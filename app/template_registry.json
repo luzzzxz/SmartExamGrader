@@ -1,0 +1,50 @@
+{
+  "current_template": "direct_paper_choice_v1",
+  "templates": {
+    "default": {
+      "display_name": "默认阅卷模板",
+      "mode": "grader",
+      "template_image": "incoming/template_with_markers/1.jpg",
+      "marker_config": "template_marker_detection.json",
+      "answer_config": "answer_zone_points.json",
+      "student_id_config": "student_id_points.json"
+    },
+    "错题采集模板_tc": {
+      "display_name": "错题采集模板-tc",
+      "mode": "collector",
+      "template_image": "templates\\错题采集模板_tc\\template.jpg",
+      "marker_config": "templates\\错题采集模板_tc\\template_marker_detection.json",
+      "answer_config": "templates\\错题采集模板_tc\\answer_zone_points.json",
+      "student_id_config": "templates\\错题采集模板_tc\\student_id_points.json"
+    },
+    "mixed_objective_subjective_v1": {
+      "display_name": "客观主观混合模板-v1",
+      "mode": "grader",
+      "template_image": "templates/混合题模板_客观主观_v1/template.jpg",
+      "marker_config": "templates/混合题模板_客观主观_v1/template_marker_detection.json",
+      "answer_config": "templates/混合题模板_客观主观_v1/answer_zone_points.json",
+      "student_id_config": "templates/混合题模板_客观主观_v1/student_id_points.json",
+      "subjective_config": "templates/混合题模板_客观主观_v1/subjective_config.json"
+    },
+    "direct_paper_choice_v1": {
+      "display_name": "试卷直接批改模板-v1",
+      "mode": "grader",
+      "template_image": "templates\\direct_paper_choice_v1\\template_front.jpg",
+      "marker_config": "templates\\direct_paper_choice_v1\\template_marker_detection.json",
+      "answer_config": "templates\\direct_paper_choice_v1\\answer_zone_points.json",
+      "student_id_config": "templates\\direct_paper_choice_v1\\student_id_points.json",
+      "direct_paper_choice": true,
+      "front_template": true,
+      "subjective_config": "templates\\direct_paper_choice_v1\\subjective_config.json"
+    },
+    "mixed_objective_subjective_v2_edge": {
+      "display_name": "客观主观混合模板-v2（边缘定位块）",
+      "mode": "grader",
+      "template_image": "templates\\mixed_objective_subjective_v2_edge\\template.jpg",
+      "marker_config": "templates\\mixed_objective_subjective_v2_edge\\template_marker_detection.json",
+      "answer_config": "templates\\mixed_objective_subjective_v2_edge\\answer_zone_points.json",
+      "student_id_config": "templates\\mixed_objective_subjective_v2_edge\\student_id_points.json",
+      "subjective_config": "templates\\mixed_objective_subjective_v2_edge\\subjective_config.json"
+    }
+  }
+}

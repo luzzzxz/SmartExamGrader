@@ -1,0 +1,33 @@
+{
+  "image_path": "C:\\Users\\Administrator\\.openclaw\\workspace\\answer_card_autograder\\templates\\mixed_objective_subjective_v2_edge\\template.jpg",
+  "image_size": {
+    "width": 2308,
+    "height": 3086
+  },
+  "markers": {
+    "top_left": {
+      "center": {
+        "x": 153.5,
+        "y": 92.0
+      }
+    },
+    "top_right": {
+      "center": {
+        "x": 2160.0,
+        "y": 79.5
+      }
+    },
+    "bottom_right": {
+      "center": {
+        "x": 2160.5,
+        "y": 2977.5
+      }
+    },
+    "bottom_left": {
+      "center": {
+        "x": 151.5,
+        "y": 2946.5
+      }
+    }
+  }
+}

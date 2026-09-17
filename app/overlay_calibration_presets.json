@@ -1,0 +1,28 @@
+{
+  "速印缩打": {
+    "front": {
+      "offset_x": 11.0,
+      "offset_y": 0.0,
+      "scale": 90.0
+    },
+    "back": {
+      "offset_x": 9.0,
+      "offset_y": 0.0,
+      "scale": 90.0
+    },
+    "matrices": {}
+  },
+  "A4": {
+    "front": {
+      "offset_x": 0.0,
+      "offset_y": 0.0,
+      "scale": 100.0
+    },
+    "back": {
+      "offset_x": 0.0,
+      "offset_y": 0.0,
+      "scale": 100.0
+    },
+    "matrices": {}
+  }
+}

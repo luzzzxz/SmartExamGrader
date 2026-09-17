@@ -1,0 +1,417 @@
+{
+  "version": 1,
+  "crop_geometry_version": 3,
+  "template_key": "direct_paper_choice_v1",
+  "template_name": "试卷直接批改模板-v1",
+  "display_name": "试卷直接批改模板主观横线配置",
+  "source": "direct_subjective_lines",
+  "updated_at": "2026-09-17T11:26:39",
+  "scoring": {
+    "default_blank_score": 1,
+    "include_in_total_score": true,
+    "max_score": 8.0
+  },
+  "crop_regions": {
+    "direct_front": {
+      "x": 0,
+      "y": 0,
+      "w": 2480.0,
+      "h": 3507.0
+    },
+    "direct_back": {
+      "x": 0,
+      "y": 0,
+      "w": 2480.0,
+      "h": 3507.0
+    }
+  },
+  "items": [
+    {
+      "question_no": "F001",
+      "label": "7",
+      "answer_label": "7",
+      "kind": "fill_blank",
+      "side": "front",
+      "region_name": "direct_front",
+      "source": "direct_subjective_lines",
+      "source_line_index": 1,
+      "max_score": 1.0,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1.0,
+          "score_category": "direct_subjective",
+          "side": "front",
+          "region_name": "direct_front",
+          "rect": {
+            "x": 1812.56,
+            "y": 2099.0,
+            "w": 262.88,
+            "h": 71.0
+          },
+          "label": "7",
+          "answer_label": "7",
+          "ocr": {
+            "enabled": true,
+            "unique_answer": true,
+            "choice_fill": false,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.85,
+            "single_char": false,
+            "split_char_check": true,
+            "expected_keywords": "功",
+            "expected_answer": "做功",
+            "candidate_words": "",
+            "common_wrong_answers": "热传递",
+            "wrong_keywords": "热,传,递"
+          }
+        }
+      ]
+    },
+    {
+      "question_no": "F002",
+      "label": "7",
+      "answer_label": "7",
+      "kind": "fill_blank",
+      "side": "front",
+      "region_name": "direct_front",
+      "source": "direct_subjective_lines",
+      "source_line_index": 2,
+      "max_score": 1.0,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1.0,
+          "score_category": "direct_subjective",
+          "side": "front",
+          "region_name": "direct_front",
+          "rect": {
+            "x": 1341.68,
+            "y": 2193.0,
+            "w": 261.64,
+            "h": 71.0
+          },
+          "label": "7",
+          "answer_label": "7",
+          "ocr": {
+            "enabled": true,
+            "unique_answer": false,
+            "choice_fill": false,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.6,
+            "single_char": false,
+            "split_char_check": false,
+            "expected_keywords": "",
+            "expected_answer": "30",
+            "candidate_words": "",
+            "common_wrong_answers": "",
+            "wrong_keywords": ""
+          }
+        }
+      ]
+    },
+    {
+      "question_no": "F003",
+      "label": "8",
+      "answer_label": "8",
+      "kind": "fill_blank",
+      "side": "front",
+      "region_name": "direct_front",
+      "source": "direct_subjective_lines",
+      "source_line_index": 3,
+      "max_score": 1.0,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1.0,
+          "score_category": "direct_subjective",
+          "side": "front",
+          "region_name": "direct_front",
+          "rect": {
+            "x": 597.68,
+            "y": 2353.0,
+            "w": 261.64,
+            "h": 71.0
+          },
+          "label": "8",
+          "answer_label": "8",
+          "ocr": {
+            "enabled": true,
+            "unique_answer": false,
+            "choice_fill": false,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.6,
+            "single_char": false,
+            "split_char_check": false,
+            "expected_keywords": "",
+            "expected_answer": "压缩",
+            "candidate_words": "",
+            "common_wrong_answers": "",
+            "wrong_keywords": ""
+          }
+        }
+      ]
+    },
+    {
+      "question_no": "F004",
+      "label": "8",
+      "answer_label": "8",
+      "kind": "fill_blank",
+      "side": "front",
+      "region_name": "direct_front",
+      "source": "direct_subjective_lines",
+      "source_line_index": 4,
+      "max_score": 1.0,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1.0,
+          "score_category": "direct_subjective",
+          "side": "front",
+          "region_name": "direct_front",
+          "rect": {
+            "x": 295.44,
+            "y": 2449.0,
+            "w": 264.12,
+            "h": 71.0
+          },
+          "label": "8",
+          "answer_label": "8",
+          "ocr": {
+            "enabled": true,
+            "unique_answer": true,
+            "choice_fill": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.6,
+            "single_char": false,
+            "split_char_check": true,
+            "expected_keywords": "",
+            "expected_answer": "柴油机",
+            "candidate_words": "填/汽油机/柴油机",
+            "common_wrong_answers": "填,汽油机",
+            "wrong_keywords": "填,汽"
+          }
+        }
+      ]
+    },
+    {
+      "question_no": "F005",
+      "label": "8",
+      "answer_label": "8",
+      "kind": "fill_blank",
+      "side": "front",
+      "region_name": "direct_front",
+      "source": "direct_subjective_lines",
+      "source_line_index": 5,
+      "max_score": 1.0,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1.0,
+          "score_category": "direct_subjective",
+          "side": "front",
+          "region_name": "direct_front",
+          "rect": {
+            "x": 715.56,
+            "y": 2544.0,
+            "w": 262.88,
+            "h": 71.0
+          },
+          "label": "8",
+          "answer_label": "8",
+          "ocr": {
+            "enabled": true,
+            "unique_answer": false,
+            "choice_fill": false,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.6,
+            "single_char": false,
+            "split_char_check": false,
+            "expected_keywords": "",
+            "expected_answer": "30",
+            "candidate_words": "",
+            "common_wrong_answers": "",
+            "wrong_keywords": ""
+          }
+        }
+      ]
+    },
+    {
+      "question_no": "F006",
+      "label": "9",
+      "answer_label": "9",
+      "kind": "fill_blank",
+      "side": "front",
+      "region_name": "direct_front",
+      "source": "direct_subjective_lines",
+      "source_line_index": 6,
+      "max_score": 1.0,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1.0,
+          "score_category": "direct_subjective",
+          "side": "front",
+          "region_name": "direct_front",
+          "rect": {
+            "x": 1082.76,
+            "y": 2700.0,
+            "w": 405.48,
+            "h": 71.0
+          },
+          "label": "9",
+          "answer_label": "9",
+          "ocr": {
+            "enabled": true,
+            "unique_answer": false,
+            "choice_fill": false,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.6,
+            "single_char": false,
+            "split_char_check": false,
+            "expected_keywords": "",
+            "expected_answer": "4.2x10^4,4.2×10^4,4.2*10^4,42000",
+            "candidate_words": "",
+            "common_wrong_answers": "",
+            "wrong_keywords": ""
+          }
+        }
+      ]
+    },
+    {
+      "question_no": "F007",
+      "label": "9",
+      "answer_label": "9",
+      "kind": "fill_blank",
+      "side": "front",
+      "region_name": "direct_front",
+      "source": "direct_subjective_lines",
+      "source_line_index": 7,
+      "max_score": 1.0,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1.0,
+          "score_category": "direct_subjective",
+          "side": "front",
+          "region_name": "direct_front",
+          "rect": {
+            "x": 2050.16,
+            "y": 2699.0,
+            "w": 256.68,
+            "h": 70.0
+          },
+          "label": "9",
+          "answer_label": "9",
+          "ocr": {
+            "enabled": true,
+            "unique_answer": true,
+            "choice_fill": false,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.85,
+            "single_char": false,
+            "split_char_check": true,
+            "expected_keywords": "功",
+            "expected_answer": "做功",
+            "candidate_words": "",
+            "common_wrong_answers": "热传递",
+            "wrong_keywords": "热,传,递"
+          }
+        }
+      ]
+    },
+    {
+      "question_no": "F008",
+      "label": "9",
+      "answer_label": "9",
+      "kind": "fill_blank",
+      "side": "front",
+      "region_name": "direct_front",
+      "source": "direct_subjective_lines",
+      "source_line_index": 8,
+      "max_score": 1.0,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1.0,
+          "score_category": "direct_subjective",
+          "side": "front",
+          "region_name": "direct_front",
+          "rect": {
+            "x": 600.8,
+            "y": 2806.0,
+            "w": 260.4,
+            "h": 71.0
+          },
+          "label": "9",
+          "answer_label": "9",
+          "ocr": {
+            "enabled": true,
+            "unique_answer": true,
+            "choice_fill": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.85,
+            "single_char": false,
+            "split_char_check": true,
+            "expected_keywords": "",
+            "expected_answer": "A",
+            "candidate_words": "A/B",
+            "common_wrong_answers": "B",
+            "wrong_keywords": "B"
+          }
+        }
+      ]
+    }
+  ],
+  "calculation_questions": {
+    "enabled": false,
+    "mode": "back_region_manual",
+    "questions": [],
+    "max_score": 0,
+    "updated_at": "2026-09-17T08:17:13"
+  },
+  "direct_calculation_region": {
+    "enabled": false,
+    "side": "back"
+  }
+}

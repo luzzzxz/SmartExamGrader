@@ -1,0 +1,582 @@
+{
+  "template_image": {
+    "path": "C:\\Users\\17013\\.openclaw\\workspace\\answer_card_autograder\\templates\\错题采集模板_tc\\template.jpg",
+    "width": 2307,
+    "height": 3084
+  },
+  "markers": {
+    "top_left": {
+      "x": 157.28,
+      "y": 257.51
+    },
+    "top_right": {
+      "x": 1998.43,
+      "y": 252.89
+    },
+    "bottom_right": {
+      "x": 1956.8,
+      "y": 2886.62
+    },
+    "bottom_left": {
+      "x": 129.53,
+      "y": 2829.57
+    }
+  },
+  "marker_diag": 3229.4459,
+  "zones": [
+    {
+      "zone_name": "student_id",
+      "zone_label": "学号区",
+      "questions": [
+        {
+          "question_no_in_zone": 1,
+          "question_label": "学号第1位",
+          "question_type": "single",
+          "options": {
+            "0": {
+              "label": "0",
+              "template_pixel": {
+                "x": 133.0,
+                "y": 488.0
+              },
+              "marker_signature": {
+                "top_left": 0.071766,
+                "top_right": 0.582201,
+                "bottom_right": 0.933052,
+                "bottom_left": 0.725069
+              }
+            },
+            "1": {
+              "label": "1",
+              "template_pixel": {
+                "x": 204.0,
+                "y": 489.0
+              },
+              "marker_signature": {
+                "top_left": 0.073126,
+                "top_right": 0.560436,
+                "bottom_right": 0.919662,
+                "bottom_left": 0.725126
+              }
+            },
+            "2": {
+              "label": "2",
+              "template_pixel": {
+                "x": 275.0,
+                "y": 489.0
+              },
+              "marker_signature": {
+                "top_left": 0.080417,
+                "top_right": 0.538646,
+                "bottom_right": 0.906861,
+                "bottom_left": 0.726157
+              }
+            },
+            "3": {
+              "label": "3",
+              "template_pixel": {
+                "x": 349.0,
+                "y": 490.0
+              },
+              "marker_signature": {
+                "top_left": 0.093311,
+                "top_right": 0.515997,
+                "bottom_right": 0.893642,
+                "bottom_left": 0.72763
+              }
+            },
+            "4": {
+              "label": "4",
+              "template_pixel": {
+                "x": 422.0,
+                "y": 492.0
+              },
+              "marker_signature": {
+                "top_left": 0.109505,
+                "top_right": 0.493726,
+                "bottom_right": 0.880727,
+                "bottom_left": 0.729474
+              }
+            },
+            "5": {
+              "label": "5",
+              "template_pixel": {
+                "x": 495.0,
+                "y": 493.0
+              },
+              "marker_signature": {
+                "top_left": 0.127488,
+                "top_right": 0.471438,
+                "bottom_right": 0.868474,
+                "bottom_left": 0.732317
+              }
+            },
+            "6": {
+              "label": "6",
+              "template_pixel": {
+                "x": 570.0,
+                "y": 491.0
+              },
+              "marker_signature": {
+                "top_left": 0.146833,
+                "top_right": 0.448417,
+                "bottom_right": 0.857135,
+                "bottom_left": 0.736872
+              }
+            },
+            "7": {
+              "label": "7",
+              "template_pixel": {
+                "x": 644.0,
+                "y": 494.0
+              },
+              "marker_signature": {
+                "top_left": 0.167562,
+                "top_right": 0.425994,
+                "bottom_right": 0.845073,
+                "bottom_left": 0.740549
+              }
+            },
+            "8": {
+              "label": "8",
+              "template_pixel": {
+                "x": 721.0,
+                "y": 494.0
+              },
+              "marker_signature": {
+                "top_left": 0.189295,
+                "top_right": 0.402541,
+                "bottom_right": 0.833865,
+                "bottom_left": 0.746041
+              }
+            },
+            "9": {
+              "label": "9",
+              "template_pixel": {
+                "x": 797.0,
+                "y": 494.0
+              },
+              "marker_signature": {
+                "top_left": 0.211192,
+                "top_right": 0.379441,
+                "bottom_right": 0.823331,
+                "bottom_left": 0.752165
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 2,
+          "question_label": "学号第2位",
+          "question_type": "single",
+          "options": {
+            "0": {
+              "label": "0",
+              "template_pixel": {
+                "x": 132.0,
+                "y": 545.0
+              },
+              "marker_signature": {
+                "top_left": 0.089365,
+                "top_right": 0.584977,
+                "bottom_right": 0.919255,
+                "bottom_left": 0.707419
+              }
+            },
+            "1": {
+              "label": "1",
+              "template_pixel": {
+                "x": 205.0,
+                "y": 546.0
+              },
+              "marker_signature": {
+                "top_left": 0.090545,
+                "top_right": 0.562705,
+                "bottom_right": 0.905288,
+                "bottom_left": 0.707495
+              }
+            },
+            "2": {
+              "label": "2",
+              "template_pixel": {
+                "x": 276.0,
+                "y": 545.0
+              },
+              "marker_signature": {
+                "top_left": 0.096313,
+                "top_right": 0.540967,
+                "bottom_right": 0.892539,
+                "bottom_left": 0.708871
+              }
+            },
+            "3": {
+              "label": "3",
+              "template_pixel": {
+                "x": 348.0,
+                "y": 545.0
+              },
+              "marker_signature": {
+                "top_left": 0.106829,
+                "top_right": 0.519,
+                "bottom_right": 0.879725,
+                "bottom_left": 0.710646
+              }
+            },
+            "4": {
+              "label": "4",
+              "template_pixel": {
+                "x": 422.0,
+                "y": 546.0
+              },
+              "marker_signature": {
+                "top_left": 0.12124,
+                "top_right": 0.496509,
+                "bottom_right": 0.866696,
+                "bottom_left": 0.712885
+              }
+            },
+            "5": {
+              "label": "5",
+              "template_pixel": {
+                "x": 497.0,
+                "y": 548.0
+              },
+              "marker_signature": {
+                "top_left": 0.138409,
+                "top_right": 0.473814,
+                "bottom_right": 0.853657,
+                "bottom_left": 0.715594
+              }
+            },
+            "6": {
+              "label": "6",
+              "template_pixel": {
+                "x": 570.0,
+                "y": 547.0
+              },
+              "marker_signature": {
+                "top_left": 0.156103,
+                "top_right": 0.451593,
+                "bottom_right": 0.842172,
+                "bottom_left": 0.719839
+              }
+            },
+            "7": {
+              "label": "7",
+              "template_pixel": {
+                "x": 644.0,
+                "y": 548.0
+              },
+              "marker_signature": {
+                "top_left": 0.175515,
+                "top_right": 0.42924,
+                "bottom_right": 0.830452,
+                "bottom_left": 0.724228
+              }
+            },
+            "8": {
+              "label": "8",
+              "template_pixel": {
+                "x": 720.0,
+                "y": 547.0
+              },
+              "marker_signature": {
+                "top_left": 0.195952,
+                "top_right": 0.406207,
+                "bottom_right": 0.819463,
+                "bottom_left": 0.730065
+              }
+            },
+            "9": {
+              "label": "9",
+              "template_pixel": {
+                "x": 797.0,
+                "y": 546.0
+              },
+              "marker_signature": {
+                "top_left": 0.217301,
+                "top_right": 0.382935,
+                "bottom_right": 0.808872,
+                "bottom_left": 0.736696
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 3,
+          "question_label": "学号第3位",
+          "question_type": "single",
+          "options": {
+            "0": {
+              "label": "0",
+              "template_pixel": {
+                "x": 133.0,
+                "y": 601.0
+              },
+              "marker_signature": {
+                "top_left": 0.106627,
+                "top_right": 0.587603,
+                "bottom_right": 0.905446,
+                "bottom_left": 0.690079
+              }
+            },
+            "1": {
+              "label": "1",
+              "template_pixel": {
+                "x": 205.0,
+                "y": 601.0
+              },
+              "marker_signature": {
+                "top_left": 0.107383,
+                "top_right": 0.565701,
+                "bottom_right": 0.891711,
+                "bottom_left": 0.690474
+              }
+            },
+            "2": {
+              "label": "2",
+              "template_pixel": {
+                "x": 278.0,
+                "y": 600.0
+              },
+              "marker_signature": {
+                "top_left": 0.112447,
+                "top_right": 0.543467,
+                "bottom_right": 0.878393,
+                "bottom_left": 0.691917
+              }
+            },
+            "3": {
+              "label": "3",
+              "template_pixel": {
+                "x": 349.0,
+                "y": 601.0
+              },
+              "marker_signature": {
+                "top_left": 0.121808,
+                "top_right": 0.521998,
+                "bottom_right": 0.86531,
+                "bottom_left": 0.693416
+              }
+            },
+            "4": {
+              "label": "4",
+              "template_pixel": {
+                "x": 422.0,
+                "y": 602.0
+              },
+              "marker_signature": {
+                "top_left": 0.134529,
+                "top_right": 0.499969,
+                "bottom_right": 0.852248,
+                "bottom_left": 0.695688
+              }
+            },
+            "5": {
+              "label": "5",
+              "template_pixel": {
+                "x": 496.0,
+                "y": 601.0
+              },
+              "marker_signature": {
+                "top_left": 0.149378,
+                "top_right": 0.477553,
+                "bottom_right": 0.839947,
+                "bottom_left": 0.699346
+              }
+            },
+            "6": {
+              "label": "6",
+              "template_pixel": {
+                "x": 570.0,
+                "y": 601.0
+              },
+              "marker_signature": {
+                "top_left": 0.166269,
+                "top_right": 0.455259,
+                "bottom_right": 0.827832,
+                "bottom_left": 0.703428
+              }
+            },
+            "7": {
+              "label": "7",
+              "template_pixel": {
+                "x": 644.0,
+                "y": 601.0
+              },
+              "marker_signature": {
+                "top_left": 0.184465,
+                "top_right": 0.433031,
+                "bottom_right": 0.816181,
+                "bottom_left": 0.708228
+              }
+            },
+            "8": {
+              "label": "8",
+              "template_pixel": {
+                "x": 718.0,
+                "y": 603.0
+              },
+              "marker_signature": {
+                "top_left": 0.20394,
+                "top_right": 0.41104,
+                "bottom_right": 0.804469,
+                "bottom_left": 0.713132
+              }
+            },
+            "9": {
+              "label": "9",
+              "template_pixel": {
+                "x": 797.0,
+                "y": 602.0
+              },
+              "marker_signature": {
+                "top_left": 0.224985,
+                "top_right": 0.387411,
+                "bottom_right": 0.793372,
+                "bottom_left": 0.720068
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 4,
+          "question_label": "学号第4位",
+          "question_type": "single",
+          "options": {
+            "0": {
+              "label": "0",
+              "template_pixel": {
+                "x": 133.0,
+                "y": 656.0
+              },
+              "marker_signature": {
+                "top_left": 0.123622,
+                "top_right": 0.590965,
+                "bottom_right": 0.892198,
+                "bottom_left": 0.673048
+              }
+            },
+            "1": {
+              "label": "1",
+              "template_pixel": {
+                "x": 204.0,
+                "y": 656.0
+              },
+              "marker_signature": {
+                "top_left": 0.124238,
+                "top_right": 0.569494,
+                "bottom_right": 0.878446,
+                "bottom_left": 0.673442
+              }
+            },
+            "2": {
+              "label": "2",
+              "template_pixel": {
+                "x": 275.0,
+                "y": 656.0
+              },
+              "marker_signature": {
+                "top_left": 0.128664,
+                "top_right": 0.548065,
+                "bottom_right": 0.865035,
+                "bottom_left": 0.674553
+              }
+            },
+            "3": {
+              "label": "3",
+              "template_pixel": {
+                "x": 346.0,
+                "y": 655.0
+              },
+              "marker_signature": {
+                "top_left": 0.136251,
+                "top_right": 0.526608,
+                "bottom_right": 0.852232,
+                "bottom_left": 0.676685
+              }
+            },
+            "4": {
+              "label": "4",
+              "template_pixel": {
+                "x": 422.0,
+                "y": 657.0
+              },
+              "marker_signature": {
+                "top_left": 0.148396,
+                "top_right": 0.503926,
+                "bottom_right": 0.838165,
+                "bottom_left": 0.678806
+              }
+            },
+            "5": {
+              "label": "5",
+              "template_pixel": {
+                "x": 495.0,
+                "y": 658.0
+              },
+              "marker_signature": {
+                "top_left": 0.162219,
+                "top_right": 0.482143,
+                "bottom_right": 0.825299,
+                "bottom_left": 0.681885
+              }
+            },
+            "6": {
+              "label": "6",
+              "template_pixel": {
+                "x": 570.0,
+                "y": 657.0
+              },
+              "marker_signature": {
+                "top_left": 0.177862,
+                "top_right": 0.459674,
+                "bottom_right": 0.813057,
+                "bottom_left": 0.686425
+              }
+            },
+            "7": {
+              "label": "7",
+              "template_pixel": {
+                "x": 642.0,
+                "y": 657.0
+              },
+              "marker_signature": {
+                "top_left": 0.1945,
+                "top_right": 0.438263,
+                "bottom_right": 0.801505,
+                "bottom_left": 0.6912
+              }
+            },
+            "8": {
+              "label": "8",
+              "template_pixel": {
+                "x": 718.0,
+                "y": 657.0
+              },
+              "marker_signature": {
+                "top_left": 0.213187,
+                "top_right": 0.415764,
+                "bottom_right": 0.789811,
+                "bottom_left": 0.696979
+              }
+            },
+            "9": {
+              "label": "9",
+              "template_pixel": {
+                "x": 795.0,
+                "y": 658.0
+              },
+              "marker_signature": {
+                "top_left": 0.233181,
+                "top_right": 0.39319,
+                "bottom_right": 0.778236,
+                "bottom_left": 0.703293
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

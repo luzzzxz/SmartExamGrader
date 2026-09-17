@@ -1,0 +1,72 @@
+{
+  "image_path": "C:\\Users\\17013\\.openclaw\\workspace\\answer_card_autograder\\incoming\\template_with_markers\\1.jpg",
+  "image_size": {
+    "width": 2295,
+    "height": 3084
+  },
+  "scaled_detection_size": {
+    "width": 744,
+    "height": 1000
+  },
+  "threshold": 131,
+  "scale": 0.324254215304799,
+  "candidates_found": 5,
+  "markers": {
+    "top_left": {
+      "center": {
+        "x": 232.84,
+        "y": 248.26
+      },
+      "bbox": {
+        "left": 181.96,
+        "top": 197.38,
+        "right": 283.73,
+        "bottom": 299.15
+      },
+      "area_scaled": 1099,
+      "fill_ratio": 0.9507
+    },
+    "top_right": {
+      "center": {
+        "x": 2066.28,
+        "y": 242.09
+      },
+      "bbox": {
+        "left": 2029.27,
+        "top": 206.63,
+        "right": 2103.29,
+        "bottom": 277.56
+      },
+      "area_scaled": 587,
+      "fill_ratio": 0.9783
+    },
+    "bottom_right": {
+      "center": {
+        "x": 2026.19,
+        "y": 2877.37
+      },
+      "bbox": {
+        "left": 1964.51,
+        "top": 2852.7,
+        "right": 2087.87,
+        "bottom": 2902.04
+      },
+      "area_scaled": 644,
+      "fill_ratio": 0.924
+    },
+    "bottom_left": {
+      "center": {
+        "x": 203.54,
+        "y": 2815.69
+      },
+      "bbox": {
+        "left": 178.87,
+        "top": 2757.1,
+        "right": 228.22,
+        "bottom": 2874.29
+      },
+      "area_scaled": 623,
+      "fill_ratio": 0.9397
+    }
+  }
+}

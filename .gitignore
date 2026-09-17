@@ -1,0 +1,92 @@
+# ==========================================
+# Git Ignore for SmartExamGrader (答题卡智能识别批改系统)
+# ==========================================
+
+# 1. Python 运行缓存与字节码
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 2. 虚拟环境与便携运行时
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+runtime/
+
+# 3. 业务数据库与临时快照 (保证用户本地考试数据与成绩绝不入库)
+*.db
+*.sqlite
+*.sqlite3
+answer_card_app.db*
+*.db-journal
+*.db-wal
+*.db-shm
+
+# 4. 运行时用户评卷数据与上传图片
+app/session_answer_keys/*
+!app/session_answer_keys/.gitkeep
+app/session_subjective_scores/*
+!app/session_subjective_scores/.gitkeep
+app/session_template_configs/*
+!app/session_template_configs/.gitkeep
+app/incoming/*
+!app/incoming/template_with_markers/
+app/incoming/template_with_markers/*
+!app/incoming/template_with_markers/1.jpg
+.web_cache/
+
+# 5. 导出报表、错题本与压缩归档
+exports/
+reports/
+output/
+wrong_book_output/
+*.zip
+*.tar.gz
+*.rar
+*.7z
+PACKAGE_MANIFEST_SHA256.txt
+
+# 6. 编辑器与操作系统专属文件
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# 7. 本地测试与日志备份
+*.bak
+*.bak.*
+*.backup_*
+*.orig
+*.log
+scratch/
+tests/tmp/
+tmp/
+temp/

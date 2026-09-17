@@ -1,0 +1,72 @@
+{
+  "image_path": "C:\\Users\\17013\\.openclaw\\workspace\\answer_card_autograder\\templates\\错题采集模板_tc\\template.jpg",
+  "image_size": {
+    "width": 2307,
+    "height": 3084
+  },
+  "scaled_detection_size": {
+    "width": 748,
+    "height": 1000
+  },
+  "threshold": 145,
+  "scale": 0.324254215304799,
+  "candidates_found": 5,
+  "markers": {
+    "top_left": {
+      "center": {
+        "x": 157.28,
+        "y": 257.51
+      },
+      "bbox": {
+        "left": 104.86,
+        "top": 206.63,
+        "right": 209.71,
+        "bottom": 308.4
+      },
+      "area_scaled": 1175,
+      "fill_ratio": 0.9874
+    },
+    "top_right": {
+      "center": {
+        "x": 1998.43,
+        "y": 252.89
+      },
+      "bbox": {
+        "left": 1961.42,
+        "top": 215.88,
+        "right": 2035.44,
+        "bottom": 289.9
+      },
+      "area_scaled": 607,
+      "fill_ratio": 0.9712
+    },
+    "bottom_right": {
+      "center": {
+        "x": 1956.8,
+        "y": 2886.62
+      },
+      "bbox": {
+        "left": 1893.58,
+        "top": 2861.95,
+        "right": 2020.02,
+        "bottom": 2911.3
+      },
+      "area_scaled": 673,
+      "fill_ratio": 0.9426
+    },
+    "bottom_left": {
+      "center": {
+        "x": 129.53,
+        "y": 2829.57
+      },
+      "bbox": {
+        "left": 104.86,
+        "top": 2769.43,
+        "right": 154.2,
+        "bottom": 2889.71
+      },
+      "area_scaled": 673,
+      "fill_ratio": 0.9897
+    }
+  }
+}

@@ -1,0 +1,533 @@
+{
+  "template_image": {
+    "path": "C:\\Users\\17013\\.openclaw\\workspace\\answer_card_autograder\\incoming\\template_with_markers\\1.jpg",
+    "width": 2295,
+    "height": 3084
+  },
+  "markers": {
+    "top_left": {
+      "x": 232.84,
+      "y": 248.26
+    },
+    "top_right": {
+      "x": 2066.28,
+      "y": 242.09
+    },
+    "bottom_right": {
+      "x": 2026.19,
+      "y": 2877.37
+    },
+    "bottom_left": {
+      "x": 203.54,
+      "y": 2815.69
+    }
+  },
+  "marker_diag": 3227.1506,
+  "zones": [
+    {
+      "zone_name": "student_id",
+      "questions": [
+        {
+          "question_no_in_zone": 1,
+          "options": {
+            "0": {
+              "template_pixel": {
+                "x": 208.0,
+                "y": 479.0
+              },
+              "marker_signature": {
+                "top_left": 0.071913,
+                "top_right": 0.580488,
+                "bottom_right": 0.932603,
+                "bottom_left": 0.724074
+              }
+            },
+            "1": {
+              "template_pixel": {
+                "x": 278.0,
+                "y": 479.0
+              },
+              "marker_signature": {
+                "top_left": 0.072856,
+                "top_right": 0.558977,
+                "bottom_right": 0.919661,
+                "bottom_left": 0.72444
+              }
+            },
+            "2": {
+              "template_pixel": {
+                "x": 352.0,
+                "y": 479.0
+              },
+              "marker_signature": {
+                "top_left": 0.080471,
+                "top_right": 0.536254,
+                "bottom_right": 0.906344,
+                "bottom_left": 0.725532
+              }
+            },
+            "3": {
+              "template_pixel": {
+                "x": 424.0,
+                "y": 481.0
+              },
+              "marker_signature": {
+                "top_left": 0.093327,
+                "top_right": 0.514251,
+                "bottom_right": 0.893246,
+                "bottom_left": 0.726671
+              }
+            },
+            "4": {
+              "template_pixel": {
+                "x": 496.0,
+                "y": 479.0
+              },
+              "marker_signature": {
+                "top_left": 0.108452,
+                "top_right": 0.492091,
+                "bottom_right": 0.881563,
+                "bottom_left": 0.729721
+              }
+            },
+            "5": {
+              "template_pixel": {
+                "x": 572.0,
+                "y": 480.0
+              },
+              "marker_signature": {
+                "top_left": 0.127286,
+                "top_right": 0.468866,
+                "bottom_right": 0.868858,
+                "bottom_left": 0.732713
+              }
+            },
+            "6": {
+              "template_pixel": {
+                "x": 643.0,
+                "y": 481.0
+              },
+              "marker_signature": {
+                "top_left": 0.146133,
+                "top_right": 0.447203,
+                "bottom_right": 0.857386,
+                "bottom_left": 0.736157
+              }
+            },
+            "7": {
+              "template_pixel": {
+                "x": 718.0,
+                "y": 482.0
+              },
+              "marker_signature": {
+                "top_left": 0.166875,
+                "top_right": 0.424355,
+                "bottom_right": 0.845735,
+                "bottom_left": 0.740506
+              }
+            },
+            "8": {
+              "template_pixel": {
+                "x": 794.0,
+                "y": 482.0
+              },
+              "marker_signature": {
+                "top_left": 0.188369,
+                "top_right": 0.40119,
+                "bottom_right": 0.834703,
+                "bottom_left": 0.74593
+              }
+            },
+            "9": {
+              "template_pixel": {
+                "x": 869.0,
+                "y": 481.0
+              },
+              "marker_signature": {
+                "top_left": 0.209906,
+                "top_right": 0.378316,
+                "bottom_right": 0.82461,
+                "bottom_left": 0.752266
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 2,
+          "options": {
+            "0": {
+              "template_pixel": {
+                "x": 206.0,
+                "y": 533.0
+              },
+              "marker_signature": {
+                "top_left": 0.088624,
+                "top_right": 0.583452,
+                "bottom_right": 0.919704,
+                "bottom_left": 0.70734
+              }
+            },
+            "1": {
+              "template_pixel": {
+                "x": 278.0,
+                "y": 534.0
+              },
+              "marker_signature": {
+                "top_left": 0.089642,
+                "top_right": 0.56147,
+                "bottom_right": 0.905945,
+                "bottom_left": 0.707406
+              }
+            },
+            "2": {
+              "template_pixel": {
+                "x": 350.0,
+                "y": 536.0
+              },
+              "marker_signature": {
+                "top_left": 0.09627,
+                "top_right": 0.539567,
+                "bottom_right": 0.892279,
+                "bottom_left": 0.707866
+              }
+            },
+            "3": {
+              "template_pixel": {
+                "x": 423.0,
+                "y": 534.0
+              },
+              "marker_signature": {
+                "top_left": 0.106358,
+                "top_right": 0.517176,
+                "bottom_right": 0.879815,
+                "bottom_left": 0.710292
+              }
+            },
+            "4": {
+              "template_pixel": {
+                "x": 496.0,
+                "y": 536.0
+              },
+              "marker_signature": {
+                "top_left": 0.120829,
+                "top_right": 0.495034,
+                "bottom_right": 0.866725,
+                "bottom_left": 0.712199
+              }
+            },
+            "5": {
+              "template_pixel": {
+                "x": 570.0,
+                "y": 537.0
+              },
+              "marker_signature": {
+                "top_left": 0.137552,
+                "top_right": 0.472573,
+                "bottom_right": 0.854133,
+                "bottom_left": 0.715172
+              }
+            },
+            "6": {
+              "template_pixel": {
+                "x": 645.0,
+                "y": 536.0
+              },
+              "marker_signature": {
+                "top_left": 0.155761,
+                "top_right": 0.449731,
+                "bottom_right": 0.842353,
+                "bottom_left": 0.719533
+              }
+            },
+            "7": {
+              "template_pixel": {
+                "x": 718.0,
+                "y": 536.0
+              },
+              "marker_signature": {
+                "top_left": 0.174789,
+                "top_right": 0.427604,
+                "bottom_right": 0.831088,
+                "bottom_left": 0.724174
+              }
+            },
+            "8": {
+              "template_pixel": {
+                "x": 792.0,
+                "y": 537.0
+              },
+              "marker_signature": {
+                "top_left": 0.195005,
+                "top_right": 0.405299,
+                "bottom_right": 0.819874,
+                "bottom_left": 0.729265
+              }
+            },
+            "9": {
+              "template_pixel": {
+                "x": 867.0,
+                "y": 539.0
+              },
+              "marker_signature": {
+                "top_left": 0.216175,
+                "top_right": 0.382841,
+                "bottom_right": 0.808739,
+                "bottom_left": 0.734825
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 3,
+          "options": {
+            "0": {
+              "template_pixel": {
+                "x": 206.0,
+                "y": 589.0
+              },
+              "marker_signature": {
+                "top_left": 0.105912,
+                "top_right": 0.586384,
+                "bottom_right": 0.90606,
+                "bottom_left": 0.689987
+              }
+            },
+            "1": {
+              "template_pixel": {
+                "x": 278.0,
+                "y": 590.0
+              },
+              "marker_signature": {
+                "top_left": 0.106816,
+                "top_right": 0.564525,
+                "bottom_right": 0.892096,
+                "bottom_left": 0.690062
+              }
+            },
+            "2": {
+              "template_pixel": {
+                "x": 351.0,
+                "y": 589.0
+              },
+              "marker_signature": {
+                "top_left": 0.111754,
+                "top_right": 0.542277,
+                "bottom_right": 0.878794,
+                "bottom_left": 0.691498
+              }
+            },
+            "3": {
+              "template_pixel": {
+                "x": 422.0,
+                "y": 589.0
+              },
+              "marker_signature": {
+                "top_left": 0.120764,
+                "top_right": 0.520731,
+                "bottom_right": 0.86598,
+                "bottom_left": 0.693299
+              }
+            },
+            "4": {
+              "template_pixel": {
+                "x": 495.0,
+                "y": 591.0
+              },
+              "marker_signature": {
+                "top_left": 0.133712,
+                "top_right": 0.498753,
+                "bottom_right": 0.852682,
+                "bottom_left": 0.695258
+              }
+            },
+            "5": {
+              "template_pixel": {
+                "x": 569.0,
+                "y": 590.0
+              },
+              "marker_signature": {
+                "top_left": 0.148541,
+                "top_right": 0.476324,
+                "bottom_right": 0.8404,
+                "bottom_left": 0.698912
+              }
+            },
+            "6": {
+              "template_pixel": {
+                "x": 644.0,
+                "y": 591.0
+              },
+              "marker_signature": {
+                "top_left": 0.165867,
+                "top_right": 0.453791,
+                "bottom_right": 0.827879,
+                "bottom_left": 0.702748
+              }
+            },
+            "7": {
+              "template_pixel": {
+                "x": 719.0,
+                "y": 591.0
+              },
+              "marker_signature": {
+                "top_left": 0.18432,
+                "top_right": 0.431255,
+                "bottom_right": 0.816099,
+                "bottom_left": 0.707629
+              }
+            },
+            "8": {
+              "template_pixel": {
+                "x": 793.0,
+                "y": 591.0
+              },
+              "marker_signature": {
+                "top_left": 0.203491,
+                "top_right": 0.409098,
+                "bottom_right": 0.804964,
+                "bottom_left": 0.713155
+              }
+            },
+            "9": {
+              "template_pixel": {
+                "x": 867.0,
+                "y": 592.0
+              },
+              "marker_signature": {
+                "top_left": 0.223519,
+                "top_right": 0.387117,
+                "bottom_right": 0.794058,
+                "bottom_left": 0.719072
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 4,
+          "options": {
+            "0": {
+              "template_pixel": {
+                "x": 204.0,
+                "y": 643.0
+              },
+              "marker_signature": {
+                "top_left": 0.122644,
+                "top_right": 0.590287,
+                "bottom_right": 0.893417,
+                "bottom_left": 0.673253
+              }
+            },
+            "1": {
+              "template_pixel": {
+                "x": 278.0,
+                "y": 644.0
+              },
+              "marker_signature": {
+                "top_left": 0.123424,
+                "top_right": 0.567959,
+                "bottom_right": 0.87886,
+                "bottom_left": 0.673339
+              }
+            },
+            "2": {
+              "template_pixel": {
+                "x": 351.0,
+                "y": 645.0
+              },
+              "marker_signature": {
+                "top_left": 0.128275,
+                "top_right": 0.545982,
+                "bottom_right": 0.864853,
+                "bottom_left": 0.674184
+              }
+            },
+            "3": {
+              "template_pixel": {
+                "x": 424.0,
+                "y": 644.0
+              },
+              "marker_signature": {
+                "top_left": 0.136185,
+                "top_right": 0.523912,
+                "bottom_right": 0.85172,
+                "bottom_left": 0.676402
+              }
+            },
+            "4": {
+              "template_pixel": {
+                "x": 495.0,
+                "y": 645.0
+              },
+              "marker_signature": {
+                "top_left": 0.147353,
+                "top_right": 0.502646,
+                "bottom_right": 0.83883,
+                "bottom_left": 0.67867
+              }
+            },
+            "5": {
+              "template_pixel": {
+                "x": 567.0,
+                "y": 645.0
+              },
+              "marker_signature": {
+                "top_left": 0.160735,
+                "top_right": 0.481067,
+                "bottom_right": 0.826415,
+                "bottom_left": 0.681997
+              }
+            },
+            "6": {
+              "template_pixel": {
+                "x": 644.0,
+                "y": 645.0
+              },
+              "marker_signature": {
+                "top_left": 0.177049,
+                "top_right": 0.458066,
+                "bottom_right": 0.813606,
+                "bottom_left": 0.686341
+              }
+            },
+            "7": {
+              "template_pixel": {
+                "x": 717.0,
+                "y": 645.0
+              },
+              "marker_signature": {
+                "top_left": 0.193964,
+                "top_right": 0.436345,
+                "bottom_right": 0.801928,
+                "bottom_left": 0.691195
+              }
+            },
+            "8": {
+              "template_pixel": {
+                "x": 794.0,
+                "y": 646.0
+              },
+              "marker_signature": {
+                "top_left": 0.213136,
+                "top_right": 0.413633,
+                "bottom_right": 0.789855,
+                "bottom_left": 0.696775
+              }
+            },
+            "9": {
+              "template_pixel": {
+                "x": 869.0,
+                "y": 648.0
+              },
+              "marker_signature": {
+                "top_left": 0.232814,
+                "top_right": 0.391744,
+                "bottom_right": 0.778336,
+                "bottom_left": 0.702643
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

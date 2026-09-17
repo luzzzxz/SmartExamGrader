@@ -1,0 +1,3542 @@
+{
+  "template_image": {
+    "path": "C:\\Users\\17013\\.openclaw\\workspace\\answer_card_autograder\\templates\\错题采集模板_tc\\template.jpg",
+    "width": 2307,
+    "height": 3084
+  },
+  "markers": {
+    "top_left": {
+      "x": 157.28,
+      "y": 257.51
+    },
+    "top_right": {
+      "x": 1998.43,
+      "y": 252.89
+    },
+    "bottom_right": {
+      "x": 1956.8,
+      "y": 2886.62
+    },
+    "bottom_left": {
+      "x": 129.53,
+      "y": 2829.57
+    }
+  },
+  "marker_diag": 3229.4459,
+  "mode": "collector",
+  "zones": [
+    {
+      "zone_name": "zone1",
+      "zone_label": "选择题错题区",
+      "questions": [
+        {
+          "question_no_in_zone": 1,
+          "question_label": "选择题1",
+          "question_type": "single",
+          "options": {
+            "A": {
+              "label": "A",
+              "template_pixel": {
+                "x": 187.0,
+                "y": 764.0
+              },
+              "marker_signature": {
+                "top_left": 0.157105,
+                "top_right": 0.582811,
+                "bottom_right": 0.855763,
+                "bottom_left": 0.639853
+              }
+            },
+            "B": {
+              "label": "B",
+              "template_pixel": {
+                "x": 262.0,
+                "y": 765.0
+              },
+              "marker_signature": {
+                "top_left": 0.160455,
+                "top_right": 0.560583,
+                "bottom_right": 0.840838,
+                "bottom_left": 0.64061
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 336.0,
+                "y": 765.0
+              },
+              "marker_signature": {
+                "top_left": 0.166604,
+                "top_right": 0.538644,
+                "bottom_right": 0.82673,
+                "bottom_left": 0.642484
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 414.0,
+                "y": 766.0
+              },
+              "marker_signature": {
+                "top_left": 0.176383,
+                "top_right": 0.515705,
+                "bottom_right": 0.812044,
+                "bottom_left": 0.645029
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 2,
+          "question_label": "选择题2",
+          "question_type": "single",
+          "options": {
+            "A": {
+              "label": "A",
+              "template_pixel": {
+                "x": 187.0,
+                "y": 818.0
+              },
+              "marker_signature": {
+                "top_left": 0.1738,
+                "top_right": 0.587572,
+                "bottom_right": 0.842988,
+                "bottom_left": 0.623138
+              }
+            },
+            "B": {
+              "label": "B",
+              "template_pixel": {
+                "x": 261.0,
+                "y": 821.0
+              },
+              "marker_signature": {
+                "top_left": 0.177416,
+                "top_right": 0.566027,
+                "bottom_right": 0.827557,
+                "bottom_left": 0.623286
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 336.0,
+                "y": 820.0
+              },
+              "marker_signature": {
+                "top_left": 0.182756,
+                "top_right": 0.543901,
+                "bottom_right": 0.813263,
+                "bottom_left": 0.62554
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 412.0,
+                "y": 821.0
+              },
+              "marker_signature": {
+                "top_left": 0.191484,
+                "top_right": 0.521787,
+                "bottom_right": 0.798706,
+                "bottom_left": 0.628075
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 3,
+          "question_label": "选择题3",
+          "question_type": "single",
+          "options": {
+            "A": {
+              "label": "A",
+              "template_pixel": {
+                "x": 187.0,
+                "y": 875.0
+              },
+              "marker_signature": {
+                "top_left": 0.191428,
+                "top_right": 0.593068,
+                "bottom_right": 0.829656,
+                "bottom_left": 0.605495
+              }
+            },
+            "B": {
+              "label": "B",
+              "template_pixel": {
+                "x": 260.0,
+                "y": 877.0
+              },
+              "marker_signature": {
+                "top_left": 0.194445,
+                "top_right": 0.571945,
+                "bottom_right": 0.814428,
+                "bottom_left": 0.605963
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 334.0,
+                "y": 877.0
+              },
+              "marker_signature": {
+                "top_left": 0.199478,
+                "top_right": 0.550433,
+                "bottom_right": 0.799837,
+                "bottom_left": 0.607921
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 411.0,
+                "y": 876.0
+              },
+              "marker_signature": {
+                "top_left": 0.207004,
+                "top_right": 0.528061,
+                "bottom_right": 0.785323,
+                "bottom_left": 0.611171
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 4,
+          "question_label": "选择题4",
+          "question_type": "single",
+          "options": {
+            "A": {
+              "label": "A",
+              "template_pixel": {
+                "x": 187.0,
+                "y": 931.0
+              },
+              "marker_signature": {
+                "top_left": 0.20875,
+                "top_right": 0.598925,
+                "bottom_right": 0.816717,
+                "bottom_left": 0.588163
+              }
+            },
+            "B": {
+              "label": "B",
+              "template_pixel": {
+                "x": 261.0,
+                "y": 933.0
+              },
+              "marker_signature": {
+                "top_left": 0.211617,
+                "top_right": 0.577746,
+                "bottom_right": 0.801054,
+                "bottom_left": 0.588683
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 335.0,
+                "y": 931.0
+              },
+              "marker_signature": {
+                "top_left": 0.215685,
+                "top_right": 0.556237,
+                "bottom_right": 0.786701,
+                "bottom_left": 0.591326
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 410.0,
+                "y": 932.0
+              },
+              "marker_signature": {
+                "top_left": 0.223035,
+                "top_right": 0.534925,
+                "bottom_right": 0.77184,
+                "bottom_left": 0.593967
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 5,
+          "question_label": "选择题5",
+          "question_type": "single",
+          "options": {
+            "A": {
+              "label": "A",
+              "template_pixel": {
+                "x": 187.0,
+                "y": 985.0
+              },
+              "marker_signature": {
+                "top_left": 0.225456,
+                "top_right": 0.60499,
+                "bottom_right": 0.804398,
+                "bottom_left": 0.571449
+              }
+            },
+            "B": {
+              "label": "B",
+              "template_pixel": {
+                "x": 260.0,
+                "y": 987.0
+              },
+              "marker_signature": {
+                "top_left": 0.228115,
+                "top_right": 0.584334,
+                "bottom_right": 0.788709,
+                "bottom_left": 0.571982
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 332.0,
+                "y": 987.0
+              },
+              "marker_signature": {
+                "top_left": 0.232276,
+                "top_right": 0.563862,
+                "bottom_right": 0.774036,
+                "bottom_left": 0.573987
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 409.0,
+                "y": 987.0
+              },
+              "marker_signature": {
+                "top_left": 0.238957,
+                "top_right": 0.542128,
+                "bottom_right": 0.758754,
+                "bottom_left": 0.577078
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 6,
+          "question_label": "选择题6",
+          "question_type": "single",
+          "options": {
+            "A": {
+              "label": "A",
+              "template_pixel": {
+                "x": 188.0,
+                "y": 1042.0
+              },
+              "marker_signature": {
+                "top_left": 0.243104,
+                "top_right": 0.611539,
+                "bottom_right": 0.791354,
+                "bottom_left": 0.553818
+              }
+            },
+            "B": {
+              "label": "B",
+              "template_pixel": {
+                "x": 262.0,
+                "y": 1042.0
+              },
+              "marker_signature": {
+                "top_left": 0.245073,
+                "top_right": 0.590604,
+                "bottom_right": 0.775671,
+                "bottom_left": 0.55504
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 334.0,
+                "y": 1041.0
+              },
+              "marker_signature": {
+                "top_left": 0.248703,
+                "top_right": 0.570249,
+                "bottom_right": 0.760997,
+                "bottom_left": 0.557439
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 409.0,
+                "y": 1042.0
+              },
+              "marker_signature": {
+                "top_left": 0.255117,
+                "top_right": 0.549487,
+                "bottom_right": 0.745629,
+                "bottom_left": 0.560246
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 7,
+          "question_label": "选择题7",
+          "question_type": "single",
+          "options": {
+            "A": {
+              "label": "A",
+              "template_pixel": {
+                "x": 651.0,
+                "y": 767.0
+              },
+              "marker_signature": {
+                "top_left": 0.219686,
+                "top_right": 0.446571,
+                "bottom_right": 0.770893,
+                "bottom_left": 0.658772
+              }
+            },
+            "B": {
+              "label": "B",
+              "template_pixel": {
+                "x": 729.0,
+                "y": 767.0
+              },
+              "marker_signature": {
+                "top_left": 0.237129,
+                "top_right": 0.424093,
+                "bottom_right": 0.758504,
+                "bottom_left": 0.665105
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 804.0,
+                "y": 767.0
+              },
+              "marker_signature": {
+                "top_left": 0.254936,
+                "top_right": 0.402662,
+                "bottom_right": 0.747134,
+                "bottom_left": 0.671957
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 884.0,
+                "y": 767.0
+              },
+              "marker_signature": {
+                "top_left": 0.274823,
+                "top_right": 0.380034,
+                "bottom_right": 0.73562,
+                "bottom_left": 0.680064
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 8,
+          "question_label": "选择题8",
+          "question_type": "single",
+          "options": {
+            "A": {
+              "label": "A",
+              "template_pixel": {
+                "x": 650.0,
+                "y": 822.0
+              },
+              "marker_signature": {
+                "top_left": 0.232015,
+                "top_right": 0.453207,
+                "bottom_right": 0.756612,
+                "bottom_left": 0.642197
+              }
+            },
+            "B": {
+              "label": "B",
+              "template_pixel": {
+                "x": 730.0,
+                "y": 824.0
+              },
+              "marker_signature": {
+                "top_left": 0.249441,
+                "top_right": 0.430746,
+                "bottom_right": 0.743125,
+                "bottom_left": 0.648263
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 805.0,
+                "y": 824.0
+              },
+              "marker_signature": {
+                "top_left": 0.266453,
+                "top_right": 0.409681,
+                "bottom_right": 0.731526,
+                "bottom_left": 0.655302
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 885.0,
+                "y": 824.0
+              },
+              "marker_signature": {
+                "top_left": 0.285566,
+                "top_right": 0.387483,
+                "bottom_right": 0.719773,
+                "bottom_left": 0.663624
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 9,
+          "question_label": "选择题9",
+          "question_type": "single",
+          "options": {
+            "A": {
+              "label": "A",
+              "template_pixel": {
+                "x": 650.0,
+                "y": 879.0
+              },
+              "marker_signature": {
+                "top_left": 0.245587,
+                "top_right": 0.460358,
+                "bottom_right": 0.741758,
+                "bottom_left": 0.625127
+              }
+            },
+            "B": {
+              "label": "B",
+              "template_pixel": {
+                "x": 727.0,
+                "y": 878.0
+              },
+              "marker_signature": {
+                "top_left": 0.260841,
+                "top_right": 0.43871,
+                "bottom_right": 0.729289,
+                "bottom_left": 0.631991
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 806.0,
+                "y": 881.0
+              },
+              "marker_signature": {
+                "top_left": 0.278613,
+                "top_right": 0.41733,
+                "bottom_right": 0.716013,
+                "bottom_left": 0.638702
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 884.0,
+                "y": 881.0
+              },
+              "marker_signature": {
+                "top_left": 0.296499,
+                "top_right": 0.39612,
+                "bottom_right": 0.704305,
+                "bottom_left": 0.647025
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 10,
+          "question_label": "选择题10",
+          "question_type": "single",
+          "options": {
+            "A": {
+              "label": "A",
+              "template_pixel": {
+                "x": 652.0,
+                "y": 933.0
+              },
+              "marker_signature": {
+                "top_left": 0.259264,
+                "top_right": 0.467093,
+                "bottom_right": 0.727457,
+                "bottom_left": 0.609151
+              }
+            },
+            "B": {
+              "label": "B",
+              "template_pixel": {
+                "x": 727.0,
+                "y": 933.0
+              },
+              "marker_signature": {
+                "top_left": 0.273628,
+                "top_right": 0.446486,
+                "bottom_right": 0.71482,
+                "bottom_left": 0.615726
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 806.0,
+                "y": 934.0
+              },
+              "marker_signature": {
+                "top_left": 0.290226,
+                "top_right": 0.425226,
+                "bottom_right": 0.701826,
+                "bottom_left": 0.623221
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 884.0,
+                "y": 936.0
+              },
+              "marker_signature": {
+                "top_left": 0.30786,
+                "top_right": 0.404754,
+                "bottom_right": 0.689334,
+                "bottom_left": 0.631173
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 11,
+          "question_label": "选择题11",
+          "question_type": "single",
+          "options": {
+            "A": {
+              "label": "A",
+              "template_pixel": {
+                "x": 650.0,
+                "y": 988.0
+              },
+              "marker_signature": {
+                "top_left": 0.272842,
+                "top_right": 0.475558,
+                "bottom_right": 0.713708,
+                "bottom_left": 0.59258
+              }
+            },
+            "B": {
+              "label": "B",
+              "template_pixel": {
+                "x": 729.0,
+                "y": 988.0
+              },
+              "marker_signature": {
+                "top_left": 0.287238,
+                "top_right": 0.454231,
+                "bottom_right": 0.700129,
+                "bottom_left": 0.599695
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 805.0,
+                "y": 989.0
+              },
+              "marker_signature": {
+                "top_left": 0.302543,
+                "top_right": 0.434189,
+                "bottom_right": 0.687369,
+                "bottom_left": 0.607101
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 884.0,
+                "y": 991.0
+              },
+              "marker_signature": {
+                "top_left": 0.319725,
+                "top_right": 0.413909,
+                "bottom_right": 0.674461,
+                "bottom_left": 0.615385
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 12,
+          "question_label": "选择题12",
+          "question_type": "single",
+          "options": {
+            "A": {
+              "label": "A",
+              "template_pixel": {
+                "x": 650.0,
+                "y": 1044.0
+              },
+              "marker_signature": {
+                "top_left": 0.287382,
+                "top_right": 0.484098,
+                "bottom_right": 0.699494,
+                "bottom_left": 0.575913
+              }
+            },
+            "B": {
+              "label": "B",
+              "template_pixel": {
+                "x": 729.0,
+                "y": 1045.0
+              },
+              "marker_signature": {
+                "top_left": 0.301334,
+                "top_right": 0.463328,
+                "bottom_right": 0.685375,
+                "bottom_left": 0.582938
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 806.0,
+                "y": 1044.0
+              },
+              "marker_signature": {
+                "top_left": 0.315692,
+                "top_right": 0.443108,
+                "bottom_right": 0.672704,
+                "bottom_left": 0.591252
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 882.0,
+                "y": 1045.0
+              },
+              "marker_signature": {
+                "top_left": 0.331393,
+                "top_right": 0.423877,
+                "bottom_right": 0.660272,
+                "bottom_left": 0.599708
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 13,
+          "question_label": "13题-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 208.0,
+                "y": 1214.0
+              },
+              "marker_signature": {
+                "top_left": 0.296594,
+                "top_right": 0.629237,
+                "bottom_right": 0.749326,
+                "bottom_left": 0.500852
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 282.0,
+                "y": 1215.0
+              },
+              "marker_signature": {
+                "top_left": 0.298992,
+                "top_right": 0.609295,
+                "bottom_right": 0.732719,
+                "bottom_left": 0.502177
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 14,
+          "question_label": "13题-第2空",
+          "question_type": "single",
+          "options": {
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 360.0,
+                "y": 1214.0
+              },
+              "marker_signature": {
+                "top_left": 0.302757,
+                "top_right": 0.588188,
+                "bottom_right": 0.716052,
+                "bottom_left": 0.505327
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 435.0,
+                "y": 1215.0
+              },
+              "marker_signature": {
+                "top_left": 0.308707,
+                "top_right": 0.56844,
+                "bottom_right": 0.699988,
+                "bottom_left": 0.508822
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 15,
+          "question_label": "14题-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 209.0,
+                "y": 1269.0
+              },
+              "marker_signature": {
+                "top_left": 0.313618,
+                "top_right": 0.637199,
+                "bottom_right": 0.73743,
+                "bottom_left": 0.483858
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 284.0,
+                "y": 1269.0
+              },
+              "marker_signature": {
+                "top_left": 0.315657,
+                "top_right": 0.61711,
+                "bottom_right": 0.720559,
+                "bottom_left": 0.485593
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 16,
+          "question_label": "14题-第2空",
+          "question_type": "single",
+          "options": {
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 359.0,
+                "y": 1271.0
+              },
+              "marker_signature": {
+                "top_left": 0.319984,
+                "top_right": 0.597576,
+                "bottom_right": 0.703609,
+                "bottom_left": 0.487815
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 433.0,
+                "y": 1269.0
+              },
+              "marker_signature": {
+                "top_left": 0.324636,
+                "top_right": 0.577899,
+                "bottom_right": 0.68814,
+                "bottom_left": 0.492283
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 17,
+          "question_label": "15题-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 209.0,
+                "y": 1323.0
+              },
+              "marker_signature": {
+                "top_left": 0.330318,
+                "top_right": 0.645619,
+                "bottom_right": 0.726176,
+                "bottom_left": 0.467159
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 283.0,
+                "y": 1325.0
+              },
+              "marker_signature": {
+                "top_left": 0.332833,
+                "top_right": 0.626392,
+                "bottom_right": 0.708841,
+                "bottom_left": 0.468308
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 18,
+          "question_label": "15题-第2空",
+          "question_type": "single",
+          "options": {
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 359.0,
+                "y": 1326.0
+              },
+              "marker_signature": {
+                "top_left": 0.336703,
+                "top_right": 0.606733,
+                "bottom_right": 0.691603,
+                "bottom_left": 0.470972
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 434.0,
+                "y": 1325.0
+              },
+              "marker_signature": {
+                "top_left": 0.341474,
+                "top_right": 0.587265,
+                "bottom_right": 0.675406,
+                "bottom_left": 0.475335
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 19,
+          "question_label": "16题-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 209.0,
+                "y": 1379.0
+              },
+              "marker_signature": {
+                "top_left": 0.347639,
+                "top_right": 0.654688,
+                "bottom_right": 0.714731,
+                "bottom_left": 0.449844
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 282.0,
+                "y": 1380.0
+              },
+              "marker_signature": {
+                "top_left": 0.349719,
+                "top_right": 0.635841,
+                "bottom_right": 0.697564,
+                "bottom_left": 0.451336
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 20,
+          "question_label": "16题-第2空",
+          "question_type": "single",
+          "options": {
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 359.0,
+                "y": 1382.0
+              },
+              "marker_signature": {
+                "top_left": 0.353757,
+                "top_right": 0.616401,
+                "bottom_right": 0.6796,
+                "bottom_left": 0.453838
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 433.0,
+                "y": 1379.0
+              },
+              "marker_signature": {
+                "top_left": 0.357611,
+                "top_right": 0.597128,
+                "bottom_right": 0.663757,
+                "bottom_left": 0.458894
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 21,
+          "question_label": "17题-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 206.0,
+                "y": 1433.0
+              },
+              "marker_signature": {
+                "top_left": 0.364304,
+                "top_right": 0.664521,
+                "bottom_right": 0.704638,
+                "bottom_left": 0.433097
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 280.0,
+                "y": 1435.0
+              },
+              "marker_signature": {
+                "top_left": 0.366585,
+                "top_right": 0.645856,
+                "bottom_right": 0.686759,
+                "bottom_left": 0.434336
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 22,
+          "question_label": "17题-第2空",
+          "question_type": "single",
+          "options": {
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 357.0,
+                "y": 1435.0
+              },
+              "marker_signature": {
+                "top_left": 0.369818,
+                "top_right": 0.626358,
+                "bottom_right": 0.668914,
+                "bottom_left": 0.437536
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 434.0,
+                "y": 1436.0
+              },
+              "marker_signature": {
+                "top_left": 0.374845,
+                "top_right": 0.607357,
+                "bottom_right": 0.65124,
+                "bottom_left": 0.441699
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 23,
+          "question_label": "18题-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 208.0,
+                "y": 1490.0
+              },
+              "marker_signature": {
+                "top_left": 0.381964,
+                "top_right": 0.673878,
+                "bottom_right": 0.693012,
+                "bottom_left": 0.41551
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 282.0,
+                "y": 1490.0
+              },
+              "marker_signature": {
+                "top_left": 0.38359,
+                "top_right": 0.655156,
+                "bottom_right": 0.675259,
+                "bottom_left": 0.417477
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 24,
+          "question_label": "18题-第2空",
+          "question_type": "single",
+          "options": {
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 358.0,
+                "y": 1490.0
+              },
+              "marker_signature": {
+                "top_left": 0.386669,
+                "top_right": 0.636214,
+                "bottom_right": 0.657358,
+                "bottom_left": 0.420788
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 431.0,
+                "y": 1490.0
+              },
+              "marker_signature": {
+                "top_left": 0.39094,
+                "top_right": 0.618316,
+                "bottom_right": 0.640506,
+                "bottom_left": 0.425173
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 25,
+          "question_label": "19题-小题1",
+          "question_type": "single",
+          "options": {
+            "sub1": {
+              "label": "小题1",
+              "template_pixel": {
+                "x": 209.0,
+                "y": 1655.0
+              },
+              "marker_signature": {
+                "top_left": 0.43303,
+                "top_right": 0.703934,
+                "bottom_right": 0.66208,
+                "bottom_left": 0.364538
+              }
+            },
+            "understand1": {
+              "label": "小题1讲评后未理解",
+              "template_pixel": {
+                "x": 283.0,
+                "y": 1656.0
+              },
+              "marker_signature": {
+                "top_left": 0.43479,
+                "top_right": 0.686239,
+                "bottom_right": 0.643301,
+                "bottom_left": 0.366491
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 26,
+          "question_label": "19题-小题2",
+          "question_type": "single",
+          "options": {
+            "sub2": {
+              "label": "小题2",
+              "template_pixel": {
+                "x": 357.0,
+                "y": 1657.0
+              },
+              "marker_signature": {
+                "top_left": 0.437744,
+                "top_right": 0.668861,
+                "bottom_right": 0.624798,
+                "bottom_left": 0.369856
+              }
+            },
+            "understand2": {
+              "label": "小题2讲评后未理解",
+              "template_pixel": {
+                "x": 433.0,
+                "y": 1656.0
+              },
+              "marker_signature": {
+                "top_left": 0.441379,
+                "top_right": 0.650951,
+                "bottom_right": 0.606504,
+                "bottom_left": 0.37535
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 27,
+          "question_label": "19题-小题3",
+          "question_type": "single",
+          "options": {
+            "sub3": {
+              "label": "小题3",
+              "template_pixel": {
+                "x": 507.0,
+                "y": 1658.0
+              },
+              "marker_signature": {
+                "top_left": 0.446979,
+                "top_right": 0.634497,
+                "bottom_right": 0.588453,
+                "bottom_left": 0.381142
+              }
+            },
+            "understand3": {
+              "label": "小题3讲评后未理解",
+              "template_pixel": {
+                "x": 590.0,
+                "y": 1658.0
+              },
+              "marker_signature": {
+                "top_left": 0.453891,
+                "top_right": 0.616042,
+                "bottom_right": 0.569088,
+                "bottom_left": 0.389792
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 28,
+          "question_label": "20题-小题1-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 257.0,
+                "y": 1765.0
+              },
+              "marker_signature": {
+                "top_left": 0.467815,
+                "top_right": 0.71415,
+                "bottom_right": 0.630605,
+                "bottom_left": 0.331999
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 331.0,
+                "y": 1767.0
+              },
+              "marker_signature": {
+                "top_left": 0.4705,
+                "top_right": 0.697426,
+                "bottom_right": 0.611258,
+                "bottom_left": 0.334888
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 408.0,
+                "y": 1767.0
+              },
+              "marker_signature": {
+                "top_left": 0.473818,
+                "top_right": 0.679963,
+                "bottom_right": 0.591776,
+                "bottom_left": 0.340137
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 479.0,
+                "y": 1768.0
+              },
+              "marker_signature": {
+                "top_left": 0.478216,
+                "top_right": 0.664432,
+                "bottom_right": 0.573916,
+                "bottom_left": 0.34607
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 558.0,
+                "y": 1768.0
+              },
+              "marker_signature": {
+                "top_left": 0.483903,
+                "top_right": 0.64734,
+                "bottom_right": 0.554608,
+                "bottom_left": 0.354481
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 634.0,
+                "y": 1769.0
+              },
+              "marker_signature": {
+                "top_left": 0.490761,
+                "top_right": 0.631586,
+                "bottom_right": 0.53623,
+                "bottom_left": 0.363665
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 29,
+          "question_label": "20题-小题2-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 832.0,
+                "y": 1771.0
+              },
+              "marker_signature": {
+                "top_left": 0.513114,
+                "top_right": 0.592819,
+                "bottom_right": 0.490558,
+                "bottom_left": 0.393395
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 907.0,
+                "y": 1773.0
+              },
+              "marker_signature": {
+                "top_left": 0.523556,
+                "top_right": 0.579465,
+                "bottom_right": 0.4739,
+                "bottom_left": 0.406197
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 983.0,
+                "y": 1773.0
+              },
+              "marker_signature": {
+                "top_left": 0.534407,
+                "top_right": 0.566062,
+                "bottom_right": 0.458077,
+                "bottom_left": 0.420573
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 1057.0,
+                "y": 1773.0
+              },
+              "marker_signature": {
+                "top_left": 0.545742,
+                "top_right": 0.553662,
+                "bottom_right": 0.443329,
+                "bottom_left": 0.435336
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 1133.0,
+                "y": 1772.0
+              },
+              "marker_signature": {
+                "top_left": 0.557862,
+                "top_right": 0.541372,
+                "bottom_right": 0.429179,
+                "bottom_left": 0.451433
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 1211.0,
+                "y": 1775.0
+              },
+              "marker_signature": {
+                "top_left": 0.572067,
+                "top_right": 0.530657,
+                "bottom_right": 0.414506,
+                "bottom_left": 0.467736
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 30,
+          "question_label": "20题-小题3-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 257.0,
+                "y": 1822.0
+              },
+              "marker_signature": {
+                "top_left": 0.485428,
+                "top_right": 0.725844,
+                "bottom_right": 0.621059,
+                "bottom_left": 0.314482
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 330.0,
+                "y": 1823.0
+              },
+              "marker_signature": {
+                "top_left": 0.487696,
+                "top_right": 0.709425,
+                "bottom_right": 0.601852,
+                "bottom_left": 0.317806
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 406.0,
+                "y": 1823.0
+              },
+              "marker_signature": {
+                "top_left": 0.490835,
+                "top_right": 0.692475,
+                "bottom_right": 0.582297,
+                "bottom_left": 0.323228
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 478.0,
+                "y": 1824.0
+              },
+              "marker_signature": {
+                "top_left": 0.495127,
+                "top_right": 0.677002,
+                "bottom_right": 0.563871,
+                "bottom_left": 0.329542
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 557.0,
+                "y": 1824.0
+              },
+              "marker_signature": {
+                "top_left": 0.500607,
+                "top_right": 0.660225,
+                "bottom_right": 0.544193,
+                "bottom_left": 0.338342
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 635.0,
+                "y": 1826.0
+              },
+              "marker_signature": {
+                "top_left": 0.507712,
+                "top_right": 0.64461,
+                "bottom_right": 0.524771,
+                "bottom_left": 0.347948
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 31,
+          "question_label": "20题-小题4-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 830.0,
+                "y": 1825.0
+              },
+              "marker_signature": {
+                "top_left": 0.528186,
+                "top_right": 0.606533,
+                "bottom_right": 0.47938,
+                "bottom_left": 0.37922
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 910.0,
+                "y": 1826.0
+              },
+              "marker_signature": {
+                "top_left": 0.538716,
+                "top_right": 0.592344,
+                "bottom_right": 0.461442,
+                "bottom_left": 0.393669
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 984.0,
+                "y": 1830.0
+              },
+              "marker_signature": {
+                "top_left": 0.550115,
+                "top_right": 0.580654,
+                "bottom_right": 0.444733,
+                "bottom_left": 0.407195
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 1061.0,
+                "y": 1828.0
+              },
+              "marker_signature": {
+                "top_left": 0.56107,
+                "top_right": 0.567578,
+                "bottom_right": 0.429415,
+                "bottom_left": 0.423529
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 1135.0,
+                "y": 1829.0
+              },
+              "marker_signature": {
+                "top_left": 0.573106,
+                "top_right": 0.556479,
+                "bottom_right": 0.414737,
+                "bottom_left": 0.439236
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 1211.0,
+                "y": 1830.0
+              },
+              "marker_signature": {
+                "top_left": 0.586136,
+                "top_right": 0.54584,
+                "bottom_right": 0.400476,
+                "bottom_left": 0.456009
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 32,
+          "question_label": "20题-小题5-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 258.0,
+                "y": 1876.0
+              },
+              "marker_signature": {
+                "top_left": 0.502136,
+                "top_right": 0.736915,
+                "bottom_right": 0.612081,
+                "bottom_left": 0.297941
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 332.0,
+                "y": 1877.0
+              },
+              "marker_signature": {
+                "top_left": 0.504386,
+                "top_right": 0.720543,
+                "bottom_right": 0.592341,
+                "bottom_left": 0.301553
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 407.0,
+                "y": 1878.0
+              },
+              "marker_signature": {
+                "top_left": 0.507709,
+                "top_right": 0.70432,
+                "bottom_right": 0.572577,
+                "bottom_left": 0.306925
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 480.0,
+                "y": 1880.0
+              },
+              "marker_signature": {
+                "top_left": 0.512247,
+                "top_right": 0.689146,
+                "bottom_right": 0.55342,
+                "bottom_left": 0.313423
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 557.0,
+                "y": 1880.0
+              },
+              "marker_signature": {
+                "top_left": 0.517427,
+                "top_right": 0.673104,
+                "bottom_right": 0.533887,
+                "bottom_left": 0.322455
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 637.0,
+                "y": 1880.0
+              },
+              "marker_signature": {
+                "top_left": 0.523905,
+                "top_right": 0.65694,
+                "bottom_right": 0.513979,
+                "bottom_left": 0.33339
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 33,
+          "question_label": "20题-小题6-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 832.0,
+                "y": 1881.0
+              },
+              "marker_signature": {
+                "top_left": 0.544401,
+                "top_right": 0.620176,
+                "bottom_right": 0.467198,
+                "bottom_left": 0.365499
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 911.0,
+                "y": 1885.0
+              },
+              "marker_signature": {
+                "top_left": 0.555374,
+                "top_right": 0.607285,
+                "bottom_right": 0.448399,
+                "bottom_left": 0.37961
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 985.0,
+                "y": 1883.0
+              },
+              "marker_signature": {
+                "top_left": 0.564834,
+                "top_right": 0.59436,
+                "bottom_right": 0.432586,
+                "bottom_left": 0.395071
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 1061.0,
+                "y": 1885.0
+              },
+              "marker_signature": {
+                "top_left": 0.576436,
+                "top_right": 0.582815,
+                "bottom_right": 0.416097,
+                "bottom_left": 0.41078
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 1133.0,
+                "y": 1885.0
+              },
+              "marker_signature": {
+                "top_left": 0.587582,
+                "top_right": 0.572037,
+                "bottom_right": 0.401579,
+                "bottom_left": 0.42673
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 1211.0,
+                "y": 1884.0
+              },
+              "marker_signature": {
+                "top_left": 0.600099,
+                "top_right": 0.56085,
+                "bottom_right": 0.386935,
+                "bottom_left": 0.444829
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 34,
+          "question_label": "21题-小题1-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 257.0,
+                "y": 1932.0
+              },
+              "marker_signature": {
+                "top_left": 0.519426,
+                "top_right": 0.749072,
+                "bottom_right": 0.603669,
+                "bottom_left": 0.280722
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 329.0,
+                "y": 1932.0
+              },
+              "marker_signature": {
+                "top_left": 0.521226,
+                "top_right": 0.733186,
+                "bottom_right": 0.584332,
+                "bottom_left": 0.284714
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 407.0,
+                "y": 1932.0
+              },
+              "marker_signature": {
+                "top_left": 0.524241,
+                "top_right": 0.716362,
+                "bottom_right": 0.56363,
+                "bottom_left": 0.29091
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 479.0,
+                "y": 1936.0
+              },
+              "marker_signature": {
+                "top_left": 0.529207,
+                "top_right": 0.702131,
+                "bottom_right": 0.544102,
+                "bottom_left": 0.297103
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 559.0,
+                "y": 1935.0
+              },
+              "marker_signature": {
+                "top_left": 0.534123,
+                "top_right": 0.685543,
+                "bottom_right": 0.523614,
+                "bottom_left": 0.307273
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 635.0,
+                "y": 1935.0
+              },
+              "marker_signature": {
+                "top_left": 0.540089,
+                "top_right": 0.67048,
+                "bottom_right": 0.504335,
+                "bottom_left": 0.318166
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 35,
+          "question_label": "21题-小题2-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 832.0,
+                "y": 1938.0
+              },
+              "marker_signature": {
+                "top_left": 0.560741,
+                "top_right": 0.634607,
+                "bottom_right": 0.455624,
+                "bottom_left": 0.351472
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 907.0,
+                "y": 1937.0
+              },
+              "marker_signature": {
+                "top_left": 0.569519,
+                "top_right": 0.621422,
+                "bottom_right": 0.438334,
+                "bottom_left": 0.366533
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 983.0,
+                "y": 1939.0
+              },
+              "marker_signature": {
+                "top_left": 0.580066,
+                "top_right": 0.609474,
+                "bottom_right": 0.420746,
+                "bottom_left": 0.381955
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 1060.0,
+                "y": 1941.0
+              },
+              "marker_signature": {
+                "top_left": 0.591509,
+                "top_right": 0.598064,
+                "bottom_right": 0.403551,
+                "bottom_left": 0.398395
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 1135.0,
+                "y": 1940.0
+              },
+              "marker_signature": {
+                "top_left": 0.602564,
+                "top_right": 0.586855,
+                "bottom_right": 0.38817,
+                "bottom_left": 0.415706
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 1208.0,
+                "y": 1940.0
+              },
+              "marker_signature": {
+                "top_left": 0.614232,
+                "top_right": 0.576908,
+                "bottom_right": 0.373741,
+                "bottom_left": 0.432895
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 36,
+          "question_label": "21题-小题3-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 256.0,
+                "y": 1987.0
+              },
+              "marker_signature": {
+                "top_left": 0.536409,
+                "top_right": 0.761212,
+                "bottom_right": 0.595789,
+                "bottom_left": 0.263825
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 332.0,
+                "y": 1988.0
+              },
+              "marker_signature": {
+                "top_left": 0.538572,
+                "top_right": 0.74494,
+                "bottom_right": 0.574942,
+                "bottom_left": 0.268028
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 406.0,
+                "y": 1987.0
+              },
+              "marker_signature": {
+                "top_left": 0.541047,
+                "top_right": 0.729026,
+                "bottom_right": 0.555156,
+                "bottom_left": 0.274589
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 480.0,
+                "y": 1990.0
+              },
+              "marker_signature": {
+                "top_left": 0.545695,
+                "top_right": 0.714427,
+                "bottom_right": 0.534976,
+                "bottom_left": 0.281715
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 556.0,
+                "y": 1989.0
+              },
+              "marker_signature": {
+                "top_left": 0.550189,
+                "top_right": 0.698925,
+                "bottom_right": 0.515172,
+                "bottom_left": 0.291867
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 633.0,
+                "y": 1990.0
+              },
+              "marker_signature": {
+                "top_left": 0.556323,
+                "top_right": 0.684177,
+                "bottom_right": 0.49509,
+                "bottom_left": 0.303135
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 37,
+          "question_label": "21题-小题4-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 829.0,
+                "y": 1992.0
+              },
+              "marker_signature": {
+                "top_left": 0.575955,
+                "top_right": 0.648943,
+                "bottom_right": 0.445755,
+                "bottom_left": 0.3379
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 907.0,
+                "y": 1994.0
+              },
+              "marker_signature": {
+                "top_left": 0.58568,
+                "top_right": 0.636306,
+                "bottom_right": 0.426695,
+                "bottom_left": 0.353414
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 981.0,
+                "y": 1994.0
+              },
+              "marker_signature": {
+                "top_left": 0.595135,
+                "top_right": 0.624438,
+                "bottom_right": 0.409507,
+                "bottom_left": 0.369404
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 1059.0,
+                "y": 1994.0
+              },
+              "marker_signature": {
+                "top_left": 0.605879,
+                "top_right": 0.612607,
+                "bottom_right": 0.392025,
+                "bottom_left": 0.387013
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 1131.0,
+                "y": 1997.0
+              },
+              "marker_signature": {
+                "top_left": 0.617282,
+                "top_right": 0.603172,
+                "bottom_right": 0.375861,
+                "bottom_left": 0.403273
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 1207.0,
+                "y": 1995.0
+              },
+              "marker_signature": {
+                "top_left": 0.628582,
+                "top_right": 0.592502,
+                "bottom_right": 0.360738,
+                "bottom_left": 0.422017
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 38,
+          "question_label": "21题-小题5-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 257.0,
+                "y": 2041.0
+              },
+              "marker_signature": {
+                "top_left": 0.553121,
+                "top_right": 0.772882,
+                "bottom_right": 0.587879,
+                "bottom_left": 0.247351
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 331.0,
+                "y": 2044.0
+              },
+              "marker_signature": {
+                "top_left": 0.555797,
+                "top_right": 0.757752,
+                "bottom_right": 0.567027,
+                "bottom_left": 0.251125
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 406.0,
+                "y": 2044.0
+              },
+              "marker_signature": {
+                "top_left": 0.558523,
+                "top_right": 0.742123,
+                "bottom_right": 0.546513,
+                "bottom_left": 0.257877
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 482.0,
+                "y": 2043.0
+              },
+              "marker_signature": {
+                "top_left": 0.561947,
+                "top_right": 0.726463,
+                "bottom_right": 0.526108,
+                "bottom_left": 0.266898
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 555.0,
+                "y": 2045.0
+              },
+              "marker_signature": {
+                "top_left": 0.567033,
+                "top_right": 0.712543,
+                "bottom_right": 0.506292,
+                "bottom_left": 0.276366
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 634.0,
+                "y": 2047.0
+              },
+              "marker_signature": {
+                "top_left": 0.573442,
+                "top_right": 0.697951,
+                "bottom_right": 0.485151,
+                "bottom_left": 0.288309
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 39,
+          "question_label": "21题-小题6-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 829.0,
+                "y": 2047.0
+              },
+              "marker_signature": {
+                "top_left": 0.591869,
+                "top_right": 0.663144,
+                "bottom_right": 0.435375,
+                "bottom_left": 0.325011
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 907.0,
+                "y": 2048.0
+              },
+              "marker_signature": {
+                "top_left": 0.601068,
+                "top_right": 0.650535,
+                "bottom_right": 0.416058,
+                "bottom_left": 0.341362
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 982.0,
+                "y": 2050.0
+              },
+              "marker_signature": {
+                "top_left": 0.610976,
+                "top_right": 0.639317,
+                "bottom_right": 0.397774,
+                "bottom_left": 0.357701
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 1057.0,
+                "y": 2049.0
+              },
+              "marker_signature": {
+                "top_left": 0.620765,
+                "top_right": 0.627935,
+                "bottom_right": 0.380662,
+                "bottom_left": 0.375366
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 1131.0,
+                "y": 2050.0
+              },
+              "marker_signature": {
+                "top_left": 0.631653,
+                "top_right": 0.617909,
+                "bottom_right": 0.364005,
+                "bottom_left": 0.392985
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 1209.0,
+                "y": 2051.0
+              },
+              "marker_signature": {
+                "top_left": 0.643799,
+                "top_right": 0.608083,
+                "bottom_right": 0.347232,
+                "bottom_left": 0.412129
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 40,
+          "question_label": "22题-小题1-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 257.0,
+                "y": 2098.0
+              },
+              "marker_signature": {
+                "top_left": 0.570745,
+                "top_right": 0.785623,
+                "bottom_right": 0.580233,
+                "bottom_left": 0.229944
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 332.0,
+                "y": 2098.0
+              },
+              "marker_signature": {
+                "top_left": 0.572471,
+                "top_right": 0.769868,
+                "bottom_right": 0.559251,
+                "bottom_left": 0.235047
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 405.0,
+                "y": 2099.0
+              },
+              "marker_signature": {
+                "top_left": 0.575355,
+                "top_right": 0.755138,
+                "bottom_right": 0.538866,
+                "bottom_left": 0.241769
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 479.0,
+                "y": 2101.0
+              },
+              "marker_signature": {
+                "top_left": 0.579465,
+                "top_right": 0.740847,
+                "bottom_right": 0.518246,
+                "bottom_left": 0.250213
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 556.0,
+                "y": 2101.0
+              },
+              "marker_signature": {
+                "top_left": 0.584037,
+                "top_right": 0.725939,
+                "bottom_right": 0.497319,
+                "bottom_left": 0.26141
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 634.0,
+                "y": 2100.0
+              },
+              "marker_signature": {
+                "top_left": 0.589316,
+                "top_right": 0.711084,
+                "bottom_right": 0.476557,
+                "bottom_left": 0.274659
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 41,
+          "question_label": "22题-小题2-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 829.0,
+                "y": 2102.0
+              },
+              "marker_signature": {
+                "top_left": 0.607843,
+                "top_right": 0.677475,
+                "bottom_right": 0.425425,
+                "bottom_left": 0.31252
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 906.0,
+                "y": 2105.0
+              },
+              "marker_signature": {
+                "top_left": 0.61727,
+                "top_right": 0.665836,
+                "bottom_right": 0.405525,
+                "bottom_left": 0.328858
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 981.0,
+                "y": 2105.0
+              },
+              "marker_signature": {
+                "top_left": 0.626362,
+                "top_right": 0.654344,
+                "bottom_right": 0.38714,
+                "bottom_left": 0.3462
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 1057.0,
+                "y": 2106.0
+              },
+              "marker_signature": {
+                "top_left": 0.636587,
+                "top_right": 0.64362,
+                "bottom_right": 0.368862,
+                "bottom_left": 0.364252
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 1133.0,
+                "y": 2107.0
+              },
+              "marker_signature": {
+                "top_left": 0.647506,
+                "top_right": 0.633589,
+                "bottom_right": 0.351212,
+                "bottom_left": 0.382899
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 1209.0,
+                "y": 2106.0
+              },
+              "marker_signature": {
+                "top_left": 0.658547,
+                "top_right": 0.623715,
+                "bottom_right": 0.334734,
+                "bottom_left": 0.402404
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 42,
+          "question_label": "22题-小题3-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 256.0,
+                "y": 2153.0
+              },
+              "marker_signature": {
+                "top_left": 0.587735,
+                "top_right": 0.798303,
+                "bottom_right": 0.573558,
+                "bottom_left": 0.213129
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 332.0,
+                "y": 2152.0
+              },
+              "marker_signature": {
+                "top_left": 0.58912,
+                "top_right": 0.782357,
+                "bottom_right": 0.552155,
+                "bottom_left": 0.218977
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 405.0,
+                "y": 2155.0
+              },
+              "marker_signature": {
+                "top_left": 0.592545,
+                "top_right": 0.768348,
+                "bottom_right": 0.531243,
+                "bottom_left": 0.225626
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 481.0,
+                "y": 2155.0
+              },
+              "marker_signature": {
+                "top_left": 0.596048,
+                "top_right": 0.753452,
+                "bottom_right": 0.510055,
+                "bottom_left": 0.235533
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 558.0,
+                "y": 2156.0
+              },
+              "marker_signature": {
+                "top_left": 0.600821,
+                "top_right": 0.739065,
+                "bottom_right": 0.488664,
+                "bottom_left": 0.247194
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 634.0,
+                "y": 2157.0
+              },
+              "marker_signature": {
+                "top_left": 0.606419,
+                "top_right": 0.725356,
+                "bottom_right": 0.467782,
+                "bottom_left": 0.260335
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 43,
+          "question_label": "22题-小题4-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 830.0,
+                "y": 2159.0
+              },
+              "marker_signature": {
+                "top_left": 0.62456,
+                "top_right": 0.692295,
+                "bottom_right": 0.415337,
+                "bottom_left": 0.300269
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 905.0,
+                "y": 2159.0
+              },
+              "marker_signature": {
+                "top_left": 0.632684,
+                "top_right": 0.680446,
+                "bottom_right": 0.396028,
+                "bottom_left": 0.317451
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 983.0,
+                "y": 2162.0
+              },
+              "marker_signature": {
+                "top_left": 0.642769,
+                "top_right": 0.669576,
+                "bottom_right": 0.37586,
+                "bottom_left": 0.335519
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 1057.0,
+                "y": 2161.0
+              },
+              "marker_signature": {
+                "top_left": 0.651943,
+                "top_right": 0.658849,
+                "bottom_right": 0.357933,
+                "bottom_left": 0.354031
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 1133.0,
+                "y": 2163.0
+              },
+              "marker_signature": {
+                "top_left": 0.662893,
+                "top_right": 0.649343,
+                "bottom_right": 0.339526,
+                "bottom_left": 0.373032
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 1207.0,
+                "y": 2164.0
+              },
+              "marker_signature": {
+                "top_left": 0.673916,
+                "top_right": 0.640513,
+                "bottom_right": 0.32245,
+                "bottom_left": 0.392161
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 44,
+          "question_label": "22题-小题5-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 256.0,
+                "y": 2207.0
+              },
+              "marker_signature": {
+                "top_left": 0.604434,
+                "top_right": 0.810706,
+                "bottom_right": 0.567143,
+                "bottom_left": 0.196717
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 333.0,
+                "y": 2210.0
+              },
+              "marker_signature": {
+                "top_left": 0.607033,
+                "top_right": 0.795744,
+                "bottom_right": 0.544716,
+                "bottom_left": 0.201931
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 407.0,
+                "y": 2210.0
+              },
+              "marker_signature": {
+                "top_left": 0.609515,
+                "top_right": 0.781089,
+                "bottom_right": 0.523639,
+                "bottom_left": 0.210211
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 478.0,
+                "y": 2210.0
+              },
+              "marker_signature": {
+                "top_left": 0.612692,
+                "top_right": 0.767408,
+                "bottom_right": 0.503567,
+                "bottom_left": 0.220113
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 555.0,
+                "y": 2211.0
+              },
+              "marker_signature": {
+                "top_left": 0.617309,
+                "top_right": 0.753265,
+                "bottom_right": 0.481853,
+                "bottom_left": 0.232476
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 634.0,
+                "y": 2210.0
+              },
+              "marker_signature": {
+                "top_left": 0.62235,
+                "top_right": 0.738758,
+                "bottom_right": 0.46008,
+                "bottom_left": 0.247402
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 45,
+          "question_label": "22题-小题6-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 831.0,
+                "y": 2215.0
+              },
+              "marker_signature": {
+                "top_left": 0.641034,
+                "top_right": 0.706978,
+                "bottom_right": 0.405926,
+                "bottom_left": 0.288782
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 907.0,
+                "y": 2215.0
+              },
+              "marker_signature": {
+                "top_left": 0.649074,
+                "top_right": 0.695239,
+                "bottom_right": 0.385904,
+                "bottom_left": 0.306875
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 981.0,
+                "y": 2216.0
+              },
+              "marker_signature": {
+                "top_left": 0.657904,
+                "top_right": 0.684669,
+                "bottom_right": 0.366634,
+                "bottom_left": 0.324981
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 1057.0,
+                "y": 2218.0
+              },
+              "marker_signature": {
+                "top_left": 0.667943,
+                "top_right": 0.674722,
+                "bottom_right": 0.347126,
+                "bottom_left": 0.344008
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 1131.0,
+                "y": 2219.0
+              },
+              "marker_signature": {
+                "top_left": 0.678098,
+                "top_right": 0.665426,
+                "bottom_right": 0.328822,
+                "bottom_left": 0.363195
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 1208.0,
+                "y": 2219.0
+              },
+              "marker_signature": {
+                "top_left": 0.68903,
+                "top_right": 0.656165,
+                "bottom_right": 0.310643,
+                "bottom_left": 0.383754
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 46,
+          "question_label": "23题-小题1-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 256.0,
+                "y": 2262.0
+              },
+              "marker_signature": {
+                "top_left": 0.621444,
+                "top_right": 0.823495,
+                "bottom_right": 0.561047,
+                "bottom_left": 0.180059
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 332.0,
+                "y": 2264.0
+              },
+              "marker_signature": {
+                "top_left": 0.623662,
+                "top_right": 0.808749,
+                "bottom_right": 0.538795,
+                "bottom_left": 0.186013
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 404.0,
+                "y": 2265.0
+              },
+              "marker_signature": {
+                "top_left": 0.626298,
+                "top_right": 0.794952,
+                "bottom_right": 0.517922,
+                "bottom_left": 0.194384
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 480.0,
+                "y": 2264.0
+              },
+              "marker_signature": {
+                "top_left": 0.629296,
+                "top_right": 0.780307,
+                "bottom_right": 0.496272,
+                "bottom_left": 0.206028
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 555.0,
+                "y": 2266.0
+              },
+              "marker_signature": {
+                "top_left": 0.634006,
+                "top_right": 0.76704,
+                "bottom_right": 0.474707,
+                "bottom_left": 0.218657
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 634.0,
+                "y": 2267.0
+              },
+              "marker_signature": {
+                "top_left": 0.63951,
+                "top_right": 0.753305,
+                "bottom_right": 0.452316,
+                "bottom_left": 0.233981
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 47,
+          "question_label": "23题-小题2-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 831.0,
+                "y": 2268.0
+              },
+              "marker_signature": {
+                "top_left": 0.656574,
+                "top_right": 0.721131,
+                "bottom_right": 0.397767,
+                "bottom_left": 0.278242
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 904.0,
+                "y": 2271.0
+              },
+              "marker_signature": {
+                "top_left": 0.664973,
+                "top_right": 0.710886,
+                "bottom_right": 0.377644,
+                "bottom_left": 0.295681
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 982.0,
+                "y": 2272.0
+              },
+              "marker_signature": {
+                "top_left": 0.674039,
+                "top_right": 0.69997,
+                "bottom_right": 0.356837,
+                "bottom_left": 0.315417
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 1055.0,
+                "y": 2273.0
+              },
+              "marker_signature": {
+                "top_left": 0.683206,
+                "top_right": 0.690382,
+                "bottom_right": 0.337757,
+                "bottom_left": 0.334403
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 1132.0,
+                "y": 2272.0
+              },
+              "marker_signature": {
+                "top_left": 0.692971,
+                "top_right": 0.680352,
+                "bottom_right": 0.318512,
+                "bottom_left": 0.355199
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 1207.0,
+                "y": 2273.0
+              },
+              "marker_signature": {
+                "top_left": 0.703671,
+                "top_right": 0.671821,
+                "bottom_right": 0.300014,
+                "bottom_left": 0.375522
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 48,
+          "question_label": "23题-小题3-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 255.0,
+                "y": 2316.0
+              },
+              "marker_signature": {
+                "top_left": 0.638131,
+                "top_right": 0.836399,
+                "bottom_right": 0.555797,
+                "bottom_left": 0.163704
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 330.0,
+                "y": 2318.0
+              },
+              "marker_signature": {
+                "top_left": 0.64027,
+                "top_right": 0.822082,
+                "bottom_right": 0.533625,
+                "bottom_left": 0.170137
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 405.0,
+                "y": 2320.0
+              },
+              "marker_signature": {
+                "top_left": 0.643241,
+                "top_right": 0.80818,
+                "bottom_right": 0.511546,
+                "bottom_left": 0.179369
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 479.0,
+                "y": 2322.0
+              },
+              "marker_signature": {
+                "top_left": 0.646986,
+                "top_right": 0.794897,
+                "bottom_right": 0.489864,
+                "bottom_left": 0.19082
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 555.0,
+                "y": 2321.0
+              },
+              "marker_signature": {
+                "top_left": 0.650721,
+                "top_right": 0.780944,
+                "bottom_right": 0.468071,
+                "bottom_left": 0.205322
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 632.0,
+                "y": 2323.0
+              },
+              "marker_signature": {
+                "top_left": 0.656255,
+                "top_right": 0.768064,
+                "bottom_right": 0.445807,
+                "bottom_left": 0.220937
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 49,
+          "question_label": "23题-小题4-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 827.0,
+                "y": 2323.0
+              },
+              "marker_signature": {
+                "top_left": 0.672361,
+                "top_right": 0.736526,
+                "bottom_right": 0.39096,
+                "bottom_left": 0.266925
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 905.0,
+                "y": 2325.0
+              },
+              "marker_signature": {
+                "top_left": 0.680781,
+                "top_right": 0.725484,
+                "bottom_right": 0.369212,
+                "bottom_left": 0.28648
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 981.0,
+                "y": 2326.0
+              },
+              "marker_signature": {
+                "top_left": 0.689428,
+                "top_right": 0.715082,
+                "bottom_right": 0.348475,
+                "bottom_left": 0.306317
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 1055.0,
+                "y": 2327.0
+              },
+              "marker_signature": {
+                "top_left": 0.698514,
+                "top_right": 0.705568,
+                "bottom_right": 0.328641,
+                "bottom_left": 0.326101
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 1131.0,
+                "y": 2327.0
+              },
+              "marker_signature": {
+                "top_left": 0.708208,
+                "top_right": 0.696154,
+                "bottom_right": 0.308894,
+                "bottom_left": 0.346963
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 1205.0,
+                "y": 2329.0
+              },
+              "marker_signature": {
+                "top_left": 0.718816,
+                "top_right": 0.688216,
+                "bottom_right": 0.289841,
+                "bottom_left": 0.367325
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 50,
+          "question_label": "23题-小题5-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 257.0,
+                "y": 2373.0
+              },
+              "marker_signature": {
+                "top_left": 0.65579,
+                "top_right": 0.849563,
+                "bottom_right": 0.549848,
+                "bottom_left": 0.146784
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 329.0,
+                "y": 2375.0
+              },
+              "marker_signature": {
+                "top_left": 0.657835,
+                "top_right": 0.836077,
+                "bottom_right": 0.528359,
+                "bottom_left": 0.153713
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 406.0,
+                "y": 2375.0
+              },
+              "marker_signature": {
+                "top_left": 0.66019,
+                "top_right": 0.821548,
+                "bottom_right": 0.505664,
+                "bottom_left": 0.164747
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 478.0,
+                "y": 2374.0
+              },
+              "marker_signature": {
+                "top_left": 0.662854,
+                "top_right": 0.808112,
+                "bottom_right": 0.484643,
+                "bottom_left": 0.177604
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 556.0,
+                "y": 2375.0
+              },
+              "marker_signature": {
+                "top_left": 0.667205,
+                "top_right": 0.794539,
+                "bottom_right": 0.461784,
+                "bottom_left": 0.193007
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 633.0,
+                "y": 2379.0
+              },
+              "marker_signature": {
+                "top_left": 0.673234,
+                "top_right": 0.782427,
+                "bottom_right": 0.439019,
+                "bottom_left": 0.209214
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 51,
+          "question_label": "23题-小题6-第1空",
+          "question_type": "single",
+          "options": {
+            "blank1": {
+              "label": "第1空",
+              "template_pixel": {
+                "x": 828.0,
+                "y": 2377.0
+              },
+              "marker_signature": {
+                "top_left": 0.688379,
+                "top_right": 0.750975,
+                "bottom_right": 0.383505,
+                "bottom_left": 0.257714
+              }
+            },
+            "understand1": {
+              "label": "第1空讲评后未理解",
+              "template_pixel": {
+                "x": 905.0,
+                "y": 2381.0
+              },
+              "marker_signature": {
+                "top_left": 0.697113,
+                "top_right": 0.740864,
+                "bottom_right": 0.361368,
+                "bottom_left": 0.277404
+              }
+            },
+            "blank2": {
+              "label": "第2空",
+              "template_pixel": {
+                "x": 980.0,
+                "y": 2381.0
+              },
+              "marker_signature": {
+                "top_left": 0.705166,
+                "top_right": 0.730543,
+                "bottom_right": 0.340586,
+                "bottom_left": 0.297734
+              }
+            },
+            "understand2": {
+              "label": "第2空讲评后未理解",
+              "template_pixel": {
+                "x": 1055.0,
+                "y": 2381.0
+              },
+              "marker_signature": {
+                "top_left": 0.713885,
+                "top_right": 0.720822,
+                "bottom_right": 0.32014,
+                "bottom_left": 0.31846
+              }
+            },
+            "blank3": {
+              "label": "第3空",
+              "template_pixel": {
+                "x": 1129.0,
+                "y": 2383.0
+              },
+              "marker_signature": {
+                "top_left": 0.723679,
+                "top_right": 0.712417,
+                "bottom_right": 0.300039,
+                "bottom_left": 0.338974
+              }
+            },
+            "understand3": {
+              "label": "第3空讲评后未理解",
+              "template_pixel": {
+                "x": 1206.0,
+                "y": 2383.0
+              },
+              "marker_signature": {
+                "top_left": 0.733913,
+                "top_right": 0.703753,
+                "bottom_right": 0.279944,
+                "bottom_left": 0.360874
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 52,
+          "question_label": "24题-小问1",
+          "question_type": "single",
+          "options": {
+            "sub1": {
+              "label": "小问1",
+              "template_pixel": {
+                "x": 173.0,
+                "y": 2482.0
+              },
+              "marker_signature": {
+                "top_left": 0.688832,
+                "top_right": 0.892155,
+                "bottom_right": 0.566386,
+                "bottom_left": 0.108464
+              }
+            },
+            "understand1": {
+              "label": "小问1讲评后未理解",
+              "template_pixel": {
+                "x": 246.0,
+                "y": 2483.0
+              },
+              "marker_signature": {
+                "top_left": 0.689672,
+                "top_right": 0.878251,
+                "bottom_right": 0.544294,
+                "bottom_left": 0.113214
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 53,
+          "question_label": "24题-小问2",
+          "question_type": "single",
+          "options": {
+            "sub2": {
+              "label": "小问2",
+              "template_pixel": {
+                "x": 323.0,
+                "y": 2484.0
+              },
+              "marker_signature": {
+                "top_left": 0.691341,
+                "top_right": 0.863971,
+                "bottom_right": 0.521042,
+                "bottom_left": 0.122635
+              }
+            },
+            "understand2": {
+              "label": "小问2讲评后未理解",
+              "template_pixel": {
+                "x": 397.0,
+                "y": 2484.0
+              },
+              "marker_signature": {
+                "top_left": 0.693419,
+                "top_right": 0.850409,
+                "bottom_right": 0.498824,
+                "bottom_left": 0.135314
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 54,
+          "question_label": "24题-小问3",
+          "question_type": "single",
+          "options": {
+            "sub3": {
+              "label": "小问3",
+              "template_pixel": {
+                "x": 471.0,
+                "y": 2486.0
+              },
+              "marker_signature": {
+                "top_left": 0.696858,
+                "top_right": 0.837765,
+                "bottom_right": 0.47651,
+                "bottom_left": 0.149994
+              }
+            },
+            "understand3": {
+              "label": "小问3讲评后未理解",
+              "template_pixel": {
+                "x": 547.0,
+                "y": 2486.0
+              },
+              "marker_signature": {
+                "top_left": 0.700526,
+                "top_right": 0.824708,
+                "bottom_right": 0.453829,
+                "bottom_left": 0.167418
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 55,
+          "question_label": "24题-小问4",
+          "question_type": "single",
+          "options": {
+            "sub4": {
+              "label": "小问4",
+              "template_pixel": {
+                "x": 622.0,
+                "y": 2488.0
+              },
+              "marker_signature": {
+                "top_left": 0.705504,
+                "top_right": 0.812812,
+                "bottom_right": 0.431359,
+                "bottom_left": 0.185583
+              }
+            },
+            "understand4": {
+              "label": "小问4讲评后未理解",
+              "template_pixel": {
+                "x": 699.0,
+                "y": 2490.0
+              },
+              "marker_signature": {
+                "top_left": 0.711353,
+                "top_right": 0.801103,
+                "bottom_right": 0.408383,
+                "bottom_left": 0.205307
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 56,
+          "question_label": "25题-小问1",
+          "question_type": "single",
+          "options": {
+            "sub1": {
+              "label": "小问1",
+              "template_pixel": {
+                "x": 173.0,
+                "y": 2537.0
+              },
+              "marker_signature": {
+                "top_left": 0.705862,
+                "top_right": 0.905396,
+                "bottom_right": 0.562864,
+                "bottom_left": 0.091589
+              }
+            },
+            "understand1": {
+              "label": "小问1讲评后未理解",
+              "template_pixel": {
+                "x": 249.0,
+                "y": 2540.0
+              },
+              "marker_signature": {
+                "top_left": 0.707345,
+                "top_right": 0.891631,
+                "bottom_right": 0.539604,
+                "bottom_left": 0.096997
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 57,
+          "question_label": "25题-小问2",
+          "question_type": "single",
+          "options": {
+            "sub2": {
+              "label": "小问2",
+              "template_pixel": {
+                "x": 323.0,
+                "y": 2540.0
+              },
+              "marker_signature": {
+                "top_left": 0.708635,
+                "top_right": 0.877898,
+                "bottom_right": 0.517167,
+                "bottom_left": 0.107837
+              }
+            },
+            "understand2": {
+              "label": "小问2讲评后未理解",
+              "template_pixel": {
+                "x": 395.0,
+                "y": 2538.0
+              },
+              "marker_signature": {
+                "top_left": 0.709981,
+                "top_right": 0.864403,
+                "bottom_right": 0.495514,
+                "bottom_left": 0.122101
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 58,
+          "question_label": "25题-小问3",
+          "question_type": "single",
+          "options": {
+            "sub3": {
+              "label": "小问3",
+              "template_pixel": {
+                "x": 470.0,
+                "y": 2540.0
+              },
+              "marker_signature": {
+                "top_left": 0.713377,
+                "top_right": 0.851791,
+                "bottom_right": 0.472734,
+                "bottom_left": 0.138401
+              }
+            },
+            "understand3": {
+              "label": "小问3讲评后未理解",
+              "template_pixel": {
+                "x": 548.0,
+                "y": 2539.0
+              },
+              "marker_signature": {
+                "top_left": 0.71675,
+                "top_right": 0.83835,
+                "bottom_right": 0.44932,
+                "bottom_left": 0.157754
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 59,
+          "question_label": "25题-小问4",
+          "question_type": "single",
+          "options": {
+            "sub4": {
+              "label": "小问4",
+              "template_pixel": {
+                "x": 623.0,
+                "y": 2542.0
+              },
+              "marker_signature": {
+                "top_left": 0.721944,
+                "top_right": 0.826937,
+                "bottom_right": 0.426575,
+                "bottom_left": 0.176856
+              }
+            },
+            "understand4": {
+              "label": "小问4讲评后未理解",
+              "template_pixel": {
+                "x": 698.0,
+                "y": 2542.0
+              },
+              "marker_signature": {
+                "top_left": 0.726939,
+                "top_right": 0.815219,
+                "bottom_right": 0.404132,
+                "bottom_left": 0.197268
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

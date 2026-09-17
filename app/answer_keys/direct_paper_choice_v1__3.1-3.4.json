@@ -1,0 +1,2143 @@
+{
+  "template_key": "direct_paper_choice_v1",
+  "template_name": "试卷直接批改模板-v1",
+  "name": "3.1-3.4",
+  "answer_key": {
+    "__global__": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": []
+    }
+  },
+  "direct_paper_structure": {
+    "version": 1,
+    "template_key": "direct_paper_choice_v1",
+    "template_name": "试卷直接批改模板-v1",
+    "answer_config": {
+      "template_image": {
+        "path": "C:\\Users\\Administrator\\.openclaw\\workspace\\answer_card_autograder\\answer_keys\\_scheme_assets\\direct_paper_choice_v1__3.1-3.4\\direct_front_template.jpg",
+        "width": 2480,
+        "height": 3507
+      },
+      "markers": {
+        "top_left": {
+          "x": 96.98,
+          "y": 65.5
+        },
+        "top_right": {
+          "x": 2395.19,
+          "y": 63.52
+        },
+        "bottom_right": {
+          "x": 2207.91,
+          "y": 3135.73
+        },
+        "bottom_left": {
+          "x": 77.77,
+          "y": 3290.04
+        }
+      },
+      "marker_diag": 3972.5139,
+      "mode": "direct_paper_choice",
+      "direct_mark_threshold": 3.0,
+      "direct_single_gap": 1.0,
+      "direct_single_adaptive_gap": 2.0,
+      "direct_inner_shrink": 0.38,
+      "updated_at": "2026-07-24T06:56:00",
+      "zones": [
+        {
+          "zone_name": "paper_front",
+          "zone_label": "试卷正面选择题",
+          "side": "front",
+          "questions": [
+            {
+              "question_no_in_zone": 1,
+              "question_label": "第1题",
+              "question_type": "single",
+              "options": {
+                "A": {
+                  "label": "A",
+                  "template_pixel": {
+                    "x": 115.59,
+                    "y": 717.65
+                  },
+                  "template_rect": {
+                    "x": 100.0,
+                    "y": 703.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.164233,
+                    "top_right": 0.597001,
+                    "bottom_right": 0.804939,
+                    "bottom_left": 0.647616
+                  }
+                },
+                "B": {
+                  "label": "B",
+                  "template_pixel": {
+                    "x": 605.92,
+                    "y": 718.49
+                  },
+                  "template_rect": {
+                    "x": 590.0,
+                    "y": 704.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.208407,
+                    "top_right": 0.479641,
+                    "bottom_right": 0.729989,
+                    "bottom_left": 0.660847
+                  }
+                },
+                "C": {
+                  "label": "C",
+                  "template_pixel": {
+                    "x": 1100.09,
+                    "y": 719.02
+                  },
+                  "template_rect": {
+                    "x": 1084.0,
+                    "y": 705.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.301375,
+                    "top_right": 0.365395,
+                    "bottom_right": 0.669229,
+                    "bottom_left": 0.696489
+                  }
+                },
+                "D": {
+                  "label": "D",
+                  "template_pixel": {
+                    "x": 1594.25,
+                    "y": 721.09
+                  },
+                  "template_rect": {
+                    "x": 1579.0,
+                    "y": 706.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.411455,
+                    "top_right": 0.260866,
+                    "bottom_right": 0.627159,
+                    "bottom_left": 0.750948
+                  }
+                }
+              }
+            },
+            {
+              "question_no_in_zone": 2,
+              "question_label": "第2题",
+              "question_type": "single",
+              "options": {
+                "A": {
+                  "label": "A",
+                  "template_pixel": {
+                    "x": 115.43,
+                    "y": 844.34
+                  },
+                  "template_rect": {
+                    "x": 101.0,
+                    "y": 830.0,
+                    "w": 31.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.196113,
+                    "top_right": 0.606611,
+                    "bottom_right": 0.781128,
+                    "bottom_left": 0.615728
+                  }
+                },
+                "B": {
+                  "label": "B",
+                  "template_pixel": {
+                    "x": 115.68,
+                    "y": 907.31
+                  },
+                  "template_rect": {
+                    "x": 101.0,
+                    "y": 893.0,
+                    "w": 31.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.211962,
+                    "top_right": 0.611872,
+                    "bottom_right": 0.769454,
+                    "bottom_left": 0.599879
+                  }
+                },
+                "C": {
+                  "label": "C",
+                  "template_pixel": {
+                    "x": 116.06,
+                    "y": 970.29
+                  },
+                  "template_rect": {
+                    "x": 100.0,
+                    "y": 956.0,
+                    "w": 32.0,
+                    "h": 31.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.227814,
+                    "top_right": 0.617466,
+                    "bottom_right": 0.757907,
+                    "bottom_left": 0.584029
+                  }
+                },
+                "D": {
+                  "label": "D",
+                  "template_pixel": {
+                    "x": 116.21,
+                    "y": 1034.56
+                  },
+                  "template_rect": {
+                    "x": 101.0,
+                    "y": 1020.0,
+                    "w": 31.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.24399,
+                    "top_right": 0.623593,
+                    "bottom_right": 0.746329,
+                    "bottom_left": 0.567853
+                  }
+                }
+              }
+            },
+            {
+              "question_no_in_zone": 3,
+              "question_label": "第3题",
+              "question_type": "single",
+              "options": {
+                "A": {
+                  "label": "A",
+                  "template_pixel": {
+                    "x": 115.59,
+                    "y": 1162.48
+                  },
+                  "template_rect": {
+                    "x": 100.0,
+                    "y": 1147.0,
+                    "w": 32.0,
+                    "h": 31.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.276183,
+                    "top_right": 0.637046,
+                    "bottom_right": 0.723978,
+                    "bottom_left": 0.535654
+                  }
+                },
+                "B": {
+                  "label": "B",
+                  "template_pixel": {
+                    "x": 1100.07,
+                    "y": 1163.5
+                  },
+                  "template_rect": {
+                    "x": 1084.0,
+                    "y": 1149.0,
+                    "w": 32.0,
+                    "h": 31.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.374376,
+                    "top_right": 0.427741,
+                    "bottom_right": 0.569431,
+                    "bottom_left": 0.593956
+                  }
+                },
+                "C": {
+                  "label": "C",
+                  "template_pixel": {
+                    "x": 115.56,
+                    "y": 1226.26
+                  },
+                  "template_rect": {
+                    "x": 100.0,
+                    "y": 1211.0,
+                    "w": 32.0,
+                    "h": 31.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.292236,
+                    "top_right": 0.644187,
+                    "bottom_right": 0.713063,
+                    "bottom_left": 0.519601
+                  }
+                },
+                "D": {
+                  "label": "D",
+                  "template_pixel": {
+                    "x": 1099.32,
+                    "y": 1226.9
+                  },
+                  "template_rect": {
+                    "x": 1084.0,
+                    "y": 1212.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.386186,
+                    "top_right": 0.438382,
+                    "bottom_right": 0.555665,
+                    "bottom_left": 0.57953
+                  }
+                }
+              }
+            },
+            {
+              "question_no_in_zone": 4,
+              "question_label": "第4题",
+              "question_type": "single",
+              "options": {
+                "A": {
+                  "label": "A",
+                  "template_pixel": {
+                    "x": 115.73,
+                    "y": 1352.59
+                  },
+                  "template_rect": {
+                    "x": 101.0,
+                    "y": 1338.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.324034,
+                    "top_right": 0.659208,
+                    "bottom_right": 0.691992,
+                    "bottom_left": 0.487806
+                  }
+                },
+                "B": {
+                  "label": "B",
+                  "template_pixel": {
+                    "x": 605.28,
+                    "y": 1352.57
+                  },
+                  "template_rect": {
+                    "x": 590.0,
+                    "y": 1338.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.348346,
+                    "top_right": 0.555259,
+                    "bottom_right": 0.603523,
+                    "bottom_left": 0.505471
+                  }
+                },
+                "C": {
+                  "label": "C",
+                  "template_pixel": {
+                    "x": 1099.74,
+                    "y": 1353.02
+                  },
+                  "template_rect": {
+                    "x": 1084.0,
+                    "y": 1338.0,
+                    "w": 32.0,
+                    "h": 31.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.41081,
+                    "top_right": 0.460123,
+                    "bottom_right": 0.528396,
+                    "bottom_left": 0.551308
+                  }
+                },
+                "D": {
+                  "label": "D",
+                  "template_pixel": {
+                    "x": 1594.16,
+                    "y": 1353.84
+                  },
+                  "template_rect": {
+                    "x": 1579.0,
+                    "y": 1339.0,
+                    "w": 32.0,
+                    "h": 31.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.497215,
+                    "top_right": 0.382314,
+                    "bottom_right": 0.474416,
+                    "bottom_left": 0.619085
+                  }
+                }
+              }
+            },
+            {
+              "question_no_in_zone": 5,
+              "question_label": "第5题",
+              "question_type": "single",
+              "options": {
+                "A": {
+                  "label": "A",
+                  "template_pixel": {
+                    "x": 115.88,
+                    "y": 1543.17
+                  },
+                  "template_rect": {
+                    "x": 101.0,
+                    "y": 1528.0,
+                    "w": 31.0,
+                    "h": 31.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.372005,
+                    "top_right": 0.684068,
+                    "bottom_right": 0.661851,
+                    "bottom_left": 0.439843
+                  }
+                },
+                "B": {
+                  "label": "B",
+                  "template_pixel": {
+                    "x": 1100.05,
+                    "y": 1544.32
+                  },
+                  "template_rect": {
+                    "x": 1084.0,
+                    "y": 1529.0,
+                    "w": 32.0,
+                    "h": 31.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.449821,
+                    "top_right": 0.495222,
+                    "bottom_right": 0.488115,
+                    "bottom_left": 0.509251
+                  }
+                },
+                "C": {
+                  "label": "C",
+                  "template_pixel": {
+                    "x": 115.79,
+                    "y": 1606.44
+                  },
+                  "template_rect": {
+                    "x": 101.0,
+                    "y": 1592.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.387931,
+                    "top_right": 0.692888,
+                    "bottom_right": 0.652345,
+                    "bottom_left": 0.423919
+                  }
+                },
+                "D": {
+                  "label": "D",
+                  "template_pixel": {
+                    "x": 1099.83,
+                    "y": 1607.54
+                  },
+                  "template_rect": {
+                    "x": 1085.0,
+                    "y": 1593.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.463047,
+                    "top_right": 0.507345,
+                    "bottom_right": 0.475174,
+                    "bottom_left": 0.495555
+                  }
+                }
+              }
+            },
+            {
+              "question_no_in_zone": 6,
+              "question_label": "第6题",
+              "question_type": "single",
+              "options": {
+                "A": {
+                  "label": "A",
+                  "template_pixel": {
+                    "x": 67.83,
+                    "y": 1828.82
+                  },
+                  "template_rect": {
+                    "x": 52.0,
+                    "y": 1814.0,
+                    "w": 32.0,
+                    "h": 31.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.443942,
+                    "top_right": 0.735332,
+                    "bottom_right": 0.631228,
+                    "bottom_left": 0.36784
+                  }
+                },
+                "B": {
+                  "label": "B",
+                  "template_pixel": {
+                    "x": 431.77,
+                    "y": 1828.86
+                  },
+                  "template_rect": {
+                    "x": 416.0,
+                    "y": 1814.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.451821,
+                    "top_right": 0.664656,
+                    "bottom_right": 0.555092,
+                    "bottom_left": 0.378461
+                  }
+                },
+                "C": {
+                  "label": "C",
+                  "template_pixel": {
+                    "x": 757.85,
+                    "y": 1828.03
+                  },
+                  "template_rect": {
+                    "x": 742.0,
+                    "y": 1814.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.473846,
+                    "top_right": 0.605954,
+                    "bottom_right": 0.49153,
+                    "bottom_left": 0.405898
+                  }
+                },
+                "D": {
+                  "label": "D",
+                  "template_pixel": {
+                    "x": 1213.19,
+                    "y": 1828.9
+                  },
+                  "template_rect": {
+                    "x": 1198.0,
+                    "y": 1814.0,
+                    "w": 32.0,
+                    "h": 31.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.525358,
+                    "top_right": 0.534813,
+                    "bottom_right": 0.413422,
+                    "bottom_left": 0.465807
+                  }
+                }
+              }
+            },
+            {
+              "question_no_in_zone": 7,
+              "question_label": "第7题",
+              "question_type": "single",
+              "options": {
+                "A": {
+                  "label": "A",
+                  "template_pixel": {
+                    "x": 117.13,
+                    "y": 2118.52
+                  },
+                  "template_rect": {
+                    "x": 101.0,
+                    "y": 2104.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.516833,
+                    "top_right": 0.772307,
+                    "bottom_right": 0.585291,
+                    "bottom_left": 0.295071
+                  }
+                },
+                "B": {
+                  "label": "B",
+                  "template_pixel": {
+                    "x": 840.88,
+                    "y": 2118.85
+                  },
+                  "template_rect": {
+                    "x": 826.0,
+                    "y": 2104.0,
+                    "w": 31.0,
+                    "h": 31.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.549767,
+                    "top_right": 0.648677,
+                    "bottom_right": 0.428884,
+                    "bottom_left": 0.351881
+                  }
+                },
+                "C": {
+                  "label": "C",
+                  "template_pixel": {
+                    "x": 116.66,
+                    "y": 2182.53
+                  },
+                  "template_rect": {
+                    "x": 101.0,
+                    "y": 2168.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.532944,
+                    "top_right": 0.783278,
+                    "bottom_right": 0.578531,
+                    "bottom_left": 0.278963
+                  }
+                },
+                "D": {
+                  "label": "D",
+                  "template_pixel": {
+                    "x": 843.61,
+                    "y": 2182.39
+                  },
+                  "template_rect": {
+                    "x": 828.0,
+                    "y": 2168.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.56506,
+                    "top_right": 0.661099,
+                    "bottom_right": 0.41897,
+                    "bottom_left": 0.338983
+                  }
+                }
+              }
+            },
+            {
+              "question_no_in_zone": 8,
+              "question_label": "第8题",
+              "question_type": "single",
+              "options": {
+                "A": {
+                  "label": "A",
+                  "template_pixel": {
+                    "x": 116.69,
+                    "y": 2309.46
+                  },
+                  "template_rect": {
+                    "x": 102.0,
+                    "y": 2295.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.564895,
+                    "top_right": 0.805373,
+                    "bottom_right": 0.566019,
+                    "bottom_left": 0.247034
+                  }
+                },
+                "B": {
+                  "label": "B",
+                  "template_pixel": {
+                    "x": 606.38,
+                    "y": 2309.46
+                  },
+                  "template_rect": {
+                    "x": 591.0,
+                    "y": 2294.0,
+                    "w": 32.0,
+                    "h": 31.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.579245,
+                    "top_right": 0.722782,
+                    "bottom_right": 0.453641,
+                    "bottom_left": 0.280421
+                  }
+                },
+                "C": {
+                  "label": "C",
+                  "template_pixel": {
+                    "x": 1100.89,
+                    "y": 2309.15
+                  },
+                  "template_rect": {
+                    "x": 1085.0,
+                    "y": 2294.0,
+                    "w": 32.0,
+                    "h": 31.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.618755,
+                    "top_right": 0.652467,
+                    "bottom_right": 0.347777,
+                    "bottom_left": 0.35679
+                  }
+                },
+                "D": {
+                  "label": "D",
+                  "template_pixel": {
+                    "x": 1595.3,
+                    "y": 2309.24
+                  },
+                  "template_rect": {
+                    "x": 1580.0,
+                    "y": 2295.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.679175,
+                    "top_right": 0.600107,
+                    "bottom_right": 0.258969,
+                    "bottom_left": 0.454847
+                  }
+                }
+              }
+            },
+            {
+              "question_no_in_zone": 9,
+              "question_label": "第9题",
+              "question_type": "single",
+              "options": {
+                "A": {
+                  "label": "A",
+                  "template_pixel": {
+                    "x": 117.31,
+                    "y": 2563.32
+                  },
+                  "template_rect": {
+                    "x": 102.0,
+                    "y": 2549.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.628798,
+                    "top_right": 0.851346,
+                    "bottom_right": 0.545631,
+                    "bottom_left": 0.183206
+                  }
+                },
+                "B": {
+                  "label": "B",
+                  "template_pixel": {
+                    "x": 1102.0,
+                    "y": 2562.65
+                  },
+                  "template_rect": {
+                    "x": 1086.0,
+                    "y": 2548.0,
+                    "w": 32.0,
+                    "h": 31.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.67761,
+                    "top_right": 0.708344,
+                    "bottom_right": 0.313543,
+                    "bottom_left": 0.316231
+                  }
+                },
+                "C": {
+                  "label": "C",
+                  "template_pixel": {
+                    "x": 123.33,
+                    "y": 2626.05
+                  },
+                  "template_rect": {
+                    "x": 108.0,
+                    "y": 2612.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.644603,
+                    "top_right": 0.862077,
+                    "bottom_right": 0.540202,
+                    "bottom_left": 0.167537
+                  }
+                },
+                "D": {
+                  "label": "D",
+                  "template_pixel": {
+                    "x": 1101.55,
+                    "y": 2626.52
+                  },
+                  "template_rect": {
+                    "x": 1086.0,
+                    "y": 2612.0,
+                    "w": 32.0,
+                    "h": 30.0
+                  },
+                  "match_score": 1.0,
+                  "marker_signature": {
+                    "top_left": 0.69251,
+                    "top_right": 0.722712,
+                    "bottom_right": 0.306581,
+                    "bottom_left": 0.307106
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "sides": {
+        "front": {
+          "template_image": {
+            "path": "C:\\Users\\Administrator\\.openclaw\\workspace\\answer_card_autograder\\answer_keys\\_scheme_assets\\direct_paper_choice_v1__3.1-3.4\\direct_front_template.jpg",
+            "width": 2480,
+            "height": 3507
+          },
+          "markers": {
+            "top_left": {
+              "x": 96.98,
+              "y": 65.5
+            },
+            "top_right": {
+              "x": 2395.19,
+              "y": 63.52
+            },
+            "bottom_right": {
+              "x": 2207.91,
+              "y": 3135.73
+            },
+            "bottom_left": {
+              "x": 77.77,
+              "y": 3290.04
+            }
+          },
+          "marker_diag": 3972.5139
+        },
+        "back": {
+          "template_image": {
+            "path": "C:\\Users\\Administrator\\.openclaw\\workspace\\answer_card_autograder\\answer_keys\\_scheme_assets\\direct_paper_choice_v1__3.1-3.4\\direct_back_template.jpg",
+            "width": 2480,
+            "height": 3507
+          },
+          "markers": {
+            "top_left": {
+              "x": 85.56,
+              "y": 73.49
+            },
+            "top_right": {
+              "x": 2372.24,
+              "y": 61.06
+            },
+            "bottom_right": {
+              "x": 2358.05,
+              "y": 3335.42
+            },
+            "bottom_left": {
+              "x": 66.53,
+              "y": 3285.95
+            }
+          },
+          "marker_diag": 4004.7137
+        }
+      },
+      "double_sided": false,
+      "direct_option_score_shift_x": 0.0,
+      "direct_use_template_diff": true,
+      "direct_refine_box": false,
+      "direct_multi_adaptive_gap": 0.0
+    },
+    "marker_config": {
+      "markers": {
+        "top_left": {
+          "center": {
+            "x": 96.98163967869438,
+            "y": 65.49751370648987
+          }
+        },
+        "top_right": {
+          "center": {
+            "x": 2395.18817468106,
+            "y": 63.51741903827282
+          }
+        },
+        "bottom_left": {
+          "center": {
+            "x": 77.7716697080292,
+            "y": 3290.0392335766423
+          }
+        },
+        "bottom_right": {
+          "center": {
+            "x": 2207.9149641814806,
+            "y": 3135.730830459008
+          }
+        }
+      }
+    },
+    "template_images": {
+      "front": "C:\\Users\\Administrator\\.openclaw\\workspace\\answer_card_autograder\\answer_keys\\_scheme_assets\\direct_paper_choice_v1__3.1-3.4\\direct_front_template.jpg",
+      "back": "C:\\Users\\Administrator\\.openclaw\\workspace\\answer_card_autograder\\answer_keys\\_scheme_assets\\direct_paper_choice_v1__3.1-3.4\\direct_back_template.jpg"
+    },
+    "saved_at": "2026-07-24T08:10:42"
+  },
+  "template_structure": {},
+  "subjective_ocr_settings": {
+    "qF001_b1": {
+      "enabled": true,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "2.20",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qF002_b1": {
+      "enabled": true,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "337.5",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qF003_b1": {
+      "enabled": true,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "4.80",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qF004_b1": {
+      "enabled": true,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "367.5",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qF005_b1": {
+      "enabled": true,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "沸水",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qF006_b1": {
+      "enabled": true,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "-14°C",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qF007_b1": {
+      "enabled": true,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "折射",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qF008_b1": {
+      "enabled": true,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "深",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qB001_drawing_1": {
+      "enabled": false,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "作图",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qB002_b1": {
+      "enabled": false,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qB003_b1": {
+      "enabled": false,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qB004_b1": {
+      "enabled": false,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qB005_b1": {
+      "enabled": false,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qB006_b1": {
+      "enabled": false,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qB007_b1": {
+      "enabled": false,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qB008_b1": {
+      "enabled": false,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qB009_b1": {
+      "enabled": false,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qB010_b1": {
+      "enabled": false,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qB011_b1": {
+      "enabled": false,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    },
+    "qB012_b1": {
+      "enabled": false,
+      "prefix": "",
+      "suffix": "",
+      "pad_left": 180,
+      "pad_right": 180,
+      "pad_top": 20,
+      "pad_bottom": 20,
+      "low_confidence_threshold": 0.6,
+      "single_char": false,
+      "expected_keywords": "",
+      "expected_answer": "",
+      "common_wrong_answers": "",
+      "wrong_keywords": ""
+    }
+  },
+  "subjective_config": {
+    "version": 1,
+    "template_key": "direct_paper_choice_v1",
+    "template_name": "试卷直接批改模板-v1",
+    "display_name": "试卷直接批改模板主观横线配置",
+    "source": "direct_subjective_lines",
+    "updated_at": "2026-07-24T08:10:42",
+    "scoring": {
+      "default_blank_score": 1,
+      "include_in_total_score": true,
+      "max_score": 21.0
+    },
+    "crop_regions": {
+      "direct_front": {
+        "x": 0,
+        "y": 0,
+        "w": 2480.0,
+        "h": 3507.0
+      },
+      "direct_back": {
+        "x": 0,
+        "y": 0,
+        "w": 2480.0,
+        "h": 3507.0
+      },
+      "direct_back_calculation": {
+        "x": 62.0,
+        "y": 2287.04,
+        "w": 2356.0,
+        "h": 1062.14
+      }
+    },
+    "items": [
+      {
+        "question_no": "F001",
+        "label": "正面横线1",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "front",
+        "region_name": "direct_front",
+        "source": "direct_subjective_lines",
+        "source_line_index": 1,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "front",
+            "region_name": "direct_front",
+            "rect": {
+              "x": 574.68,
+              "y": 2702.0,
+              "w": 261.64,
+              "h": 81.0
+            },
+            "label": "正面横线1",
+            "answer_label": "",
+            "ocr": {
+              "enabled": true,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "2.20",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "F002",
+        "label": "正面横线2",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "front",
+        "region_name": "direct_front",
+        "source": "direct_subjective_lines",
+        "source_line_index": 2,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "front",
+            "region_name": "direct_front",
+            "rect": {
+              "x": 1401.56,
+              "y": 2701.0,
+              "w": 262.88,
+              "h": 81.0
+            },
+            "label": "正面横线2",
+            "answer_label": "",
+            "ocr": {
+              "enabled": true,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "337.5",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "F003",
+        "label": "正面横线3",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "front",
+        "region_name": "direct_front",
+        "source": "direct_subjective_lines",
+        "source_line_index": 3,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "front",
+            "region_name": "direct_front",
+            "rect": {
+              "x": 457.44,
+              "y": 2765.0,
+              "w": 264.12,
+              "h": 81.0
+            },
+            "label": "正面横线3",
+            "answer_label": "",
+            "ocr": {
+              "enabled": true,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "4.80",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "F004",
+        "label": "正面横线4",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "front",
+        "region_name": "direct_front",
+        "source": "direct_subjective_lines",
+        "source_line_index": 4,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "front",
+            "region_name": "direct_front",
+            "rect": {
+              "x": 1166.32,
+              "y": 2764.0,
+              "w": 265.36,
+              "h": 82.0
+            },
+            "label": "正面横线4",
+            "answer_label": "",
+            "ocr": {
+              "enabled": true,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "367.5",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "F005",
+        "label": "正面横线5",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "front",
+        "region_name": "direct_front",
+        "source": "direct_subjective_lines",
+        "source_line_index": 5,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "front",
+            "region_name": "direct_front",
+            "rect": {
+              "x": 759.44,
+              "y": 2828.0,
+              "w": 264.12,
+              "h": 81.0
+            },
+            "label": "正面横线5",
+            "answer_label": "",
+            "ocr": {
+              "enabled": true,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "沸水",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "F006",
+        "label": "正面横线6",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "front",
+        "region_name": "direct_front",
+        "source": "direct_subjective_lines",
+        "source_line_index": 6,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "front",
+            "region_name": "direct_front",
+            "rect": {
+              "x": 947.44,
+              "y": 2954.0,
+              "w": 264.12,
+              "h": 82.0
+            },
+            "label": "正面横线6",
+            "answer_label": "",
+            "ocr": {
+              "enabled": true,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "-14°C",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "F007",
+        "label": "正面横线7",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "front",
+        "region_name": "direct_front",
+        "source": "direct_subjective_lines",
+        "source_line_index": 7,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "front",
+            "region_name": "direct_front",
+            "rect": {
+              "x": 1131.0,
+              "y": 3018.0,
+              "w": 219.0,
+              "h": 81.0
+            },
+            "label": "正面横线7",
+            "answer_label": "",
+            "ocr": {
+              "enabled": true,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "折射",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "F008",
+        "label": "正面横线8",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "front",
+        "region_name": "direct_front",
+        "source": "direct_subjective_lines",
+        "source_line_index": 8,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "front",
+            "region_name": "direct_front",
+            "rect": {
+              "x": 756.56,
+              "y": 3082.0,
+              "w": 262.88,
+              "h": 80.0
+            },
+            "label": "正面横线8",
+            "answer_label": "",
+            "ocr": {
+              "enabled": true,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "深",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "part_id": "qB001_drawing_1",
+        "question_no": "B001",
+        "label": "作图",
+        "answer_label": "作图",
+        "kind": "drawing",
+        "side": "back",
+        "region_name": "direct_back",
+        "source": "direct_subjective_lines",
+        "source_line_index": 1,
+        "max_score": 2.0,
+        "manual_only": true,
+        "score_category": "drawing",
+        "rect": {
+          "x": 1731.0,
+          "y": 117.0,
+          "w": 659.0,
+          "h": 474.0
+        }
+      },
+      {
+        "question_no": "B002",
+        "label": "背面横线2",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "back",
+        "region_name": "direct_back",
+        "source": "direct_subjective_lines",
+        "source_line_index": 2,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "back",
+            "region_name": "direct_back",
+            "rect": {
+              "x": 1108.56,
+              "y": 544.0,
+              "w": 262.88,
+              "h": 81.0
+            },
+            "label": "背面横线2",
+            "answer_label": "",
+            "ocr": {
+              "enabled": false,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "B003",
+        "label": "背面横线3",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "back",
+        "region_name": "direct_back",
+        "source": "direct_subjective_lines",
+        "source_line_index": 3,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "back",
+            "region_name": "direct_back",
+            "rect": {
+              "x": 1748.68,
+              "y": 670.0,
+              "w": 261.64,
+              "h": 82.0
+            },
+            "label": "背面横线3",
+            "answer_label": "",
+            "ocr": {
+              "enabled": false,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "B004",
+        "label": "背面横线4",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "back",
+        "region_name": "direct_back",
+        "source": "direct_subjective_lines",
+        "source_line_index": 4,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "back",
+            "region_name": "direct_back",
+            "rect": {
+              "x": 1788.0,
+              "y": 734.0,
+              "w": 617.0,
+              "h": 82.0
+            },
+            "label": "背面横线4",
+            "answer_label": "",
+            "ocr": {
+              "enabled": false,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "B005",
+        "label": "背面横线5",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "back",
+        "region_name": "direct_back",
+        "source": "direct_subjective_lines",
+        "source_line_index": 5,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "back",
+            "region_name": "direct_back",
+            "rect": {
+              "x": 332.56,
+              "y": 925.0,
+              "w": 262.88,
+              "h": 81.0
+            },
+            "label": "背面横线5",
+            "answer_label": "",
+            "ocr": {
+              "enabled": false,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "B006",
+        "label": "背面横线6",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "back",
+        "region_name": "direct_back",
+        "source": "direct_subjective_lines",
+        "source_line_index": 6,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "back",
+            "region_name": "direct_back",
+            "rect": {
+              "x": 240.68,
+              "y": 1242.0,
+              "w": 261.64,
+              "h": 80.0
+            },
+            "label": "背面横线6",
+            "answer_label": "",
+            "ocr": {
+              "enabled": false,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "B007",
+        "label": "背面横线7",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "back",
+        "region_name": "direct_back",
+        "source": "direct_subjective_lines",
+        "source_line_index": 7,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "back",
+            "region_name": "direct_back",
+            "rect": {
+              "x": 1019.0,
+              "y": 1558.0,
+              "w": 179.0,
+              "h": 82.0
+            },
+            "label": "背面横线7",
+            "answer_label": "",
+            "ocr": {
+              "enabled": false,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "B008",
+        "label": "背面横线8",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "back",
+        "region_name": "direct_back",
+        "source": "direct_subjective_lines",
+        "source_line_index": 8,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "back",
+            "region_name": "direct_back",
+            "rect": {
+              "x": 333.56,
+              "y": 1684.0,
+              "w": 262.88,
+              "h": 82.0
+            },
+            "label": "背面横线8",
+            "answer_label": "",
+            "ocr": {
+              "enabled": false,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "B009",
+        "label": "背面横线9",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "back",
+        "region_name": "direct_back",
+        "source": "direct_subjective_lines",
+        "source_line_index": 9,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "back",
+            "region_name": "direct_back",
+            "rect": {
+              "x": 842.68,
+              "y": 1812.0,
+              "w": 261.64,
+              "h": 82.0
+            },
+            "label": "背面横线9",
+            "answer_label": "",
+            "ocr": {
+              "enabled": false,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "B010",
+        "label": "背面横线10",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "back",
+        "region_name": "direct_back",
+        "source": "direct_subjective_lines",
+        "source_line_index": 10,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "back",
+            "region_name": "direct_back",
+            "rect": {
+              "x": 241.68,
+              "y": 2002.0,
+              "w": 261.64,
+              "h": 81.0
+            },
+            "label": "背面横线10",
+            "answer_label": "",
+            "ocr": {
+              "enabled": false,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "B011",
+        "label": "背面横线11",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "back",
+        "region_name": "direct_back",
+        "source": "direct_subjective_lines",
+        "source_line_index": 11,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "back",
+            "region_name": "direct_back",
+            "rect": {
+              "x": 517.56,
+              "y": 2065.0,
+              "w": 262.88,
+              "h": 82.0
+            },
+            "label": "背面横线11",
+            "answer_label": "",
+            "ocr": {
+              "enabled": false,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      },
+      {
+        "question_no": "B012",
+        "label": "背面横线12",
+        "answer_label": "",
+        "kind": "fill_blank",
+        "side": "back",
+        "region_name": "direct_back",
+        "source": "direct_subjective_lines",
+        "source_line_index": 12,
+        "max_score": 1.0,
+        "blanks": [
+          {
+            "blank_no": 1,
+            "score": 1.0,
+            "score_category": "direct_subjective",
+            "side": "back",
+            "region_name": "direct_back",
+            "rect": {
+              "x": 914.4,
+              "y": 2192.0,
+              "w": 378.2,
+              "h": 82.0
+            },
+            "label": "背面横线12",
+            "answer_label": "",
+            "ocr": {
+              "enabled": false,
+              "prefix": "",
+              "suffix": "",
+              "pad_left": 180,
+              "pad_right": 180,
+              "pad_top": 20,
+              "pad_bottom": 20,
+              "low_confidence_threshold": 0.6,
+              "single_char": false,
+              "expected_keywords": "",
+              "expected_answer": "",
+              "common_wrong_answers": "",
+              "wrong_keywords": ""
+            }
+          }
+        ]
+      }
+    ],
+    "calculation_questions": {
+      "enabled": false,
+      "mode": "back_region_manual",
+      "questions": [],
+      "max_score": 0,
+      "updated_at": "2026-07-24T08:10:42"
+    },
+    "direct_calculation_region": {
+      "enabled": true,
+      "side": "back",
+      "source": "last_retained_line_to_page_bottom",
+      "top_offset": 0.0,
+      "rect": {
+        "x": 62.0,
+        "y": 2287.04,
+        "w": 2356.0,
+        "h": 1062.14
+      },
+      "template_width": 2480.0,
+      "template_height": 3507.0
+    },
+    "_answer_scheme_snapshot": {
+      "template_key": "direct_paper_choice_v1",
+      "template_name": "试卷直接批改模板-v1",
+      "saved_at": "2026-07-24T08:10:42"
+    }
+  },
+  "knowledge_identity": {},
+  "saved_at": "2026-07-24T08:10:42",
+  "ocr_settings_updated_at": "2026-07-24T08:10:42"
+}

@@ -1,0 +1,9 @@
+# OCR runs in a separate virtual environment.
+# Verified on 2026-08-23.
+paddleocr==3.7.0
+paddlepaddle==3.2.2
+paddlex==3.7.1
+numpy==2.3.5
+opencv-contrib-python==4.10.0.84
+pillow==12.2.0
+

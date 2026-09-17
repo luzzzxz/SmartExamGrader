@@ -1,0 +1,33 @@
+{
+  "image_path": "C:\\Users\\Administrator\\.openclaw\\workspace\\answer_card_autograder\\templates\\混合题模板_客观主观_v1\\template.jpg",
+  "image_size": {
+    "width": 2306,
+    "height": 3092
+  },
+  "markers": {
+    "top_left": {
+      "center": {
+        "x": 210.5,
+        "y": 260.0
+      }
+    },
+    "top_right": {
+      "center": {
+        "x": 2044.5,
+        "y": 293.0
+      }
+    },
+    "bottom_right": {
+      "center": {
+        "x": 1954.0,
+        "y": 2855.5
+      }
+    },
+    "bottom_left": {
+      "center": {
+        "x": 130.5,
+        "y": 2725.0
+      }
+    }
+  }
+}

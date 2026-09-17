@@ -1,0 +1,1278 @@
+{
+  "version": 1,
+  "display_name": "客观主观混合模板-v2（边缘定位块） 主观题配置",
+  "scoring": {
+    "default_blank_score": 1,
+    "include_in_total_score": false
+  },
+  "notes": "第一版：13-18填空题每题2空；20-23实验题暂按每题4小题、每小题2空；19作图题人工批改。\n2026-05-08: adjusted fixed fill blanks and drawing/experiment locked regions for rebuilt Word template.\n2026-05-12: imported new drawing layout: 19?(1)(2)(3)=2? each, 22?(1)????=1?.\n20260605_092941: corrected V2 blank crop geometry; line_y-70 to line_y+3, pad left/right 35, preserve scheme answers only.\n20260605_093804: recaptured Q19 drawing regions from three left-side long answer lines in V2 template.\n20260605_094304: moved Q19(1) drawing top upward to just below Q18 line.",
+  "items": [
+    {
+      "question_no": 13,
+      "kind": "fill_blank",
+      "label": "13题",
+      "max_score": 2,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1,
+          "rect": {
+            "x": 182.0,
+            "y": 776.7,
+            "w": 345.0,
+            "h": 73.0
+          },
+          "region_name": "fill_blank",
+          "ocr": {
+            "enabled": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.85,
+            "single_char": false,
+            "expected_keywords": "",
+            "expected_answer": "2.75",
+            "common_wrong_answers": "",
+            "wrong_keywords": ""
+          }
+        },
+        {
+          "blank_no": 2,
+          "score": 1,
+          "rect": {
+            "x": 549.0,
+            "y": 775.9,
+            "w": 347.0,
+            "h": 73.0
+          },
+          "region_name": "fill_blank",
+          "ocr": {
+            "enabled": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.85,
+            "single_char": false,
+            "expected_keywords": "",
+            "expected_answer": "276.5",
+            "common_wrong_answers": "",
+            "wrong_keywords": ""
+          }
+        }
+      ],
+      "region_name": "fill_blank"
+    },
+    {
+      "question_no": 14,
+      "kind": "fill_blank",
+      "label": "14题",
+      "max_score": 2,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1,
+          "rect": {
+            "x": 183.0,
+            "y": 889.4,
+            "w": 344.0,
+            "h": 73.0
+          },
+          "region_name": "fill_blank",
+          "ocr": {
+            "enabled": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.85,
+            "single_char": false,
+            "expected_keywords": "功",
+            "expected_answer": "做功",
+            "common_wrong_answers": "热传递",
+            "wrong_keywords": "热,传,递"
+          }
+        },
+        {
+          "blank_no": 2,
+          "score": 1,
+          "rect": {
+            "x": 550.0,
+            "y": 888.4,
+            "w": 347.0,
+            "h": 73.0
+          },
+          "region_name": "fill_blank",
+          "ocr": {
+            "enabled": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.85,
+            "single_char": false,
+            "expected_keywords": "",
+            "expected_answer": "运动",
+            "common_wrong_answers": "",
+            "wrong_keywords": "静,止"
+          }
+        }
+      ],
+      "region_name": "fill_blank"
+    },
+    {
+      "question_no": 15,
+      "kind": "fill_blank",
+      "label": "15题",
+      "max_score": 2,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1,
+          "rect": {
+            "x": 183.0,
+            "y": 1002.8,
+            "w": 345.0,
+            "h": 73.0
+          },
+          "region_name": "fill_blank",
+          "ocr": {
+            "enabled": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.85,
+            "single_char": false,
+            "expected_keywords": "",
+            "expected_answer": "可再生",
+            "common_wrong_answers": "",
+            "wrong_keywords": "不"
+          }
+        },
+        {
+          "blank_no": 2,
+          "score": 1,
+          "rect": {
+            "x": 551.0,
+            "y": 1002.0,
+            "w": 347.0,
+            "h": 73.0
+          },
+          "region_name": "fill_blank",
+          "ocr": {
+            "enabled": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.85,
+            "single_char": false,
+            "expected_keywords": "",
+            "expected_answer": "电磁波",
+            "common_wrong_answers": "",
+            "wrong_keywords": "声"
+          }
+        }
+      ],
+      "region_name": "fill_blank"
+    },
+    {
+      "question_no": 16,
+      "kind": "fill_blank",
+      "label": "16题",
+      "max_score": 2,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1,
+          "rect": {
+            "x": 184.0,
+            "y": 1115.5,
+            "w": 346.0,
+            "h": 73.0
+          },
+          "region_name": "fill_blank",
+          "ocr": {
+            "enabled": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.85,
+            "single_char": false,
+            "expected_keywords": "",
+            "expected_answer": "2.1x10^5,2.1×10^5,2.1*10^5,210000",
+            "common_wrong_answers": "",
+            "wrong_keywords": ""
+          }
+        },
+        {
+          "blank_no": 2,
+          "score": 1,
+          "rect": {
+            "x": 552.0,
+            "y": 1114.8,
+            "w": 347.0,
+            "h": 73.0
+          },
+          "region_name": "fill_blank",
+          "ocr": {
+            "enabled": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.85,
+            "single_char": false,
+            "expected_keywords": "功",
+            "expected_answer": "做功",
+            "common_wrong_answers": "热传递",
+            "wrong_keywords": "热,传,递"
+          }
+        }
+      ],
+      "region_name": "fill_blank"
+    },
+    {
+      "question_no": 17,
+      "kind": "fill_blank",
+      "label": "17题",
+      "max_score": 2,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1,
+          "rect": {
+            "x": 184.0,
+            "y": 1229.0,
+            "w": 346.0,
+            "h": 73.0
+          },
+          "region_name": "fill_blank",
+          "ocr": {
+            "enabled": true,
+            "prefix": "",
+            "suffix": "片",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.85,
+            "single_char": false,
+            "expected_keywords": "",
+            "expected_answer": "相",
+            "common_wrong_answers": "",
+            "wrong_keywords": ""
+          }
+        },
+        {
+          "blank_no": 2,
+          "score": 1,
+          "rect": {
+            "x": 553.0,
+            "y": 1227.9,
+            "w": 346.0,
+            "h": 73.0
+          },
+          "region_name": "fill_blank",
+          "ocr": {
+            "enabled": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.85,
+            "single_char": false,
+            "expected_keywords": "",
+            "expected_answer": "甲",
+            "common_wrong_answers": "",
+            "wrong_keywords": "乙"
+          }
+        }
+      ],
+      "region_name": "fill_blank"
+    },
+    {
+      "question_no": 18,
+      "kind": "fill_blank",
+      "label": "18题",
+      "max_score": 2,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1,
+          "rect": {
+            "x": 186.0,
+            "y": 1341.9,
+            "w": 345.0,
+            "h": 73.0
+          },
+          "region_name": "fill_blank",
+          "ocr": {
+            "enabled": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.85,
+            "single_char": false,
+            "expected_keywords": "",
+            "expected_answer": "相互",
+            "common_wrong_answers": "相对",
+            "wrong_keywords": ""
+          }
+        },
+        {
+          "blank_no": 2,
+          "score": 1,
+          "rect": {
+            "x": 553.0,
+            "y": 1341.0,
+            "w": 346.0,
+            "h": 73.0
+          },
+          "region_name": "fill_blank",
+          "ocr": {
+            "enabled": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.85,
+            "single_char": false,
+            "expected_keywords": "",
+            "expected_answer": "运动状态",
+            "common_wrong_answers": "",
+            "wrong_keywords": ""
+          }
+        }
+      ],
+      "region_name": "fill_blank"
+    },
+    {
+      "question_no": "19-1",
+      "kind": "drawing",
+      "label": "19题(1) 作图题",
+      "max_score": 2,
+      "manual_only": true,
+      "rect": {
+        "x": 75.0,
+        "y": 1430.0,
+        "w": 960.0,
+        "h": 510.0
+      },
+      "notes": "V2???19(1)??????18?????????",
+      "region_name": "drawing"
+    },
+    {
+      "question_no": "19-2",
+      "kind": "drawing",
+      "label": "19题(2) 作图题",
+      "max_score": 2,
+      "manual_only": true,
+      "rect": {
+        "x": 75.0,
+        "y": 1930.0,
+        "w": 990.0,
+        "h": 470.0
+      },
+      "notes": "V2???19??????????????????",
+      "region_name": "drawing"
+    },
+    {
+      "question_no": "19-3",
+      "kind": "drawing",
+      "label": "19题(3) 作图题",
+      "max_score": 2,
+      "manual_only": true,
+      "rect": {
+        "x": 75.0,
+        "y": 2435.0,
+        "w": 1030.0,
+        "h": 460.0
+      },
+      "notes": "V2???19??????????????????",
+      "region_name": "drawing"
+    },
+    {
+      "question_no": 20,
+      "kind": "experiment",
+      "label": "20题 实验题",
+      "max_score": 7,
+      "subquestions": [
+        {
+          "sub_no": 1,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1238.7,
+                "y": 188.4,
+                "w": 122.9,
+                "h": 109.9
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "右",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": true,
+                "expected_keywords": "",
+                "expected_answer": "左",
+                "common_wrong_answers": "右",
+                "wrong_keywords": ""
+              }
+            },
+            {
+              "blank_no": 2,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1392.5,
+                "y": 188.4,
+                "w": 188.9,
+                "h": 109.9
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "水平",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            },
+            {
+              "blank_no": 3,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1612.4,
+                "y": 188.4,
+                "w": 446.7,
+                "h": 109.9
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "便于测量力臂",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            }
+          ]
+        },
+        {
+          "sub_no": 2,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1239.6,
+                "y": 301.9,
+                "w": 573.6,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "钩码对杠杆的拉力",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            },
+            {
+              "blank_no": 2,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1844.2,
+                "y": 301.9,
+                "w": 123.9,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "2",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            }
+          ]
+        },
+        {
+          "sub_no": 3,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1239.6,
+                "y": 415.9,
+                "w": 187.9,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "变小",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "变大",
+                "common_wrong_answers": "变小,减小",
+                "wrong_keywords": ""
+              }
+            }
+          ]
+        },
+        {
+          "sub_no": 4,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1239.6,
+                "y": 529.3,
+                "w": 123.9,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "A",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "B",
+                "common_wrong_answers": "",
+                "wrong_keywords": "A"
+              }
+            }
+          ]
+        }
+      ],
+      "region_name": "experiment"
+    },
+    {
+      "question_no": 21,
+      "kind": "experiment",
+      "label": "21题 实验题",
+      "max_score": 6,
+      "subquestions": [
+        {
+          "sub_no": 1,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1241.6,
+                "y": 752.7,
+                "w": 187.9,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "高度",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            }
+          ]
+        },
+        {
+          "sub_no": 2,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1242.5,
+                "y": 865.7,
+                "w": 122.9,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "慢",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            },
+            {
+              "blank_no": 2,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1395.5,
+                "y": 864.7,
+                "w": 318.8,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "匀速直线",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            }
+          ]
+        },
+        {
+          "sub_no": 3,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1242.5,
+                "y": 978.7,
+                "w": 251.9,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "不需要",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            }
+          ]
+        },
+        {
+          "sub_no": 4,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1243.5,
+                "y": 1091.7,
+                "w": 123.0,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "D",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            }
+          ]
+        },
+        {
+          "sub_no": 5,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1244.5,
+                "y": 1204.7,
+                "w": 122.0,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "A",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "b",
+                "common_wrong_answers": "",
+                "wrong_keywords": "A"
+              }
+            }
+          ]
+        }
+      ],
+      "region_name": "experiment"
+    },
+    {
+      "question_no": 22,
+      "kind": "experiment",
+      "label": "22题 实验题",
+      "max_score": 6,
+      "subquestions": [
+        {
+          "sub_no": 1,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1244.5,
+                "y": 1430.1,
+                "w": 187.9,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "质量",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            },
+            {
+              "blank_no": 2,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1464.3,
+                "y": 1429.6,
+                "w": 188.9,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "相同",
+                "common_wrong_answers": "不同,不相同,不相等",
+                "wrong_keywords": ""
+              }
+            }
+          ]
+        },
+        {
+          "sub_no": 2,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1246.4,
+                "y": 1542.1,
+                "w": 382.8,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "升高的温度",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            },
+            {
+              "blank_no": 2,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1659.2,
+                "y": 1541.1,
+                "w": 124.0,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "水",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            }
+          ]
+        },
+        {
+          "sub_no": 3,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1246.4,
+                "y": 1653.6,
+                "w": 317.9,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "8400",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            }
+          ]
+        },
+        {
+          "sub_no": 4,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1248.4,
+                "y": 1766.7,
+                "w": 124.0,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "水",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            }
+          ]
+        }
+      ],
+      "region_name": "experiment"
+    },
+    {
+      "question_no": "22-1-drawing",
+      "kind": "drawing",
+      "label": "22题(1) 实验作图",
+      "max_score": 1,
+      "manual_only": true,
+      "rect": {
+        "x": 1783.4,
+        "y": 2337.4,
+        "w": 656.6,
+        "h": 540.6
+      },
+      "notes": "22(1)??????????????????????1??",
+      "region_name": "drawing",
+      "score_category": "experiment",
+      "optional_experiment_drawing": true
+    },
+    {
+      "question_no": 23,
+      "kind": "experiment",
+      "label": "23题 实验题",
+      "max_score": 6,
+      "subquestions": [
+        {
+          "sub_no": 1,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1250.4,
+                "y": 1994.7,
+                "w": 251.9,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "作图题",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            }
+          ]
+        },
+        {
+          "sub_no": 2,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1251.3,
+                "y": 2106.7,
+                "w": 188.0,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "断路",
+                "common_wrong_answers": "短路",
+                "wrong_keywords": "短"
+              }
+            }
+          ]
+        },
+        {
+          "sub_no": 3,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1252.3,
+                "y": 2218.7,
+                "w": 316.9,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "0.06",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            },
+            {
+              "blank_no": 2,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1601.2,
+                "y": 2217.2,
+                "w": 124.0,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "12",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "3",
+                "common_wrong_answers": "1,2",
+                "wrong_keywords": ""
+              }
+            }
+          ]
+        },
+        {
+          "sub_no": 4,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1253.3,
+                "y": 2330.8,
+                "w": 189.0,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "正比",
+                "common_wrong_answers": "反比",
+                "wrong_keywords": ""
+              }
+            }
+          ]
+        },
+        {
+          "sub_no": 5,
+          "region_name": "experiment",
+          "blanks": [
+            {
+              "blank_no": 1,
+              "score": 1,
+              "region_name": "experiment",
+              "rect": {
+                "x": 1253.3,
+                "y": 2442.3,
+                "w": 334.9,
+                "h": 110.0
+              },
+              "ocr": {
+                "enabled": true,
+                "prefix": "人工",
+                "suffix": "",
+                "pad_left": 180,
+                "pad_right": 180,
+                "pad_top": 20,
+                "pad_bottom": 20,
+                "low_confidence_threshold": 0.85,
+                "single_char": false,
+                "expected_keywords": "",
+                "expected_answer": "这个人工",
+                "common_wrong_answers": "",
+                "wrong_keywords": ""
+              }
+            }
+          ]
+        }
+      ],
+      "region_name": "experiment"
+    }
+  ],
+  "crop_regions": {
+    "fill_blank": {
+      "x": 58.4,
+      "y": 986.1,
+      "w": 988.1,
+      "h": 871.7
+    },
+    "drawing": {
+      "x": 74.0,
+      "y": 1400.0,
+      "w": 2366.1,
+      "h": 1577.1
+    },
+    "experiment": {
+      "x": 1117.4,
+      "y": 164.4,
+      "w": 1217.4,
+      "h": 2695.1
+    }
+  },
+  "crop_policy": {
+    "line_top_margin": 92,
+    "line_bottom_margin": 18,
+    "uniform_crop_height": 114,
+    "description": "Expanded lower experiment crop for v2 edge-marker template; default assignment groups blanks by visual row.",
+    "experiment_bottom_extension_note": "2026-06-04: kept the lower experiment crop enlarged; reduced only the line scan box bottom margin so the red preview box stays tighter below each line."
+  },
+  "updated_at": "2026-06-16T10:13:29",
+  "experiment_structure_source": "blank_template_line_detection",
+  "latest_template_note": "Auto-scaffolded from mixed_objective_subjective_v1 by marker-based homography.",
+  "template_images": {
+    "latest_drawing_layout": "C:\\Users\\Administrator\\.openclaw\\workspace\\answer_card_autograder\\templates\\混合题模板_客观主观_v1\\template_20260512_drawing_layout.jpg",
+    "scaffold_source": "C:\\Users\\Administrator\\.openclaw\\workspace\\answer_card_autograder\\templates\\mixed_objective_subjective_v2_edge\\template.jpg"
+  },
+  "optional_experiment_drawing": {
+    "enabled": true,
+    "drawing_question_no": "22-1-drawing",
+    "placeholder_part_id": "q22_s1_b1",
+    "placeholder_normal_score": 1
+  },
+  "_answer_scheme_snapshot": {
+    "template_key": "mixed_objective_subjective_v2_edge",
+    "template_name": "客观主观混合模板-v2（边缘定位块）",
+    "saved_at": "2026-06-05T08:23:35"
+  }
+}

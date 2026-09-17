@@ -1,0 +1,7 @@
+﻿{
+    "api_token":  "",
+    "session_secret":  "",
+    "teacher_username":  "teacher",
+    "teacher_password_hash":  "",
+    "teacher_password_initial":  ""
+}
