@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 export DEBIAN_FRONTEND=noninteractive
@@ -55,7 +55,7 @@ cat >/etc/nginx/sites-available/manual-grading <<'EOF'
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
-    server_name your-domain.com 192.0.2.1 _;
+    server_name gj.your-domain.com 192.0.2.1 _;
 
     client_max_body_size 256m;
 
@@ -82,12 +82,11 @@ systemctl enable --now nginx
 systemctl reload nginx
 
 curl --fail --silent --show-error --max-time 10 http://127.0.0.1:18765/ >/dev/null
-curl --fail --silent --show-error --max-time 10 -H 'Host: your-domain.com' http://127.0.0.1/ >/dev/null
+curl --fail --silent --show-error --max-time 10 -H 'Host: gj.your-domain.com' http://127.0.0.1/ >/dev/null
 
-certbot --nginx -d your-domain.com \
+certbot --nginx -d gj.your-domain.com \
     --non-interactive --agree-tos --register-unsafely-without-email --redirect
 systemctl enable --now certbot.timer
-curl --fail --silent --show-error --max-time 15 https://your-domain.com/login >/dev/null
+curl --fail --silent --show-error --max-time 15 https://your-manual-grading-server.example.com/login >/dev/null
 
 echo MANUAL_GRADING_DEPLOY_OK
-

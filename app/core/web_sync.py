@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import base64
 from datetime import datetime
@@ -1183,5 +1183,4 @@ class ManualWebSyncMixin:
         url = config.get('teacher_url') or config.get('server_url') or 'https://your-manual-grading-server.example.com'
         import webbrowser
         webbrowser.open(url)
-
 

@@ -1,4 +1,4 @@
-﻿# 答题卡与试卷批改系统：当前版使用与维护手册
+# 答题卡与试卷批改系统：当前版使用与维护手册
 
 > 文档状态：当前维护入口  
 > 最后核对：2026-09-16  
@@ -334,7 +334,7 @@ flowchart LR
 网页人工批改入口：
 
 ```text
-https://your-domain.com
+https://your-manual-grading-server.example.com
 ```
 
 本地主程序支持：
@@ -705,4 +705,3 @@ flowchart TD
 - 本地代码修改需要重启桌面程序；网页改动需要更新 VPS 上的服务端脚本后生效，本次未部署线上服务。
 
 回归命令（在包根目录）：`py -3.14 -m unittest discover -s app/tests -v`。本次 34 项通过，但不替代真实扫描、OCR、全部模板界面和 PDF 打印验收。
-

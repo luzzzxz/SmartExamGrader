@@ -1,4 +1,4 @@
-﻿# 答题批改系统项目维护与备份说明
+# 答题批改系统项目维护与备份说明
 
 > 文档版本：2026-09-02  
 > 当前源码目录：`C:\Users\Administrator\.openclaw\workspace\answer_card_autograder`  
@@ -244,7 +244,7 @@ session_results:
 
 ## 11. 网页人工打分
 
-本地配置：`manual_web_sync_config.json`。服务地址为 `https://your-domain.com`，公网经 nginx 443 转发到服务端默认 18765 端口。
+本地配置：`manual_web_sync_config.json`。服务地址为 `https://your-manual-grading-server.example.com`，公网经 nginx 443 转发到服务端默认 18765 端口。
 
 网页登录账号默认为 `teacher`。密码哈希及部署时的初始密码只保存在私密服务配置中，不应写入可公开的说明文件。网页首页按任务列出待批改内容；本机上传、网页打分、本机取回、VPS 删除构成完整闭环。
 
@@ -414,4 +414,3 @@ python -m py_compile enhanced_answer_card_gui_stats.py
 - 修改前源码与 MD 备份：包根目录 `scratch/code_backup_20260914_154728`。包含原源码中的历史凭据，按私有资料保存。
 - 在包根目录执行 `py -3.14 -m unittest discover -s app/tests -v`，本次 34 项通过。真实 OCR、界面全流程、VPS 和打印验证仍需按第 17 节执行。
 - 原始 `PACKAGE_MANIFEST_SHA256.txt` 对应修改前备份包；代码修改后校验差异是预期行为，重新打包再生成新清单，不应伪造原始清单。
-

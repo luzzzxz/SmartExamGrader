@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import csv
 import json
@@ -1298,4 +1298,3 @@ def open_window(app):
     class_var.trace_add('write', refresh_analysis_context)
     weak_only_var.trace_add('write', lambda *_args: refresh())
     refresh()
-

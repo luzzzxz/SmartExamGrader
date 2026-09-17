@@ -1,7 +1,7 @@
 ﻿{
-    "api_token":  "",
-    "session_secret":  "",
+    "api_token":  "_rdrRZ5krk4Vvx_PuLhgLWA-1SybQABuMJmuY2KarJE",
+    "session_secret":  "EzK9zQSI9_8KeXbbvol4_etTsyCUW4jwvJPA-BkW7R4",
     "teacher_username":  "teacher",
-    "teacher_password_hash":  "",
-    "teacher_password_initial":  ""
+    "teacher_password_hash":  "pbkdf2_sha256$183ee94bcd754abd8d0e758e7156894c$tHQZrpw_nQIxL4nRqWmGcDFxgPnkKG7lKnZy3oGqkV8=",
+    "teacher_password_initial":  "kUlzHobpQ2I"
 }
