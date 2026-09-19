@@ -2,8 +2,10 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import re
 import sqlite3
+import subprocess
 import unicodedata
 import uuid
 from collections import Counter, defaultdict
@@ -13,6 +15,8 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
+
+import knowledge_report_export
 
 
 CATALOG_COLUMNS = ('知识点编号', '知识点内容')
@@ -570,9 +574,9 @@ def analyze_payloads(sessions, catalog, payload_filter, latest_only=False, weigh
     skipped_question_count = 0
 
     if latest_only:
-        # 以最后一次为准：每个 (学生, 知识点) 只保留最后一次 session 的数据
-        # sessions 已按 created_at ASC 排序，后出现的自动覆盖前面的
-        latest_data = {}  # key: (student_key_str, code) -> {score, max_score, wrong}
+        # 以最后一次为准：每个 (学生, 知识点) 只保留最后一次出现该知识点的 session 完整数据
+        # sessions 已按 created_at ASC 排序，后出现的 session 覆盖前面的 session
+        latest_data = {}  # key: (student_key_str, code) -> {score, max_score, wrong, question_count, wrong_count}
         for session in sessions:
             matched_payloads = [
                 payload for payload in session['payloads']
@@ -581,6 +585,15 @@ def analyze_payloads(sessions, catalog, payload_filter, latest_only=False, weigh
             if not matched_payloads:
                 continue
             used_tests += 1
+
+            # 暂存当前 session 内每个 (sk, code) 的作答累加
+            current_session_data = defaultdict(lambda: {
+                'score': 0.0,
+                'max_score': 0.0,
+                'question_count': 0,
+                'wrong_count': 0,
+            })
+
             for payload in matched_payloads:
                 sk = student_key(payload)
                 question_scores = extract_question_scores(payload, session.get('part_question_map'))
@@ -602,12 +615,18 @@ def analyze_payloads(sessions, catalog, payload_filter, latest_only=False, weigh
                     for code in codes:
                         all_details[code].append(detail_entry)
                         is_wrong = result['score'] + 1e-9 < result['max_score']
-                        # 后出现的 session 覆盖前面的 → 最后一次为准
-                        latest_data[(sk, code)] = {
-                            'score': result['score'] * share,
-                            'max_score': result['max_score'] * share,
-                            'wrong': is_wrong,
-                        }
+                        # 在当前 session 内累加多道题
+                        cur = current_session_data[(sk, code)]
+                        cur['score'] += result['score'] * share
+                        cur['max_score'] += result['max_score'] * share
+                        cur['question_count'] += 1
+                        if is_wrong:
+                            cur['wrong_count'] += 1
+
+            # 本次 session 出现过的 (sk, code)，覆盖旧 session 对应数据
+            for (sk, code), cdata in current_session_data.items():
+                latest_data[(sk, code)] = cdata
+
         # 汇总：用覆盖后的最终数据
         summary = defaultdict(lambda: {
             'score': 0.0, 'max_score': 0.0,
@@ -617,9 +636,8 @@ def analyze_payloads(sessions, catalog, payload_filter, latest_only=False, weigh
             item = summary[code]
             item['score'] += data['score']
             item['max_score'] += data['max_score']
-            item['question_count'] += 1
-            if data['wrong']:
-                item['wrong_count'] += 1
+            item['question_count'] += data['question_count']
+            item['wrong_count'] += data['wrong_count']
     else:
         # 全部累加：原有逻辑
         summary = defaultdict(lambda: {
@@ -865,9 +883,10 @@ def open_window(app):
     panes.add(summary_frame, weight=3)
     panes.add(detail_frame, weight=2)
 
-    summary_columns = ('code', 'name', 'weight', 'questions', 'wrong', 'score', 'mastery', 'risk')
+    summary_columns = ('index', 'code', 'name', 'weight', 'questions', 'wrong', 'score', 'mastery', 'risk')
     summary_tree = ttk.Treeview(summary_frame, columns=summary_columns, show='headings', selectmode='extended')
     headings = {
+        'index': '序号',
         'code': '知识点编号',
         'name': '知识点内容',
         'weight': '权重',
@@ -877,7 +896,7 @@ def open_window(app):
         'mastery': '掌握率',
         'risk': '风险分',
     }
-    widths = {'code': 100, 'name': 300, 'weight': 60, 'questions': 80, 'wrong': 80, 'score': 110, 'mastery': 80, 'risk': 80}
+    widths = {'index': 50, 'code': 95, 'name': 290, 'weight': 55, 'questions': 75, 'wrong': 75, 'score': 105, 'mastery': 75, 'risk': 75}
     for column in summary_columns:
         summary_tree.heading(column, text=headings[column])
         summary_tree.column(column, width=widths[column], anchor='center' if column != 'name' else 'w')
@@ -1250,6 +1269,7 @@ def open_window(app):
             else:
                 tag = 'good'
             item_id = summary_tree.insert('', tk.END, values=(
+                index + 1,
                 row['code'],
                 row['name'],
                 f"{row['weight']:g}",
@@ -1274,13 +1294,253 @@ def open_window(app):
             summary_tree.focus(first)
             show_detail()
 
+    def get_current_scope_description():
+        mode = scope_var.get()
+        if mode == '全部有知识点的测试':
+            return '全部有知识点的测试'
+        elif mode == '按日期范围':
+            return f"日期范围：{start_date_var.get()} 至 {end_date_var.get()}"
+        else:
+            return f"测试范围：{start_test_var.get()} 至 {end_test_var.get()}"
+
+    def export_class_report():
+        try:
+            win.config(cursor="wait")
+            status_var.set("正在生成班级诊断报告，请稍候...")
+            win.update_idletasks()
+
+            filtered_sessions = selected_sessions()
+            selected_class = class_var.get()
+            latest_only = stat_mode_var.get() == '以最后一次为准'
+            stat_mode_text = stat_mode_var.get()
+            scope_desc = get_current_scope_description()
+
+            rows, used_tests, _ = analyze_class(
+                filtered_sessions,
+                selected_class,
+                dataset['catalog'],
+                latest_only=latest_only,
+                weights=dataset['weights'],
+            )
+
+            if not rows:
+                messagebox.showwarning('导出班级报告', '当前范围内没有可统计的班级知识点数据。', parent=win)
+                return
+
+            export_dir = project_dir / 'exports' / '知识点报告'
+            export_dir.mkdir(parents=True, exist_ok=True)
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            safe_class = re.sub(r'[^A-Za-z0-9\u4e00-\u9fff_.-]+', '_', selected_class)
+
+            html_path = export_dir / f"{safe_class}_班级知识点诊断分析报告_{timestamp}.html"
+            excel_path = export_dir / f"{safe_class}_班级知识点诊断分析表_{timestamp}.xlsx"
+
+            knowledge_report_export.export_class_report_html(
+                html_path, selected_class, scope_desc, stat_mode_text, used_tests, rows
+            )
+            knowledge_report_export.export_class_report_excel(
+                excel_path, selected_class, scope_desc, stat_mode_text, used_tests, rows
+            )
+
+            status_var.set(f"已生成班级报告：{html_path.name}")
+            msg = (
+                f"✅ 班级报告已成功生成！\n\n"
+                f"1. 打印版 (HTML)：{html_path.name}\n"
+                f"2. 归档表 (Excel)：{excel_path.name}\n\n"
+                f"保存在文件夹：\n{export_dir}\n\n"
+                f"是否立即在浏览器中打开并准备打印？"
+            )
+            if messagebox.askyesno('生成班级报告完成', msg, parent=win):
+                try:
+                    os.startfile(str(html_path))
+                except Exception:
+                    pass
+                try:
+                    os.startfile(str(export_dir))
+                except Exception:
+                    pass
+        except Exception as exc:
+            import traceback
+            traceback.print_exc()
+            status_var.set(f"导出失败：{exc}")
+            messagebox.showerror('导出失败', f'生成班级报告遇到错误：\n{exc}', parent=win)
+        finally:
+            try:
+                win.config(cursor="")
+            except Exception:
+                pass
+
+    def export_students_worksheets():
+        try:
+            win.config(cursor="wait")
+            status_var.set("正在准备全班学生复习单数据，请稍候...")
+            win.update_idletasks()
+
+            try:
+                filtered_sessions = selected_sessions()
+            except Exception as exc:
+                messagebox.showerror('范围设置错误', str(exc), parent=win)
+                return
+
+            selected_class = class_var.get()
+            latest_only = stat_mode_var.get() == '以最后一次为准'
+            stat_mode_text = stat_mode_var.get()
+            scope_desc = get_current_scope_description()
+
+            _, current_student_map = make_student_choices(selected_class)
+            if not current_student_map:
+                messagebox.showwarning('批量生成复习单', f'班级【{selected_class}】下未找到学生名单。', parent=win)
+                return
+
+            export_dir = project_dir / 'exports' / '知识点报告'
+            single_dir = export_dir / f"{selected_class}_单人复习单"
+            export_dir.mkdir(parents=True, exist_ok=True)
+            single_dir.mkdir(parents=True, exist_ok=True)
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            safe_class = re.sub(r'[^A-Za-z0-9\u4e00-\u9fff_.-]+', '_', selected_class)
+
+            student_reports_data = []
+            # 提取有效学生并按学号自然排序
+            valid_students = []
+            for label, key in current_student_map.items():
+                name_match = re.match(r'^(.*?)（(.*?)）(?: #\d+)?$', label)
+                s_name = name_match.group(1).strip() if name_match else label
+                s_id = name_match.group(2).strip() if name_match else ''
+                if s_id in ('无学号', '未匹配'):
+                    s_id = ''
+
+                # 过滤掉只有编号未匹配上姓名的记录
+                if not s_name or s_name in ('未匹配', '未识别', '未知', '未命名'):
+                    continue
+
+                valid_students.append((s_id, s_name, label, key))
+
+            # 按学号排序（优先按数字，如 1, 2, ..., 47）
+            def sort_key(item):
+                sid = item[0]
+                m = re.search(r'\d+', sid)
+                return (0, int(m.group(0))) if m else (1, sid, item[1])
+
+            valid_students.sort(key=sort_key)
+
+            if not valid_students:
+                messagebox.showwarning('批量生成复习单', f'班级【{selected_class}】下未找到已匹配姓名的正式学生。', parent=win)
+                return
+
+            # 先获取班级整体测过的知识点全集，用于对比识别学生是否有漏测
+            class_rows, _, _ = analyze_class(
+                filtered_sessions,
+                selected_class,
+                dataset['catalog'],
+                latest_only=latest_only,
+                weights=dataset['weights'],
+            )
+            class_knowledge_map = {r['code']: r for r in class_rows}
+
+            for s_id, s_name, label, key in valid_students:
+                rows, used_tests, _ = analyze_student(
+                    filtered_sessions,
+                    key,
+                    dataset['catalog'],
+                    selected_class,
+                    latest_only=latest_only,
+                    weights=dataset['weights'],
+                )
+
+                student_tested_codes = {r['code'] for r in rows}
+                # 找出班级考过但该生无记录的漏测知识点
+                missing_codes = [code for code in class_knowledge_map if code not in student_tested_codes]
+                missing_rows = [class_knowledge_map[code] for code in missing_codes]
+                # 漏测按权重由高到低排列
+                missing_rows.sort(key=lambda x: -x.get('weight', 1))
+
+                s_info = {
+                    'student_name': s_name,
+                    'score_id': s_id,
+                    'class_name': selected_class,
+                    'scope_desc': scope_desc,
+                    'stat_mode': stat_mode_text,
+                    'rows': rows,
+                    'missing_rows': missing_rows,
+                    'generated_at': datetime.now().strftime('%Y-%m-%d'),
+                }
+                student_reports_data.append(s_info)
+
+                single_html_content = f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>{s_name} - 知识点复习指导单</title>
+    <style>
+        @page {{ size: A4 portrait; margin: 10mm 12mm 10mm 12mm; }}
+        body {{ font-family: "PingFang SC", "Microsoft YaHei", sans-serif; margin: 0; padding: 10px; }}
+        .student-page {{ width: 100%; }}
+        .student-header {{ text-align: center; border-bottom: 2px solid #1565c0; padding-bottom: 4px; margin-bottom: 8px; }}
+        .student-title {{ font-size: 19px; font-weight: bold; color: #0d47a1; }}
+        .student-meta {{ display: flex; justify-content: space-between; font-size: 11.5px; margin-top: 4px; }}
+        table {{ width: 100%; border-collapse: collapse; font-size: 11px; margin-bottom: 6px; }}
+        th, td {{ border: 1px solid #ccc; padding: 3.5px 5px; }}
+        th {{ background: #f1f5f9; }}
+        .feedback-box {{ margin-top: 8px; border: 1px solid #90caf9; background: #f8fbff; border-radius: 4px; padding: 6px 10px; display: flex; }}
+    </style>
+</head>
+<body>
+    {knowledge_report_export.export_student_worksheet_html_single(s_info)}
+</body>
+</html>"""
+                safe_sname = re.sub(r'[^A-Za-z0-9\u4e00-\u9fff_.-]+', '_', f"{s_id}_{s_name}" if s_id else s_name)
+                (single_dir / f"{safe_sname}_复习单.html").write_text(single_html_content, encoding='utf-8')
+
+            combined_html_path = export_dir / f"{safe_class}_全班学生复习单_一键批量打印_{timestamp}.html"
+            excel_path = export_dir / f"{safe_class}_全班学生薄弱知识点汇总_{timestamp}.xlsx"
+
+            status_var.set("正在写入打印排版文件与汇总表...")
+            win.update_idletasks()
+
+            knowledge_report_export.export_all_students_combined_html(
+                combined_html_path, selected_class, student_reports_data
+            )
+            knowledge_report_export.export_all_students_excel(
+                excel_path, selected_class, scope_desc, stat_mode_text, student_reports_data
+            )
+
+            status_var.set(f"已生成全班 {len(student_reports_data)} 名学生的复习指导单！")
+            msg = (
+                f"✅ 全班共 {len(student_reports_data)} 名学生的复习指导单已全部生成！\n\n"
+                f"📄 批量打印文件 (自动分页)：\n{combined_html_path.name}\n\n"
+                f"📊 全班薄弱点汇总表：\n{excel_path.name}\n\n"
+                f"📂 单人独立网页也已保存在子文件夹：\n{single_dir.name}\n\n"
+                f"是否立即打开【批量打印总单】并在浏览器中预览打印？"
+            )
+            if messagebox.askyesno('生成全班学生复习单完成', msg, parent=win):
+                try:
+                    os.startfile(str(combined_html_path))
+                except Exception:
+                    pass
+                try:
+                    os.startfile(str(export_dir))
+                except Exception:
+                    pass
+        except Exception as exc:
+            import traceback
+            traceback.print_exc()
+            status_var.set(f"生成失败：{exc}")
+            messagebox.showerror('导出失败', f'生成全班学生复习单失败：\n{exc}', parent=win)
+        finally:
+            try:
+                win.config(cursor="")
+            except Exception:
+                pass
+
     def refresh_analysis_context(*_args):
         update_student_choices()
         refresh()
 
     button_row = ttk.Frame(filters)
-    button_row.grid(row=0, column=8, rowspan=3, padx=(8, 10), pady=8, sticky='ns')
+    button_row.grid(row=0, column=8, rowspan=4, padx=(8, 10), pady=8, sticky='ns')
     ttk.Button(button_row, text='刷新分析', command=refresh).pack(fill=tk.X, pady=(0, 4))
+    ttk.Button(button_row, text='🖨️ 生成班级报告', command=export_class_report).pack(fill=tk.X, pady=(0, 4))
+    ttk.Button(button_row, text='🖨️ 生成全班学生复习单', command=export_students_worksheets).pack(fill=tk.X, pady=(0, 4))
     ttk.Button(button_row, text='手工录入错题', command=open_manual_entry).pack(fill=tk.X, pady=(0, 4))
     ttk.Button(button_row, text='关闭', command=win.destroy).pack(fill=tk.X)
 

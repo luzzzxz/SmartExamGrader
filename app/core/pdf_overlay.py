@@ -19,11 +19,18 @@ from tkinter import filedialog, messagebox, ttk
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageTk
 
-from reportlab.lib.pagesizes import A4
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.lib.utils import ImageReader
-import reportlab.pdfgen.canvas as pdf_canvas_module
+try:
+    from reportlab.lib.pagesizes import A4
+    from reportlab.pdfbase import pdfmetrics
+    from reportlab.pdfbase.ttfonts import TTFont
+    from reportlab.lib.utils import ImageReader
+    import reportlab.pdfgen.canvas as pdf_canvas_module
+except Exception:
+    A4 = (595.27, 841.89)
+    pdfmetrics = None
+    TTFont = None
+    ImageReader = None
+    pdf_canvas_module = None
 
 from marker_utils import compute_homography, apply_homography
 from core.persistence import replace_file_batch
@@ -919,18 +926,166 @@ class PdfOverlayExportMixin:
             calculation_groups = defaultdict(list)
             for row in calculation_rows:
                 calculation_groups[self.normalized_question_number_key(row['part'].get('question_no'))].append(row)
+            error_stats_by_q = self.summarize_calculation_error_stamps()
+            current_y = base_y
             for index, (qkey, rows) in enumerate(sorted(calculation_groups.items(), key=lambda item: int(item[0]) if item[0].isdigit() else 9999)):
                 average_score = sum(float(row.get('average_score') or 0) for row in rows)
                 max_score = sum(float(row.get('max_score') or 0) for row in rows)
                 accuracy = (average_score / max_score * 100.0) if max_score else 0.0
                 ops.append({
                     'type': 'text',
-                    'xy': (base_x, base_y + index * 44),
+                    'xy': (base_x, current_y),
                     'text': f"{qkey}题 平均{self.plain_score_text(average_score)}/{self.plain_score_text(max_score)}",
                     'font_size': 34,
                     'bold': True,
                     'prefer_chinese_font': True,
                     'color': self.teacher_accuracy_color(accuracy),
+                })
+                current_y += 42.0
+
+                stamps = error_stats_by_q.get(str(qkey)) or error_stats_by_q.get(qkey) or error_stats_by_q.get('all') or {}
+                if stamps:
+                    sorted_stamps = sorted(stamps.items(), key=lambda x: x[1], reverse=True)
+                    stamp_texts = [f"{st_text}({cnt}人)" for st_text, cnt in sorted_stamps[:5]]
+                    err_summary = f"常见错误: {' '.join(stamp_texts)}"
+                    ops.append({
+                        'type': 'text',
+                        'xy': (base_x, current_y),
+                        'text': err_summary,
+                        'font_size': 28,
+                        'bold': True,
+                        'prefer_chinese_font': True,
+                        'color': (200, 30, 30),
+                    })
+                    current_y += 44.0
+                else:
+                    current_y += 6.0
+        return ops
+
+    def summarize_calculation_error_stamps(self):
+        payload = self.load_subjective_score_payload() if hasattr(self, 'load_subjective_score_payload') else {}
+        if not isinstance(payload, dict):
+            return {}
+        annotations_map = payload.get('calculation_annotations', {})
+        if not isinstance(annotations_map, dict):
+            return {}
+
+        stats = defaultdict(lambda: defaultdict(int))
+        for entry_key, q_annos in annotations_map.items():
+            if isinstance(q_annos, dict):
+                for qno, annos in q_annos.items():
+                    if not isinstance(annos, list):
+                        continue
+                    seen_texts = set()
+                    for item in annos:
+                        if isinstance(item, dict) and item.get('type') == 'stamp':
+                            txt = str(item.get('text') or '').strip()
+                            if txt and txt not in seen_texts:
+                                seen_texts.add(txt)
+                                stats[str(qno)][txt] += 1
+            elif isinstance(q_annos, list):
+                seen_texts = set()
+                for item in q_annos:
+                    if isinstance(item, dict) and item.get('type') == 'stamp':
+                        txt = str(item.get('text') or '').strip()
+                        if txt and txt not in seen_texts:
+                            seen_texts.add(txt)
+                            stats['all'][txt] += 1
+        return stats
+
+    def collect_calculation_annotations_mark_ops(self, entry, matrix, side='back', image_size=None):
+        if str(side or 'front').lower() != 'back':
+            return []
+        payload = self.load_subjective_score_payload() if hasattr(self, 'load_subjective_score_payload') else {}
+        if not isinstance(payload, dict):
+            return []
+        annotations_map = payload.get('calculation_annotations', {})
+        if not isinstance(annotations_map, dict):
+            return []
+        entry_key = self.subjective_entry_key(entry) if hasattr(self, 'subjective_entry_key') else None
+        student_annos = annotations_map.get(entry_key) or {}
+        if not student_annos:
+            return []
+
+        region_rect = None
+        if self.is_direct_paper_choice_template():
+            region = self.direct_calculation_region_config()
+            if isinstance(region, dict) and region.get('rect'):
+                try:
+                    if matrix is not None:
+                        rx1, ry1, rx2, ry2 = self.project_template_rect(matrix, region['rect'])
+                        region_rect = (float(rx1), float(ry1), float(rx2), float(ry2))
+                    else:
+                        r = region['rect']
+                        region_rect = (float(r.get('x', 0)), float(r.get('y', 0)), float(r.get('x', 0) + r.get('w', 0)), float(r.get('y', 0) + r.get('h', 0)))
+                except Exception:
+                    pass
+
+        if not region_rect:
+            if image_size:
+                region_rect = (0.0, 0.0, float(image_size[0]), float(image_size[1]))
+            else:
+                region_rect = (0.0, 0.0, 2480.0, 3508.0)
+
+        rx1, ry1, rx2, ry2 = region_rect
+        rw = max(1.0, rx2 - rx1)
+        rh = max(1.0, ry2 - ry1)
+
+        def norm_to_page(u, v):
+            return rx1 + float(u) * rw, ry1 + float(v) * rh
+
+        ops = []
+        anno_list = []
+        if isinstance(student_annos, dict):
+            for items in student_annos.values():
+                if isinstance(items, list):
+                    anno_list.extend(items)
+                elif isinstance(items, dict):
+                    anno_list.append(items)
+        elif isinstance(student_annos, list):
+            anno_list.extend(student_annos)
+
+        for anno in anno_list:
+            if not isinstance(anno, dict):
+                continue
+            atype = anno.get('type')
+            if atype == 'line':
+                pts = anno.get('points') or []
+                for i in range(len(pts) - 1):
+                    x1, y1 = norm_to_page(pts[i][0], pts[i][1])
+                    x2, y2 = norm_to_page(pts[i+1][0], pts[i+1][1])
+                    ops.append({
+                        'type': 'line',
+                        'points': (x1, y1, x2, y2),
+                        'color': anno.get('color', (220, 0, 0)),
+                        'width': max(1.5, float(anno.get('width') or 3)),
+                    })
+            elif atype in ('check', 'cross'):
+                px, py = norm_to_page(anno.get('u', 0), anno.get('v', 0))
+                sym = 'V' if atype == 'check' else 'X'
+                color = (22, 163, 74) if atype == 'check' else (220, 38, 38)
+                ops.append({
+                    'type': 'objective_symbol',
+                    'center': (px, py),
+                    'symbol': sym,
+                    'size': float(anno.get('size') or 56),
+                    'width': max(2.5, float(anno.get('stroke_width') or 6)),
+                    'color': color,
+                })
+            elif atype == 'stamp':
+                px, py = norm_to_page(anno.get('u', 0), anno.get('v', 0))
+                text = str(anno.get('text') or '').strip()
+                if not text:
+                    continue
+                color = anno.get('color', (220, 38, 38))
+                ops.append({
+                    'type': 'text',
+                    'xy': (px, py),
+                    'text': f"[{text}]",
+                    'font_size': float(anno.get('font_size') or 36),
+                    'bold': True,
+                    'prefer_chinese_font': True,
+                    'color': color,
                 })
         return ops
 
@@ -1372,6 +1527,7 @@ class PdfOverlayExportMixin:
         image, _rotation_name = self.orient_entry_image_for_side(entry, input_path, side)
         if side == 'back' and self.is_mixed_objective_subjective_template():
             ops = self.collect_calculation_back_page_mark_ops(entry, image.size)
+            ops.extend(self.collect_calculation_annotations_mark_ops(entry, None, side='back', image_size=image.size))
             ops.extend(self.collect_wrong_knowledge_mark_ops(entry, None, side='back', image_size=image.size))
             return ops, image.size
 
@@ -1398,6 +1554,8 @@ class PdfOverlayExportMixin:
         ops.extend(self.collect_wrong_knowledge_mark_ops(entry, matrix, side=side, image_size=image.size))
         if side == 'back' and self.is_direct_paper_choice_template():
             ops.extend(self.collect_direct_calculation_region_mark_ops(entry, matrix))
+        if side == 'back':
+            ops.extend(self.collect_calculation_annotations_mark_ops(entry, matrix, side=side, image_size=image.size))
         if not entry.get('side_files') or side == 'front':
             if not self.is_direct_paper_choice_template():
                 ops.extend(self.collect_big_question_score_mark_ops(entry, matrix))
@@ -1750,6 +1908,7 @@ class PdfOverlayExportMixin:
         if side == 'back' and self.is_mixed_objective_subjective_template():
             marked = image.convert('RGB')
             ops = self.collect_calculation_back_page_mark_ops(entry, marked.size)
+            ops.extend(self.collect_calculation_annotations_mark_ops(entry, None, side='back', image_size=marked.size))
             ops.extend(self.collect_wrong_knowledge_mark_ops(entry, None, side='back', image_size=marked.size))
             self.draw_overlay_ops_to_image(marked, ops)
             return marked
@@ -1778,6 +1937,8 @@ class PdfOverlayExportMixin:
         ops.extend(self.collect_wrong_knowledge_mark_ops(entry, matrix, side=side, image_size=marked.size))
         if side == 'back' and self.is_direct_paper_choice_template():
             ops.extend(self.collect_direct_calculation_region_mark_ops(entry, matrix))
+        if side == 'back':
+            ops.extend(self.collect_calculation_annotations_mark_ops(entry, matrix, side=side, image_size=marked.size))
         if not entry.get('side_files') or side == 'front':
             if not self.is_direct_paper_choice_template():
                 ops.extend(self.collect_big_question_score_mark_ops(entry, matrix))
@@ -1853,7 +2014,8 @@ class PdfOverlayExportMixin:
                 staged = Path(folder) / Path(pdf_path).name
                 first.save(staged, 'PDF', save_all=True, append_images=rest, resolution=200.0)
                 replace_file_batch([(staged, pdf_path)])
-            self.register_linked_output('marked_card', pdf_path, [pdf_path], self.overlay_export_options())
+            if not getattr(self, '_refreshing_linked_outputs', False):
+                self.register_linked_output('marked_card', pdf_path, [pdf_path], self.overlay_export_options())
             self.status_var.set(f'整卡标注PDF已导出：{pdf_path}')
             if silent:
                 return [Path(pdf_path)]
@@ -1876,6 +2038,7 @@ class PdfOverlayExportMixin:
         if side == 'back' and self.is_mixed_objective_subjective_template():
             overlay = Image.new('RGB', image.size, 'white')
             ops = self.collect_calculation_back_page_mark_ops(entry, overlay.size)
+            ops.extend(self.collect_calculation_annotations_mark_ops(entry, None, side='back', image_size=overlay.size))
             ops.extend(self.collect_wrong_knowledge_mark_ops(entry, None, side='back', image_size=overlay.size))
             self.draw_overlay_ops_to_image(overlay, ops)
             return overlay
@@ -1904,6 +2067,8 @@ class PdfOverlayExportMixin:
         ops.extend(self.collect_wrong_knowledge_mark_ops(entry, matrix, side=side, image_size=overlay.size))
         if side == 'back' and self.is_direct_paper_choice_template():
             ops.extend(self.collect_direct_calculation_region_mark_ops(entry, matrix))
+        if side == 'back':
+            ops.extend(self.collect_calculation_annotations_mark_ops(entry, matrix, side=side, image_size=overlay.size))
         if not entry.get('side_files') or side == 'front':
             if not self.is_direct_paper_choice_template():
                 ops.extend(self.collect_big_question_score_mark_ops(entry, matrix))
@@ -2970,8 +3135,9 @@ class PdfOverlayExportMixin:
             if front_pages <= 0 and back_pages <= 0:
                 raise RuntimeError('没有成功生成任何标注页面。')
             replace_file_batch(staged_outputs)
-            self.register_linked_output('overlay', output_path, exported_paths,
-                                        self.overlay_export_options())
+            if not getattr(self, '_refreshing_linked_outputs', False):
+                self.register_linked_output('overlay', output_path, exported_paths,
+                                            self.overlay_export_options())
             self.status_var.set(f'透打标注PDF已导出：{output_path}')
             if silent:
                 return exported_paths
@@ -3108,7 +3274,8 @@ class PdfOverlayExportMixin:
                 page_count += 1
             pdf.save()
             replace_file_batch([(staged, pdf_path)])
-            self.register_linked_output('teacher_commentary', pdf_path, [pdf_path], self.overlay_export_options())
+            if not getattr(self, '_refreshing_linked_outputs', False):
+                self.register_linked_output('teacher_commentary', pdf_path, [pdf_path], self.overlay_export_options())
             self.status_var.set(f'老师讲评透打PDF已导出：{pdf_path}')
             if silent:
                 return [Path(pdf_path)]

@@ -897,7 +897,8 @@
       "front": "D:\\作业试卷批改系统\\答题批改系统_完整私有备份_20260908_105603\\答题批改系统_完整私有备份_20260908_105603\\app\\answer_keys\\_scheme_assets\\direct_paper_choice_v1__4-6章\\direct_front_template.jpg",
       "back": "D:\\作业试卷批改系统\\答题批改系统_完整私有备份_20260908_105603\\答题批改系统_完整私有备份_20260908_105603\\app\\answer_keys\\_scheme_assets\\direct_paper_choice_v1__4-6章\\direct_back_template.jpg"
     },
-    "saved_at": "2026-09-16T16:39:33"
+    "saved_at": "2026-09-18T08:55:08",
+    "subjective_line_config": {}
   },
   "template_structure": {},
   "subjective_ocr_settings": {
@@ -988,7 +989,7 @@
       "pad_top": 20,
       "pad_bottom": 20,
       "low_confidence_threshold": 0.6,
-      "single_char": true,
+      "single_char": false,
       "split_char_check": true,
       "expected_keywords": "",
       "expected_answer": "凸",
@@ -1045,8 +1046,8 @@
       "pad_top": 20,
       "pad_bottom": 20,
       "low_confidence_threshold": 0.6,
-      "single_char": true,
-      "split_char_check": false,
+      "single_char": false,
+      "split_char_check": true,
       "expected_keywords": "丁/了/子",
       "expected_answer": "丁",
       "candidate_words": "甲/乙/丙/丁",
@@ -1194,7 +1195,7 @@
     "template_name": "试卷直接批改模板-v1",
     "display_name": "试卷直接批改模板主观横线配置",
     "source": "direct_subjective_lines",
-    "updated_at": "2026-09-16T16:39:33",
+    "updated_at": "2026-09-18T08:55:08",
     "scoring": {
       "default_blank_score": 1,
       "include_in_total_score": true,
@@ -1439,7 +1440,7 @@
               "pad_top": 20,
               "pad_bottom": 20,
               "low_confidence_threshold": 0.6,
-              "single_char": true,
+              "single_char": false,
               "split_char_check": true,
               "expected_keywords": "",
               "expected_answer": "凸",
@@ -1580,8 +1581,8 @@
               "pad_top": 20,
               "pad_bottom": 20,
               "low_confidence_threshold": 0.6,
-              "single_char": true,
-              "split_char_check": false,
+              "single_char": false,
+              "split_char_check": true,
               "expected_keywords": "丁/了/子",
               "expected_answer": "丁",
               "candidate_words": "甲/乙/丙/丁",
@@ -1872,7 +1873,7 @@
       "mode": "back_region_manual",
       "questions": [],
       "max_score": 0,
-      "updated_at": "2026-09-16T16:39:33"
+      "updated_at": "2026-09-18T08:55:08"
     },
     "direct_calculation_region": {
       "enabled": false,
@@ -1881,7 +1882,7 @@
     "_answer_scheme_snapshot": {
       "template_key": "direct_paper_choice_v1",
       "template_name": "试卷直接批改模板-v1",
-      "saved_at": "2026-09-16T16:39:33"
+      "saved_at": "2026-09-18T08:55:08"
     }
   },
   "knowledge_identity": {
@@ -1953,8 +1954,8 @@
       }
     ],
     "source_name": "paper_20260831_131305_知识点.csv",
-    "imported_at": "2026-09-16T16:18:18"
+    "imported_at": "2026-09-18T08:53:35"
   },
-  "saved_at": "2026-09-16T16:39:33",
-  "ocr_settings_updated_at": "2026-09-16T16:39:33"
+  "saved_at": "2026-09-18T08:55:08",
+  "ocr_settings_updated_at": "2026-09-18T08:55:08"
 }

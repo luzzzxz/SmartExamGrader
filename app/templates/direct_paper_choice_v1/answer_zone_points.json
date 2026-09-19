@@ -1,34 +1,5 @@
 {
-  "template_image": {
-    "path": "D:\\作业试卷批改系统\\答题批改系统_完整私有备份_20260908_105603\\答题批改系统_完整私有备份_20260908_105603\\app\\templates\\direct_paper_choice_v1\\template_front.jpg",
-    "width": 2480,
-    "height": 3507
-  },
-  "markers": {
-    "top_left": {
-      "x": 113.91,
-      "y": 69.29
-    },
-    "top_right": {
-      "x": 2417.44,
-      "y": 58.1
-    },
-    "bottom_right": {
-      "x": 2404.55,
-      "y": 3332.06
-    },
-    "bottom_left": {
-      "x": 102.59,
-      "y": 3291.58
-    }
-  },
-  "marker_diag": 4009.6564,
   "mode": "direct_paper_choice",
-  "direct_mark_threshold": 3.0,
-  "direct_single_gap": 1.0,
-  "direct_single_adaptive_gap": 2.0,
-  "direct_inner_shrink": 0.38,
-  "updated_at": "2026-09-17T08:05:43",
   "zones": [
     {
       "zone_name": "paper_front",
@@ -43,81 +14,81 @@
             "A": {
               "label": "A",
               "template_pixel": {
-                "x": 137.02,
-                "y": 720.01
+                "x": 131.77,
+                "y": 782.42
               },
               "template_rect": {
-                "x": 122.0,
-                "y": 707.0,
+                "x": 117.0,
+                "y": 768.0,
                 "w": 32.0,
-                "h": 29.0
+                "h": 30.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.162388,
-                "top_right": 0.592205,
-                "bottom_right": 0.862661,
-                "bottom_left": 0.641402
+                "top_left": 0.178161,
+                "top_right": 0.597692,
+                "bottom_right": 0.852519,
+                "bottom_left": 0.626796
               }
             },
             "B": {
               "label": "B",
               "template_pixel": {
-                "x": 626.61,
-                "y": 720.53
+                "x": 133.14,
+                "y": 846.24
               },
               "template_rect": {
-                "x": 612.0,
-                "y": 706.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 117.0,
+                "y": 831.0,
+                "w": 33.0,
+                "h": 31.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.206709,
-                "top_right": 0.476205,
-                "bottom_right": 0.787922,
-                "bottom_left": 0.654397
+                "top_left": 0.194107,
+                "top_right": 0.602432,
+                "bottom_right": 0.840479,
+                "bottom_left": 0.610857
               }
             },
             "C": {
               "label": "C",
               "template_pixel": {
-                "x": 1121.86,
-                "y": 719.93
+                "x": 133.38,
+                "y": 909.7
               },
               "template_rect": {
-                "x": 1107.0,
-                "y": 705.0,
+                "x": 118.0,
+                "y": 895.0,
                 "w": 32.0,
                 "h": 30.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.299203,
-                "top_right": 0.362833,
-                "bottom_right": 0.725766,
-                "bottom_left": 0.689904
+                "top_left": 0.209955,
+                "top_right": 0.607786,
+                "bottom_right": 0.828831,
+                "bottom_left": 0.595004
               }
             },
             "D": {
               "label": "D",
               "template_pixel": {
-                "x": 1617.39,
-                "y": 719.44
+                "x": 133.61,
+                "y": 972.76
               },
               "template_rect": {
-                "x": 1602.0,
-                "y": 705.0,
+                "x": 118.0,
+                "y": 958.0,
                 "w": 32.0,
-                "h": 30.0
+                "h": 31.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.408521,
-                "top_right": 0.258876,
-                "bottom_right": 0.680514,
-                "bottom_left": 0.744465
+                "top_left": 0.225703,
+                "top_right": 0.613468,
+                "bottom_right": 0.817398,
+                "bottom_left": 0.579252
               }
             }
           }
@@ -130,81 +101,81 @@
             "A": {
               "label": "A",
               "template_pixel": {
-                "x": 138.31,
-                "y": 915.19
+                "x": 134.62,
+                "y": 1104.18
               },
               "template_rect": {
-                "x": 122.0,
-                "y": 901.0,
+                "x": 119.0,
+                "y": 1090.0,
                 "w": 32.0,
                 "h": 30.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.211051,
-                "top_right": 0.607274,
-                "bottom_right": 0.826298,
-                "bottom_left": 0.592734
+                "top_left": 0.258529,
+                "top_right": 0.626298,
+                "bottom_right": 0.793951,
+                "bottom_left": 0.546425
               }
             },
             "B": {
               "label": "B",
               "template_pixel": {
-                "x": 627.65,
-                "y": 915.17
+                "x": 624.15,
+                "y": 1102.46
               },
               "template_rect": {
-                "x": 612.0,
-                "y": 900.0,
+                "x": 609.0,
+                "y": 1087.0,
                 "w": 32.0,
                 "h": 31.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.246819,
-                "top_right": 0.49491,
-                "bottom_right": 0.748141,
-                "bottom_left": 0.606966
+                "top_left": 0.288605,
+                "top_right": 0.51764,
+                "bottom_right": 0.711913,
+                "bottom_left": 0.561981
               }
             },
             "C": {
               "label": "C",
               "template_pixel": {
-                "x": 1122.38,
-                "y": 914.49
+                "x": 1119.05,
+                "y": 1100.09
               },
               "template_rect": {
-                "x": 1108.0,
-                "y": 900.0,
-                "w": 31.0,
-                "h": 30.0
-              },
-              "match_score": 1.0,
-              "marker_signature": {
-                "top_left": 0.32816,
-                "top_right": 0.387217,
-                "bottom_right": 0.682485,
-                "bottom_left": 0.645094
-              }
-            },
-            "D": {
-              "label": "D",
-              "template_pixel": {
-                "x": 1617.89,
-                "y": 914.97
-              },
-              "template_rect": {
-                "x": 1602.0,
-                "y": 900.0,
+                "x": 1104.0,
+                "y": 1085.0,
                 "w": 32.0,
                 "h": 30.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.430319,
-                "top_right": 0.292286,
-                "bottom_right": 0.63394,
-                "bottom_left": 0.702949
+                "top_left": 0.36091,
+                "top_right": 0.415472,
+                "bottom_right": 0.642269,
+                "bottom_left": 0.603187
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 1613.69,
+                "y": 1098.67
+              },
+              "template_rect": {
+                "x": 1598.0,
+                "y": 1084.0,
+                "w": 32.0,
+                "h": 30.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.455924,
+                "top_right": 0.328644,
+                "bottom_right": 0.590369,
+                "bottom_left": 0.664915
               }
             }
           }
@@ -217,81 +188,81 @@
             "A": {
               "label": "A",
               "template_pixel": {
-                "x": 138.84,
-                "y": 1106.51
+                "x": 135.4,
+                "y": 1231.55
               },
               "template_rect": {
-                "x": 123.0,
-                "y": 1092.0,
+                "x": 120.0,
+                "y": 1217.0,
                 "w": 32.0,
                 "h": 30.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.258753,
-                "top_right": 0.625546,
-                "bottom_right": 0.79207,
-                "bottom_left": 0.545027
+                "top_left": 0.290345,
+                "top_right": 0.640139,
+                "bottom_right": 0.771917,
+                "bottom_left": 0.514611
               }
             },
             "B": {
               "label": "B",
               "template_pixel": {
-                "x": 628.72,
-                "y": 1105.8
+                "x": 624.96,
+                "y": 1229.31
               },
               "template_rect": {
-                "x": 613.0,
-                "y": 1092.0,
-                "w": 32.0,
-                "h": 29.0
-              },
-              "match_score": 1.0,
-              "marker_signature": {
-                "top_left": 0.28863,
-                "top_right": 0.516994,
-                "bottom_right": 0.710228,
-                "bottom_left": 0.560699
-              }
-            },
-            "C": {
-              "label": "C",
-              "template_pixel": {
-                "x": 1123.42,
-                "y": 1104.68
-              },
-              "template_rect": {
-                "x": 1108.0,
-                "y": 1091.0,
+                "x": 609.0,
+                "y": 1215.0,
                 "w": 32.0,
                 "h": 30.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.360647,
-                "top_right": 0.415067,
-                "bottom_right": 0.640837,
-                "bottom_left": 0.601903
+                "top_left": 0.317336,
+                "top_right": 0.534246,
+                "bottom_right": 0.687362,
+                "bottom_left": 0.531246
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 1119.86,
+                "y": 1228.08
+              },
+              "template_rect": {
+                "x": 1104.0,
+                "y": 1213.0,
+                "w": 32.0,
+                "h": 30.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.384503,
+                "top_right": 0.436192,
+                "bottom_right": 0.614712,
+                "bottom_left": 0.574415
               }
             },
             "D": {
               "label": "D",
               "template_pixel": {
-                "x": 1618.38,
-                "y": 1104.57
+                "x": 1614.43,
+                "y": 1226.02
               },
               "template_rect": {
-                "x": 1604.0,
-                "y": 1091.0,
-                "w": 31.0,
-                "h": 29.0
+                "x": 1599.0,
+                "y": 1211.0,
+                "w": 32.0,
+                "h": 30.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.455465,
-                "top_right": 0.328373,
-                "bottom_right": 0.589116,
-                "bottom_left": 0.663634
+                "top_left": 0.474737,
+                "top_right": 0.354392,
+                "bottom_right": 0.560445,
+                "bottom_left": 0.639069
               }
             }
           }
@@ -304,81 +275,81 @@
             "A": {
               "label": "A",
               "template_pixel": {
-                "x": 139.72,
-                "y": 1236.87
+                "x": 135.8,
+                "y": 1358.29
               },
               "template_rect": {
-                "x": 124.0,
-                "y": 1222.0,
-                "w": 31.0,
-                "h": 30.0
-              },
-              "match_score": 1.0,
-              "marker_signature": {
-                "top_left": 0.291261,
-                "top_right": 0.639622,
-                "bottom_right": 0.769476,
-                "bottom_left": 0.512524
-              }
-            },
-            "B": {
-              "label": "B",
-              "template_pixel": {
-                "x": 139.0,
-                "y": 1299.79
-              },
-              "template_rect": {
-                "x": 124.0,
-                "y": 1286.0,
-                "w": 31.0,
-                "h": 30.0
-              },
-              "match_score": 1.0,
-              "marker_signature": {
-                "top_left": 0.306945,
-                "top_right": 0.647142,
-                "bottom_right": 0.75904,
-                "bottom_left": 0.496831
-              }
-            },
-            "C": {
-              "label": "C",
-              "template_pixel": {
-                "x": 139.33,
-                "y": 1363.43
-              },
-              "template_rect": {
-                "x": 124.0,
-                "y": 1349.0,
+                "x": 121.0,
+                "y": 1343.0,
                 "w": 32.0,
                 "h": 31.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.322816,
-                "top_right": 0.654814,
-                "bottom_right": 0.748473,
-                "bottom_left": 0.480964
+                "top_left": 0.322001,
+                "top_right": 0.655239,
+                "bottom_right": 0.750761,
+                "bottom_left": 0.482952
               }
             },
-            "D": {
-              "label": "D",
+            "B": {
+              "label": "B",
               "template_pixel": {
-                "x": 139.28,
-                "y": 1427.53
+                "x": 136.14,
+                "y": 1421.51
               },
               "template_rect": {
-                "x": 124.0,
-                "y": 1413.0,
+                "x": 121.0,
+                "y": 1407.0,
                 "w": 32.0,
                 "h": 30.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.338799,
-                "top_right": 0.662918,
-                "bottom_right": 0.738095,
-                "bottom_left": 0.46498
+                "top_left": 0.337794,
+                "top_right": 0.663178,
+                "bottom_right": 0.740461,
+                "bottom_left": 0.467162
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 136.35,
+                "y": 1484.62
+              },
+              "template_rect": {
+                "x": 121.0,
+                "y": 1470.0,
+                "w": 32.0,
+                "h": 30.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.353558,
+                "top_right": 0.671407,
+                "bottom_right": 0.7304,
+                "bottom_left": 0.451398
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 137.15,
+                "y": 1547.79
+              },
+              "template_rect": {
+                "x": 121.0,
+                "y": 1533.0,
+                "w": 32.0,
+                "h": 31.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.36934,
+                "top_right": 0.679788,
+                "bottom_right": 0.720418,
+                "bottom_left": 0.435622
               }
             }
           }
@@ -391,81 +362,81 @@
             "A": {
               "label": "A",
               "template_pixel": {
-                "x": 140.18,
-                "y": 1622.2
+                "x": 138.05,
+                "y": 1675.67
               },
               "template_rect": {
-                "x": 125.0,
-                "y": 1608.0,
+                "x": 122.0,
+                "y": 1661.0,
                 "w": 32.0,
                 "h": 30.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.387345,
-                "top_right": 0.689003,
-                "bottom_right": 0.707648,
-                "bottom_left": 0.416445
+                "top_left": 0.401287,
+                "top_right": 0.697684,
+                "bottom_right": 0.701009,
+                "bottom_left": 0.403685
               }
             },
             "B": {
               "label": "B",
               "template_pixel": {
-                "x": 629.9,
-                "y": 1621.95
+                "x": 1122.84,
+                "y": 1671.39
               },
               "template_rect": {
-                "x": 615.0,
-                "y": 1607.0,
+                "x": 1107.0,
+                "y": 1657.0,
                 "w": 32.0,
                 "h": 30.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.408051,
-                "top_right": 0.592336,
-                "bottom_right": 0.614646,
-                "bottom_left": 0.436676
+                "top_left": 0.473906,
+                "top_right": 0.51688,
+                "bottom_right": 0.52314,
+                "bottom_left": 0.477942
               }
             },
             "C": {
               "label": "C",
               "template_pixel": {
-                "x": 1124.42,
-                "y": 1621.05
+                "x": 138.2,
+                "y": 1738.79
               },
               "template_rect": {
-                "x": 1110.0,
-                "y": 1607.0,
-                "w": 32.0,
-                "h": 30.0
-              },
-              "match_score": 1.0,
-              "marker_signature": {
-                "top_left": 0.461828,
-                "top_right": 0.505898,
-                "bottom_right": 0.532935,
-                "bottom_left": 0.488388
-              }
-            },
-            "D": {
-              "label": "D",
-              "template_pixel": {
-                "x": 1619.78,
-                "y": 1621.92
-              },
-              "template_rect": {
-                "x": 1605.0,
-                "y": 1607.0,
+                "x": 123.0,
+                "y": 1724.0,
                 "w": 31.0,
                 "h": 30.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.539431,
-                "top_right": 0.437819,
-                "bottom_right": 0.469269,
-                "bottom_left": 0.562647
+                "top_left": 0.417054,
+                "top_right": 0.706943,
+                "bottom_right": 0.691833,
+                "bottom_left": 0.38792
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 1122.98,
+                "y": 1734.59
+              },
+              "template_rect": {
+                "x": 1107.0,
+                "y": 1720.0,
+                "w": 32.0,
+                "h": 31.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.487329,
+                "top_right": 0.529313,
+                "bottom_right": 0.510749,
+                "bottom_left": 0.464669
               }
             }
           }
@@ -478,92 +449,347 @@
             "A": {
               "label": "A",
               "template_pixel": {
-                "x": 140.14,
-                "y": 1812.26
+                "x": 139.49,
+                "y": 1929.3
               },
               "template_rect": {
-                "x": 125.0,
-                "y": 1798.0,
+                "x": 124.0,
+                "y": 1915.0,
                 "w": 32.0,
                 "h": 30.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.43474,
-                "top_right": 0.716913,
-                "bottom_right": 0.680145,
-                "bottom_left": 0.369058
+                "top_left": 0.464646,
+                "top_right": 0.736068,
+                "bottom_right": 0.665459,
+                "bottom_left": 0.340345
               }
             },
             "B": {
               "label": "B",
               "template_pixel": {
-                "x": 145.71,
-                "y": 1875.78
+                "x": 1124.05,
+                "y": 1924.72
               },
               "template_rect": {
-                "x": 131.0,
-                "y": 1862.0,
-                "w": 31.0,
+                "x": 1109.0,
+                "y": 1911.0,
+                "w": 32.0,
                 "h": 30.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.450602,
-                "top_right": 0.725603,
-                "bottom_right": 0.670278,
-                "bottom_left": 0.353261
+                "top_left": 0.528578,
+                "top_right": 0.567631,
+                "bottom_right": 0.474582,
+                "bottom_left": 0.425871
               }
             },
             "C": {
               "label": "C",
               "template_pixel": {
-                "x": 140.98,
-                "y": 1938.93
+                "x": 139.87,
+                "y": 1992.8
               },
               "template_rect": {
-                "x": 126.0,
-                "y": 1925.0,
+                "x": 124.0,
+                "y": 1978.0,
                 "w": 32.0,
-                "h": 29.0
+                "h": 30.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.466331,
-                "top_right": 0.736454,
-                "bottom_right": 0.662881,
-                "bottom_left": 0.337484
+                "top_left": 0.48051,
+                "top_right": 0.746207,
+                "bottom_right": 0.657209,
+                "bottom_left": 0.324489
               }
             },
             "D": {
               "label": "D",
               "template_pixel": {
-                "x": 141.0,
-                "y": 2002.48
+                "x": 1124.73,
+                "y": 1988.54
               },
               "template_rect": {
-                "x": 126.0,
-                "y": 1988.0,
+                "x": 1109.0,
+                "y": 1974.0,
+                "w": 32.0,
+                "h": 30.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.542691,
+                "top_right": 0.580753,
+                "bottom_right": 0.462845,
+                "bottom_left": 0.413304
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 7,
+          "question_label": "第7题",
+          "question_type": "single",
+          "options": {
+            "A": {
+              "label": "A",
+              "template_pixel": {
+                "x": 141.01,
+                "y": 2183.44
+              },
+              "template_rect": {
+                "x": 125.0,
+                "y": 2169.0,
+                "w": 33.0,
+                "h": 30.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.528135,
+                "top_right": 0.777799,
+                "bottom_right": 0.634186,
+                "bottom_left": 0.276891
+              }
+            },
+            "B": {
+              "label": "B",
+              "template_pixel": {
+                "x": 631.15,
+                "y": 2180.31
+              },
+              "template_rect": {
+                "x": 615.0,
+                "y": 2166.0,
+                "w": 33.0,
+                "h": 31.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.543332,
+                "top_right": 0.693053,
+                "bottom_right": 0.528088,
+                "bottom_left": 0.30709
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 1125.73,
+                "y": 2178.39
+              },
+              "template_rect": {
+                "x": 1110.0,
+                "y": 2164.0,
+                "w": 32.0,
+                "h": 31.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.585119,
+                "top_right": 0.620702,
+                "bottom_right": 0.429729,
+                "bottom_left": 0.377262
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 1620.32,
+                "y": 2176.12
+              },
+              "template_rect": {
+                "x": 1605.0,
+                "y": 2162.0,
                 "w": 31.0,
                 "h": 30.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.482178,
-                "top_right": 0.746646,
-                "bottom_right": 0.654708,
-                "bottom_left": 0.321642
+                "top_left": 0.648046,
+                "top_right": 0.56627,
+                "bottom_right": 0.34791,
+                "bottom_left": 0.470037
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 8,
+          "question_label": "第8题",
+          "question_type": "single",
+          "options": {
+            "A": {
+              "label": "A",
+              "template_pixel": {
+                "x": 141.82,
+                "y": 2314.68
+              },
+              "template_rect": {
+                "x": 126.0,
+                "y": 2300.0,
+                "w": 32.0,
+                "h": 30.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.560922,
+                "top_right": 0.800465,
+                "bottom_right": 0.619962,
+                "bottom_left": 0.24413
+              }
+            },
+            "B": {
+              "label": "B",
+              "template_pixel": {
+                "x": 142.17,
+                "y": 2377.57
+              },
+              "template_rect": {
+                "x": 127.0,
+                "y": 2362.0,
+                "w": 32.0,
+                "h": 31.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.576633,
+                "top_right": 0.811579,
+                "bottom_right": 0.613659,
+                "bottom_left": 0.228434
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 142.63,
+                "y": 2441.34
+              },
+              "template_rect": {
+                "x": 127.0,
+                "y": 2426.0,
+                "w": 32.0,
+                "h": 31.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.592565,
+                "top_right": 0.822983,
+                "bottom_right": 0.607591,
+                "bottom_left": 0.212522
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 143.29,
+                "y": 2504.61
+              },
+              "template_rect": {
+                "x": 128.0,
+                "y": 2490.0,
+                "w": 32.0,
+                "h": 30.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.608372,
+                "top_right": 0.83441,
+                "bottom_right": 0.60188,
+                "bottom_left": 0.19674
+              }
+            }
+          }
+        },
+        {
+          "question_no_in_zone": 9,
+          "question_label": "第9题",
+          "question_type": "single",
+          "options": {
+            "A": {
+              "label": "A",
+              "template_pixel": {
+                "x": 145.21,
+                "y": 2761.75
+              },
+              "template_rect": {
+                "x": 129.0,
+                "y": 2747.0,
+                "w": 32.0,
+                "h": 30.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.672614,
+                "top_right": 0.882365,
+                "bottom_right": 0.582703,
+                "bottom_left": 0.132647
+              }
+            },
+            "B": {
+              "label": "B",
+              "template_pixel": {
+                "x": 1201.72,
+                "y": 2756.2
+              },
+              "template_rect": {
+                "x": 1186.0,
+                "y": 2742.0,
+                "w": 32.0,
+                "h": 30.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.724792,
+                "top_right": 0.740071,
+                "bottom_right": 0.333267,
+                "bottom_left": 0.30487
+              }
+            },
+            "C": {
+              "label": "C",
+              "template_pixel": {
+                "x": 145.25,
+                "y": 2824.68
+              },
+              "template_rect": {
+                "x": 130.0,
+                "y": 2810.0,
+                "w": 32.0,
+                "h": 30.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.688334,
+                "top_right": 0.89448,
+                "bottom_right": 0.579105,
+                "bottom_left": 0.116978
+              }
+            },
+            "D": {
+              "label": "D",
+              "template_pixel": {
+                "x": 1200.08,
+                "y": 2818.83
+              },
+              "template_rect": {
+                "x": 1184.0,
+                "y": 2805.0,
+                "w": 32.0,
+                "h": 30.0
+              },
+              "match_score": 1.0,
+              "marker_signature": {
+                "top_left": 0.739153,
+                "top_right": 0.754548,
+                "bottom_right": 0.327292,
+                "bottom_left": 0.297966
               }
             }
           }
         }
       ]
-    },
-    {
-      "zone_name": "paper_back",
-      "zone_label": "试卷背面选择题",
-      "side": "back",
-      "questions": []
     }
   ],
   "sides": {
@@ -575,23 +801,23 @@
       },
       "markers": {
         "top_left": {
-          "x": 113.91,
-          "y": 69.29
+          "x": 106.47,
+          "y": 69.72
         },
         "top_right": {
-          "x": 2417.44,
-          "y": 58.1
+          "x": 2409.74,
+          "y": 51.42
         },
         "bottom_right": {
-          "x": 2404.55,
-          "y": 3332.06
+          "x": 2408.83,
+          "y": 3323.96
         },
         "bottom_left": {
-          "x": 102.59,
-          "y": 3291.58
+          "x": 104.92,
+          "y": 3291.16
         }
       },
-      "marker_diag": 4009.6564
+      "marker_diag": 4002.7132
     },
     "back": {
       "template_image": {
@@ -601,28 +827,54 @@
       },
       "markers": {
         "top_left": {
-          "x": 86.96,
-          "y": 65.49
+          "x": 97.05,
+          "y": 70.47
         },
         "top_right": {
-          "x": 2378.01,
-          "y": 67.49
+          "x": 2399.57,
+          "y": 51.15
         },
         "bottom_right": {
-          "x": 2350.88,
-          "y": 3339.57
+          "x": 2402.42,
+          "y": 3325.97
         },
         "bottom_left": {
-          "x": 55.84,
-          "y": 3288.52
+          "x": 99.19,
+          "y": 3296.18
         }
       },
-      "marker_diag": 4013.9847
+      "marker_diag": 4004.8941
     }
   },
-  "double_sided": true,
-  "direct_option_score_shift_x": 0.0,
+  "direct_mark_threshold": 3.0,
+  "direct_inner_shrink": 0.34,
   "direct_use_template_diff": true,
   "direct_refine_box": false,
-  "direct_multi_adaptive_gap": 0.0
+  "direct_multi_adaptive_gap": 0.0,
+  "updated_at": "2026-09-18T21:10:08",
+  "template_image": {
+    "path": "D:\\作业试卷批改系统\\答题批改系统_完整私有备份_20260908_105603\\答题批改系统_完整私有备份_20260908_105603\\app\\templates\\direct_paper_choice_v1\\template_front.jpg",
+    "width": 2480,
+    "height": 3507
+  },
+  "markers": {
+    "top_left": {
+      "x": 106.47,
+      "y": 69.72
+    },
+    "top_right": {
+      "x": 2409.74,
+      "y": 51.42
+    },
+    "bottom_right": {
+      "x": 2408.83,
+      "y": 3323.96
+    },
+    "bottom_left": {
+      "x": 104.92,
+      "y": 3291.16
+    }
+  },
+  "marker_diag": 4002.7132,
+  "double_sided": false
 }

@@ -2,7 +2,7 @@
   "version": 1,
   "template_key": "direct_paper_choice_v1",
   "template_name": "试卷直接批改模板-v1",
-  "updated_at": "2026-09-16T21:32:11",
+  "updated_at": "2026-09-18T16:24:11",
   "sides": {
     "front": {
       "side": "front",
@@ -15,137 +15,52 @@
         {
           "index": 1,
           "template_rect": {
-            "x": 1838.0,
-            "y": 2164.0,
-            "w": 212.0,
+            "x": 2298.0,
+            "y": 2977.0,
+            "w": 171.0,
             "h": 3.0
           },
           "template_pixel": {
-            "x": 1943.5,
-            "y": 2165.0
+            "x": 2378.15,
+            "y": 2977.92
           },
           "status": "accepted",
           "kind": "fill_blank",
-          "answer_label": "7",
+          "answer_label": "10",
           "drawing_rect": null
         },
         {
           "index": 2,
           "template_rect": {
-            "x": 1367.0,
-            "y": 2258.0,
-            "w": 211.0,
-            "h": 3.0
+            "x": 489.0,
+            "y": 3077.0,
+            "w": 539.0,
+            "h": 5.0
           },
           "template_pixel": {
-            "x": 1466.38,
-            "y": 2259.08
+            "x": 761.19,
+            "y": 3079.03
           },
           "status": "accepted",
           "kind": "fill_blank",
-          "answer_label": "7",
+          "answer_label": "10",
           "drawing_rect": null
         },
         {
           "index": 3,
           "template_rect": {
-            "x": 623.0,
-            "y": 2418.0,
-            "w": 211.0,
+            "x": 2205.0,
+            "y": 3071.0,
+            "w": 206.0,
             "h": 3.0
           },
           "template_pixel": {
-            "x": 729.46,
-            "y": 2419.01
+            "x": 2310.76,
+            "y": 3072.03
           },
           "status": "accepted",
           "kind": "fill_blank",
-          "answer_label": "8",
-          "drawing_rect": null
-        },
-        {
-          "index": 4,
-          "template_rect": {
-            "x": 321.0,
-            "y": 2514.0,
-            "w": 213.0,
-            "h": 3.0
-          },
-          "template_pixel": {
-            "x": 426.84,
-            "y": 2515.01
-          },
-          "status": "accepted",
-          "kind": "fill_blank",
-          "answer_label": "8",
-          "drawing_rect": null
-        },
-        {
-          "index": 5,
-          "template_rect": {
-            "x": 741.0,
-            "y": 2609.0,
-            "w": 212.0,
-            "h": 3.0
-          },
-          "template_pixel": {
-            "x": 846.34,
-            "y": 2609.99
-          },
-          "status": "accepted",
-          "kind": "fill_blank",
-          "answer_label": "8",
-          "drawing_rect": null
-        },
-        {
-          "index": 6,
-          "template_rect": {
-            "x": 1122.0,
-            "y": 2765.0,
-            "w": 327.0,
-            "h": 3.0
-          },
-          "template_pixel": {
-            "x": 1278.91,
-            "y": 2765.95
-          },
-          "status": "accepted",
-          "kind": "fill_blank",
-          "answer_label": "9",
-          "drawing_rect": null
-        },
-        {
-          "index": 7,
-          "template_rect": {
-            "x": 2075.0,
-            "y": 2764.0,
-            "w": 207.0,
-            "h": 2.0
-          },
-          "template_pixel": {
-            "x": 2178.5,
-            "y": 2764.5
-          },
-          "status": "accepted",
-          "kind": "fill_blank",
-          "answer_label": "9",
-          "drawing_rect": null
-        },
-        {
-          "index": 8,
-          "template_rect": {
-            "x": 626.0,
-            "y": 2871.0,
-            "w": 210.0,
-            "h": 3.0
-          },
-          "template_pixel": {
-            "x": 728.46,
-            "y": 2871.98
-          },
-          "status": "accepted",
-          "kind": "fill_blank",
-          "answer_label": "9",
+          "answer_label": "10",
           "drawing_rect": null
         }
       ]
@@ -157,17 +72,154 @@
         "width": 2480,
         "height": 3507
       },
-      "lines": [],
+      "lines": [
+        {
+          "index": 1,
+          "template_rect": {
+            "x": 718.0,
+            "y": 276.0,
+            "w": 212.0,
+            "h": 4.0
+          },
+          "template_pixel": {
+            "x": 821.89,
+            "y": 277.46
+          },
+          "status": "accepted",
+          "kind": "fill_blank",
+          "answer_label": "11",
+          "drawing_rect": null
+        },
+        {
+          "index": 2,
+          "template_rect": {
+            "x": 531.0,
+            "y": 372.0,
+            "w": 330.0,
+            "h": 4.0
+          },
+          "template_pixel": {
+            "x": 696.73,
+            "y": 373.53
+          },
+          "status": "accepted",
+          "kind": "fill_blank",
+          "answer_label": "11",
+          "drawing_rect": null
+        },
+        {
+          "index": 3,
+          "template_rect": {
+            "x": 142.0,
+            "y": 565.0,
+            "w": 209.0,
+            "h": 3.0
+          },
+          "template_pixel": {
+            "x": 256.08,
+            "y": 566.25
+          },
+          "status": "accepted",
+          "kind": "fill_blank",
+          "answer_label": "12",
+          "drawing_rect": null
+        },
+        {
+          "index": 4,
+          "template_rect": {
+            "x": 605.0,
+            "y": 658.0,
+            "w": 212.0,
+            "h": 4.0
+          },
+          "template_pixel": {
+            "x": 704.43,
+            "y": 659.21
+          },
+          "status": "accepted",
+          "kind": "fill_blank",
+          "answer_label": "12",
+          "drawing_rect": null
+        },
+        {
+          "index": 5,
+          "template_rect": {
+            "x": 840.0,
+            "y": 1102.0,
+            "w": 213.0,
+            "h": 4.0
+          },
+          "template_pixel": {
+            "x": 953.74,
+            "y": 1103.79
+          },
+          "status": "accepted",
+          "kind": "fill_blank",
+          "answer_label": "13",
+          "drawing_rect": null
+        },
+        {
+          "index": 6,
+          "template_rect": {
+            "x": 1112.0,
+            "y": 1293.0,
+            "w": 213.0,
+            "h": 3.0
+          },
+          "template_pixel": {
+            "x": 1218.16,
+            "y": 1294.0
+          },
+          "status": "accepted",
+          "kind": "fill_blank",
+          "answer_label": "13",
+          "drawing_rect": null
+        },
+        {
+          "index": 7,
+          "template_rect": {
+            "x": 738.0,
+            "y": 1484.0,
+            "w": 329.0,
+            "h": 4.0
+          },
+          "template_pixel": {
+            "x": 918.14,
+            "y": 1485.79
+          },
+          "status": "accepted",
+          "kind": "fill_blank",
+          "answer_label": "13",
+          "drawing_rect": null
+        },
+        {
+          "index": 8,
+          "template_rect": {
+            "x": 627.0,
+            "y": 1850.0,
+            "w": 447.0,
+            "h": 5.0
+          },
+          "template_pixel": {
+            "x": 853.02,
+            "y": 1851.85
+          },
+          "status": "accepted",
+          "kind": "fill_blank",
+          "answer_label": "13",
+          "drawing_rect": null
+        }
+      ],
       "calculation_region": {
         "enabled": true,
         "side": "back",
-        "source": "full_page_content_area",
+        "source": "last_retained_line_to_page_bottom",
         "top_offset": 0.0,
         "rect": {
           "x": 62.0,
-          "y": 157.81,
+          "y": 1876.04,
           "w": 2356.0,
-          "h": 3191.37
+          "h": 1473.14
         },
         "template_width": 2480.0,
         "template_height": 3507.0

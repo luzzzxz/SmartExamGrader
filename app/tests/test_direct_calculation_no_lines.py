@@ -1,4 +1,4 @@
-﻿"""Unit tests for calculation-only back pages, Office Math extraction, and template ranking."""
+"""Unit tests for calculation-only back pages, Office Math extraction, and template ranking."""
 import sys
 import unittest
 from pathlib import Path
@@ -81,31 +81,64 @@ class DirectCalculationNoLinesTests(unittest.TestCase):
         extracted = self.gui.extract_paragraph_full_text(DummyParagraph())
         self.assertEqual(extracted, '9．4.2×10^4J；做功；A')
 
-    def test_docx_scoring_penalizes_template_without_answers(self):
-        """Templates named *不处理答案* should receive heavy penalties in scoring."""
+    def test_docx_scoring_prioritizes_template(self):
+        """Word files with 套用模板 or 套模板 should have absolute tier-1 priority over all other files."""
         class DummyDocxPath:
-            def __init__(self, stem):
+            def __init__(self, stem, mtime=1000):
                 self.stem = stem
+                self._mtime = mtime
             def stat(self):
                 class Stat:
-                    st_mtime = 1000
+                    st_mtime = self._mtime
                 return Stat()
-
-        p_no_ans = DummyDocxPath('14.2-14.3套用模板不处理答案')
-        p_real = DummyDocxPath('paper_20260916_092050')
 
         def docx_score(p):
             stem = p.stem
             score = 0
-            if '不处理答案' in stem: score -= 200
-            if '套用模板' in stem: score += 100
-            elif '模板' in stem: score += 80
-            elif '试卷' in stem: score += 60
-            elif '答案' in stem: score += 50
-            elif '题' in stem: score += 30
+            if any(kw in stem for kw in ('compact_print', '透打', '打印辅助', '讲评')):
+                score -= 500
+            if '套用模板' in stem or '套模板' in stem:
+                score += 1000
+                if any(kw in stem for kw in ('删除', '修改', '编辑', '最终', '改')):
+                    score += 50
+            elif '模板' in stem:
+                score += 100
+            elif '答案' in stem:
+                score += 60
+            elif '试卷' in stem:
+                score += 50
+            elif '题' in stem:
+                score += 30
             return (score, p.stat().st_mtime)
 
-        self.assertLess(docx_score(p_no_ans)[0], docx_score(p_real)[0])
+        p_modified = DummyDocxPath('paper_20260831_131305套用模板不处理答案删除')
+        p_template = DummyDocxPath('paper_20260831_131305套用模板不处理答案')
+        p_other_template = DummyDocxPath('期末复习模板')
+        p_answer = DummyDocxPath('参考答案')
+        p_raw = DummyDocxPath('paper_20260831_131305')
+        p_compact = DummyDocxPath('paper_20260831_131305_compact_print')
+
+        # 套用模板 > 纯模板 > 答案 > 原卷 > 紧凑打印
+        self.assertGreater(docx_score(p_modified)[0], docx_score(p_template)[0])
+        self.assertGreater(docx_score(p_template)[0], docx_score(p_other_template)[0])
+        self.assertGreater(docx_score(p_other_template)[0], docx_score(p_answer)[0])
+        self.assertGreater(docx_score(p_answer)[0], docx_score(p_raw)[0])
+        self.assertGreater(docx_score(p_raw)[0], docx_score(p_compact)[0])
+
+    def test_parse_word_calculation_scores_no_dot_subquestions(self):
+        """Verify question numbers followed directly by parenthesis (e.g. 10（1）（2）（3）（4）) are parsed."""
+        lines = ['10（1）（2）（3）（4）']
+        result = self.gui.parse_word_calculation_scores(lines)
+        self.assertEqual(result, '10: 2, 2, 2, 2')
+
+    def test_detect_direct_colored_subjective_lines_near_edge(self):
+        """Lines that end close to the margin (e.g. 10px from right border) should be detected."""
+        import numpy as np
+        mask = np.zeros((1000, 2480), dtype=np.uint8)
+        mask[500:504, 2300:2470] = 255
+        lines = self.gui.detect_direct_colored_subjective_lines(mask, side='front')
+        self.assertEqual(len(lines), 1)
+        self.assertAlmostEqual(lines[0]['x'] + lines[0]['w'], 2470, delta=4)
 
 
 if __name__ == '__main__':

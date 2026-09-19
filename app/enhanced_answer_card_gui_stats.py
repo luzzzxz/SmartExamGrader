@@ -645,6 +645,12 @@ class EnhancedAnswerCardStatsGUI(
             command=self.open_subjective_grading,
         )
         self.subjective_grade_button.pack(side=tk.LEFT, padx=(0, 6))
+        self.calculation_score_button = ttk.Button(
+            roster_frame,
+            text='📐 计算题批改与批注',
+            command=self.open_calculation_score_entry,
+        )
+        self.calculation_score_button.pack(side=tk.LEFT, padx=(0, 8))
         self.auto_ocr_upload_button = ttk.Button(
             roster_frame,
             text='OCR并上传',
@@ -683,12 +689,6 @@ class EnhancedAnswerCardStatsGUI(
             command=self.open_calculation_question_settings,
         )
         self.calculation_structure_button.pack(side=tk.LEFT, padx=(0, 6))
-        self.calculation_score_button = ttk.Button(
-            roster_frame,
-            text='输入计算题分数',
-            command=self.open_calculation_score_entry,
-        )
-        self.calculation_score_button.pack(side=tk.LEFT, padx=(0, 12))
         self.mixed_single_side_check = ttk.Checkbutton(
             roster_frame,
             text='混合模板单面模式',
@@ -987,10 +987,16 @@ class EnhancedAnswerCardStatsGUI(
             calc_structure_state = 'normal' if show_calculation_structure else 'disabled'
             self.calculation_structure_button.config(state=calc_structure_state)
         if hasattr(self, 'calculation_score_button'):
-            # Direct-paper calculation tasks are handled in the same local
-            # subjective grading window as drawing tasks.
-            show_calculation_score = bool(mixed_template_enabled and not mixed_single_side)
-            self.set_packed_visible(self.calculation_score_button, show_calculation_score, {'side': tk.LEFT, 'padx': (0, 4)})
+            has_calc_questions = bool(self.calculation_question_config())
+            show_calculation_score = bool(
+                (mixed_template_enabled and not mixed_single_side)
+                or (direct_choice_enabled and (has_calc_questions or self.direct_calculation_region_config()))
+            )
+            pack_opts = {'side': tk.LEFT, 'padx': (0, 8)}
+            if hasattr(self, 'subjective_grade_button'):
+                # 紧挨主观批改右侧展示
+                self.calculation_score_button.pack_configure(**pack_opts)
+            self.set_packed_visible(self.calculation_score_button, show_calculation_score, pack_opts)
             calc_score_state = 'normal' if show_calculation_score else 'disabled'
             self.calculation_score_button.config(state=calc_score_state)
         if hasattr(self, 'mixed_single_side_check'):
@@ -1159,12 +1165,20 @@ class EnhancedAnswerCardStatsGUI(
         def docx_score(p):
             stem = p.stem
             score = 0
-            if '不处理答案' in stem: score -= 200
-            if '套用模板' in stem: score += 100
-            elif '模板' in stem: score += 80
-            elif '试卷' in stem: score += 60
-            elif '答案' in stem: score += 50
-            elif '题' in stem: score += 30
+            if any(kw in stem for kw in ('compact_print', '透打', '打印辅助', '讲评')):
+                score -= 500
+            if '套用模板' in stem or '套模板' in stem:
+                score += 1000
+                if any(kw in stem for kw in ('删除', '修改', '编辑', '最终', '改')):
+                    score += 50
+            elif '模板' in stem:
+                score += 100
+            elif '答案' in stem:
+                score += 60
+            elif '试卷' in stem:
+                score += 50
+            elif '题' in stem:
+                score += 30
             return (score, p.stat().st_mtime)
 
         all_docx.sort(key=docx_score, reverse=True)
@@ -1211,8 +1225,8 @@ class EnhancedAnswerCardStatsGUI(
                     res.append(f'{q}: ' + ', '.join(f'{sc:g}' for _, sc in subs))
                 return '\n'.join(res)
 
-        # 2. Split by question blocks: e.g. 15. or 第15题:
-        blocks = re.split(r'(?m)^\s*(?:第)?\s*(\d{1,3})\s*(?:题)?\s*[.．、:：]\s*', full_text)
+        # 2. Split by question blocks: e.g. 15. or 第15题: or 10(1)
+        blocks = re.split(r'(?m)^\s*(?:第)?\s*(\d{1,3})\s*(?:题)?\s*(?:[.．、:：]\s*|(?=[（(]))', full_text)
         questions_map = {}
         if len(blocks) >= 3:
             for i in range(1, len(blocks), 2):
@@ -1249,9 +1263,9 @@ class EnhancedAnswerCardStatsGUI(
                 results.append(f'{qno}: ' + ', '.join(f'{s:g}' for s in sub_scores))
                 continue
 
-            # Check subquestion markers without explicit score numbers: (1)解... (2)解...
+            # Check subquestion markers without explicit score numbers: (1)解... (2)解... or (1)(2)(3)(4)
             plain_subs = re.findall(r'[（(]\s*([1-9]\d*)\s*[）)]', text)
-            if plain_subs and re.search(r'解[：:]|答|公式|分|\d+\s*(?:分|V|W|A|J|Pa|m/s|kg|N|km/h|cm)', text):
+            if plain_subs:
                 unique_subs = []
                 for s in plain_subs:
                     s_int = int(s)
@@ -3448,9 +3462,10 @@ class EnhancedAnswerCardStatsGUI(
         if self.is_direct_paper_choice_template() and getattr(self, 'selected_folder_path', None):
             try:
                 folder = Path(self.selected_folder_path)
-                word_candidates = [p for p in folder.glob('*.docx') if not p.name.startswith('~$')]
-                if word_candidates:
-                    w_payload = self.read_word_answer_template(word_candidates[0])
+                match_res = self.find_folder_answer_template_files(folder)
+                word_path = match_res.get('word')
+                if word_path:
+                    w_payload = self.read_word_answer_template(word_path)
                     if w_payload.get('answer_text'):
                         self.sync_direct_paper_choice_questions_from_answer_text(w_payload['answer_text'])
             except Exception:
@@ -10777,6 +10792,8 @@ class EnhancedAnswerCardStatsGUI(
         win.protocol('WM_DELETE_WINDOW', win.destroy)
 
     def open_calculation_score_entry(self):
+        if not self.require_current_session_for_grading('计算题批改与批注'):
+            return
         if self.mixed_template_single_side_mode_enabled():
             messagebox.showinfo('提示', '当前是混合模板单面模式，不需要输入计算题分数。')
             return
@@ -10786,144 +10803,7 @@ class EnhancedAnswerCardStatsGUI(
                 self.open_calculation_question_settings()
             return
         if not self.summary_data:
-            messagebox.showwarning('提示', '请先完成正面批改，再输入计算题分数。')
-            return
-
-        payload = self.load_subjective_score_payload()
-        if not isinstance(payload, dict):
-            payload = {}
-        payload.setdefault('version', 1)
-        payload.setdefault('template_key', self.current_template_key)
-        payload.setdefault('template_name', self.current_template_name)
-        payload.setdefault('scores', {})
-        all_scores = payload.setdefault('scores', {})
-
-        win = tk.Toplevel(self.root)
-        win.title('输入计算题分数')
-        self.track_context_window(win)
-        win.geometry('1180x720')
-        win.minsize(900, 520)
-        win.transient(self.root)
-
-        ttk.Label(
-            win,
-            text='双数页计算题不做识别。这里按学生输入24、25题各小题得分；保存后会计入总分、整卡预览和透打。',
-            font=('Arial', 10, 'bold'),
-            wraplength=1120,
-        ).pack(anchor='w', padx=12, pady=(12, 6))
-
-        canvas = tk.Canvas(win, bg='#f7f7f7')
-        y_scroll = ttk.Scrollbar(win, orient=tk.VERTICAL, command=canvas.yview)
-        body = ttk.Frame(canvas)
-        body.bind('<Configure>', lambda _e: canvas.configure(scrollregion=canvas.bbox('all')))
-        canvas.create_window((0, 0), window=body, anchor='nw')
-        canvas.configure(yscrollcommand=y_scroll.set)
-        canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=(12, 0), pady=6)
-        y_scroll.pack(side=tk.RIGHT, fill=tk.Y, pady=6)
-
-        calc_parts = self.calculation_score_parts()
-        headers = ['文件', '学号', '姓名'] + [part['label'] + f"/{part['score']:g}" for part in calc_parts]
-        for col, header in enumerate(headers):
-            ttk.Label(body, text=header, font=('Arial', 9, 'bold')).grid(row=0, column=col, padx=4, pady=4, sticky='w')
-
-        row_vars = {}
-        for row, entry in enumerate(self.summary_data, 1):
-            entry_key = self.subjective_entry_key(entry)
-            entry_scores = all_scores.get(entry_key, {}) if isinstance(all_scores, dict) else {}
-            ttk.Label(body, text=entry.get('file', ''), width=14).grid(row=row, column=0, padx=4, pady=3, sticky='w')
-            ttk.Label(body, text=entry.get('score_id', ''), width=8).grid(row=row, column=1, padx=4, pady=3, sticky='w')
-            ttk.Label(body, text=entry.get('student_name', ''), width=10).grid(row=row, column=2, padx=4, pady=3, sticky='w')
-            row_vars[entry_key] = {'entry': entry, 'vars': {}}
-            for col, part in enumerate(calc_parts, 3):
-                record = entry_scores.get(part['part_id'], {}) if isinstance(entry_scores, dict) else {}
-                value = ''
-                if isinstance(record, dict) and record.get('score') is not None:
-                    value = f"{float(record.get('score') or 0):g}"
-                var = tk.StringVar(value=value)
-                row_vars[entry_key]['vars'][part['part_id']] = (var, part)
-                ttk.Entry(body, textvariable=var, width=8).grid(row=row, column=col, padx=4, pady=3, sticky='w')
-
-        status_var = tk.StringVar(value='空着表示未批；填0表示该小题0分。')
-        status = ttk.Label(win, textvariable=status_var, foreground='#555')
-        status.pack(anchor='w', padx=12, pady=(0, 6))
-
-        def save_scores(close_after=False):
-            try:
-                saved = 0
-                for entry_key, row_data in row_vars.items():
-                    entry = row_data['entry']
-                    entry_scores = all_scores.setdefault(entry_key, {})
-                    for part_id, (var, part) in row_data['vars'].items():
-                        text = var.get().strip()
-                        if text == '':
-                            continue
-                        try:
-                            score = float(text)
-                        except Exception:
-                            raise ValueError(f"{entry.get('score_id', '')} {entry.get('student_name', '')} 的 {part.get('label')} 不是数字：{text}")
-                        max_score = float(part.get('score') or 0)
-                        if score < 0 or score > max_score:
-                            raise ValueError(f"{entry.get('score_id', '')} {entry.get('student_name', '')} 的 {part.get('label')} 应在 0 到 {max_score:g} 分之间。")
-                        entry_scores[part_id] = {
-                            'score': score,
-                            'max_score': max_score,
-                            'manual_graded': True,
-                            'auto_graded': False,
-                            'label': part.get('label', ''),
-                            'kind': 'calculation',
-                            'score_category': 'calculation',
-                            'student_name': entry.get('student_name', ''),
-                            'score_id': entry.get('score_id', ''),
-                            'file': entry.get('file', ''),
-                            'updated_at': datetime.now().isoformat(timespec='seconds'),
-                        }
-                        saved += 1
-                self.save_subjective_score_payload(payload)
-                self.apply_subjective_scores_to_entries(payload)
-                self.detail_text.delete(1.0, tk.END)
-                for entry in self.summary_data:
-                    self.display_single_result(entry)
-                self.update_summary_display()
-                self.update_analysis_display()
-                self.save_results_to_database()
-                status_var.set(f'已保存计算题分数 {saved} 项。')
-                self.status_var.set('计算题分数已保存')
-                if close_after:
-                    win.destroy()
-            except Exception as e:
-                messagebox.showerror('保存失败', str(e), parent=win)
-
-        footer = ttk.Frame(win)
-        footer.pack(fill=tk.X, padx=12, pady=(4, 12))
-        ttk.Button(footer, text='保存', command=lambda: save_scores(False)).pack(side=tk.LEFT, padx=4)
-        ttk.Button(footer, text='保存并关闭', command=lambda: save_scores(True)).pack(side=tk.LEFT, padx=4)
-        ttk.Button(footer, text='关闭', command=win.destroy).pack(side=tk.LEFT, padx=4)
-        win.bind('<Control-s>', lambda _e: save_scores(False))
-        win.protocol('WM_DELETE_WINDOW', lambda: save_scores(True))
-
-    def open_calculation_score_entry(self):
-        if not self.require_current_session_for_grading('输入计算题分数'):
-            return
-        if self.is_direct_paper_choice_template():
-            self.open_subjective_grading()
-            return
-        if self.mixed_template_single_side_mode_enabled():
-            messagebox.showinfo('提示', '当前是混合模板单面模式，不需要输入计算题分数。')
-            return
-        if self.is_direct_paper_choice_template() and not self.direct_calculation_region_config():
-            messagebox.showwarning(
-                '还没有计算题区域',
-                '请先进入“正反面结构”，设置背面并勾选“启用计算题区域”。\n\n'
-                '计算题不需要设置标准答案。',
-            )
-            return
-        questions = self.calculation_question_config()
-        if not questions:
-            if messagebox.askyesno('提示', '还没有设置计算题小题分值。\n\n现在去设置吗？'):
-                self.open_calculation_question_settings()
-            return
-        if not self.summary_data:
-            messagebox.showwarning('提示', '请先完成正面批改，再输入计算题分数。')
+            messagebox.showwarning('提示', '请先完成正面批改，再进行计算题批注与批改。')
             return
 
         def infer_back_path(entry):
@@ -10959,27 +10839,13 @@ class EnhancedAnswerCardStatsGUI(
 
         entries = [entry for entry in self.summary_data if infer_back_path(entry)]
         if not entries:
-            messagebox.showwarning('提示', '当前结果里没有找到对应的双数页背面图片。\n请先用“双面扫描”的文件夹重新开始批改一次。')
-            return
-
-        calculation_crop_map = {}
-        if self.is_direct_paper_choice_template():
-            self.status_var.set('正在准备计算题裁图...')
-            self.root.update_idletasks()
-            _crop_root, _saved, crop_errors, crop_map = self.generate_subjective_crops(reuse_existing=True)
-            calculation_crop_map = crop_map
-            def has_calculation_crop(entry):
-                value = crop_map.get(self.subjective_entry_key(entry), {}).get('calculation_back_region')
-                return bool(value) and Path(value).is_file()
-
-            missing = [entry for entry in entries if not has_calculation_crop(entry)]
-            if missing:
-                messagebox.showwarning(
-                    '计算题裁图不完整',
-                    '有部分学生的计算题区域没有成功裁出，无法进入人工打分。\n\n'
-                    + '\n'.join(crop_errors[:6]),
-                )
+            entries = [entry for entry in self.summary_data if entry.get('input_path') or entry.get('file')]
+            if not entries:
+                messagebox.showwarning('提示', '当前结果里没有找到可批改的试卷图片。')
                 return
+
+        self.status_var.set('正在打开计算题工作台...')
+        self.root.update_idletasks()
 
         payload = self.load_subjective_score_payload()
         if not isinstance(payload, dict):
@@ -10988,17 +10854,18 @@ class EnhancedAnswerCardStatsGUI(
         payload.setdefault('template_key', self.current_template_key)
         payload.setdefault('template_name', self.current_template_name)
         payload.setdefault('scores', {})
-        all_scores = payload.setdefault('scores', {})
+        payload.setdefault('calculation_annotations', {})
+        all_scores = payload['scores']
+        all_annotations = payload['calculation_annotations']
 
         win = tk.Toplevel(self.root)
-        win.title(
-            '输入计算题分数 - 背面计算题裁图'
-            if self.is_direct_paper_choice_template()
-            else '输入计算题分数 - 看背面整张卷'
-        )
-        win.geometry('1380x860')
-        win.minsize(1050, 650)
+        win.title('计算题整大题集中批改与试卷批注工作台')
+        win.geometry('1520x940')
+        win.minsize(1150, 720)
         win.transient(self.root)
+        win.lift()
+        win.focus_force()
+        self.status_var.set('就绪：已进入计算题集中批改与批注工作台')
 
         state = {
             'question_index': 0,
@@ -11006,49 +10873,200 @@ class EnhancedAnswerCardStatsGUI(
             'photo': None,
             'scale': 1.0,
             'dirty': False,
+            'current_image_obj': None,
+            'canvas_items': [],
         }
 
+        anno_state = {
+            'tool': 'view',  # 'view', 'line', 'check', 'cross', 'stamp'
+            'stamp_text': '',
+            'drawing': False,
+            'temp_line_pts': [],
+            'temp_line_id': None,
+        }
+
+        # ----------------- 顶部全局导航栏 -----------------
         header = ttk.Frame(win)
-        header.pack(fill=tk.X, padx=12, pady=(10, 6))
+        header.pack(fill=tk.X, padx=12, pady=(8, 4))
+
         title_var = tk.StringVar()
         progress_var = tk.StringVar()
-        ttk.Label(header, textvariable=title_var, font=('Arial', 13, 'bold')).pack(side=tk.LEFT)
-        ttk.Label(header, textvariable=progress_var, foreground='#555').pack(side=tk.LEFT, padx=(18, 0))
+        tool_hint_var = tk.StringVar(value='💡 提示：在右侧打分面板赋分；在下方点选批注符号或印章后点击试卷页面盖印；最后点击【提交并跳到下一题】。')
 
-        main = ttk.PanedWindow(win, orient=tk.HORIZONTAL)
-        main.pack(fill=tk.BOTH, expand=True, padx=12, pady=6)
+        ttk.Label(header, textvariable=title_var, font=('Arial', 13, 'bold'), foreground='#1E3A8A').pack(side=tk.LEFT)
+        ttk.Label(header, textvariable=progress_var, foreground='#4B5563', font=('Arial', 10)).pack(side=tk.LEFT, padx=(16, 0))
 
-        image_frame = ttk.Frame(main)
-        main.add(image_frame, weight=5)
-        image_canvas = tk.Canvas(image_frame, bg='#e9e9e9', highlightthickness=0)
-        x_scroll = ttk.Scrollbar(image_frame, orient=tk.HORIZONTAL, command=image_canvas.xview)
-        y_scroll = ttk.Scrollbar(image_frame, orient=tk.VERTICAL, command=image_canvas.yview)
+        # 题目快速切换下拉框
+        q_options = [f"第 {q.get('question_no')} 题 (满分 {sum(float(s.get('score') or 0) for s in (q.get('sub_scores') or [])):g} 分)" for q in questions]
+        q_combo_var = tk.StringVar()
+        if q_options:
+            q_combo_var.set(q_options[0])
+
+        def on_q_combo_select(_e=None):
+            sel = q_combo_box.current()
+            if 0 <= sel < len(questions) and sel != state['question_index']:
+                if state['dirty'] and save_safely(show_status=False) is None:
+                    q_combo_box.current(state['question_index'])
+                    return
+                state['question_index'] = sel
+                refresh_view()
+
+        ttk.Label(header, text='跳转大题:').pack(side=tk.LEFT, padx=(24, 4))
+        q_combo_box = ttk.Combobox(header, textvariable=q_combo_var, values=q_options, state='readonly', width=22)
+        q_combo_box.pack(side=tk.LEFT)
+        q_combo_box.bind('<<ComboboxSelected>>', on_q_combo_select)
+
+        # 学生快速切换下拉框
+        def _format_sid(val, default_idx):
+            if val is not None and str(val).strip():
+                s = str(val).strip()
+                return s.zfill(2) if s.isdigit() else s
+            return f"{default_idx:02d}"
+
+        student_options = [f"{_format_sid(e.get('score_id'), idx + 1)} - {e.get('student_name') or '未匹配'}" for idx, e in enumerate(entries)]
+        s_combo_var = tk.StringVar()
+        if student_options:
+            s_combo_var.set(student_options[0])
+
+        def on_s_combo_select(_e=None):
+            sel = s_combo_box.current()
+            if 0 <= sel < len(entries) and sel != state['entry_index']:
+                if state['dirty'] and save_safely(show_status=False) is None:
+                    s_combo_box.current(state['entry_index'])
+                    return
+                state['entry_index'] = sel
+                refresh_view()
+
+        ttk.Label(header, text='跳转学生:').pack(side=tk.LEFT, padx=(18, 4))
+        s_combo_box = ttk.Combobox(header, textvariable=s_combo_var, values=student_options, state='readonly', width=20)
+        s_combo_box.pack(side=tk.LEFT)
+        s_combo_box.bind('<<ComboboxSelected>>', on_s_combo_select)
+
+        # ----------------- 主体分栏：左侧试卷，右侧固定控制区 -----------------
+        main_container = ttk.Frame(win)
+        main_container.pack(fill=tk.BOTH, expand=True, padx=10, pady=4)
+
+        # 右侧：固定宽度 480 像素，包含打分(上)、批注与批语工具(中)、提交按钮(下)
+        right_panel = ttk.Frame(main_container, width=500)
+        right_panel.pack(side=tk.RIGHT, fill=tk.Y, padx=(6, 0), pady=2)
+        right_panel.pack_propagate(False)  # 保持固定宽度，防止被挤压
+
+        # 左侧：试卷大图与 Canvas 批注区
+        left_box = ttk.Frame(main_container)
+        left_box.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        hint_bar = ttk.Frame(left_box)
+        hint_bar.pack(fill=tk.X, pady=(0, 4))
+        ttk.Label(hint_bar, textvariable=tool_hint_var, foreground='#1D4ED8', font=('Arial', 10, 'bold')).pack(side=tk.LEFT)
+
+        zoom_bar = ttk.Frame(hint_bar)
+        zoom_bar.pack(side=tk.RIGHT)
+        zoom_var = tk.StringVar(value='100%')
+        ttk.Label(zoom_bar, text='缩放:').pack(side=tk.LEFT, padx=(4, 2))
+        ttk.Label(zoom_bar, textvariable=zoom_var, font=('Arial', 9, 'bold'), width=5).pack(side=tk.LEFT)
+        tk.Button(zoom_bar, text='➕ 放大', font=('Arial', 9), command=lambda: zoom_in()).pack(side=tk.LEFT, padx=1)
+        tk.Button(zoom_bar, text='➖ 缩小', font=('Arial', 9), command=lambda: zoom_out()).pack(side=tk.LEFT, padx=1)
+        tk.Button(zoom_bar, text='↔️ 适宽', font=('Arial', 9), command=lambda: zoom_fit_width()).pack(side=tk.LEFT, padx=1)
+        tk.Button(zoom_bar, text='100%', font=('Arial', 9), command=lambda: zoom_original()).pack(side=tk.LEFT, padx=1)
+
+        canvas_container = ttk.Frame(left_box)
+        canvas_container.pack(fill=tk.BOTH, expand=True)
+
+        image_canvas = tk.Canvas(canvas_container, bg='#1E293B', highlightthickness=0)
+        x_scroll = ttk.Scrollbar(canvas_container, orient=tk.HORIZONTAL, command=image_canvas.xview)
+        y_scroll = ttk.Scrollbar(canvas_container, orient=tk.VERTICAL, command=image_canvas.yview)
         image_canvas.configure(xscrollcommand=x_scroll.set, yscrollcommand=y_scroll.set)
         image_canvas.grid(row=0, column=0, sticky='nsew')
         y_scroll.grid(row=0, column=1, sticky='ns')
         x_scroll.grid(row=1, column=0, sticky='ew')
-        image_frame.rowconfigure(0, weight=1)
-        image_frame.columnconfigure(0, weight=1)
+        canvas_container.rowconfigure(0, weight=1)
+        canvas_container.columnconfigure(0, weight=1)
 
-        score_panel = ttk.Frame(main, padding=(12, 8))
-        main.add(score_panel, weight=1)
+        # ----------------- 右侧面板内部可滚动区域 -----------------
+        r_canvas = tk.Canvas(right_panel, highlightthickness=0)
+        r_scroll = ttk.Scrollbar(right_panel, orient=tk.VERTICAL, command=r_canvas.yview)
+        score_panel = ttk.Frame(r_canvas)
+
+        score_panel.bind('<Configure>', lambda e: r_canvas.configure(scrollregion=r_canvas.bbox('all')))
+        r_canvas_window = r_canvas.create_window((0, 0), window=score_panel, anchor='nw')
+        r_canvas.configure(yscrollcommand=r_scroll.set)
+
+        def _on_r_canvas_configure(e):
+            r_canvas.itemconfig(r_canvas_window, width=e.width)
+        r_canvas.bind('<Configure>', _on_r_canvas_configure)
+
+        r_canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        r_scroll.pack(side=tk.RIGHT, fill=tk.Y)
+
         student_var = tk.StringVar()
         file_var = tk.StringVar()
         back_var = tk.StringVar()
-        ttk.Label(score_panel, text='当前学生', font=('Arial', 11, 'bold')).pack(anchor='w')
-        ttk.Label(score_panel, textvariable=student_var, wraplength=260).pack(anchor='w', pady=(4, 2))
-        ttk.Label(score_panel, textvariable=file_var, foreground='#555', wraplength=260).pack(anchor='w', pady=(0, 2))
-        ttk.Label(score_panel, textvariable=back_var, foreground='#777', wraplength=260).pack(anchor='w', pady=(0, 12))
 
-        ttk.Separator(score_panel).pack(fill=tk.X, pady=(0, 10))
-        ttk.Label(score_panel, text='本大题小题得分', font=('Arial', 11, 'bold')).pack(anchor='w')
+        info_frame = ttk.LabelFrame(score_panel, text='当前学生信息', padding=(8, 4))
+        info_frame.pack(fill=tk.X, pady=(0, 6))
+        ttk.Label(info_frame, textvariable=student_var, font=('Arial', 11, 'bold'), foreground='#1E40AF').pack(anchor='w')
+        ttk.Label(info_frame, textvariable=file_var, foreground='#6B7280', font=('Arial', 9)).pack(anchor='w')
+        ttk.Label(info_frame, textvariable=back_var, foreground='#6B7280', font=('Arial', 9)).pack(anchor='w')
+
+        # =========================================================================
+        # 1. 最上方：本大题打分（第一小问一行，第二小问第二行，第三小问第三行；等级为1分无0.5分）
+        # =========================================================================
+        score_box = ttk.LabelFrame(score_panel, text=' 📝 本大题各小问赋分 (等级为1分整分) ', padding=(8, 6))
+        score_box.pack(fill=tk.X, pady=(0, 8))
+
+        # 整大题快捷一键
+        quick_score_row = ttk.Frame(score_box)
+        quick_score_row.pack(fill=tk.X, pady=(2, 6))
+
+        def fill_all_full():
+            question = current_question()
+            for item in question.get('sub_scores', []) or []:
+                sub_no = item.get('sub_no')
+                max_score = float(item.get('score') or 0)
+                part_id = self.calculation_score_part_id(question.get('question_no'), sub_no)
+                var = score_vars.get(part_id, (None, None))[0]
+                if var:
+                    var.set(format_score_value(max_score))
+                    refresh_score_buttons(part_id)
+            state['dirty'] = True
+            tool_hint_var.set(f"已赋【全题满分】，批阅完成后点击右下方【提交并跳到下一题】")
+
+        def fill_all_zero():
+            question = current_question()
+            for item in question.get('sub_scores', []) or []:
+                sub_no = item.get('sub_no')
+                part_id = self.calculation_score_part_id(question.get('question_no'), sub_no)
+                var = score_vars.get(part_id, (None, None))[0]
+                if var:
+                    var.set('0')
+                    refresh_score_buttons(part_id)
+            state['dirty'] = True
+            tool_hint_var.set(f"已赋【全题0分】，批阅完成后点击右下方【提交并跳到下一题】")
+
+        tk.Button(
+            quick_score_row,
+            text='⭐ 整大题全部满分',
+            font=('Arial', 10, 'bold'),
+            bg='#ECFDF5',
+            fg='#047857',
+            activebackground='#D1FAE5',
+            command=fill_all_full,
+        ).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=2)
+
+        tk.Button(
+            quick_score_row,
+            text='❌ 全部0分',
+            font=('Arial', 10),
+            bg='#FEF2F2',
+            fg='#B91C1C',
+            activebackground='#FEE2E2',
+            command=fill_all_zero,
+        ).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=2)
+
         score_vars = {}
         score_button_groups = {}
-        score_body = ttk.Frame(score_panel)
-        score_body.pack(fill=tk.X, pady=(8, 10))
-
-        status_var = tk.StringVar(value='先改完全班当前大题，再进入下一大题。')
-        ttk.Label(score_panel, textvariable=status_var, foreground='#555', wraplength=260).pack(anchor='w', pady=(8, 10))
+        score_sub_body = ttk.Frame(score_box)
+        score_sub_body.pack(fill=tk.X, pady=(2, 4))
 
         def current_question():
             return questions[state['question_index']]
@@ -11061,19 +11079,22 @@ class EnhancedAnswerCardStatsGUI(
             return all_scores.setdefault(entry_key, {})
 
         def clear_score_widgets():
-            for child in score_body.winfo_children():
+            for child in score_sub_body.winfo_children():
                 child.destroy()
             score_vars.clear()
             score_button_groups.clear()
 
+        # 赋分等级为 1 分，没有 0.5 分！
         def score_choices(max_score):
             values = []
-            current = 0.0
-            while current <= max_score + 1e-9:
-                values.append(round(current, 2))
-                current += 1.0
-            if not values or abs(values[-1] - max_score) > 1e-9:
-                values.append(round(max_score, 2))
+            current = 0
+            # 步长严格为 1
+            max_int = int(max_score)
+            while current <= max_int:
+                values.append(current)
+                current += 1
+            if abs(max_score - max_int) > 1e-4:
+                values.append(round(max_score, 1))
             return values
 
         def format_score_value(value):
@@ -11084,9 +11105,9 @@ class EnhancedAnswerCardStatsGUI(
             selected = var.get().strip() if var else ''
             for value, button in score_button_groups.get(part_id, []):
                 if selected == format_score_value(value):
-                    button.configure(relief=tk.SUNKEN, bg='#b9dcff', activebackground='#b9dcff')
+                    button.configure(relief=tk.SUNKEN, bg='#93C5FD', fg='#1E3A8A')
                 else:
-                    button.configure(relief=tk.RAISED, bg='#f5f5f5', activebackground='#e8f2ff')
+                    button.configure(relief=tk.RAISED, bg='#F9FAFB', fg='#1F2937')
 
         def choose_score(part_id, value):
             var = score_vars.get(part_id, (None, None))[0]
@@ -11101,7 +11122,8 @@ class EnhancedAnswerCardStatsGUI(
             question = current_question()
             entry = current_entry()
             entry_scores = current_entry_scores(entry)
-            for row, item in enumerate(question.get('sub_scores', []) or []):
+            # 每一小问占独立一行！
+            for row_idx, item in enumerate(question.get('sub_scores', []) or []):
                 sub_no = item.get('sub_no')
                 max_score = float(item.get('score') or 0)
                 part_id = self.calculation_score_part_id(question.get('question_no'), sub_no)
@@ -11111,85 +11133,163 @@ class EnhancedAnswerCardStatsGUI(
                     value = f"{float(record.get('score') or 0):g}"
                 var = tk.StringVar(value=value)
                 score_vars[part_id] = (var, item)
-                item_frame = ttk.LabelFrame(score_body, text=f"({sub_no})  满分 {max_score:g} 分")
-                item_frame.grid(row=row, column=0, sticky='ew', pady=6)
-                score_body.columnconfigure(0, weight=1)
+
+                row_frame = ttk.Frame(score_sub_body)
+                row_frame.pack(fill=tk.X, pady=3)
+
+                # 小问标题：第一小问、第二小问、第三小问
+                lbl_text = f"第({sub_no})问 [{max_score:g}分]:"
+                ttk.Label(row_frame, text=lbl_text, font=('Arial', 10, 'bold'), width=13).pack(side=tk.LEFT)
+
+                # 各 1 分整步长按钮横排在这一行
                 score_button_groups[part_id] = []
-                for index, choice in enumerate(score_choices(max_score)):
-                    button = tk.Button(
-                        item_frame,
-                        text=format_score_value(choice),
-                        width=4,
-                        font=('Arial', 12, 'bold'),
+                choices = score_choices(max_score)
+                for choice in choices:
+                    b = tk.Button(
+                        row_frame,
+                        text=str(choice),
+                        width=3,
+                        font=('Arial', 10, 'bold'),
                         command=lambda pid=part_id, val=choice: choose_score(pid, val),
                     )
-                    button.grid(row=index // 5, column=index % 5, padx=3, pady=3, sticky='w')
-                    score_button_groups[part_id].append((choice, button))
-                clear_button = tk.Button(
-                    item_frame,
+                    b.pack(side=tk.LEFT, padx=1)
+                    score_button_groups[part_id].append((choice, b))
+
+                # 清空按钮
+                tk.Button(
+                    row_frame,
                     text='清空',
-                    width=4,
-                    font=('Arial', 11),
+                    font=('Arial', 9),
                     command=lambda pid=part_id: (score_vars[pid][0].set(''), state.__setitem__('dirty', True), refresh_score_buttons(pid)),
-                )
-                clear_button.grid(row=(len(score_button_groups[part_id]) + 4) // 5, column=0, padx=3, pady=(6, 3), sticky='w')
+                ).pack(side=tk.LEFT, padx=(3, 6))
+
+                # 当前分文本框
+                ttk.Label(row_frame, text='得分:').pack(side=tk.LEFT)
+                score_entry = ttk.Entry(row_frame, textvariable=var, width=5, font=('Arial', 10, 'bold'))
+                score_entry.pack(side=tk.LEFT, padx=1)
+                var.trace_add('write', lambda *args, pid=part_id: (state.__setitem__('dirty', True), refresh_score_buttons(pid)))
+
                 refresh_score_buttons(part_id)
 
-        def load_back_image():
-            image_canvas.delete('all')
-            entry = current_entry()
-            back_path = infer_back_path(entry)
-            if not back_path or not Path(back_path).exists():
-                image_canvas.create_text(30, 30, text='没有找到这个学生的背面图片', anchor='nw', fill='red', font=('Arial', 18, 'bold'))
-                state['photo'] = None
-                return
-            try:
-                if self.is_direct_paper_choice_template():
-                    crop_path = calculation_crop_map.get(
-                        self.subjective_entry_key(entry), {}
-                    ).get('calculation_back_region')
-                    if crop_path and Path(crop_path).exists():
-                        image = Image.open(crop_path).convert('RGB')
-                    else:
-                        image = self.direct_calculation_crop_for_entry(entry, back_path)
-                else:
-                    image = Image.open(back_path).convert('RGB')
-                target_width = 1500
-                scale = target_width / max(1, image.width)
-                if scale <= 0:
-                    scale = 1.0
-                display_size = (max(1, int(image.width * scale)), max(1, int(image.height * scale)))
-                display = image.resize(display_size, Image.LANCZOS)
-                state['photo'] = ImageTk.PhotoImage(display)
-                state['scale'] = scale
-                image_canvas.create_image(0, 0, image=state['photo'], anchor='nw')
-                image_canvas.configure(scrollregion=(0, 0, display_size[0], display_size[1]))
-                image_canvas.xview_moveto(0)
-                image_canvas.yview_moveto(0)
-            except Exception as exc:
-                image_canvas.create_text(
-                    30,
-                    30,
-                    text=f'计算题裁图打开失败：{exc}',
-                    anchor='nw',
-                    fill='red',
-                    font=('Arial', 14, 'bold'),
-                )
-                state['photo'] = None
+        # =========================================================================
+        # 2. 排在打分下面的是：常用的划线、打叉、打勾、批语这些工具
+        # =========================================================================
+        anno_frame = ttk.LabelFrame(score_panel, text=' 🎨 试卷批注与常见错误批语印章 (点击后在试卷上点击盖印) ', padding=(8, 6))
+        anno_frame.pack(fill=tk.X, pady=(0, 8))
 
-        def refresh_view():
-            question = current_question()
-            entry = current_entry()
-            qno = question.get('question_no')
-            title_var.set(f'正在批改：第 {qno} 题')
-            progress_var.set(f'第 {state["entry_index"] + 1}/{len(entries)} 份 | 大题 {state["question_index"] + 1}/{len(questions)}')
-            student_var.set(f"{entry.get('score_id') or '未识别学号'}  {entry.get('student_name') or '未匹配'}")
-            file_var.set(f"正面：{entry.get('file') or Path(str(entry.get('input_path') or '')).name}")
-            back_path = infer_back_path(entry)
-            back_var.set(f"背面：{Path(back_path).name if back_path else '未找到'}")
-            load_score_widgets()
-            load_back_image()
-            state['dirty'] = False
+        tool_buttons = {}
+        tool_row = ttk.Frame(anno_frame)
+        tool_row.pack(fill=tk.X, pady=(2, 6))
+
+        def update_tool_button_styles():
+            for t_name, btn in tool_buttons.items():
+                if anno_state['tool'] == t_name:
+                    btn.configure(relief=tk.SUNKEN, bg='#93C5FD')
+                else:
+                    btn.configure(relief=tk.RAISED, bg='#F3F4F6')
+
+        def set_tool(t_name, stamp_text=''):
+            anno_state['tool'] = t_name
+            anno_state['stamp_text'] = stamp_text
+            update_tool_button_styles()
+            update_stamp_button_styles()
+            if t_name == 'view':
+                image_canvas.config(cursor='arrow')
+                tool_hint_var.set('当前模式：【🖱️浏览】支持拖拽和滚轮缩放。')
+            elif t_name == 'line':
+                image_canvas.config(cursor='crosshair')
+                tool_hint_var.set('当前模式：【✏️划线】在左侧试卷上按住鼠标左键自由划线。')
+            elif t_name == 'check':
+                image_canvas.config(cursor='crosshair')
+                tool_hint_var.set('当前模式：【✔打勾】点击试卷任意步骤位置盖上绿勾。')
+            elif t_name == 'cross':
+                image_canvas.config(cursor='crosshair')
+                tool_hint_var.set('当前模式：【❌打叉】点击试卷任意步骤位置盖上红叉。')
+            elif t_name == 'stamp':
+                image_canvas.config(cursor='crosshair')
+                tool_hint_var.set(f'当前模式：【批语印章】点击试卷任意步骤位置盖印 [{stamp_text}]。')
+
+        tool_buttons['view'] = tk.Button(tool_row, text='🖱️ 浏览', font=('Arial', 10), command=lambda: set_tool('view'))
+        tool_buttons['view'].pack(side=tk.LEFT, padx=2)
+
+        tool_buttons['line'] = tk.Button(tool_row, text='✏️ 划线', font=('Arial', 10, 'bold'), fg='#DC2626', command=lambda: set_tool('line'))
+        tool_buttons['line'].pack(side=tk.LEFT, padx=2)
+
+        tool_buttons['cross'] = tk.Button(tool_row, text='❌ 打叉', font=('Arial', 10, 'bold'), fg='#DC2626', command=lambda: set_tool('cross'))
+        tool_buttons['cross'].pack(side=tk.LEFT, padx=2)
+
+        tool_buttons['check'] = tk.Button(tool_row, text='✔ 打勾', font=('Arial', 10, 'bold'), fg='#16A34A', command=lambda: set_tool('check'))
+        tool_buttons['check'].pack(side=tk.LEFT, padx=2)
+
+        def undo_last_annotation():
+            qno_key = str(current_question().get('question_no'))
+            entry_key = self.subjective_entry_key(current_entry())
+            q_annos = all_annotations.setdefault(entry_key, {}).setdefault(qno_key, [])
+            if q_annos:
+                popped = q_annos.pop()
+                state['dirty'] = True
+                redraw_annotations()
+                tool_hint_var.set(f"已撤销上一步批注：{popped.get('type')}")
+
+        def clear_current_annotations():
+            qno_key = str(current_question().get('question_no'))
+            entry_key = self.subjective_entry_key(current_entry())
+            q_annos = all_annotations.setdefault(entry_key, {}).setdefault(qno_key, [])
+            if q_annos:
+                if messagebox.askyesno('清空批注', f'确定要清空第 {qno_key} 题试卷上的所有批注吗？', parent=win):
+                    q_annos.clear()
+                    state['dirty'] = True
+                    redraw_annotations()
+                    tool_hint_var.set('已清空当前题目的所有批注。')
+
+        tk.Button(tool_row, text='↩️ 撤销', font=('Arial', 9), command=undo_last_annotation).pack(side=tk.LEFT, padx=(6, 2))
+        tk.Button(tool_row, text='🗑️ 清空', font=('Arial', 9), fg='#9CA3AF', command=clear_current_annotations).pack(side=tk.LEFT, padx=2)
+
+        ttk.Label(anno_frame, text='点选常见错误批语 ➔ 点击试卷对应位置盖印：', font=('Arial', 9), foreground='#4B5563').pack(anchor='w', pady=(4, 2))
+
+        # 常见错误批语印章网格
+        stamps_grid = ttk.Frame(anno_frame)
+        stamps_grid.pack(fill=tk.X, pady=(2, 4))
+
+        common_stamps = [
+            '没有原始公式', '没有单位',
+            '没有下标',     '公式错误',
+            '没有文字说明', '计算错误',
+            '步骤缺失',     '数值代入错误',
+            '符号不规范',   '单位换算错误',
+            '有效数字不符', '结果未化简',
+        ]
+
+        stamp_buttons = {}
+
+        def update_stamp_button_styles():
+            for st_text, btn in stamp_buttons.items():
+                if anno_state['tool'] == 'stamp' and anno_state['stamp_text'] == st_text:
+                    btn.configure(relief=tk.SUNKEN, bg='#FEE2E2', fg='#B91C1C', activebackground='#FEE2E2')
+                else:
+                    btn.configure(relief=tk.RAISED, bg='#FFF1F2', fg='#BE123C', activebackground='#FDE8E8')
+
+        for idx, st_text in enumerate(common_stamps):
+            r = idx // 2
+            c = idx % 2
+            btn = tk.Button(
+                stamps_grid,
+                text=st_text,
+                font=('Arial', 10, 'bold'),
+                bg='#FFF1F2',
+                fg='#BE123C',
+                activebackground='#FDE8E8',
+                command=lambda t=st_text: set_tool('stamp', stamp_text=t),
+            )
+            btn.grid(row=r, column=c, padx=3, pady=2, sticky='ew')
+            stamps_grid.columnconfigure(c, weight=1)
+            stamp_buttons[st_text] = btn
+
+        # =========================================================================
+        # 3. 排在最下面的是：提交按钮（“当我点完之后，再点提交，才跳到下一题”）
+        # =========================================================================
+        submit_box = ttk.Frame(score_panel)
+        submit_box.pack(fill=tk.X, pady=(10, 10))
 
         def save_current(show_status=True):
             question = current_question()
@@ -11235,8 +11335,8 @@ class EnhancedAnswerCardStatsGUI(
             self.save_results_to_database()
             state['dirty'] = False
             if show_status:
-                status_var.set(f'已保存：第 {question.get("question_no")} 题，{entry.get("score_id") or ""} {entry.get("student_name") or ""}')
-                self.status_var.set('计算题分数已保存')
+                tool_hint_var.set(f'已保存第 {question.get("question_no")} 题：{entry.get("score_id") or ""} {entry.get("student_name") or ""}')
+                self.status_var.set('计算题分数及批注已保存')
             return changed
 
         def save_safely(show_status=True):
@@ -11246,7 +11346,8 @@ class EnhancedAnswerCardStatsGUI(
                 messagebox.showerror('保存失败', str(exc), parent=win)
                 return None
 
-        def next_entry():
+        # 核心提交函数：点完提交，才跳到下一题！
+        def submit_and_next():
             if save_safely() is None:
                 return
             if state['entry_index'] < len(entries) - 1:
@@ -11258,9 +11359,9 @@ class EnhancedAnswerCardStatsGUI(
                 state['question_index'] += 1
                 state['entry_index'] = 0
                 refresh_view()
-                messagebox.showinfo('进入下一大题', f'第 {finished_qno} 题已到最后一份。\n现在开始批改第 {current_question().get("question_no")} 题。', parent=win)
+                messagebox.showinfo('进入下一大题', f'第 {finished_qno} 题已批完全班。\n现在开始批改第 {current_question().get("question_no")} 题。', parent=win)
                 return
-            messagebox.showinfo('完成', '计算题分数已经录完。', parent=win)
+            messagebox.showinfo('完成', '全部计算题批改和批注已提交完成！', parent=win)
 
         def previous_entry():
             if state['dirty'] and save_safely(show_status=False) is None:
@@ -11295,25 +11396,312 @@ class EnhancedAnswerCardStatsGUI(
                     return
             win.destroy()
 
-        button_frame = ttk.Frame(score_panel)
-        button_frame.pack(fill=tk.X, pady=(8, 0))
-        ttk.Button(button_frame, text='上一份', command=previous_entry).pack(fill=tk.X, pady=3)
-        ttk.Button(button_frame, text='保存并下一份', command=next_entry).pack(fill=tk.X, pady=3)
-        ttk.Button(button_frame, text='保存本份', command=lambda: save_safely(True)).pack(fill=tk.X, pady=3)
-        ttk.Separator(button_frame).pack(fill=tk.X, pady=8)
-        ttk.Button(button_frame, text='上一大题', command=previous_question).pack(fill=tk.X, pady=3)
-        ttk.Button(button_frame, text='下一大题', command=next_question).pack(fill=tk.X, pady=3)
-        ttk.Separator(button_frame).pack(fill=tk.X, pady=8)
-        ttk.Button(button_frame, text='保存并关闭', command=close_window).pack(fill=tk.X, pady=3)
+        # 大号提交按钮（亮蓝色加粗，高度46px）
+        submit_btn = tk.Button(
+            submit_box,
+            text='💾 提交并跳到下一题 (Enter) ➡️',
+            font=('Arial', 12, 'bold'),
+            bg='#2563EB',
+            fg='white',
+            activebackground='#1D4ED8',
+            activeforeground='white',
+            height=2,
+            relief=tk.RAISED,
+            command=submit_and_next,
+        )
+        submit_btn.pack(fill=tk.X, pady=(2, 6))
 
-        def on_mousewheel(event):
+        nav_row = ttk.Frame(submit_box)
+        nav_row.pack(fill=tk.X, pady=2)
+        tk.Button(nav_row, text='⬅️ 上一题 / 上一份', font=('Arial', 10), command=previous_entry).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=2)
+        tk.Button(nav_row, text='仅保存当前', font=('Arial', 10), command=lambda: save_safely(True)).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=2)
+
+        ttk.Separator(submit_box).pack(fill=tk.X, pady=6)
+        q_nav_row = ttk.Frame(submit_box)
+        q_nav_row.pack(fill=tk.X)
+        ttk.Button(q_nav_row, text='⏮️ 上一大题', command=previous_question).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=2)
+        ttk.Button(q_nav_row, text='⏭️ 下一大题', command=next_question).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=2)
+
+        ttk.Separator(submit_box).pack(fill=tk.X, pady=6)
+        ttk.Button(submit_box, text='保存并关闭窗口', command=close_window).pack(fill=tk.X, pady=2)
+
+        # ----------------- 画布绘制与批注渲染 -----------------
+        def render_current_image():
+            image = state.get('current_image_obj')
+            if not image:
+                return
+            scale = max(0.1, min(5.0, float(state.get('scale') or 1.0)))
+            state['scale'] = scale
+            display_size = (max(1, int(image.width * scale)), max(1, int(image.height * scale)))
+            display = image.resize(display_size, Image.LANCZOS)
+            photo = ImageTk.PhotoImage(display)
+            state['photo'] = photo
+            image_canvas.image = photo  # 保持引用，彻底防止GC导致白屏
+            image_canvas.delete('paper_img')
+            image_canvas.create_image(0, 0, image=photo, anchor='nw', tags='paper_img')
+            image_canvas.tag_lower('paper_img')
+            image_canvas.configure(scrollregion=(0, 0, display_size[0], display_size[1]))
+            zoom_var.set(f"{int(round(scale * 100))}%")
+            redraw_annotations()
+
+        def zoom_in():
+            if state.get('current_image_obj'):
+                state['scale'] = min(5.0, state['scale'] * 1.25)
+                render_current_image()
+
+        def zoom_out():
+            if state.get('current_image_obj'):
+                state['scale'] = max(0.15, state['scale'] * 0.8)
+                render_current_image()
+
+        def zoom_fit_width():
+            image = state.get('current_image_obj')
+            if not image:
+                return
+            cw = image_canvas.winfo_width()
+            if cw < 100:
+                cw = 1000
+            state['scale'] = (cw - 20) / max(1, image.width)
+            render_current_image()
+
+        def zoom_original():
+            if state.get('current_image_obj'):
+                state['scale'] = 1.0
+                render_current_image()
+
+        def load_back_image():
+            image_canvas.delete('all')
+            state['canvas_items'].clear()
+            entry = current_entry()
+            back_path = infer_back_path(entry)
+            if not back_path:
+                raw_front = (entry.get('side_files') or {}).get('front') or entry.get('input_path') or entry.get('file')
+                if raw_front:
+                    fp = Path(raw_front)
+                    if not fp.is_absolute() and getattr(self, 'selected_folder_path', ''):
+                        fp = Path(self.selected_folder_path) / fp
+                    if fp.exists():
+                        back_path = fp
+
+            if not back_path or not Path(back_path).exists():
+                image_canvas.create_text(30, 30, text='没有找到该学生的试卷图片', anchor='nw', fill='red', font=('Arial', 18, 'bold'))
+                state['photo'] = None
+                state['current_image_obj'] = None
+                return
+            try:
+                image = None
+                if self.is_direct_paper_choice_template():
+                    try:
+                        image = self.direct_calculation_crop_for_entry(entry, back_path)
+                    except Exception:
+                        image = None
+                if image is None:
+                    image = Image.open(back_path).convert('RGB')
+                state['current_image_obj'] = image
+
+                target_width = 1500
+                scale = target_width / max(1, image.width)
+                if scale <= 0:
+                    scale = 1.0
+                state['scale'] = scale
+
+                render_current_image()
+                image_canvas.xview_moveto(0)
+                image_canvas.yview_moveto(0)
+            except Exception as exc:
+                image_canvas.create_text(
+                    30, 30,
+                    text=f'计算题图像加载失败：{exc}',
+                    anchor='nw', fill='red', font=('Arial', 14, 'bold'),
+                )
+                state['photo'] = None
+                state['current_image_obj'] = None
+
+        def redraw_annotations():
+            for item_id in state['canvas_items']:
+                try:
+                    image_canvas.delete(item_id)
+                except Exception:
+                    pass
+            state['canvas_items'].clear()
+
+            img = state['current_image_obj']
+            scale = state['scale']
+            if not img:
+                return
+
+            w = img.width * scale
+            h = img.height * scale
+
+            qno_key = str(current_question().get('question_no'))
+            entry_key = self.subjective_entry_key(current_entry())
+            annos = all_annotations.get(entry_key, {}).get(qno_key, [])
+
+            for item in annos:
+                if not isinstance(item, dict):
+                    continue
+                itype = item.get('type')
+                if itype == 'line':
+                    pts = item.get('points') or []
+                    if len(pts) >= 2:
+                        flat_pts = []
+                        for u, v in pts:
+                            flat_pts.extend([u * w, v * h])
+                        cid = image_canvas.create_line(flat_pts, fill=item.get('color', '#DC2626'), width=int(item.get('width', 3)), capstyle=tk.ROUND, joinstyle=tk.ROUND)
+                        state['canvas_items'].append(cid)
+                elif itype == 'check':
+                    cx = item.get('u', 0) * w
+                    cy = item.get('v', 0) * h
+                    sz = item.get('size', 24)
+                    cid1 = image_canvas.create_line(cx - sz * 0.45, cy - sz * 0.05, cx - sz * 0.1, cy + sz * 0.4, fill='#16A34A', width=3, capstyle=tk.ROUND)
+                    cid2 = image_canvas.create_line(cx - sz * 0.1, cy + sz * 0.4, cx + sz * 0.55, cy - sz * 0.45, fill='#16A34A', width=3, capstyle=tk.ROUND)
+                    state['canvas_items'].extend([cid1, cid2])
+                elif itype == 'cross':
+                    cx = item.get('u', 0) * w
+                    cy = item.get('v', 0) * h
+                    sz = item.get('size', 22)
+                    cid1 = image_canvas.create_line(cx - sz * 0.4, cy - sz * 0.4, cx + sz * 0.4, cy + sz * 0.4, fill='#DC2626', width=3, capstyle=tk.ROUND)
+                    cid2 = image_canvas.create_line(cx - sz * 0.4, cy + sz * 0.4, cx + sz * 0.4, cy - sz * 0.4, fill='#DC2626', width=3, capstyle=tk.ROUND)
+                    state['canvas_items'].extend([cid1, cid2])
+                elif itype == 'stamp':
+                    cx = item.get('u', 0) * w
+                    cy = item.get('v', 0) * h
+                    text = str(item.get('text') or '').strip()
+                    font_spec = ('Arial', 10, 'bold')
+                    tid = image_canvas.create_text(cx, cy, text=f" {text} ", fill='#DC2626', font=font_spec, anchor='c')
+                    bbox = image_canvas.bbox(tid)
+                    if bbox:
+                        bx1, by1, bx2, by2 = bbox
+                        rid = image_canvas.create_rectangle(bx1 - 3, by1 - 2, bx2 + 3, by2 + 2, fill='#FEF2F2', outline='#F87171', width=1)
+                        image_canvas.tag_lower(rid, tid)
+                        state['canvas_items'].extend([rid, tid])
+                    else:
+                        state['canvas_items'].append(tid)
+
+        def add_annotation(item):
+            qno_key = str(current_question().get('question_no'))
+            entry_key = self.subjective_entry_key(current_entry())
+            q_annos = all_annotations.setdefault(entry_key, {}).setdefault(qno_key, [])
+            q_annos.append(item)
+            state['dirty'] = True
+            redraw_annotations()
+
+        def on_canvas_b1_press(event):
+            img = state['current_image_obj']
+            scale = state['scale']
+            if not img or scale <= 0:
+                return
+            cx = image_canvas.canvasx(event.x)
+            cy = image_canvas.canvasy(event.y)
+            w = img.width * scale
+            h = img.height * scale
+            u = max(0.0, min(1.0, cx / w))
+            v = max(0.0, min(1.0, cy / h))
+
+            tool = anno_state['tool']
+            if tool == 'view':
+                image_canvas.scan_mark(event.x, event.y)
+            elif tool == 'line':
+                anno_state['drawing'] = True
+                anno_state['temp_line_pts'] = [(u, v)]
+                if anno_state['temp_line_id']:
+                    image_canvas.delete(anno_state['temp_line_id'])
+                anno_state['temp_line_id'] = image_canvas.create_line(cx, cy, cx, cy, fill='#DC2626', width=3, capstyle=tk.ROUND)
+            elif tool == 'check':
+                add_annotation({'type': 'check', 'u': u, 'v': v, 'color': '#16A34A', 'size': 24})
+            elif tool == 'cross':
+                add_annotation({'type': 'cross', 'u': u, 'v': v, 'color': '#DC2626', 'size': 22})
+            elif tool == 'stamp':
+                if anno_state['stamp_text']:
+                    add_annotation({'type': 'stamp', 'u': u, 'v': v, 'text': anno_state['stamp_text'], 'color': '#DC2626'})
+
+        def on_canvas_b1_motion(event):
+            img = state['current_image_obj']
+            scale = state['scale']
+            if not img or scale <= 0:
+                return
+            tool = anno_state['tool']
+            if tool == 'view':
+                image_canvas.scan_dragto(event.x, event.y, gain=1)
+            elif tool == 'line' and anno_state['drawing']:
+                cx = image_canvas.canvasx(event.x)
+                cy = image_canvas.canvasy(event.y)
+                w = img.width * scale
+                h = img.height * scale
+                u = max(0.0, min(1.0, cx / w))
+                v = max(0.0, min(1.0, cy / h))
+                anno_state['temp_line_pts'].append((u, v))
+                flat = []
+                for tu, tv in anno_state['temp_line_pts']:
+                    flat.extend([tu * w, tv * h])
+                if len(flat) >= 4:
+                    image_canvas.coords(anno_state['temp_line_id'], *flat)
+
+        def on_canvas_b1_release(event):
+            if anno_state['tool'] == 'line' and anno_state['drawing']:
+                anno_state['drawing'] = False
+                if anno_state['temp_line_id']:
+                    image_canvas.delete(anno_state['temp_line_id'])
+                    anno_state['temp_line_id'] = None
+                pts = anno_state['temp_line_pts']
+                if len(pts) >= 2:
+                    add_annotation({'type': 'line', 'points': pts, 'color': '#DC2626', 'width': 3})
+                anno_state['temp_line_pts'] = []
+
+        image_canvas.bind('<Button-1>', on_canvas_b1_press)
+        image_canvas.bind('<B1-Motion>', on_canvas_b1_motion)
+        image_canvas.bind('<ButtonRelease-1>', on_canvas_b1_release)
+
+        # ----------------- 视图刷新 -----------------
+        def refresh_view():
+            question = current_question()
+            entry = current_entry()
+            qno = question.get('question_no')
+            max_total = sum(float(s.get('score') or 0) for s in (question.get('sub_scores') or []))
+            title_var.set(f'正在批改：第 {qno} 题 (整大题满分 {max_total:g} 分)')
+            progress_var.set(f'学生 {state["entry_index"] + 1}/{len(entries)} 份 | 计算大题 {state["question_index"] + 1}/{len(questions)}')
+            q_combo_box.current(state['question_index'])
+            s_combo_box.current(state['entry_index'])
+
+            student_var.set(f"{entry.get('score_id') or '未识别学号'}  {entry.get('student_name') or '未匹配'}")
+            file_var.set(f"正面：{entry.get('file') or Path(str(entry.get('input_path') or '')).name}")
+            back_path = infer_back_path(entry)
+            back_var.set(f"背面：{Path(back_path).name if back_path else '未找到'}")
+
+            load_score_widgets()
+            load_back_image()
+            r_canvas.yview_moveto(0)
+            state['dirty'] = False
+
+        def on_r_mousewheel(event):
+            delta = -1 if event.delta > 0 else 1
+            r_canvas.yview_scroll(delta * 2, 'units')
+
+        r_canvas.bind('<MouseWheel>', on_r_mousewheel)
+        score_panel.bind('<MouseWheel>', on_r_mousewheel)
+
+        def on_image_mousewheel(event):
+            if event.state & 0x0004:  # Ctrl pressed -> Zoom!
+                if event.delta > 0:
+                    zoom_in()
+                else:
+                    zoom_out()
+                return 'break'
             delta = -1 if event.delta > 0 else 1
             image_canvas.yview_scroll(delta * 3, 'units')
 
-        image_canvas.bind('<MouseWheel>', on_mousewheel)
+        image_canvas.bind('<MouseWheel>', on_image_mousewheel)
+        win.bind('<Control-plus>', lambda _e: zoom_in())
+        win.bind('<Control-equal>', lambda _e: zoom_in())
+        win.bind('<Control-minus>', lambda _e: zoom_out())
+        win.bind('<plus>', lambda _e: zoom_in())
+        win.bind('<equal>', lambda _e: zoom_in())
+        win.bind('<minus>', lambda _e: zoom_out())
         win.bind('<Control-s>', lambda _e: save_safely(True))
-        win.bind('<Return>', lambda _e: next_entry())
+        win.bind('<Control-z>', lambda _e: undo_last_annotation())
+        win.bind('<Return>', lambda _e: submit_and_next())
         win.protocol('WM_DELETE_WINDOW', close_window)
+
         refresh_view()
 
     def detect_direct_choice_boxes_from_blank(self, image_path, include_top=False):
@@ -11772,7 +12160,7 @@ class EnhancedAnswerCardStatsGUI(
             # Some direct-paper blanks start very close to the page margin after
             # printing/scanning. Keep a small edge guard, but do not drop valid
             # left-margin blanks such as a wrapped fill line near question text.
-            if x < 20 or x + w > width - 20:
+            if x < 4 or x + w > width - 4:
                 continue
             if w < 80 or w > width * 0.78:
                 continue
@@ -11968,7 +12356,7 @@ class EnhancedAnswerCardStatsGUI(
                 continue
             if self.direct_subjective_line_is_name_area({'x': x, 'y': y, 'w': w, 'h': h}, width, height, side=side):
                 continue
-            if x < 20 or x + w > width - 20 or w < 45 or w > width * 0.78:
+            if x < 4 or x + w > width - 4 or w < 45 or w > width * 0.78:
                 continue
             # Coloured illustrations can contain similar colours, but answer
             # blanks are thin and long rather than filled coloured blocks.
@@ -14811,15 +15199,16 @@ class EnhancedAnswerCardStatsGUI(
             back_boxes = self.detect_direct_choice_boxes_from_blank(Path(back_file), include_top=True)
             choice_qnos = None
             parent_dir = Path(front_file).parent
-            word_files = [p for p in parent_dir.glob('*.docx') if not p.name.startswith('~$')]
-            if word_files:
-                try:
-                    word_payload = self.read_word_answer_template(word_files[0])
+            try:
+                match_res = self.find_folder_answer_template_files(parent_dir)
+                word_path = match_res.get('word')
+                if word_path:
+                    word_payload = self.read_word_answer_template(word_path)
                     choice_answers = self.extract_direct_choice_answers_from_text(word_payload.get('answer_text') or '')
                     if choice_answers:
                         choice_qnos = list(choice_answers.keys())
-                except Exception:
-                    pass
+            except Exception:
+                pass
             questions_by_side, total_boxes = self.build_direct_choice_questions_from_continuous_boxes(
                 [('front', front_boxes), ('back', back_boxes)],
                 choice_question_numbers=choice_qnos,
@@ -15208,6 +15597,13 @@ class EnhancedAnswerCardStatsGUI(
 
     def open_llm_preview_dialog(self, parent_win, task_item=None, on_apply_callback=None):
         """打开大模型识图与判分效果实测/预览对话框"""
+        part = (task_item or {}).get('part', {})
+        kind = str(part.get('kind') or '').lower()
+        pid = str((task_item or {}).get('part_id') or '').lower()
+        if kind in ('calculation', 'drawing') or bool(part.get('manual_only')) or pid.startswith('calc_'):
+            messagebox.showinfo('提示', '计算题/作图题属于纯人工评阅题目，不支持大模型判分。', parent=parent_win)
+            return
+
         try:
             import llm_grading_service
         except ImportError:
@@ -15947,10 +16343,16 @@ class EnhancedAnswerCardStatsGUI(
                 return False
             return True
 
+        def is_calc_or_drawing(task_item):
+            part = (task_item or {}).get('part', {})
+            kind = str(part.get('kind') or '').lower()
+            pid = str((task_item or {}).get('part_id') or '').lower()
+            return kind in ('drawing', 'calculation') or bool(part.get('manual_only')) or pid.startswith('calc_')
+
         target_tasks = [
             t for t in tasks
             if is_task_pending_manual(t)
-            and t.get('part', {}).get('kind') != 'drawing'
+            and not is_calc_or_drawing(t)
             and os.path.exists(t.get('crop_path', ''))
         ]
 
@@ -16143,7 +16545,7 @@ class EnhancedAnswerCardStatsGUI(
 
         threading.Thread(target=worker_thread, daemon=True).start()
 
-    def open_subjective_grading(self):
+    def open_subjective_grading(self, target_part_id=None, target_kind=None):
         if not self.context_change_allowed():
             return
         if not self.require_current_session_for_grading('主观题批改'):
@@ -16268,7 +16670,64 @@ class EnhancedAnswerCardStatsGUI(
         ocr_display_label = ttk.Label(info, textvariable=ocr_var, foreground='#0B5CAD', wraplength=900)
         ocr_display_label.pack(anchor='w')
 
-        state = {'index': 0, 'photo': None, 'manual_mode': False, 'manual_scope': 'all', 'closing': False}
+        # 显目的人工赋分操作栏
+        score_action_frame = ttk.LabelFrame(win, text=' ✍️ 人工赋分操作 (点击按钮或按键盘数字键0~9) ', padding=(8, 6))
+        score_action_frame.pack(fill=tk.X, padx=12, pady=(2, 6))
+
+        top_switch_bar = ttk.Frame(score_action_frame)
+        top_switch_bar.pack(fill=tk.X, pady=(0, 4))
+        tk.Button(
+            top_switch_bar,
+            text='📐 切换到计算题整大题批注工作台 (一次改完整题+画线打勾打叉批语印章)',
+            font=('Arial', 10, 'bold'),
+            bg='#EFF6FF',
+            fg='#1D4ED8',
+            activebackground='#DBEAFE',
+            command=lambda: (win.destroy(), self.open_calculation_score_entry()),
+        ).pack(side=tk.LEFT, padx=2)
+
+        score_buttons_container = ttk.Frame(score_action_frame)
+        score_buttons_container.pack(fill=tk.X)
+
+        initial_index = 0
+        if target_part_id:
+            for i, t in enumerate(tasks):
+                if t.get('part_id') == target_part_id:
+                    initial_index = i
+                    break
+        elif target_kind:
+            for i, t in enumerate(tasks):
+                if t.get('part', {}).get('kind') == target_kind:
+                    initial_index = i
+                    break
+
+        state = {'index': initial_index, 'photo': None, 'manual_mode': False, 'manual_scope': 'all', 'closing': False}
+
+        part_nav_var = tk.StringVar()
+        part_jump_options = []
+        part_jump_map = {}
+        has_draw_part = False
+        has_calc_part = False
+        first_draw_idx = None
+        first_calc_idx = None
+        for i, t in enumerate(tasks):
+            p = t.get('part', {})
+            pid = t.get('part_id')
+            pkind = p.get('kind', '')
+            if pkind == 'drawing':
+                has_draw_part = True
+                if first_draw_idx is None:
+                    first_draw_idx = i
+            elif pkind == 'calculation':
+                has_calc_part = True
+                if first_calc_idx is None:
+                    first_calc_idx = i
+            if pid not in part_jump_map:
+                part_jump_map[pid] = i
+                kind_tag = " [作图题]" if pkind == 'drawing' else (" [计算题]" if pkind == 'calculation' else "")
+                score_str = f"{float(p.get('score') or 1):g}分"
+                label_text = f"{p.get('label', pid)}{kind_tag} ({score_str})"
+                part_jump_options.append((label_text, pid))
 
         def refresh_main_result_views():
             self.refresh_main_result_views(payload)
@@ -16507,6 +16966,102 @@ class EnhancedAnswerCardStatsGUI(
                 state['index'] += 1
             refresh()
 
+        def update_score_buttons():
+            for w in score_buttons_container.winfo_children():
+                w.destroy()
+            if not tasks or state['index'] >= len(tasks):
+                return
+            curr_task = tasks[state['index']]
+            curr_part = curr_task['part']
+            curr_max = float(curr_part.get('score') or (curr_part.get('max_score') or 1))
+            rec = all_scores.get(curr_task['entry_key'], {}).get(curr_task['part_id'], {})
+            curr_score = rec.get('score') if isinstance(rec, dict) else None
+
+            if curr_max <= 1.0:
+                step_values = [0.0, 0.5, curr_max]
+            elif curr_max <= 2.0:
+                step_values = [0.0, 0.5, 1.0, 1.5, curr_max]
+            elif curr_max <= 3.0:
+                step_values = [0.0, 1.0, 1.5, 2.0, 2.5, curr_max]
+            elif curr_max <= 5.0:
+                step_values = [0.0, 1.0, 2.0, 3.0, 4.0, curr_max]
+            else:
+                step_values = [0.0, 1.0, 2.0, round(curr_max / 2, 1), curr_max - 1, curr_max]
+
+            cand_vals = sorted(set([round(v, 2) for v in step_values if 0 <= v <= curr_max]))
+
+            ttk.Label(score_buttons_container, text='快捷给分: ', font=('Microsoft YaHei', 10, 'bold')).pack(side=tk.LEFT, padx=(2, 6))
+
+            for val in cand_vals:
+                is_selected = (curr_score is not None and abs(float(curr_score) - val) < 1e-4)
+                if val == 0.0:
+                    btn_text = '❌ 0分'
+                    bg_col = '#DC2626' if is_selected else '#FEE2E2'
+                    fg_col = 'white' if is_selected else '#991B1B'
+                    act_bg = '#B91C1C'
+                elif abs(val - curr_max) < 1e-4:
+                    btn_text = f'✔ 满分({curr_max:g}分)'
+                    bg_col = '#16A34A' if is_selected else '#DCFCE7'
+                    fg_col = 'white' if is_selected else '#166534'
+                    act_bg = '#15803D'
+                else:
+                    btn_text = f'{val:g}分'
+                    bg_col = '#2563EB' if is_selected else '#EFF6FF'
+                    fg_col = 'white' if is_selected else '#1E40AF'
+                    act_bg = '#1D4ED8'
+
+                if val.is_integer() and int(val) < 10:
+                    btn_text += f' [{int(val)}]'
+
+                b = tk.Button(
+                    score_buttons_container,
+                    text=btn_text,
+                    command=lambda v=val: save_current_score(v),
+                    bg=bg_col,
+                    fg=fg_col,
+                    activebackground=act_bg,
+                    activeforeground='white',
+                    font=('Microsoft YaHei', 10, 'bold'),
+                    relief='solid' if is_selected else 'groove',
+                    bd=2 if is_selected else 1,
+                    padx=10,
+                    pady=4,
+                    cursor='hand2',
+                )
+                b.pack(side=tk.LEFT, padx=3)
+
+            custom_box = ttk.Frame(score_buttons_container)
+            custom_box.pack(side=tk.LEFT, padx=(16, 2))
+            ttk.Label(custom_box, text='自定义得分:').pack(side=tk.LEFT, padx=(0, 2))
+            cust_val_var = tk.StringVar(value='' if curr_score is None else f"{float(curr_score):g}")
+            cust_entry = ttk.Entry(custom_box, textvariable=cust_val_var, width=6, font=('Arial', 10))
+            cust_entry.pack(side=tk.LEFT, padx=2)
+
+            def submit_custom():
+                raw = cust_val_var.get().strip()
+                try:
+                    num = float(raw)
+                    if 0 <= num <= curr_max:
+                        save_current_score(num)
+                    else:
+                        messagebox.showwarning('分数超出范围', f'该题满分为 {curr_max:g} 分，请输入 0 ~ {curr_max:g} 之间的分数。', parent=win)
+                except ValueError:
+                    messagebox.showwarning('输入错误', '请输入有效的分数数值。', parent=win)
+
+            cust_btn = tk.Button(
+                custom_box,
+                text='打分并下一份 ↵',
+                command=submit_custom,
+                bg='#4F46E5',
+                fg='white',
+                font=('Microsoft YaHei', 9, 'bold'),
+                padx=8,
+                pady=3,
+                cursor='hand2',
+            )
+            cust_btn.pack(side=tk.LEFT, padx=3)
+            cust_entry.bind('<Return>', lambda _e: submit_custom())
+
         def jump(delta):
             if state.get('manual_mode'):
                 if not tasks:
@@ -16572,7 +17127,10 @@ class EnhancedAnswerCardStatsGUI(
                 for task_item in tasks:
                     if target_part_id and task_item.get('part_id') != target_part_id:
                         continue
-                    if task_item.get('part', {}).get('kind') in ('drawing', 'calculation'):
+                    part = task_item.get('part', {})
+                    kind = str(part.get('kind') or '').lower()
+                    pid = str(task_item.get('part_id') or '').lower()
+                    if kind in ('drawing', 'calculation') or bool(part.get('manual_only')) or pid.startswith('calc_'):
                         continue
                     record = all_scores.get(task_item['entry_key'], {}).get(task_item['part_id'], {})
                     if not isinstance(record, dict) or record.get('manual_graded'):
@@ -17340,7 +17898,10 @@ class EnhancedAnswerCardStatsGUI(
             def collect_groups():
                 grouped = {}
                 for task_item in tasks:
-                    if task_item.get('part', {}).get('kind') in ('drawing', 'calculation'):
+                    part = task_item.get('part', {})
+                    kind = str(part.get('kind') or '').lower()
+                    pid = str(task_item.get('part_id') or '').lower()
+                    if kind in ('drawing', 'calculation') or bool(part.get('manual_only')) or pid.startswith('calc_'):
                         continue
                     if not is_manual_grade_task(task_item):
                         continue
@@ -18631,9 +19192,16 @@ class EnhancedAnswerCardStatsGUI(
             threading.Thread(target=worker, daemon=True).start()
 
         def auto_grade_candidate_tasks(target_entry_key=None):
+            def is_calc_or_drawing(task_item):
+                part = (task_item or {}).get('part', {})
+                kind = str(part.get('kind') or '').lower()
+                pid = str((task_item or {}).get('part_id') or '').lower()
+                return kind in ('drawing', 'calculation') or bool(part.get('manual_only')) or pid.startswith('calc_')
+
             return [
                 task for task in tasks
                 if (target_entry_key is None or task['entry_key'] == target_entry_key)
+                and not is_calc_or_drawing(task)
                 and (task['part'].get('ocr') or {}).get('enabled')
             ]
 
@@ -18879,6 +19447,20 @@ class EnhancedAnswerCardStatsGUI(
             except Exception as e:
                 image_label.configure(image='', text=f'图片打开失败：{e}')
 
+            try:
+                current_pid = task.get('part_id')
+                for opt_text, pid in part_jump_options:
+                    if pid == current_pid:
+                        part_nav_var.set(opt_text)
+                        break
+            except (NameError, AttributeError):
+                pass
+
+            try:
+                update_score_buttons()
+            except (NameError, AttributeError):
+                pass
+
         def external_refresh():
             fresh_payload = self.load_subjective_score_payload()
             fresh_parts = {p['part_id']: p for p in self.iter_subjective_parts()}
@@ -19039,6 +19621,43 @@ class EnhancedAnswerCardStatsGUI(
 
         ttk.Button(nav_bar, text='上一空 ←', command=lambda: jump(-1)).pack(side=tk.LEFT, padx=4)
         ttk.Button(nav_bar, text='下一空 →', command=lambda: jump(1)).pack(side=tk.LEFT, padx=4)
+
+        ttk.Label(nav_bar, text='【跳转题位】:').pack(side=tk.LEFT, padx=(10, 2))
+        part_nav_combo = ttk.Combobox(
+            nav_bar,
+            textvariable=part_nav_var,
+            values=[opt[0] for opt in part_jump_options],
+            state='readonly',
+            width=26,
+        )
+        part_nav_combo.pack(side=tk.LEFT, padx=2)
+
+        def on_part_nav_select(event=None):
+            sel_text = part_nav_var.get()
+            for opt_text, pid in part_jump_options:
+                if opt_text == sel_text:
+                    target_i = part_jump_map.get(pid)
+                    if target_i is not None:
+                        state['index'] = target_i
+                        state['manual_mode'] = False
+                        refresh()
+                    break
+
+        part_nav_combo.bind('<<ComboboxSelected>>', on_part_nav_select)
+
+        if has_draw_part and first_draw_idx is not None:
+            def jump_to_drawing():
+                state['index'] = first_draw_idx
+                state['manual_mode'] = False
+                refresh()
+            ttk.Button(nav_bar, text='📐 直达作图题', command=jump_to_drawing).pack(side=tk.LEFT, padx=4)
+
+        if has_calc_part and first_calc_idx is not None:
+            def jump_to_calc():
+                state['index'] = first_calc_idx
+                state['manual_mode'] = False
+                refresh()
+            ttk.Button(nav_bar, text='🧮 直达计算题', command=jump_to_calc).pack(side=tk.LEFT, padx=4)
 
         ttk.Button(nav_bar, text='保存并关闭', command=safe_close_window).pack(side=tk.RIGHT, padx=4)
         ttk.Button(nav_bar, text='清空主观题结果', command=clear_subjective_results).pack(side=tk.RIGHT, padx=10)
@@ -23705,10 +24324,23 @@ class EnhancedAnswerCardStatsGUI(
 
         tmpls = [
             p for p in folder_p.glob('*模板*.docx')
-            if not p.name.startswith('~$') and '删除' not in p.name
+            if not p.name.startswith('~$')
         ]
         if tmpls:
-            tmpls.sort(key=lambda p: p.stat().st_mtime, reverse=True)
+            def tmpl_score(p):
+                stem = p.stem
+                score = 0
+                if any(kw in stem for kw in ('compact_print', '透打', '打印辅助', '讲评')):
+                    score -= 500
+                if '套用模板' in stem or '套模板' in stem:
+                    score += 1000
+                    if any(kw in stem for kw in ('删除', '修改', '编辑', '最终', '改')):
+                        score += 50
+                elif '模板' in stem:
+                    score += 100
+                return (score, p.stat().st_mtime)
+
+            tmpls.sort(key=tmpl_score, reverse=True)
             return tmpls[0]
 
         return None
@@ -23879,7 +24511,9 @@ class EnhancedAnswerCardStatsGUI(
 
     def open_knowledge_analysis(self):
         try:
+            import importlib
             import knowledge_analysis
+            importlib.reload(knowledge_analysis)
             knowledge_analysis.open_window(self)
         except Exception as e:
             messagebox.showerror('学生知识点分析启动失败', str(e))
