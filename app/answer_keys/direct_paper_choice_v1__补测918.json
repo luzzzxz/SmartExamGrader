@@ -950,7 +950,7 @@
       "front": "D:\\作业试卷批改系统\\答题批改系统_完整私有备份_20260908_105603\\答题批改系统_完整私有备份_20260908_105603\\app\\answer_keys\\_scheme_assets\\direct_paper_choice_v1__补测918\\direct_front_template.jpg",
       "back": "D:\\作业试卷批改系统\\答题批改系统_完整私有备份_20260908_105603\\答题批改系统_完整私有备份_20260908_105603\\app\\answer_keys\\_scheme_assets\\direct_paper_choice_v1__补测918\\direct_back_template.jpg"
     },
-    "saved_at": "2026-09-19T08:07:15",
+    "saved_at": "2026-09-19T09:57:30",
     "subjective_line_config": {
       "version": 1,
       "template_key": "direct_paper_choice_v1",
@@ -1400,7 +1400,7 @@
     "template_name": "试卷直接批改模板-v1",
     "display_name": "试卷直接批改模板主观横线配置",
     "source": "direct_subjective_lines",
-    "updated_at": "2026-09-19T08:07:15",
+    "updated_at": "2026-09-19T09:57:30",
     "scoring": {
       "default_blank_score": 1,
       "include_in_total_score": true,
@@ -1969,7 +1969,7 @@
         }
       ],
       "max_score": 6.0,
-      "updated_at": "2026-09-19T08:07:15"
+      "updated_at": "2026-09-19T09:57:30"
     },
     "direct_calculation_region": {
       "enabled": true,
@@ -1988,7 +1988,7 @@
     "_answer_scheme_snapshot": {
       "template_key": "direct_paper_choice_v1",
       "template_name": "试卷直接批改模板-v1",
-      "saved_at": "2026-09-19T08:07:15"
+      "saved_at": "2026-09-19T09:57:30"
     }
   },
   "knowledge_identity": {
@@ -2058,6 +2058,6 @@
     "source_name": "paper_20260918_015151_知识点.csv",
     "imported_at": "2026-09-18T21:10:30"
   },
-  "saved_at": "2026-09-19T08:07:15",
-  "ocr_settings_updated_at": "2026-09-19T08:07:15"
+  "saved_at": "2026-09-19T09:57:30",
+  "ocr_settings_updated_at": "2026-09-19T09:57:30"
 }

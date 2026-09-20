@@ -993,6 +993,37 @@ class PdfOverlayExportMixin:
                             stats['all'][txt] += 1
         return stats
 
+    def summarize_drawing_error_stamps(self):
+        payload = self.load_subjective_score_payload() if hasattr(self, 'load_subjective_score_payload') else {}
+        if not isinstance(payload, dict):
+            return {}
+        annotations_map = payload.get('drawing_annotations', {})
+        if not isinstance(annotations_map, dict):
+            return {}
+
+        stats = defaultdict(lambda: defaultdict(int))
+        for entry_key, q_annos in annotations_map.items():
+            if isinstance(q_annos, dict):
+                for qno, annos in q_annos.items():
+                    if not isinstance(annos, list):
+                        continue
+                    seen_texts = set()
+                    for item in annos:
+                        if isinstance(item, dict) and item.get('type') == 'stamp':
+                            txt = str(item.get('text') or '').strip()
+                            if txt and txt not in seen_texts:
+                                seen_texts.add(txt)
+                                stats[str(qno)][txt] += 1
+            elif isinstance(q_annos, list):
+                seen_texts = set()
+                for item in q_annos:
+                    if isinstance(item, dict) and item.get('type') == 'stamp':
+                        txt = str(item.get('text') or '').strip()
+                        if txt and txt not in seen_texts:
+                            seen_texts.add(txt)
+                            stats['all'][txt] += 1
+        return stats
+
     def collect_calculation_annotations_mark_ops(self, entry, matrix, side='back', image_size=None):
         if str(side or 'front').lower() != 'back':
             return []
@@ -1087,6 +1118,115 @@ class PdfOverlayExportMixin:
                     'prefer_chinese_font': True,
                     'color': color,
                 })
+        return ops
+
+    def collect_drawing_annotations_mark_ops(self, entry, matrix, side='back', image_size=None):
+        side = str(side or 'back').lower()
+        payload = self.load_subjective_score_payload() if hasattr(self, 'load_subjective_score_payload') else {}
+        if not isinstance(payload, dict):
+            return []
+        annotations_map = payload.get('drawing_annotations', {})
+        if not isinstance(annotations_map, dict):
+            return []
+        entry_key = self.subjective_entry_key(entry) if hasattr(self, 'subjective_entry_key') else None
+        student_annos = annotations_map.get(entry_key) or {}
+        if not student_annos:
+            return []
+
+        drawing_parts = {}
+        if hasattr(self, 'drawing_question_config'):
+            try:
+                drawing_parts = {str(p.get('part_id')): p for p in self.drawing_question_config()}
+            except Exception:
+                drawing_parts = {}
+
+        if image_size:
+            region_rect = (0.0, 0.0, float(image_size[0]), float(image_size[1]))
+        else:
+            region_rect = (0.0, 0.0, 2480.0, 3508.0)
+
+        rx1, ry1, rx2, ry2 = region_rect
+        rw = max(1.0, rx2 - rx1)
+        rh = max(1.0, ry2 - ry1)
+
+        def norm_to_page(u, v):
+            return rx1 + float(u) * rw, ry1 + float(v) * rh
+
+        ops = []
+        for part_id, items in student_annos.items():
+            part_info = drawing_parts.get(str(part_id)) or {}
+            part_side = str(part_info.get('side') or 'back').lower()
+            if part_side != side:
+                continue
+            if not isinstance(items, list):
+                continue
+
+            part_rect = part_info.get('rect')
+            if part_rect and isinstance(part_rect, dict):
+                if matrix is not None and hasattr(self, 'project_template_rect'):
+                    try:
+                        qx1, qy1, qx2, qy2 = self.project_template_rect(matrix, part_rect)
+                    except Exception:
+                        qx1 = float(part_rect.get('x', 0))
+                        qy1 = float(part_rect.get('y', 0))
+                        qx2 = qx1 + float(part_rect.get('w', 100))
+                        qy2 = qy1 + float(part_rect.get('h', 100))
+                else:
+                    qx1 = float(part_rect.get('x', 0))
+                    qy1 = float(part_rect.get('y', 0))
+                    qx2 = qx1 + float(part_rect.get('w', 100))
+                    qy2 = qy1 + float(part_rect.get('h', 100))
+                box_w = max(1.0, qx2 - qx1)
+                box_h = max(1.0, qy2 - qy1)
+
+                def norm_to_box(u, v):
+                    return qx1 + float(u) * box_w, qy1 + float(v) * box_h
+            else:
+                def norm_to_box(u, v):
+                    return rx1 + float(u) * rw, ry1 + float(v) * rh
+
+            for anno in items:
+                if not isinstance(anno, dict):
+                    continue
+                atype = anno.get('type')
+                if atype == 'line':
+                    pts = anno.get('points') or []
+                    for i in range(len(pts) - 1):
+                        x1, y1 = norm_to_box(pts[i][0], pts[i][1])
+                        x2, y2 = norm_to_box(pts[i+1][0], pts[i+1][1])
+                        ops.append({
+                            'type': 'line',
+                            'points': (x1, y1, x2, y2),
+                            'color': anno.get('color', (220, 0, 0)),
+                            'width': max(1.5, float(anno.get('width') or 3)),
+                        })
+                elif atype in ('check', 'cross'):
+                    px, py = norm_to_box(anno.get('u', 0), anno.get('v', 0))
+                    sym = 'V' if atype == 'check' else 'X'
+                    color = (22, 163, 74) if atype == 'check' else (220, 38, 38)
+                    ops.append({
+                        'type': 'objective_symbol',
+                        'center': (px, py),
+                        'symbol': sym,
+                        'size': float(anno.get('size') or 56),
+                        'width': max(2.5, float(anno.get('stroke_width') or 6)),
+                        'color': color,
+                    })
+                elif atype == 'stamp':
+                    px, py = norm_to_box(anno.get('u', 0), anno.get('v', 0))
+                    text = str(anno.get('text') or '').strip()
+                    if not text:
+                        continue
+                    color = anno.get('color', (220, 38, 38))
+                    ops.append({
+                        'type': 'text',
+                        'xy': (px, py),
+                        'text': f"[{text}]",
+                        'font_size': float(anno.get('font_size') or 44),
+                        'bold': True,
+                        'prefer_chinese_font': True,
+                        'color': color,
+                    })
         return ops
 
     def collect_wrong_knowledge_mark_ops(self, entry, matrix, side='front', image_size=None):
@@ -1511,7 +1651,10 @@ class PdfOverlayExportMixin:
 
     def entry_image_path_for_side(self, entry, side='front'):
         side_files = entry.get('side_files') or {}
-        return Path(side_files.get(side) or entry.get('input_path') or '')
+        raw = side_files.get(side)
+        if isinstance(raw, dict):
+            raw = raw.get('path')
+        return Path(raw or entry.get('input_path') or entry.get('file') or '')
 
     def orient_entry_image_for_side(self, entry, input_path, side='front'):
         rotation_name = (entry.get('side_orientations') or {}).get(side) or entry.get('orientation')
@@ -1528,6 +1671,7 @@ class PdfOverlayExportMixin:
         if side == 'back' and self.is_mixed_objective_subjective_template():
             ops = self.collect_calculation_back_page_mark_ops(entry, image.size)
             ops.extend(self.collect_calculation_annotations_mark_ops(entry, None, side='back', image_size=image.size))
+            ops.extend(self.collect_drawing_annotations_mark_ops(entry, None, side='back', image_size=image.size))
             ops.extend(self.collect_wrong_knowledge_mark_ops(entry, None, side='back', image_size=image.size))
             return ops, image.size
 
@@ -1556,6 +1700,7 @@ class PdfOverlayExportMixin:
             ops.extend(self.collect_direct_calculation_region_mark_ops(entry, matrix))
         if side == 'back':
             ops.extend(self.collect_calculation_annotations_mark_ops(entry, matrix, side=side, image_size=image.size))
+        ops.extend(self.collect_drawing_annotations_mark_ops(entry, matrix, side=side, image_size=image.size))
         if not entry.get('side_files') or side == 'front':
             if not self.is_direct_paper_choice_template():
                 ops.extend(self.collect_big_question_score_mark_ops(entry, matrix))
@@ -1909,6 +2054,7 @@ class PdfOverlayExportMixin:
             marked = image.convert('RGB')
             ops = self.collect_calculation_back_page_mark_ops(entry, marked.size)
             ops.extend(self.collect_calculation_annotations_mark_ops(entry, None, side='back', image_size=marked.size))
+            ops.extend(self.collect_drawing_annotations_mark_ops(entry, None, side='back', image_size=marked.size))
             ops.extend(self.collect_wrong_knowledge_mark_ops(entry, None, side='back', image_size=marked.size))
             self.draw_overlay_ops_to_image(marked, ops)
             return marked
@@ -1939,6 +2085,7 @@ class PdfOverlayExportMixin:
             ops.extend(self.collect_direct_calculation_region_mark_ops(entry, matrix))
         if side == 'back':
             ops.extend(self.collect_calculation_annotations_mark_ops(entry, matrix, side=side, image_size=marked.size))
+        ops.extend(self.collect_drawing_annotations_mark_ops(entry, matrix, side=side, image_size=marked.size))
         if not entry.get('side_files') or side == 'front':
             if not self.is_direct_paper_choice_template():
                 ops.extend(self.collect_big_question_score_mark_ops(entry, matrix))
@@ -2039,6 +2186,7 @@ class PdfOverlayExportMixin:
             overlay = Image.new('RGB', image.size, 'white')
             ops = self.collect_calculation_back_page_mark_ops(entry, overlay.size)
             ops.extend(self.collect_calculation_annotations_mark_ops(entry, None, side='back', image_size=overlay.size))
+            ops.extend(self.collect_drawing_annotations_mark_ops(entry, None, side='back', image_size=overlay.size))
             ops.extend(self.collect_wrong_knowledge_mark_ops(entry, None, side='back', image_size=overlay.size))
             self.draw_overlay_ops_to_image(overlay, ops)
             return overlay
@@ -2069,6 +2217,7 @@ class PdfOverlayExportMixin:
             ops.extend(self.collect_direct_calculation_region_mark_ops(entry, matrix))
         if side == 'back':
             ops.extend(self.collect_calculation_annotations_mark_ops(entry, matrix, side=side, image_size=overlay.size))
+        ops.extend(self.collect_drawing_annotations_mark_ops(entry, matrix, side=side, image_size=overlay.size))
         if not entry.get('side_files') or side == 'front':
             if not self.is_direct_paper_choice_template():
                 ops.extend(self.collect_big_question_score_mark_ops(entry, matrix))

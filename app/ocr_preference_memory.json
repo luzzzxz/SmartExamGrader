@@ -1650,7 +1650,7 @@
     }
   },
   "cleared_at": "2026-05-15T19:43:57",
-  "updated_at": "2026-09-17T08:06:22",
+  "updated_at": "2026-09-19T10:11:26",
   "ocr_result_rules": {
     "c40be4bcc5791baff6a70f1a67d47076c269f0c8824909eb6cfef17a373e8fc9": {
       "不变": {
@@ -2065,6 +2065,54 @@
         "expected_answer": "墙",
         "expected_keywords": "",
         "updated_at": "2026-09-15T10:46:14"
+      }
+    },
+    "3af19ce3653c68b421702b626998d0bc4d9fdf7fe03f218c603dfa372435e1fa": {
+      "相互": {
+        "action": "wrong_keyword",
+        "display_text": "相互",
+        "expected_answer": "相对的",
+        "expected_keywords": "相对",
+        "updated_at": "2026-09-19T10:11:26"
+      },
+      "相互的": {
+        "action": "wrong_keyword",
+        "display_text": "相互的",
+        "expected_answer": "相对的",
+        "expected_keywords": "相对",
+        "updated_at": "2026-09-19T10:11:26"
+      }
+    },
+    "ans:相对的": {
+      "相互": {
+        "action": "wrong_keyword",
+        "display_text": "相互",
+        "expected_answer": "相对的",
+        "expected_keywords": "相对",
+        "updated_at": "2026-09-19T10:11:26"
+      },
+      "相互的": {
+        "action": "wrong_keyword",
+        "display_text": "相互的",
+        "expected_answer": "相对的",
+        "expected_keywords": "相对",
+        "updated_at": "2026-09-19T10:11:26"
+      }
+    },
+    "kw:相对": {
+      "相互": {
+        "action": "wrong_keyword",
+        "display_text": "相互",
+        "expected_answer": "相对的",
+        "expected_keywords": "相对",
+        "updated_at": "2026-09-19T10:11:26"
+      },
+      "相互的": {
+        "action": "wrong_keyword",
+        "display_text": "相互的",
+        "expected_answer": "相对的",
+        "expected_keywords": "相对",
+        "updated_at": "2026-09-19T10:11:26"
       }
     }
   }

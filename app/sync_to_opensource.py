@@ -20,6 +20,7 @@ EXCLUDE_DIRS = {
 
 EXCLUDE_FILE_PATTERNS = [
     re.compile(r'\.bak([._].*)?$', re.I),
+    re.compile(r'\.backup_.*', re.I),
     re.compile(r'\.orig$', re.I),
     re.compile(r'\.tmp$', re.I),
     re.compile(r'\.lock$', re.I),

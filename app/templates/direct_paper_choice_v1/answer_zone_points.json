@@ -14,81 +14,81 @@
             "A": {
               "label": "A",
               "template_pixel": {
-                "x": 131.77,
-                "y": 782.42
+                "x": 180.62,
+                "y": 609.11
               },
               "template_rect": {
-                "x": 117.0,
-                "y": 768.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 166.0,
+                "y": 595.0,
+                "w": 30.0,
+                "h": 29.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.178161,
-                "top_right": 0.597692,
-                "bottom_right": 0.852519,
-                "bottom_left": 0.626796
+                "top_left": 0.162623,
+                "top_right": 0.593037,
+                "bottom_right": 0.864143,
+                "bottom_left": 0.642773
               }
             },
             "B": {
               "label": "B",
               "template_pixel": {
-                "x": 133.14,
-                "y": 846.24
+                "x": 597.71,
+                "y": 608.72
               },
               "template_rect": {
-                "x": 117.0,
-                "y": 831.0,
-                "w": 33.0,
-                "h": 31.0
+                "x": 583.0,
+                "y": 595.0,
+                "w": 31.0,
+                "h": 28.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.194107,
-                "top_right": 0.602432,
-                "bottom_right": 0.840479,
-                "bottom_left": 0.610857
+                "top_left": 0.206862,
+                "top_right": 0.476665,
+                "bottom_right": 0.789244,
+                "bottom_left": 0.655939
               }
             },
             "C": {
               "label": "C",
               "template_pixel": {
-                "x": 133.38,
-                "y": 909.7
+                "x": 1019.18,
+                "y": 608.48
               },
               "template_rect": {
-                "x": 118.0,
-                "y": 895.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 1005.0,
+                "y": 595.0,
+                "w": 30.0,
+                "h": 29.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.209955,
-                "top_right": 0.607786,
-                "bottom_right": 0.828831,
-                "bottom_left": 0.595004
+                "top_left": 0.299573,
+                "top_right": 0.363117,
+                "bottom_right": 0.726725,
+                "bottom_left": 0.6913
               }
             },
             "D": {
               "label": "D",
               "template_pixel": {
-                "x": 133.61,
-                "y": 972.76
+                "x": 1439.6,
+                "y": 608.45
               },
               "template_rect": {
-                "x": 118.0,
-                "y": 958.0,
-                "w": 32.0,
-                "h": 31.0
+                "x": 1425.0,
+                "y": 595.0,
+                "w": 30.0,
+                "h": 28.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.225703,
-                "top_right": 0.613468,
-                "bottom_right": 0.817398,
-                "bottom_left": 0.579252
+                "top_left": 0.408735,
+                "top_right": 0.25927,
+                "bottom_right": 0.681156,
+                "bottom_left": 0.745522
               }
             }
           }
@@ -101,81 +101,81 @@
             "A": {
               "label": "A",
               "template_pixel": {
-                "x": 134.62,
-                "y": 1104.18
+                "x": 181.82,
+                "y": 879.56
               },
               "template_rect": {
-                "x": 119.0,
-                "y": 1090.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 168.0,
+                "y": 866.0,
+                "w": 29.0,
+                "h": 28.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.258529,
-                "top_right": 0.626298,
-                "bottom_right": 0.793951,
-                "bottom_left": 0.546425
+                "top_left": 0.241942,
+                "top_right": 0.619466,
+                "bottom_right": 0.805771,
+                "bottom_left": 0.563441
               }
             },
             "B": {
               "label": "B",
               "template_pixel": {
-                "x": 624.15,
-                "y": 1102.46
+                "x": 526.06,
+                "y": 879.0
               },
               "template_rect": {
-                "x": 609.0,
-                "y": 1087.0,
-                "w": 32.0,
-                "h": 31.0
+                "x": 512.0,
+                "y": 865.0,
+                "w": 30.0,
+                "h": 29.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.288605,
-                "top_right": 0.51764,
-                "bottom_right": 0.711913,
-                "bottom_left": 0.561981
+                "top_left": 0.264368,
+                "top_right": 0.528072,
+                "bottom_right": 0.738266,
+                "bottom_left": 0.574068
               }
             },
             "C": {
               "label": "C",
               "template_pixel": {
-                "x": 1119.05,
-                "y": 1100.09
+                "x": 877.28,
+                "y": 878.38
               },
               "template_rect": {
-                "x": 1104.0,
-                "y": 1085.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 863.0,
+                "y": 865.0,
+                "w": 29.0,
+                "h": 28.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.36091,
-                "top_right": 0.415472,
-                "bottom_right": 0.642269,
-                "bottom_left": 0.603187
+                "top_left": 0.320144,
+                "top_right": 0.439173,
+                "bottom_right": 0.678037,
+                "bottom_left": 0.602434
               }
             },
             "D": {
               "label": "D",
               "template_pixel": {
-                "x": 1613.69,
-                "y": 1098.67
+                "x": 1268.52,
+                "y": 877.69
               },
               "template_rect": {
-                "x": 1598.0,
-                "y": 1084.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 1254.0,
+                "y": 864.0,
+                "w": 30.0,
+                "h": 28.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.455924,
-                "top_right": 0.328644,
-                "bottom_right": 0.590369,
-                "bottom_left": 0.664915
+                "top_left": 0.404736,
+                "top_right": 0.349415,
+                "bottom_right": 0.62427,
+                "bottom_left": 0.652001
               }
             }
           }
@@ -188,81 +188,81 @@
             "A": {
               "label": "A",
               "template_pixel": {
-                "x": 135.4,
-                "y": 1231.55
+                "x": 182.57,
+                "y": 1153.27
               },
               "template_rect": {
-                "x": 120.0,
-                "y": 1217.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 168.0,
+                "y": 1140.0,
+                "w": 30.0,
+                "h": 28.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.290345,
-                "top_right": 0.640139,
-                "bottom_right": 0.771917,
-                "bottom_left": 0.514611
+                "top_left": 0.322229,
+                "top_right": 0.655091,
+                "bottom_right": 0.750726,
+                "bottom_left": 0.483154
               }
             },
             "B": {
               "label": "B",
               "template_pixel": {
-                "x": 624.96,
-                "y": 1229.31
+                "x": 182.69,
+                "y": 1207.02
               },
               "template_rect": {
-                "x": 609.0,
-                "y": 1215.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 169.0,
+                "y": 1194.0,
+                "w": 29.0,
+                "h": 28.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.317336,
-                "top_right": 0.534246,
-                "bottom_right": 0.687362,
-                "bottom_left": 0.531246
+                "top_left": 0.337995,
+                "top_right": 0.663012,
+                "bottom_right": 0.740465,
+                "bottom_left": 0.467388
               }
             },
             "C": {
               "label": "C",
               "template_pixel": {
-                "x": 1119.86,
-                "y": 1228.08
+                "x": 183.01,
+                "y": 1261.47
               },
               "template_rect": {
-                "x": 1104.0,
-                "y": 1213.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 169.0,
+                "y": 1248.0,
+                "w": 29.0,
+                "h": 27.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.384503,
-                "top_right": 0.436192,
-                "bottom_right": 0.614712,
-                "bottom_left": 0.574415
+                "top_left": 0.353969,
+                "top_right": 0.671269,
+                "bottom_right": 0.730226,
+                "bottom_left": 0.451418
               }
             },
             "D": {
               "label": "D",
               "template_pixel": {
-                "x": 1614.43,
-                "y": 1226.02
+                "x": 183.23,
+                "y": 1315.91
               },
               "template_rect": {
-                "x": 1599.0,
-                "y": 1211.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 169.0,
+                "y": 1303.0,
+                "w": 29.0,
+                "h": 27.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.474737,
-                "top_right": 0.354392,
-                "bottom_right": 0.560445,
-                "bottom_left": 0.639069
+                "top_left": 0.369939,
+                "top_right": 0.679824,
+                "bottom_right": 0.72022,
+                "bottom_left": 0.435451
               }
             }
           }
@@ -275,81 +275,81 @@
             "A": {
               "label": "A",
               "template_pixel": {
-                "x": 135.8,
-                "y": 1358.29
+                "x": 184.05,
+                "y": 1589.55
               },
               "template_rect": {
-                "x": 121.0,
-                "y": 1343.0,
-                "w": 32.0,
-                "h": 31.0
+                "x": 170.0,
+                "y": 1576.0,
+                "w": 29.0,
+                "h": 27.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.322001,
-                "top_right": 0.655239,
-                "bottom_right": 0.750761,
-                "bottom_left": 0.482952
+                "top_left": 0.450213,
+                "top_right": 0.726695,
+                "bottom_right": 0.673492,
+                "bottom_left": 0.355197
               }
             },
             "B": {
               "label": "B",
               "template_pixel": {
-                "x": 136.14,
-                "y": 1421.51
+                "x": 184.65,
+                "y": 1643.61
               },
               "template_rect": {
-                "x": 121.0,
-                "y": 1407.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 170.0,
+                "y": 1630.0,
+                "w": 30.0,
+                "h": 27.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.337794,
-                "top_right": 0.663178,
-                "bottom_right": 0.740461,
-                "bottom_left": 0.467162
+                "top_left": 0.466074,
+                "top_right": 0.736538,
+                "bottom_right": 0.664909,
+                "bottom_left": 0.339347
               }
             },
             "C": {
               "label": "C",
               "template_pixel": {
-                "x": 136.35,
-                "y": 1484.62
+                "x": 185.21,
+                "y": 1697.21
               },
               "template_rect": {
-                "x": 121.0,
-                "y": 1470.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 171.0,
+                "y": 1684.0,
+                "w": 29.0,
+                "h": 28.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.353558,
-                "top_right": 0.671407,
-                "bottom_right": 0.7304,
-                "bottom_left": 0.451398
+                "top_left": 0.4818,
+                "top_right": 0.746509,
+                "bottom_right": 0.656676,
+                "bottom_left": 0.323633
               }
             },
             "D": {
               "label": "D",
               "template_pixel": {
-                "x": 137.15,
-                "y": 1547.79
+                "x": 185.25,
+                "y": 1751.3
               },
               "template_rect": {
-                "x": 121.0,
-                "y": 1533.0,
-                "w": 32.0,
-                "h": 31.0
+                "x": 171.0,
+                "y": 1738.0,
+                "w": 29.0,
+                "h": 28.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.36934,
-                "top_right": 0.679788,
-                "bottom_right": 0.720418,
-                "bottom_left": 0.435622
+                "top_left": 0.497667,
+                "top_right": 0.756886,
+                "bottom_right": 0.648783,
+                "bottom_left": 0.307771
               }
             }
           }
@@ -362,81 +362,81 @@
             "A": {
               "label": "A",
               "template_pixel": {
-                "x": 138.05,
-                "y": 1675.67
+                "x": 186.22,
+                "y": 2052.71
               },
               "template_rect": {
-                "x": 122.0,
-                "y": 1661.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 172.0,
+                "y": 2039.0,
+                "w": 30.0,
+                "h": 28.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.401287,
-                "top_right": 0.697684,
-                "bottom_right": 0.701009,
-                "bottom_left": 0.403685
+                "top_left": 0.586091,
+                "top_right": 0.817789,
+                "bottom_right": 0.610306,
+                "bottom_left": 0.219414
               }
             },
             "B": {
               "label": "B",
               "template_pixel": {
-                "x": 1122.84,
-                "y": 1671.39
+                "x": 568.34,
+                "y": 2051.01
               },
               "template_rect": {
-                "x": 1107.0,
-                "y": 1657.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 554.0,
+                "y": 2038.0,
+                "w": 30.0,
+                "h": 27.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.473906,
-                "top_right": 0.51688,
-                "bottom_right": 0.52314,
-                "bottom_left": 0.477942
+                "top_left": 0.597616,
+                "top_right": 0.743908,
+                "bottom_right": 0.50826,
+                "bottom_left": 0.251217
               }
             },
             "C": {
               "label": "C",
               "template_pixel": {
-                "x": 138.2,
-                "y": 1738.79
+                "x": 933.46,
+                "y": 2050.06
               },
               "template_rect": {
-                "x": 123.0,
-                "y": 1724.0,
-                "w": 31.0,
-                "h": 30.0
+                "x": 919.0,
+                "y": 2037.0,
+                "w": 29.0,
+                "h": 27.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.417054,
-                "top_right": 0.706943,
-                "bottom_right": 0.691833,
-                "bottom_left": 0.38792
+                "top_left": 0.627612,
+                "top_right": 0.683277,
+                "bottom_right": 0.415517,
+                "bottom_left": 0.317503
               }
             },
             "D": {
               "label": "D",
               "template_pixel": {
-                "x": 1122.98,
-                "y": 1734.59
+                "x": 1321.7,
+                "y": 2049.77
               },
               "template_rect": {
-                "x": 1107.0,
-                "y": 1720.0,
-                "w": 32.0,
-                "h": 31.0
+                "x": 1308.0,
+                "y": 2036.0,
+                "w": 28.0,
+                "h": 28.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.487329,
-                "top_right": 0.529313,
-                "bottom_right": 0.510749,
-                "bottom_left": 0.464669
+                "top_left": 0.67705,
+                "top_right": 0.632677,
+                "bottom_right": 0.326548,
+                "bottom_left": 0.4074
               }
             }
           }
@@ -449,81 +449,81 @@
             "A": {
               "label": "A",
               "template_pixel": {
-                "x": 139.49,
-                "y": 1929.3
+                "x": 188.41,
+                "y": 2296.56
               },
               "template_rect": {
-                "x": 124.0,
-                "y": 1915.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 174.0,
+                "y": 2283.0,
+                "w": 30.0,
+                "h": 27.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.464646,
-                "top_right": 0.736068,
-                "bottom_right": 0.665459,
-                "bottom_left": 0.340345
+                "top_left": 0.657634,
+                "top_right": 0.870255,
+                "bottom_right": 0.586735,
+                "bottom_left": 0.148022
               }
             },
             "B": {
               "label": "B",
               "template_pixel": {
-                "x": 1124.05,
-                "y": 1924.72
+                "x": 1027.22,
+                "y": 2293.29
               },
               "template_rect": {
-                "x": 1109.0,
-                "y": 1911.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 1013.0,
+                "y": 2280.0,
+                "w": 29.0,
+                "h": 27.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.528578,
-                "top_right": 0.567631,
-                "bottom_right": 0.474582,
-                "bottom_left": 0.425871
+                "top_left": 0.704089,
+                "top_right": 0.733061,
+                "bottom_right": 0.356064,
+                "bottom_left": 0.296408
               }
             },
             "C": {
               "label": "C",
               "template_pixel": {
-                "x": 139.87,
-                "y": 1992.8
+                "x": 189.57,
+                "y": 2349.85
               },
               "template_rect": {
-                "x": 124.0,
-                "y": 1978.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 175.0,
+                "y": 2337.0,
+                "w": 30.0,
+                "h": 27.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.48051,
-                "top_right": 0.746207,
-                "bottom_right": 0.657209,
-                "bottom_left": 0.324489
+                "top_left": 0.673271,
+                "top_right": 0.88195,
+                "bottom_right": 0.582433,
+                "bottom_left": 0.132457
               }
             },
             "D": {
               "label": "D",
               "template_pixel": {
-                "x": 1124.73,
-                "y": 1988.54
+                "x": 1027.56,
+                "y": 2346.59
               },
               "template_rect": {
-                "x": 1109.0,
-                "y": 1974.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 1013.0,
+                "y": 2334.0,
+                "w": 29.0,
+                "h": 27.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.542691,
-                "top_right": 0.580753,
-                "bottom_right": 0.462845,
-                "bottom_left": 0.413304
+                "top_left": 0.718729,
+                "top_right": 0.747104,
+                "bottom_right": 0.349346,
+                "bottom_left": 0.288973
               }
             }
           }
@@ -536,81 +536,81 @@
             "A": {
               "label": "A",
               "template_pixel": {
-                "x": 141.01,
-                "y": 2183.44
+                "x": 189.33,
+                "y": 2457.63
               },
               "template_rect": {
-                "x": 125.0,
-                "y": 2169.0,
-                "w": 33.0,
-                "h": 30.0
+                "x": 175.0,
+                "y": 2444.0,
+                "w": 29.0,
+                "h": 27.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.528135,
-                "top_right": 0.777799,
-                "bottom_right": 0.634186,
-                "bottom_left": 0.276891
+                "top_left": 0.704888,
+                "top_right": 0.90644,
+                "bottom_right": 0.575681,
+                "bottom_left": 0.100965
               }
             },
             "B": {
               "label": "B",
               "template_pixel": {
-                "x": 631.15,
-                "y": 2180.31
+                "x": 606.25,
+                "y": 2455.99
               },
               "template_rect": {
-                "x": 615.0,
-                "y": 2166.0,
-                "w": 33.0,
-                "h": 31.0
+                "x": 592.0,
+                "y": 2443.0,
+                "w": 31.0,
+                "h": 27.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.543332,
-                "top_right": 0.693053,
-                "bottom_right": 0.528088,
-                "bottom_left": 0.30709
+                "top_left": 0.716369,
+                "top_right": 0.834971,
+                "bottom_right": 0.456286,
+                "bottom_left": 0.166896
               }
             },
             "C": {
               "label": "C",
               "template_pixel": {
-                "x": 1125.73,
-                "y": 2178.39
+                "x": 1028.19,
+                "y": 2454.23
               },
               "template_rect": {
-                "x": 1110.0,
-                "y": 2164.0,
-                "w": 32.0,
-                "h": 31.0
+                "x": 1013.0,
+                "y": 2441.0,
+                "w": 30.0,
+                "h": 27.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.585119,
-                "top_right": 0.620702,
-                "bottom_right": 0.429729,
-                "bottom_left": 0.377262
+                "top_left": 0.748413,
+                "top_right": 0.775658,
+                "bottom_right": 0.3376,
+                "bottom_left": 0.276041
               }
             },
             "D": {
               "label": "D",
               "template_pixel": {
-                "x": 1620.32,
-                "y": 2176.12
+                "x": 1448.25,
+                "y": 2453.71
               },
               "template_rect": {
-                "x": 1605.0,
-                "y": 2162.0,
-                "w": 31.0,
-                "h": 30.0
+                "x": 1434.0,
+                "y": 2440.0,
+                "w": 29.0,
+                "h": 28.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.648046,
-                "top_right": 0.56627,
-                "bottom_right": 0.34791,
-                "bottom_left": 0.470037
+                "top_left": 0.798626,
+                "top_right": 0.73314,
+                "bottom_right": 0.224798,
+                "bottom_left": 0.393316
               }
             }
           }
@@ -623,168 +623,81 @@
             "A": {
               "label": "A",
               "template_pixel": {
-                "x": 141.82,
-                "y": 2314.68
+                "x": 190.22,
+                "y": 2672.98
               },
               "template_rect": {
-                "x": 126.0,
-                "y": 2300.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 176.0,
+                "y": 2660.0,
+                "w": 29.0,
+                "h": 28.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.560922,
-                "top_right": 0.800465,
-                "bottom_right": 0.619962,
-                "bottom_left": 0.24413
+                "top_left": 0.768067,
+                "top_right": 0.956388,
+                "bottom_right": 0.566851,
+                "bottom_left": 0.038787
               }
             },
             "B": {
               "label": "B",
               "template_pixel": {
-                "x": 142.17,
-                "y": 2377.57
+                "x": 607.61,
+                "y": 2671.91
               },
               "template_rect": {
-                "x": 127.0,
-                "y": 2362.0,
-                "w": 32.0,
-                "h": 31.0
+                "x": 593.0,
+                "y": 2658.0,
+                "w": 30.0,
+                "h": 28.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.576633,
-                "top_right": 0.811579,
-                "bottom_right": 0.613659,
-                "bottom_left": 0.228434
+                "top_left": 0.778806,
+                "top_right": 0.889022,
+                "bottom_right": 0.444942,
+                "bottom_left": 0.138536
               }
             },
             "C": {
               "label": "C",
               "template_pixel": {
-                "x": 142.63,
-                "y": 2441.34
+                "x": 1028.89,
+                "y": 2670.1
               },
               "template_rect": {
-                "x": 127.0,
-                "y": 2426.0,
-                "w": 32.0,
-                "h": 31.0
+                "x": 1015.0,
+                "y": 2657.0,
+                "w": 29.0,
+                "h": 28.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.592565,
-                "top_right": 0.822983,
-                "bottom_right": 0.607591,
-                "bottom_left": 0.212522
+                "top_left": 0.808325,
+                "top_right": 0.833645,
+                "bottom_right": 0.322349,
+                "bottom_left": 0.259753
               }
             },
             "D": {
               "label": "D",
               "template_pixel": {
-                "x": 143.29,
-                "y": 2504.61
+                "x": 1449.91,
+                "y": 2669.3
               },
               "template_rect": {
-                "x": 128.0,
-                "y": 2490.0,
-                "w": 32.0,
-                "h": 30.0
+                "x": 1435.0,
+                "y": 2656.0,
+                "w": 30.0,
+                "h": 27.0
               },
               "match_score": 1.0,
               "marker_signature": {
-                "top_left": 0.608372,
-                "top_right": 0.83441,
-                "bottom_right": 0.60188,
-                "bottom_left": 0.19674
-              }
-            }
-          }
-        },
-        {
-          "question_no_in_zone": 9,
-          "question_label": "第9题",
-          "question_type": "single",
-          "options": {
-            "A": {
-              "label": "A",
-              "template_pixel": {
-                "x": 145.21,
-                "y": 2761.75
-              },
-              "template_rect": {
-                "x": 129.0,
-                "y": 2747.0,
-                "w": 32.0,
-                "h": 30.0
-              },
-              "match_score": 1.0,
-              "marker_signature": {
-                "top_left": 0.672614,
-                "top_right": 0.882365,
-                "bottom_right": 0.582703,
-                "bottom_left": 0.132647
-              }
-            },
-            "B": {
-              "label": "B",
-              "template_pixel": {
-                "x": 1201.72,
-                "y": 2756.2
-              },
-              "template_rect": {
-                "x": 1186.0,
-                "y": 2742.0,
-                "w": 32.0,
-                "h": 30.0
-              },
-              "match_score": 1.0,
-              "marker_signature": {
-                "top_left": 0.724792,
-                "top_right": 0.740071,
-                "bottom_right": 0.333267,
-                "bottom_left": 0.30487
-              }
-            },
-            "C": {
-              "label": "C",
-              "template_pixel": {
-                "x": 145.25,
-                "y": 2824.68
-              },
-              "template_rect": {
-                "x": 130.0,
-                "y": 2810.0,
-                "w": 32.0,
-                "h": 30.0
-              },
-              "match_score": 1.0,
-              "marker_signature": {
-                "top_left": 0.688334,
-                "top_right": 0.89448,
-                "bottom_right": 0.579105,
-                "bottom_left": 0.116978
-              }
-            },
-            "D": {
-              "label": "D",
-              "template_pixel": {
-                "x": 1200.08,
-                "y": 2818.83
-              },
-              "template_rect": {
-                "x": 1184.0,
-                "y": 2805.0,
-                "w": 32.0,
-                "h": 30.0
-              },
-              "match_score": 1.0,
-              "marker_signature": {
-                "top_left": 0.739153,
-                "top_right": 0.754548,
-                "bottom_right": 0.327292,
-                "bottom_left": 0.297966
+                "top_left": 0.855095,
+                "top_right": 0.794107,
+                "bottom_right": 0.200992,
+                "bottom_left": 0.38239
               }
             }
           }
@@ -796,54 +709,54 @@
     "front": {
       "template_image": {
         "path": "D:\\作业试卷批改系统\\答题批改系统_完整私有备份_20260908_105603\\答题批改系统_完整私有备份_20260908_105603\\app\\templates\\direct_paper_choice_v1\\template_front.jpg",
-        "width": 2480,
-        "height": 3507
+        "width": 2303,
+        "height": 3070
       },
       "markers": {
         "top_left": {
-          "x": 106.47,
-          "y": 69.72
+          "x": 160.98,
+          "y": 55.14
         },
         "top_right": {
-          "x": 2409.74,
-          "y": 51.42
+          "x": 2122.41,
+          "y": 47.42
         },
         "bottom_right": {
-          "x": 2408.83,
-          "y": 3323.96
+          "x": 2116.45,
+          "y": 2830.12
         },
         "bottom_left": {
-          "x": 104.92,
-          "y": 3291.16
+          "x": 153.07,
+          "y": 2799.86
         }
       },
-      "marker_diag": 4002.7132
+      "marker_diag": 3409.0643
     },
     "back": {
       "template_image": {
         "path": "D:\\作业试卷批改系统\\答题批改系统_完整私有备份_20260908_105603\\答题批改系统_完整私有备份_20260908_105603\\app\\templates\\direct_paper_choice_v1\\template_back.jpg",
-        "width": 2480,
-        "height": 3507
+        "width": 2303,
+        "height": 3070
       },
       "markers": {
         "top_left": {
-          "x": 97.05,
-          "y": 70.47
+          "x": 158.25,
+          "y": 56.05
         },
         "top_right": {
-          "x": 2399.57,
-          "y": 51.15
+          "x": 2118.98,
+          "y": 45.51
         },
         "bottom_right": {
-          "x": 2402.42,
-          "y": 3325.97
+          "x": 2115.01,
+          "y": 2831.95
         },
         "bottom_left": {
-          "x": 99.19,
-          "y": 3296.18
+          "x": 150.65,
+          "y": 2801.44
         }
       },
-      "marker_diag": 4004.8941
+      "marker_diag": 3411.535
     }
   },
   "direct_mark_threshold": 3.0,
@@ -851,30 +764,30 @@
   "direct_use_template_diff": true,
   "direct_refine_box": false,
   "direct_multi_adaptive_gap": 0.0,
-  "updated_at": "2026-09-18T21:10:08",
+  "updated_at": "2026-09-20T14:45:21",
   "template_image": {
     "path": "D:\\作业试卷批改系统\\答题批改系统_完整私有备份_20260908_105603\\答题批改系统_完整私有备份_20260908_105603\\app\\templates\\direct_paper_choice_v1\\template_front.jpg",
-    "width": 2480,
-    "height": 3507
+    "width": 2303,
+    "height": 3070
   },
   "markers": {
     "top_left": {
-      "x": 106.47,
-      "y": 69.72
+      "x": 160.98,
+      "y": 55.14
     },
     "top_right": {
-      "x": 2409.74,
-      "y": 51.42
+      "x": 2122.41,
+      "y": 47.42
     },
     "bottom_right": {
-      "x": 2408.83,
-      "y": 3323.96
+      "x": 2116.45,
+      "y": 2830.12
     },
     "bottom_left": {
-      "x": 104.92,
-      "y": 3291.16
+      "x": 153.07,
+      "y": 2799.86
     }
   },
-  "marker_diag": 4002.7132,
+  "marker_diag": 3409.0643,
   "double_sided": false
 }

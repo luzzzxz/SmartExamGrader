@@ -25,6 +25,8 @@
           "region_name": "fill_blank",
           "ocr": {
             "enabled": true,
+            "unique_answer": false,
+            "choice_fill": false,
             "prefix": "",
             "suffix": "",
             "pad_left": 180,
@@ -33,10 +35,12 @@
             "pad_bottom": 20,
             "low_confidence_threshold": 0.85,
             "single_char": false,
+            "split_char_check": true,
             "expected_keywords": "",
-            "expected_answer": "放大镜",
-            "common_wrong_answers": "照相机，投影仪",
-            "wrong_keywords": "照,相,机,投,影,仪"
+            "expected_answer": "电磁波",
+            "candidate_words": "",
+            "common_wrong_answers": "超声波",
+            "wrong_keywords": "声"
           }
         },
         {
@@ -51,18 +55,22 @@
           "region_name": "fill_blank",
           "ocr": {
             "enabled": true,
+            "unique_answer": false,
+            "choice_fill": false,
             "prefix": "",
-            "suffix": "像",
+            "suffix": "",
             "pad_left": 180,
             "pad_right": 180,
             "pad_top": 20,
             "pad_bottom": 20,
             "low_confidence_threshold": 0.85,
             "single_char": false,
+            "split_char_check": true,
             "expected_keywords": "",
-            "expected_answer": "虚",
-            "common_wrong_answers": "实",
-            "wrong_keywords": "实"
+            "expected_answer": "3x10^8,3×10^8,3*10^8,300000000",
+            "candidate_words": "",
+            "common_wrong_answers": "340",
+            "wrong_keywords": ""
           }
         }
       ],
@@ -86,7 +94,9 @@
           "region_name": "fill_blank",
           "ocr": {
             "enabled": true,
-            "prefix": "大",
+            "unique_answer": false,
+            "choice_fill": false,
+            "prefix": "",
             "suffix": "",
             "pad_left": 180,
             "pad_right": 180,
@@ -94,10 +104,12 @@
             "pad_bottom": 20,
             "low_confidence_threshold": 0.85,
             "single_char": false,
-            "expected_keywords": "",
-            "expected_answer": "小",
-            "common_wrong_answers": "大",
-            "wrong_keywords": ""
+            "split_char_check": true,
+            "expected_keywords": "相互",
+            "expected_answer": "相互的",
+            "candidate_words": "",
+            "common_wrong_answers": "相对",
+            "wrong_keywords": "相对"
           }
         },
         {
@@ -112,6 +124,8 @@
           "region_name": "fill_blank",
           "ocr": {
             "enabled": true,
+            "unique_answer": false,
+            "choice_fill": false,
             "prefix": "",
             "suffix": "",
             "pad_left": 180,
@@ -120,10 +134,12 @@
             "pad_bottom": 20,
             "low_confidence_threshold": 0.85,
             "single_char": false,
-            "expected_keywords": "",
-            "expected_answer": "具有",
-            "common_wrong_answers": "",
-            "wrong_keywords": "不"
+            "split_char_check": true,
+            "expected_keywords": "足,球",
+            "expected_answer": "足球",
+            "candidate_words": "",
+            "common_wrong_answers": "脚",
+            "wrong_keywords": ""
           }
         }
       ],
@@ -147,6 +163,8 @@
           "region_name": "fill_blank",
           "ocr": {
             "enabled": true,
+            "unique_answer": false,
+            "choice_fill": false,
             "prefix": "",
             "suffix": "",
             "pad_left": 180,
@@ -155,9 +173,11 @@
             "pad_bottom": 20,
             "low_confidence_threshold": 0.85,
             "single_char": false,
-            "expected_keywords": "",
-            "expected_answer": "不可再生",
-            "common_wrong_answers": "可再生",
+            "split_char_check": true,
+            "expected_keywords": "断",
+            "expected_answer": "断开",
+            "candidate_words": "",
+            "common_wrong_answers": "闭合,短路",
             "wrong_keywords": ""
           }
         },
@@ -173,6 +193,8 @@
           "region_name": "fill_blank",
           "ocr": {
             "enabled": true,
+            "unique_answer": false,
+            "choice_fill": false,
             "prefix": "",
             "suffix": "",
             "pad_left": 180,
@@ -181,9 +203,11 @@
             "pad_bottom": 20,
             "low_confidence_threshold": 0.85,
             "single_char": false,
+            "split_char_check": true,
             "expected_keywords": "",
-            "expected_answer": "168000",
-            "common_wrong_answers": "",
+            "expected_answer": "电功率",
+            "candidate_words": "",
+            "common_wrong_answers": "电压,功率,电流",
             "wrong_keywords": ""
           }
         }
@@ -208,6 +232,8 @@
           "region_name": "fill_blank",
           "ocr": {
             "enabled": true,
+            "unique_answer": false,
+            "choice_fill": false,
             "prefix": "",
             "suffix": "",
             "pad_left": 180,
@@ -216,10 +242,12 @@
             "pad_bottom": 20,
             "low_confidence_threshold": 0.85,
             "single_char": false,
-            "expected_keywords": "",
-            "expected_answer": "20",
-            "common_wrong_answers": "",
-            "wrong_keywords": ""
+            "split_char_check": true,
+            "expected_keywords": "功，做功",
+            "expected_answer": "做功",
+            "candidate_words": "",
+            "common_wrong_answers": "热传递",
+            "wrong_keywords": "热,传,递"
           }
         },
         {
@@ -234,17 +262,21 @@
           "region_name": "fill_blank",
           "ocr": {
             "enabled": true,
+            "unique_answer": false,
+            "choice_fill": false,
             "prefix": "",
-            "suffix": "右",
+            "suffix": "",
             "pad_left": 180,
             "pad_right": 180,
             "pad_top": 20,
             "pad_bottom": 20,
             "low_confidence_threshold": 0.85,
             "single_char": false,
+            "split_char_check": true,
             "expected_keywords": "",
-            "expected_answer": "左",
-            "common_wrong_answers": "右",
+            "expected_answer": "无规则运动",
+            "candidate_words": "",
+            "common_wrong_answers": "运动,无规则",
             "wrong_keywords": ""
           }
         }
@@ -269,18 +301,22 @@
           "region_name": "fill_blank",
           "ocr": {
             "enabled": true,
-            "prefix": "左",
+            "unique_answer": false,
+            "choice_fill": false,
+            "prefix": "凹",
             "suffix": "",
             "pad_left": 180,
             "pad_right": 180,
             "pad_top": 20,
             "pad_bottom": 20,
             "low_confidence_threshold": 0.85,
-            "single_char": false,
+            "single_char": true,
+            "split_char_check": true,
             "expected_keywords": "",
-            "expected_answer": "右",
-            "common_wrong_answers": "左",
-            "wrong_keywords": ""
+            "expected_answer": "凸",
+            "candidate_words": "",
+            "common_wrong_answers": "凹",
+            "wrong_keywords": "等,省"
           }
         },
         {
@@ -295,17 +331,21 @@
           "region_name": "fill_blank",
           "ocr": {
             "enabled": true,
+            "unique_answer": false,
+            "choice_fill": false,
             "prefix": "",
-            "suffix": "kg",
+            "suffix": "",
             "pad_left": 180,
             "pad_right": 180,
             "pad_top": 20,
             "pad_bottom": 20,
             "low_confidence_threshold": 0.85,
             "single_char": false,
-            "expected_keywords": "",
-            "expected_answer": "2",
-            "common_wrong_answers": "",
+            "split_char_check": true,
+            "expected_keywords": "会聚",
+            "expected_answer": "会聚",
+            "candidate_words": "",
+            "common_wrong_answers": "发散",
             "wrong_keywords": ""
           }
         }
@@ -330,16 +370,20 @@
           "region_name": "fill_blank",
           "ocr": {
             "enabled": true,
+            "unique_answer": false,
+            "choice_fill": false,
             "prefix": "",
-            "suffix": "kg",
+            "suffix": "",
             "pad_left": 180,
             "pad_right": 180,
             "pad_top": 20,
             "pad_bottom": 20,
             "low_confidence_threshold": 0.85,
             "single_char": false,
+            "split_char_check": true,
             "expected_keywords": "",
-            "expected_answer": "1",
+            "expected_answer": "1500",
+            "candidate_words": "",
             "common_wrong_answers": "",
             "wrong_keywords": ""
           }
@@ -356,16 +400,20 @@
           "region_name": "fill_blank",
           "ocr": {
             "enabled": true,
+            "unique_answer": false,
+            "choice_fill": false,
             "prefix": "",
-            "suffix": "kg",
+            "suffix": "",
             "pad_left": 180,
             "pad_right": 180,
             "pad_top": 20,
             "pad_bottom": 20,
             "low_confidence_threshold": 0.85,
             "single_char": false,
+            "split_char_check": true,
             "expected_keywords": "",
-            "expected_answer": "8",
+            "expected_answer": "圆柱体A对桌面的压强减小得少,圆柱体B对桌面的压强减小得多",
+            "candidate_words": "",
             "common_wrong_answers": "",
             "wrong_keywords": ""
           }
@@ -440,6 +488,8 @@
               },
               "ocr": {
                 "enabled": true,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
@@ -448,10 +498,12 @@
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
-                "expected_keywords": "",
-                "expected_answer": "匀速直线",
-                "common_wrong_answers": "",
-                "wrong_keywords": "均,运,动"
+                "split_char_check": true,
+                "expected_keywords": "不漏气",
+                "expected_answer": "不漏气",
+                "candidate_words": "",
+                "common_wrong_answers": "漏气",
+                "wrong_keywords": ""
               }
             }
           ]
@@ -472,18 +524,22 @@
               },
               "ocr": {
                 "enabled": true,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
-                "suffix": "N",
+                "suffix": "克",
                 "pad_left": 180,
                 "pad_right": 180,
                 "pad_top": 20,
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
+                "split_char_check": true,
                 "expected_keywords": "",
-                "expected_answer": "3.4",
-                "common_wrong_answers": "",
-                "wrong_keywords": ""
+                "expected_answer": "相等",
+                "candidate_words": "",
+                "common_wrong_answers": "不相等,不同,不相同",
+                "wrong_keywords": "不"
               }
             }
           ]
@@ -504,6 +560,8 @@
               },
               "ocr": {
                 "enabled": true,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
@@ -512,10 +570,12 @@
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
-                "expected_keywords": "压力",
-                "expected_answer": "压力大小",
-                "common_wrong_answers": "",
-                "wrong_keywords": "粗,糙"
+                "split_char_check": true,
+                "expected_keywords": "深度",
+                "expected_answer": "没有控制探头在液体中的深度相同",
+                "candidate_words": "",
+                "common_wrong_answers": "大",
+                "wrong_keywords": ""
               }
             },
             {
@@ -529,19 +589,23 @@
                 "h": 118.0
               },
               "ocr": {
-                "enabled": false,
+                "enabled": true,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
                 "pad_right": 180,
                 "pad_top": 20,
                 "pad_bottom": 20,
-                "low_confidence_threshold": 0.6,
+                "low_confidence_threshold": 0.85,
                 "single_char": false,
-                "expected_keywords": "",
-                "expected_answer": "",
-                "common_wrong_answers": "",
-                "wrong_keywords": ""
+                "split_char_check": true,
+                "expected_keywords": "有",
+                "expected_answer": "有关",
+                "candidate_words": "",
+                "common_wrong_answers": "无关",
+                "wrong_keywords": "无"
               }
             },
             {
@@ -556,16 +620,20 @@
               },
               "ocr": {
                 "enabled": false,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
                 "pad_right": 180,
                 "pad_top": 20,
                 "pad_bottom": 20,
-                "low_confidence_threshold": 0.6,
+                "low_confidence_threshold": 0.85,
                 "single_char": false,
+                "split_char_check": true,
                 "expected_keywords": "",
                 "expected_answer": "",
+                "candidate_words": "",
                 "common_wrong_answers": "",
                 "wrong_keywords": ""
               }
@@ -597,6 +665,8 @@
               },
               "ocr": {
                 "enabled": true,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
@@ -605,10 +675,12 @@
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
-                "expected_keywords": "",
-                "expected_answer": "相同",
-                "common_wrong_answers": "",
-                "wrong_keywords": "不"
+                "split_char_check": true,
+                "expected_keywords": "A",
+                "expected_answer": "碎冰",
+                "candidate_words": "",
+                "common_wrong_answers": "大冰块",
+                "wrong_keywords": "大"
               }
             },
             {
@@ -623,18 +695,22 @@
               },
               "ocr": {
                 "enabled": true,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
-                "suffix": "",
+                "suffix": "线",
                 "pad_left": 180,
                 "pad_right": 180,
                 "pad_top": 20,
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
+                "split_char_check": true,
                 "expected_keywords": "",
-                "expected_answer": "2.50",
-                "common_wrong_answers": "2.5",
-                "wrong_keywords": ""
+                "expected_answer": "-6",
+                "candidate_words": "",
+                "common_wrong_answers": "",
+                "wrong_keywords": "4，6"
               }
             }
           ]
@@ -655,6 +731,8 @@
               },
               "ocr": {
                 "enabled": true,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
@@ -663,10 +741,12 @@
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
-                "expected_keywords": "4",
-                "expected_answer": "-4",
-                "common_wrong_answers": "16",
-                "wrong_keywords": "16"
+                "split_char_check": true,
+                "expected_keywords": "入",
+                "expected_answer": "入射",
+                "candidate_words": "",
+                "common_wrong_answers": "反射,折射",
+                "wrong_keywords": "反"
               }
             },
             {
@@ -681,6 +761,8 @@
               },
               "ocr": {
                 "enabled": true,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
@@ -689,10 +771,12 @@
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
+                "split_char_check": true,
                 "expected_keywords": "",
-                "expected_answer": "晶体",
-                "common_wrong_answers": "",
-                "wrong_keywords": "非"
+                "expected_answer": "等于",
+                "candidate_words": "",
+                "common_wrong_answers": "大于,小于,>,<",
+                "wrong_keywords": "大，小"
               }
             }
           ]
@@ -713,16 +797,20 @@
               },
               "ocr": {
                 "enabled": false,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
                 "pad_right": 180,
                 "pad_top": 20,
                 "pad_bottom": 20,
-                "low_confidence_threshold": 0.6,
+                "low_confidence_threshold": 0.85,
                 "single_char": false,
+                "split_char_check": true,
                 "expected_keywords": "",
                 "expected_answer": "",
+                "candidate_words": "",
                 "common_wrong_answers": "",
                 "wrong_keywords": ""
               }
@@ -739,16 +827,20 @@
               },
               "ocr": {
                 "enabled": false,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
                 "pad_right": 180,
                 "pad_top": 20,
                 "pad_bottom": 20,
-                "low_confidence_threshold": 0.6,
+                "low_confidence_threshold": 0.85,
                 "single_char": false,
+                "split_char_check": true,
                 "expected_keywords": "",
                 "expected_answer": "",
+                "candidate_words": "",
                 "common_wrong_answers": "",
                 "wrong_keywords": ""
               }
@@ -780,6 +872,8 @@
               },
               "ocr": {
                 "enabled": true,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
@@ -788,9 +882,11 @@
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
+                "split_char_check": true,
                 "expected_keywords": "",
-                "expected_answer": "空",
-                "common_wrong_answers": "",
+                "expected_answer": "如答图所示",
+                "candidate_words": "",
+                "common_wrong_answers": "短跑",
                 "wrong_keywords": ""
               }
             }
@@ -812,18 +908,22 @@
               },
               "ocr": {
                 "enabled": true,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
-                "suffix": "边",
+                "suffix": "",
                 "pad_left": 180,
                 "pad_right": 180,
                 "pad_top": 20,
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
-                "expected_keywords": "",
-                "expected_answer": "右",
-                "common_wrong_answers": "左",
-                "wrong_keywords": ""
+                "split_char_check": true,
+                "expected_keywords": "短",
+                "expected_answer": "短路",
+                "candidate_words": "",
+                "common_wrong_answers": "断路,断开",
+                "wrong_keywords": "断路,断开"
               }
             },
             {
@@ -837,7 +937,9 @@
                 "h": 119.4
               },
               "ocr": {
-                "enabled": true,
+                "enabled": false,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
@@ -846,8 +948,10 @@
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
-                "expected_keywords": "保护",
-                "expected_answer": "保护电路",
+                "split_char_check": true,
+                "expected_keywords": "",
+                "expected_answer": "",
+                "candidate_words": "",
                 "common_wrong_answers": "",
                 "wrong_keywords": ""
               }
@@ -870,18 +974,22 @@
               },
               "ocr": {
                 "enabled": true,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
-                "suffix": "",
+                "suffix": "BCD",
                 "pad_left": 180,
                 "pad_right": 180,
                 "pad_top": 20,
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
-                "expected_keywords": "断",
-                "expected_answer": "断路",
-                "common_wrong_answers": "短路",
-                "wrong_keywords": "短"
+                "split_char_check": true,
+                "expected_keywords": "",
+                "expected_answer": "A",
+                "candidate_words": "",
+                "common_wrong_answers": "B",
+                "wrong_keywords": ""
               }
             }
           ]
@@ -902,16 +1010,20 @@
               },
               "ocr": {
                 "enabled": true,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
-                "suffix": "N",
+                "suffix": "",
                 "pad_left": 180,
                 "pad_right": 180,
                 "pad_top": 20,
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
-                "expected_keywords": "",
-                "expected_answer": "10",
+                "split_char_check": true,
+                "expected_keywords": "单位",
+                "expected_answer": "1.5",
+                "candidate_words": "",
                 "common_wrong_answers": "",
                 "wrong_keywords": ""
               }
@@ -928,16 +1040,20 @@
               },
               "ocr": {
                 "enabled": false,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
                 "pad_right": 180,
                 "pad_top": 20,
                 "pad_bottom": 20,
-                "low_confidence_threshold": 0.6,
+                "low_confidence_threshold": 0.85,
                 "single_char": false,
+                "split_char_check": true,
                 "expected_keywords": "",
                 "expected_answer": "",
+                "candidate_words": "",
                 "common_wrong_answers": "",
                 "wrong_keywords": ""
               }
@@ -960,6 +1076,8 @@
               },
               "ocr": {
                 "enabled": true,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
@@ -968,8 +1086,10 @@
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
-                "expected_keywords": "变阻器",
-                "expected_answer": "滑动变阻器",
+                "split_char_check": true,
+                "expected_keywords": "调零",
+                "expected_answer": "4.91",
+                "candidate_words": "",
                 "common_wrong_answers": "",
                 "wrong_keywords": ""
               }
@@ -1018,7 +1138,9 @@
               },
               "ocr": {
                 "enabled": true,
-                "prefix": "",
+                "unique_answer": false,
+                "choice_fill": false,
+                "prefix": "左",
                 "suffix": "",
                 "pad_left": 180,
                 "pad_right": 180,
@@ -1026,9 +1148,11 @@
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
+                "split_char_check": true,
                 "expected_keywords": "",
-                "expected_answer": "游码",
-                "common_wrong_answers": "",
+                "expected_answer": "零刻度线",
+                "candidate_words": "",
+                "common_wrong_answers": "左",
                 "wrong_keywords": ""
               }
             }
@@ -1050,16 +1174,20 @@
               },
               "ocr": {
                 "enabled": true,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
-                "suffix": "kg",
+                "suffix": "",
                 "pad_left": 180,
                 "pad_right": 180,
                 "pad_top": 20,
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
+                "split_char_check": true,
                 "expected_keywords": "",
-                "expected_answer": "72.4",
+                "expected_answer": "61.4",
+                "candidate_words": "",
                 "common_wrong_answers": "",
                 "wrong_keywords": ""
               }
@@ -1082,6 +1210,8 @@
               },
               "ocr": {
                 "enabled": true,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
@@ -1090,8 +1220,10 @@
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
+                "split_char_check": true,
                 "expected_keywords": "",
-                "expected_answer": "1.6",
+                "expected_answer": "50mL刻度",
+                "candidate_words": "",
                 "common_wrong_answers": "",
                 "wrong_keywords": ""
               }
@@ -1108,6 +1240,8 @@
               },
               "ocr": {
                 "enabled": true,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
@@ -1116,8 +1250,10 @@
                 "pad_bottom": 20,
                 "low_confidence_threshold": 0.85,
                 "single_char": false,
+                "split_char_check": true,
                 "expected_keywords": "",
-                "expected_answer": "换更重的称砣",
+                "expected_answer": "0.9",
+                "candidate_words": "",
                 "common_wrong_answers": "",
                 "wrong_keywords": ""
               }
@@ -1134,16 +1270,20 @@
               },
               "ocr": {
                 "enabled": false,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
                 "pad_right": 180,
                 "pad_top": 20,
                 "pad_bottom": 20,
-                "low_confidence_threshold": 0.6,
+                "low_confidence_threshold": 0.85,
                 "single_char": false,
+                "split_char_check": true,
                 "expected_keywords": "",
                 "expected_answer": "",
+                "candidate_words": "",
                 "common_wrong_answers": "",
                 "wrong_keywords": ""
               }
@@ -1160,16 +1300,20 @@
               },
               "ocr": {
                 "enabled": false,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
                 "pad_right": 180,
                 "pad_top": 20,
                 "pad_bottom": 20,
-                "low_confidence_threshold": 0.6,
+                "low_confidence_threshold": 0.85,
                 "single_char": false,
+                "split_char_check": true,
                 "expected_keywords": "",
                 "expected_answer": "",
+                "candidate_words": "",
                 "common_wrong_answers": "",
                 "wrong_keywords": ""
               }
@@ -1186,16 +1330,20 @@
               },
               "ocr": {
                 "enabled": false,
+                "unique_answer": false,
+                "choice_fill": false,
                 "prefix": "",
                 "suffix": "",
                 "pad_left": 180,
                 "pad_right": 180,
                 "pad_top": 20,
                 "pad_bottom": 20,
-                "low_confidence_threshold": 0.6,
+                "low_confidence_threshold": 0.85,
                 "single_char": false,
+                "split_char_check": true,
                 "expected_keywords": "",
                 "expected_answer": "",
+                "candidate_words": "",
                 "common_wrong_answers": "",
                 "wrong_keywords": ""
               }
@@ -1233,7 +1381,7 @@
     "description": "Locked experiment region excludes lower-right drawing area; row ordering supports three blanks in one subquestion.",
     "experiment_bottom_extension_note": "2026-05-14: extend experiment detection region downward by 50 template px so same-row lower-right blanks are detected without scanning the diagram below."
   },
-  "updated_at": "2026-07-01T15:12:46",
+  "updated_at": "2026-09-20T11:07:27",
   "experiment_structure_source": "blank_template_line_detection",
   "latest_template_note": "2026-05-15: restored OCR settings from latest answer scheme 万唯定制2.",
   "template_images": {
@@ -1249,5 +1397,12 @@
     "template_key": "mixed_objective_subjective_v1",
     "template_name": "客观主观混合模板-v1",
     "saved_at": "2026-06-04T08:45:05"
+  },
+  "_session_snapshot": {
+    "session_id": "0c6dd205-75e9-43dc-a15a-6a8fb92b4630",
+    "session_name": "23-1\\万唯定制1",
+    "template_key": "mixed_objective_subjective_v1",
+    "template_name": "客观主观混合模板-v1",
+    "saved_at": "2026-06-09T07:50:46"
   }
 }

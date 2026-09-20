@@ -135,6 +135,15 @@ class IsolationTests(unittest.TestCase):
         self.assertTrue(result['ok'])
         self.assertEqual(result['matched_count'], 2)
 
+    def test_single_blank_regrade_with_wrong_keywords(self):
+        g = self.gui
+        self.single_regrade_fixture()
+        with patch('core.blank_recheck.get_blank_recheck_collector'):
+            result = g.regrade_single_subjective_part('q1_b1', 'B', wrong_keywords='B')
+        self.assertTrue(result['ok'])
+        self.assertEqual(result['matched_count'], 0)
+        self.assertEqual(result['zero_count'], 1)
+
     def test_rule_change_invalidates_only_affected_auto_marks_and_is_idempotent(self):
         g = self.gui
         payload = self.single_regrade_fixture()

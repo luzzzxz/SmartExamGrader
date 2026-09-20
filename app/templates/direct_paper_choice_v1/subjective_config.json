@@ -5,40 +5,34 @@
   "template_name": "试卷直接批改模板-v1",
   "display_name": "试卷直接批改模板主观横线配置",
   "source": "direct_subjective_lines",
-  "updated_at": "2026-09-19T09:07:55",
+  "updated_at": "2026-09-20T15:39:35",
   "scoring": {
     "default_blank_score": 1,
     "include_in_total_score": true,
-    "max_score": 11.0
+    "max_score": 17.0
   },
   "crop_regions": {
     "direct_front": {
       "x": 0,
       "y": 0,
-      "w": 2480.0,
-      "h": 3507.0
+      "w": 2303.0,
+      "h": 3070.0
     },
     "direct_back": {
       "x": 0,
       "y": 0,
-      "w": 2480.0,
-      "h": 3507.0
-    },
-    "direct_back_calculation": {
-      "x": 62.0,
-      "y": 1876.04,
-      "w": 2356.0,
-      "h": 1473.14
+      "w": 2303.0,
+      "h": 3070.0
     }
   },
   "items": [
     {
-      "question_no": "F001",
-      "label": "10",
-      "answer_label": "10",
+      "question_no": "B001",
+      "label": "9",
+      "answer_label": "9",
       "kind": "fill_blank",
-      "side": "front",
-      "region_name": "direct_front",
+      "side": "back",
+      "region_name": "direct_back",
       "source": "direct_subjective_lines",
       "source_line_index": 1,
       "max_score": 1.0,
@@ -47,16 +41,16 @@
           "blank_no": 1,
           "score": 1.0,
           "score_category": "direct_subjective",
-          "side": "front",
-          "region_name": "direct_front",
+          "side": "back",
+          "region_name": "direct_back",
           "rect": {
-            "x": 2274.0,
-            "y": 2912.0,
-            "w": 206.0,
-            "h": 71.0
+            "x": 624.72,
+            "y": 181.0,
+            "w": 426.56,
+            "h": 72.0
           },
-          "label": "10",
-          "answer_label": "10",
+          "label": "9",
+          "answer_label": "9",
           "ocr": {
             "enabled": true,
             "unique_answer": false,
@@ -71,117 +65,23 @@
             "single_char": false,
             "split_char_check": true,
             "expected_keywords": "",
-            "expected_answer": "沙子",
-            "candidate_words": "",
-            "common_wrong_answers": "水",
-            "wrong_keywords": ""
-          }
-        }
-      ]
-    },
-    {
-      "question_no": "F002",
-      "label": "10",
-      "answer_label": "10",
-      "kind": "fill_blank",
-      "side": "front",
-      "region_name": "direct_front",
-      "source": "direct_subjective_lines",
-      "source_line_index": 2,
-      "max_score": 1.0,
-      "blanks": [
-        {
-          "blank_no": 1,
-          "score": 1.0,
-          "score_category": "direct_subjective",
-          "side": "front",
-          "region_name": "direct_front",
-          "rect": {
-            "x": 447.0,
-            "y": 3012.0,
-            "w": 623.0,
-            "h": 73.0
-          },
-          "label": "10",
-          "answer_label": "10",
-          "ocr": {
-            "enabled": true,
-            "unique_answer": false,
-            "choice_fill": false,
-            "prefix": "",
-            "suffix": "",
-            "pad_left": 180,
-            "pad_right": 180,
-            "pad_top": 20,
-            "pad_bottom": 20,
-            "low_confidence_threshold": 0.6,
-            "single_char": false,
-            "split_char_check": false,
-            "expected_keywords": "",
-            "expected_answer": "沙子的比热容比水小",
+            "expected_answer": "光沿直线传播",
             "candidate_words": "",
             "common_wrong_answers": "",
-            "wrong_keywords": ""
+            "wrong_keywords": "反射/折射"
           }
         }
       ]
     },
     {
-      "question_no": "F003",
-      "label": "10",
-      "answer_label": "10",
-      "kind": "fill_blank",
-      "side": "front",
-      "region_name": "direct_front",
-      "source": "direct_subjective_lines",
-      "source_line_index": 3,
-      "max_score": 1.0,
-      "blanks": [
-        {
-          "blank_no": 1,
-          "score": 1.0,
-          "score_category": "direct_subjective",
-          "side": "front",
-          "region_name": "direct_front",
-          "rect": {
-            "x": 2180.28,
-            "y": 3006.0,
-            "w": 255.44,
-            "h": 71.0
-          },
-          "label": "10",
-          "answer_label": "10",
-          "ocr": {
-            "enabled": true,
-            "unique_answer": false,
-            "choice_fill": false,
-            "prefix": "",
-            "suffix": "",
-            "pad_left": 180,
-            "pad_right": 180,
-            "pad_top": 20,
-            "pad_bottom": 20,
-            "low_confidence_threshold": 0.6,
-            "single_char": false,
-            "split_char_check": false,
-            "expected_keywords": "",
-            "expected_answer": "8400",
-            "candidate_words": "",
-            "common_wrong_answers": "",
-            "wrong_keywords": ""
-          }
-        }
-      ]
-    },
-    {
-      "question_no": "B001",
-      "label": "11",
-      "answer_label": "11",
+      "question_no": "B002",
+      "label": "9",
+      "answer_label": "9",
       "kind": "fill_blank",
       "side": "back",
       "region_name": "direct_back",
       "source": "direct_subjective_lines",
-      "source_line_index": 1,
+      "source_line_index": 2,
       "max_score": 1.0,
       "blanks": [
         {
@@ -191,17 +91,17 @@
           "side": "back",
           "region_name": "direct_back",
           "rect": {
-            "x": 692.56,
-            "y": 211.0,
-            "w": 262.88,
+            "x": 365.0,
+            "y": 236.0,
+            "w": 231.0,
             "h": 72.0
           },
-          "label": "11",
-          "answer_label": "11",
+          "label": "9",
+          "answer_label": "9",
           "ocr": {
             "enabled": true,
             "unique_answer": true,
-            "choice_fill": false,
+            "choice_fill": true,
             "prefix": "",
             "suffix": "",
             "pad_left": 180,
@@ -212,65 +112,18 @@
             "single_char": true,
             "split_char_check": false,
             "expected_keywords": "",
-            "expected_answer": "52.4",
-            "candidate_words": "",
-            "common_wrong_answers": "",
-            "wrong_keywords": ""
-          }
-        }
-      ]
-    },
-    {
-      "question_no": "B002",
-      "label": "11",
-      "answer_label": "11",
-      "kind": "fill_blank",
-      "side": "back",
-      "region_name": "direct_back",
-      "source": "direct_subjective_lines",
-      "source_line_index": 2,
-      "max_score": 1.0,
-      "blanks": [
-        {
-          "blank_no": 1,
-          "score": 1.0,
-          "score_category": "direct_subjective",
-          "side": "back",
-          "region_name": "direct_back",
-          "rect": {
-            "x": 491.4,
-            "y": 307.0,
-            "w": 409.2,
-            "h": 72.0
-          },
-          "label": "11",
-          "answer_label": "11",
-          "ocr": {
-            "enabled": true,
-            "unique_answer": false,
-            "choice_fill": false,
-            "prefix": "",
-            "suffix": "",
-            "pad_left": 180,
-            "pad_right": 180,
-            "pad_top": 20,
-            "pad_bottom": 20,
-            "low_confidence_threshold": 0.6,
-            "single_char": false,
-            "split_char_check": false,
-            "expected_keywords": "",
-            "expected_answer": "2.62x10^3,2.62×10^3,2.62*10^3,2620",
-            "candidate_words": "",
-            "common_wrong_answers": "",
-            "wrong_keywords": ""
+            "expected_answer": "大",
+            "candidate_words": "大/小",
+            "common_wrong_answers": "小",
+            "wrong_keywords": "小"
           }
         }
       ]
     },
     {
       "question_no": "B003",
-      "label": "12",
-      "answer_label": "12",
+      "label": "10",
+      "answer_label": "10",
       "kind": "fill_blank",
       "side": "back",
       "region_name": "direct_back",
@@ -285,10 +138,292 @@
           "side": "back",
           "region_name": "direct_back",
           "rect": {
-            "x": 116.92,
-            "y": 500.0,
-            "w": 259.16,
-            "h": 71.0
+            "x": 1306.72,
+            "y": 396.0,
+            "w": 302.56,
+            "h": 73.0
+          },
+          "label": "10",
+          "answer_label": "10",
+          "ocr": {
+            "enabled": true,
+            "unique_answer": true,
+            "choice_fill": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.6,
+            "single_char": false,
+            "split_char_check": true,
+            "expected_keywords": "",
+            "expected_answer": "S点上方",
+            "candidate_words": "S点上方/S点/S点下方",
+            "common_wrong_answers": "S点,S点下方",
+            "wrong_keywords": "下"
+          }
+        }
+      ]
+    },
+    {
+      "question_no": "B004",
+      "label": "10",
+      "answer_label": "10",
+      "kind": "fill_blank",
+      "side": "back",
+      "region_name": "direct_back",
+      "source": "direct_subjective_lines",
+      "source_line_index": 4,
+      "max_score": 1.0,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1.0,
+          "score_category": "direct_subjective",
+          "side": "back",
+          "region_name": "direct_back",
+          "rect": {
+            "x": 1052.72,
+            "y": 451.0,
+            "w": 302.56,
+            "h": 73.0
+          },
+          "label": "10",
+          "answer_label": "10",
+          "ocr": {
+            "enabled": true,
+            "unique_answer": true,
+            "choice_fill": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.6,
+            "single_char": false,
+            "split_char_check": true,
+            "expected_keywords": "",
+            "expected_answer": "S点下方",
+            "candidate_words": "S点上方/S点/S点下方",
+            "common_wrong_answers": "S点上方,S点",
+            "wrong_keywords": "上"
+          }
+        }
+      ]
+    },
+    {
+      "question_no": "B005",
+      "label": "11",
+      "answer_label": "11",
+      "kind": "fill_blank",
+      "side": "back",
+      "region_name": "direct_back",
+      "source": "direct_subjective_lines",
+      "source_line_index": 5,
+      "max_score": 1.0,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1.0,
+          "score_category": "direct_subjective",
+          "side": "back",
+          "region_name": "direct_back",
+          "rect": {
+            "x": 1318.0,
+            "y": 505.0,
+            "w": 232.0,
+            "h": 73.0
+          },
+          "label": "11",
+          "answer_label": "11",
+          "ocr": {
+            "enabled": true,
+            "unique_answer": true,
+            "choice_fill": true,
+            "prefix": "凹",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.6,
+            "single_char": false,
+            "split_char_check": true,
+            "expected_keywords": "",
+            "expected_answer": "凸",
+            "candidate_words": "凸/凹",
+            "common_wrong_answers": "凹",
+            "wrong_keywords": "凹"
+          }
+        }
+      ]
+    },
+    {
+      "question_no": "B006",
+      "label": "11",
+      "answer_label": "11",
+      "kind": "fill_blank",
+      "side": "back",
+      "region_name": "direct_back",
+      "source": "direct_subjective_lines",
+      "source_line_index": 6,
+      "max_score": 1.0,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1.0,
+          "score_category": "direct_subjective",
+          "side": "back",
+          "region_name": "direct_back",
+          "rect": {
+            "x": 1270.0,
+            "y": 560.0,
+            "w": 231.0,
+            "h": 73.0
+          },
+          "label": "11",
+          "answer_label": "11",
+          "ocr": {
+            "enabled": true,
+            "unique_answer": true,
+            "choice_fill": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.6,
+            "single_char": false,
+            "split_char_check": true,
+            "expected_keywords": "",
+            "expected_answer": "远离",
+            "candidate_words": "远离/靠近",
+            "common_wrong_answers": "靠近",
+            "wrong_keywords": "靠,近"
+          }
+        }
+      ]
+    },
+    {
+      "question_no": "B007",
+      "label": "11",
+      "answer_label": "11",
+      "kind": "fill_blank",
+      "side": "back",
+      "region_name": "direct_back",
+      "source": "direct_subjective_lines",
+      "source_line_index": 7,
+      "max_score": 1.0,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1.0,
+          "score_category": "direct_subjective",
+          "side": "back",
+          "region_name": "direct_back",
+          "rect": {
+            "x": 1350.0,
+            "y": 614.0,
+            "w": 231.0,
+            "h": 73.0
+          },
+          "label": "11",
+          "answer_label": "11",
+          "ocr": {
+            "enabled": true,
+            "unique_answer": true,
+            "choice_fill": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.6,
+            "single_char": false,
+            "split_char_check": true,
+            "expected_keywords": "",
+            "expected_answer": "缩小",
+            "candidate_words": "放大/等大/缩小",
+            "common_wrong_answers": "放大,等大",
+            "wrong_keywords": "放,等"
+          }
+        }
+      ]
+    },
+    {
+      "question_no": "B008",
+      "label": "12",
+      "answer_label": "12",
+      "kind": "fill_blank",
+      "side": "back",
+      "region_name": "direct_back",
+      "source": "direct_subjective_lines",
+      "source_line_index": 8,
+      "max_score": 1.0,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1.0,
+          "score_category": "direct_subjective",
+          "side": "back",
+          "region_name": "direct_back",
+          "rect": {
+            "x": 1042.0,
+            "y": 776.0,
+            "w": 232.0,
+            "h": 73.0
+          },
+          "label": "12",
+          "answer_label": "12",
+          "ocr": {
+            "enabled": true,
+            "unique_answer": true,
+            "choice_fill": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.6,
+            "single_char": false,
+            "split_char_check": true,
+            "expected_keywords": "丁/了/子",
+            "expected_answer": "丁",
+            "candidate_words": "甲/乙/丙/丁",
+            "common_wrong_answers": "甲,乙,丙",
+            "wrong_keywords": "甲,乙,丙"
+          }
+        }
+      ]
+    },
+    {
+      "question_no": "B009",
+      "label": "12",
+      "answer_label": "12",
+      "kind": "fill_blank",
+      "side": "back",
+      "region_name": "direct_back",
+      "source": "direct_subjective_lines",
+      "source_line_index": 9,
+      "max_score": 1.0,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1.0,
+          "score_category": "direct_subjective",
+          "side": "back",
+          "region_name": "direct_back",
+          "rect": {
+            "x": 519.44,
+            "y": 1047.0,
+            "w": 326.12,
+            "h": 72.0
           },
           "label": "12",
           "answer_label": "12",
@@ -306,23 +441,63 @@
             "single_char": false,
             "split_char_check": true,
             "expected_keywords": "",
-            "expected_answer": "静止",
-            "candidate_words": "运动/静止",
-            "common_wrong_answers": "运动",
-            "wrong_keywords": "运,动"
+            "expected_answer": "远视眼镜",
+            "candidate_words": "远视眼镜/近视眼镜",
+            "common_wrong_answers": "近视眼镜",
+            "wrong_keywords": "近"
           }
         }
       ]
     },
     {
-      "question_no": "B004",
-      "label": "12",
-      "answer_label": "12",
+      "part_id": "qB010_drawing_10",
+      "question_no": "B010",
+      "label": "13",
+      "answer_label": "13",
+      "kind": "drawing",
+      "side": "back",
+      "region_name": "direct_back",
+      "source": "direct_subjective_lines",
+      "source_line_index": 10,
+      "max_score": 2.0,
+      "manual_only": true,
+      "score_category": "drawing",
+      "rect": {
+        "x": 1086.0,
+        "y": 1282.0,
+        "w": 499.0,
+        "h": 360.0
+      }
+    },
+    {
+      "part_id": "qB011_drawing_11",
+      "question_no": "B011",
+      "label": "14",
+      "answer_label": "14",
+      "kind": "drawing",
+      "side": "back",
+      "region_name": "direct_back",
+      "source": "direct_subjective_lines",
+      "source_line_index": 11,
+      "max_score": 2.0,
+      "manual_only": true,
+      "score_category": "drawing",
+      "rect": {
+        "x": 1635.0,
+        "y": 1286.0,
+        "w": 549.0,
+        "h": 376.0
+      }
+    },
+    {
+      "question_no": "B012",
+      "label": "15(1)",
+      "answer_label": "15(1)",
       "kind": "fill_blank",
       "side": "back",
       "region_name": "direct_back",
       "source": "direct_subjective_lines",
-      "source_line_index": 4,
+      "source_line_index": 12,
       "max_score": 1.0,
       "blanks": [
         {
@@ -332,13 +507,107 @@
           "side": "back",
           "region_name": "direct_back",
           "rect": {
-            "x": 579.56,
-            "y": 593.0,
-            "w": 262.88,
-            "h": 72.0
+            "x": 1504.0,
+            "y": 1748.0,
+            "w": 233.0,
+            "h": 74.0
           },
-          "label": "12",
-          "answer_label": "12",
+          "label": "15(1)",
+          "answer_label": "15(1)",
+          "ocr": {
+            "enabled": true,
+            "unique_answer": true,
+            "choice_fill": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.6,
+            "single_char": false,
+            "split_char_check": true,
+            "expected_keywords": "",
+            "expected_answer": "变小",
+            "candidate_words": "填/变大/变小",
+            "common_wrong_answers": "变大,增大,不变",
+            "wrong_keywords": "大,增"
+          }
+        }
+      ]
+    },
+    {
+      "question_no": "B013",
+      "label": "15(2)",
+      "answer_label": "15(2)",
+      "kind": "fill_blank",
+      "side": "back",
+      "region_name": "direct_back",
+      "source": "direct_subjective_lines",
+      "source_line_index": 13,
+      "max_score": 1.0,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1.0,
+          "score_category": "direct_subjective",
+          "side": "back",
+          "region_name": "direct_back",
+          "rect": {
+            "x": 570.0,
+            "y": 1912.0,
+            "w": 233.0,
+            "h": 73.0
+          },
+          "label": "15(2)",
+          "answer_label": "15(2)",
+          "ocr": {
+            "enabled": true,
+            "unique_answer": true,
+            "choice_fill": true,
+            "prefix": "",
+            "suffix": "",
+            "pad_left": 180,
+            "pad_right": 180,
+            "pad_top": 20,
+            "pad_bottom": 20,
+            "low_confidence_threshold": 0.6,
+            "single_char": false,
+            "split_char_check": false,
+            "expected_keywords": "",
+            "expected_answer": "不能",
+            "candidate_words": "填/能/不能",
+            "common_wrong_answers": "能",
+            "wrong_keywords": "填"
+          }
+        }
+      ]
+    },
+    {
+      "question_no": "B014",
+      "label": "15(3)",
+      "answer_label": "15(3)",
+      "kind": "fill_blank",
+      "side": "back",
+      "region_name": "direct_back",
+      "source": "direct_subjective_lines",
+      "source_line_index": 14,
+      "max_score": 1.0,
+      "blanks": [
+        {
+          "blank_no": 1,
+          "score": 1.0,
+          "score_category": "direct_subjective",
+          "side": "back",
+          "region_name": "direct_back",
+          "rect": {
+            "x": 632.0,
+            "y": 2074.0,
+            "w": 507.0,
+            "h": 74.0
+          },
+          "label": "15(3)",
+          "answer_label": "15(3)",
           "ocr": {
             "enabled": true,
             "unique_answer": false,
@@ -351,25 +620,25 @@
             "pad_bottom": 20,
             "low_confidence_threshold": 0.6,
             "single_char": false,
-            "split_char_check": false,
-            "expected_keywords": "相对",
-            "expected_answer": "相对的",
+            "split_char_check": true,
+            "expected_keywords": "",
+            "expected_answer": "反射角等于入射角",
             "candidate_words": "",
-            "common_wrong_answers": "",
+            "common_wrong_answers": "入射角等于反射角",
             "wrong_keywords": ""
           }
         }
       ]
     },
     {
-      "question_no": "B005",
-      "label": "13",
-      "answer_label": "13",
+      "question_no": "B015",
+      "label": "15(4)",
+      "answer_label": "15(4)",
       "kind": "fill_blank",
       "side": "back",
       "region_name": "direct_back",
       "source": "direct_subjective_lines",
-      "source_line_index": 5,
+      "source_line_index": 15,
       "max_score": 1.0,
       "blanks": [
         {
@@ -379,220 +648,45 @@
           "side": "back",
           "region_name": "direct_back",
           "rect": {
-            "x": 814.44,
-            "y": 1037.0,
-            "w": 264.12,
-            "h": 72.0
+            "x": 573.0,
+            "y": 2490.0,
+            "w": 232.0,
+            "h": 73.0
           },
-          "label": "13",
-          "answer_label": "13",
+          "label": "15(4)",
+          "answer_label": "15(4)",
           "ocr": {
             "enabled": true,
             "unique_answer": true,
             "choice_fill": false,
             "prefix": "",
-            "suffix": "右",
+            "suffix": "",
             "pad_left": 180,
             "pad_right": 180,
             "pad_top": 20,
             "pad_bottom": 20,
-            "low_confidence_threshold": 0.85,
-            "single_char": true,
+            "low_confidence_threshold": 0.6,
+            "single_char": false,
             "split_char_check": true,
             "expected_keywords": "",
-            "expected_answer": "左",
+            "expected_answer": "可逆",
             "candidate_words": "",
-            "common_wrong_answers": "右",
-            "wrong_keywords": ""
-          }
-        }
-      ]
-    },
-    {
-      "question_no": "B006",
-      "label": "13",
-      "answer_label": "13",
-      "kind": "fill_blank",
-      "side": "back",
-      "region_name": "direct_back",
-      "source": "direct_subjective_lines",
-      "source_line_index": 6,
-      "max_score": 1.0,
-      "blanks": [
-        {
-          "blank_no": 1,
-          "score": 1.0,
-          "score_category": "direct_subjective",
-          "side": "back",
-          "region_name": "direct_back",
-          "rect": {
-            "x": 1086.44,
-            "y": 1228.0,
-            "w": 264.12,
-            "h": 71.0
-          },
-          "label": "13",
-          "answer_label": "13",
-          "ocr": {
-            "enabled": true,
-            "unique_answer": false,
-            "choice_fill": false,
-            "prefix": "",
-            "suffix": "",
-            "pad_left": 180,
-            "pad_right": 180,
-            "pad_top": 20,
-            "pad_bottom": 20,
-            "low_confidence_threshold": 0.6,
-            "single_char": false,
-            "split_char_check": false,
-            "expected_keywords": "",
-            "expected_answer": "71.2",
-            "candidate_words": "",
-            "common_wrong_answers": "",
-            "wrong_keywords": ""
-          }
-        }
-      ]
-    },
-    {
-      "question_no": "B007",
-      "label": "13",
-      "answer_label": "13",
-      "kind": "fill_blank",
-      "side": "back",
-      "region_name": "direct_back",
-      "source": "direct_subjective_lines",
-      "source_line_index": 7,
-      "max_score": 1.0,
-      "blanks": [
-        {
-          "blank_no": 1,
-          "score": 1.0,
-          "score_category": "direct_subjective",
-          "side": "back",
-          "region_name": "direct_back",
-          "rect": {
-            "x": 698.52,
-            "y": 1419.0,
-            "w": 407.96,
-            "h": 72.0
-          },
-          "label": "13",
-          "answer_label": "13",
-          "ocr": {
-            "enabled": true,
-            "unique_answer": false,
-            "choice_fill": false,
-            "prefix": "",
-            "suffix": "",
-            "pad_left": 180,
-            "pad_right": 180,
-            "pad_top": 20,
-            "pad_bottom": 20,
-            "low_confidence_threshold": 0.6,
-            "single_char": false,
-            "split_char_check": false,
-            "expected_keywords": "",
-            "expected_answer": "1.04x10^3,1.04×10^3,1.04*10^3,1040",
-            "candidate_words": "",
-            "common_wrong_answers": "",
-            "wrong_keywords": ""
-          }
-        }
-      ]
-    },
-    {
-      "question_no": "B008",
-      "label": "13",
-      "answer_label": "13",
-      "kind": "fill_blank",
-      "side": "back",
-      "region_name": "direct_back",
-      "source": "direct_subjective_lines",
-      "source_line_index": 8,
-      "max_score": 1.0,
-      "blanks": [
-        {
-          "blank_no": 1,
-          "score": 1.0,
-          "score_category": "direct_subjective",
-          "side": "back",
-          "region_name": "direct_back",
-          "rect": {
-            "x": 585.0,
-            "y": 1785.0,
-            "w": 531.0,
-            "h": 73.0
-          },
-          "label": "13",
-          "answer_label": "13",
-          "ocr": {
-            "enabled": true,
-            "unique_answer": false,
-            "choice_fill": false,
-            "prefix": "",
-            "suffix": "",
-            "pad_left": 180,
-            "pad_right": 180,
-            "pad_top": 20,
-            "pad_bottom": 20,
-            "low_confidence_threshold": 0.6,
-            "single_char": false,
-            "split_char_check": false,
-            "expected_keywords": "",
-            "expected_answer": "m2-m0m1-m0ρ水",
-            "candidate_words": "",
-            "common_wrong_answers": "",
-            "wrong_keywords": ""
+            "common_wrong_answers": "不可逆",
+            "wrong_keywords": "不"
           }
         }
       ]
     }
   ],
   "calculation_questions": {
-    "enabled": true,
+    "enabled": false,
     "mode": "back_region_manual",
-    "questions": [
-      {
-        "question_no": 14,
-        "sub_scores": [
-          {
-            "sub_no": 1,
-            "score": 1.0
-          },
-          {
-            "sub_no": 2,
-            "score": 2.0
-          },
-          {
-            "sub_no": 3,
-            "score": 3.0
-          }
-        ],
-        "max_score": 6.0
-      }
-    ],
-    "max_score": 6.0,
-    "updated_at": "2026-09-19T08:07:15"
+    "questions": [],
+    "max_score": 0,
+    "updated_at": "2026-09-20T14:45:55"
   },
   "direct_calculation_region": {
-    "enabled": true,
-    "side": "back",
-    "source": "last_retained_line_to_page_bottom",
-    "top_offset": 0.0,
-    "rect": {
-      "x": 62.0,
-      "y": 1876.04,
-      "w": 2356.0,
-      "h": 1473.14
-    },
-    "template_width": 2480.0,
-    "template_height": 3507.0
-  },
-  "_answer_scheme_snapshot": {
-    "template_key": "direct_paper_choice_v1",
-    "template_name": "试卷直接批改模板-v1",
-    "saved_at": "2026-09-19T08:04:29"
+    "enabled": false,
+    "side": "back"
   }
 }

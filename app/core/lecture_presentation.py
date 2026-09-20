@@ -16,7 +16,7 @@ import unicodedata
 from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
-from core.grading_state import result_percentage, result_rank
+from core.grading_state import result_rank, result_percentage
 
 
 def normalized_qkey(value):
@@ -380,30 +380,107 @@ def build_lecture_presentation_data(
     questions_data = []
 
     def get_standard_answer_for(q_no, zone_name=None):
-        if answer_key:
-            if isinstance(answer_key, dict):
-                if '__global__' in answer_key and str(q_no) in answer_key['__global__']:
-                    val = answer_key['__global__'][str(q_no)]
-                    return ''.join(sorted([str(x).upper() for x in val])) if isinstance(val, (list, set)) else str(val).upper()
-                if str(q_no) in answer_key:
-                    val = answer_key[str(q_no)]
-                    return ''.join(sorted([str(x).upper() for x in val])) if isinstance(val, (list, set)) else str(val).upper()
-                if zone_name and zone_name in answer_key and str(q_no) in answer_key[zone_name]:
-                    val = answer_key[zone_name][str(q_no)]
-                    return ''.join(sorted([str(x).upper() for x in val])) if isinstance(val, (list, set)) else str(val).upper()
-        # Fallback to summary_data
+        q_str = str(q_no).strip()
+        q_int = int(q_str) if q_str.isdigit() else None
+        p_keys = [k for k in [q_no, q_str, q_int, f"第{q_str}题"] if k is not None]
+
+        if answer_key and isinstance(answer_key, dict):
+            lookup_dicts = []
+            if '__global__' in answer_key and isinstance(answer_key['__global__'], dict):
+                lookup_dicts.append(answer_key['__global__'])
+            if zone_name and zone_name in answer_key and isinstance(answer_key[zone_name], dict):
+                lookup_dicts.append(answer_key[zone_name])
+            for zk, zv in answer_key.items():
+                if isinstance(zv, dict) and zv not in lookup_dicts:
+                    lookup_dicts.append(zv)
+            lookup_dicts.append(answer_key)
+
+            for d in lookup_dicts:
+                for pk in p_keys:
+                    if pk in d:
+                        val = d[pk]
+                        if val is not None:
+                            return ''.join(sorted([str(x).upper() for x in val])) if isinstance(val, (list, set, tuple)) else str(val).upper()
+
+        # Fallback to summary_data zone_breakdowns
         for item in summary_data:
-            zb = (item.get('zone_breakdowns') or {}).get(zone_name or '')
-            if zb and 'question_numbers' in zb and 'standard_answers' in zb:
-                try:
-                    idx = zb['question_numbers'].index(q_no)
-                    if idx < len(zb['standard_answers']):
-                        ans = zb['standard_answers'][idx]
-                        if ans:
-                            return ''.join(sorted([str(x).upper() for x in ans])) if isinstance(ans, (list, set)) else str(ans).upper()
-                except Exception:
-                    pass
+            zb_root = item.get('zone_breakdowns') or {}
+            candidate_zbs = []
+            if zone_name and zone_name in zb_root and isinstance(zb_root[zone_name], dict):
+                candidate_zbs.append(zb_root[zone_name])
+            for zk, zv in zb_root.items():
+                if isinstance(zv, dict) and zv not in candidate_zbs:
+                    candidate_zbs.append(zv)
+
+            for zb in candidate_zbs:
+                q_nums = zb.get('question_numbers') or []
+                std_answers = zb.get('standard_answers') or []
+                for idx, qn in enumerate(q_nums):
+                    if str(qn).strip() == q_str:
+                        if idx < len(std_answers):
+                            ans = std_answers[idx]
+                            if ans:
+                                return ''.join(sorted([str(x).upper() for x in ans])) if isinstance(ans, (list, set, tuple)) else str(ans).upper()
         return ''
+
+    def extract_student_selected_option(item, zone_name, q_no):
+        q_str = str(q_no).strip()
+        q_int = int(q_str) if q_str.isdigit() else None
+        possible_keys = [k for k in [q_no, q_str, q_int, f"第{q_str}题"] if k is not None]
+
+        answers_root = item.get('answers') or {}
+
+        # 1. Look in answers dict (supporting int/str keys, nested or flat, dict/list/str formats)
+        candidate_zones = []
+        if isinstance(answers_root, dict):
+            if zone_name in answers_root and isinstance(answers_root[zone_name], dict):
+                candidate_zones.append(answers_root[zone_name])
+            for zk, zv in answers_root.items():
+                if isinstance(zv, dict) and zv not in candidate_zones:
+                    candidate_zones.append(zv)
+            candidate_zones.append(answers_root)
+
+        for zd in candidate_zones:
+            for pk in possible_keys:
+                if pk in zd:
+                    val = zd[pk]
+                    if isinstance(val, dict):
+                        sel = val.get('selected') or val.get('actual') or val.get('answer')
+                        if sel:
+                            return list(sel) if isinstance(sel, (list, tuple, set)) else [str(sel)]
+                    elif isinstance(val, (list, tuple, set)):
+                        return list(val)
+                    elif isinstance(val, str) and val.strip():
+                        return [val.strip()]
+
+        # 2. Fallback to zone_breakdowns
+        zb_root = item.get('zone_breakdowns') or {}
+        candidate_zbs = []
+        if isinstance(zb_root, dict):
+            if zone_name in zb_root and isinstance(zb_root[zone_name], dict):
+                candidate_zbs.append(zb_root[zone_name])
+            for zk, zv in zb_root.items():
+                if isinstance(zv, dict) and zv not in candidate_zbs:
+                    candidate_zbs.append(zv)
+
+        for zb in candidate_zbs:
+            q_nums = zb.get('question_numbers') or []
+            ans_list = zb.get('answers') or []
+            for idx, qn in enumerate(q_nums):
+                if str(qn).strip() == q_str:
+                    if idx < len(ans_list):
+                        raw_ans = str(ans_list[idx]).strip()
+                        if raw_ans and raw_ans not in ('未作答', '未判定', 'None'):
+                            return [raw_ans]
+
+        # 3. Fallback to wrong_questions
+        for w in item.get('wrong_questions') or []:
+            if str(w.get('question_no', '')).strip() == q_str:
+                act = str(w.get('actual', '')).strip()
+                if act and act not in ('未作答', '未判定', 'None'):
+                    return [act]
+
+        return []
 
     # 6.1 客观选择题分析
     zones = []
@@ -425,9 +502,9 @@ def build_lecture_presentation_data(
         for zname, zdict in first_answers.items():
             if isinstance(zdict, dict) and zdict:
                 q_list = []
-                for qk in sorted(zdict.keys(), key=lambda x: int(x) if x.isdigit() else 999):
+                for qk in sorted(zdict.keys(), key=lambda x: int(x) if str(x).isdigit() else 999):
                     q_list.append({
-                        'question_no_in_zone': int(qk) if qk.isdigit() else qk,
+                        'question_no_in_zone': int(qk) if str(qk).isdigit() else qk,
                         'question_type': 'single',
                         'score': 3.0,
                     })
@@ -437,14 +514,31 @@ def build_lecture_presentation_data(
                         'title': zname,
                         'questions': q_list,
                     })
+        # 如果仍无 zones，从 zone_breakdowns 自动发现客观题结构
+        if not zones and summary_data[0].get('zone_breakdowns'):
+            for zname, zb in summary_data[0]['zone_breakdowns'].items():
+                if isinstance(zb, dict) and zb.get('question_numbers'):
+                    q_list = []
+                    for qk in zb['question_numbers']:
+                        q_list.append({
+                            'question_no_in_zone': int(qk) if str(qk).isdigit() else qk,
+                            'question_type': 'single',
+                            'score': 3.0,
+                        })
+                    if q_list:
+                        zones.append({
+                            'zone_name': zname,
+                            'title': zname,
+                            'questions': q_list,
+                        })
 
     if not zones and answer_key and isinstance(answer_key, dict):
         for zk, zv in answer_key.items():
             if isinstance(zv, dict) and zv and zk != '__global__':
                 q_list = []
-                for qk in sorted(zv.keys(), key=lambda x: int(x) if x.isdigit() else 999):
+                for qk in sorted(zv.keys(), key=lambda x: int(x) if str(x).isdigit() else 999):
                     q_list.append({
-                        'question_no_in_zone': int(qk) if qk.isdigit() else qk,
+                        'question_no_in_zone': int(qk) if str(qk).isdigit() else qk,
                         'question_type': 'single',
                         'score': 3.0,
                     })
@@ -488,14 +582,7 @@ def build_lecture_presentation_data(
 
             for item in summary_data:
                 st_name = str(item.get('student_name') or '未命名').strip()
-                ans_info = (item.get('answers') or {}).get(zone_name, {}).get(str(q_no)) or {}
-                selected = ans_info.get('selected') or []
-                if not selected:
-                    for zk, zv in (item.get('answers') or {}).items():
-                        if str(q_no) in zv:
-                            selected = zv[str(q_no)].get('selected') or []
-                            break
-
+                selected = extract_student_selected_option(item, zone_name, q_no)
                 norm_selected = ''.join(sorted([str(x).upper() for x in selected]))
                 if not norm_selected:
                     norm_selected = '未作答'
