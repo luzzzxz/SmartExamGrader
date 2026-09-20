@@ -128,6 +128,8 @@ $coreFiles = @(
     'requirements-main.txt',
     'requirements-paddleocr.txt',
     'migrate_from_old_version.py',
+    'knowledge_report_export.py',
+    'drawing_error_comments.json',
     'build_project_backup.ps1'
 )
 $coreFiles | ForEach-Object { Copy-ProjectFile $_ }
